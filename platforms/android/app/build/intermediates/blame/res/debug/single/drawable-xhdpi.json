@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/drawable-xhdpi/icon.png",
+        "source": "/media/rahul/storage/DQCafe/platforms/android/app/src/main/res/drawable-xhdpi/icon.png"
+    },
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/drawable-xhdpi/background.png",
+        "source": "/media/rahul/storage/DQCafe/platforms/android/app/src/main/res/drawable-xhdpi/background.png"
+    },
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/drawable-xhdpi/logo.png",
+        "source": "/media/rahul/storage/DQCafe/platforms/android/app/src/main/res/drawable-xhdpi/logo.png"
+    }
+]

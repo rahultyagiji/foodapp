@@ -1,0 +1,14 @@
+<ActionBar title="{{item.name}}   menu" class="action-bar"></ActionBar>
+<FlexboxLayout flexDirection="column" class="page">
+    <FlexboxLayout class="m-15">
+
+        <ListView [items]="menu" class="list-group">
+            <ng-template let-item="item">
+                <Label [text]="item.name  +  '    ' + item.price"
+                       class="list-group-item" (tap)="ontapMenu(item.item)"></Label>
+            </ng-template>
+        </ListView>
+
+    </FlexboxLayout>
+
+</FlexboxLayout>

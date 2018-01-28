@@ -1,0 +1,66 @@
+[
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
+        "source": "/home/rahul/.android/build-cache/0c8389f473a066eb54af3374a4538b42437fdefc/output/res/anim/abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
+        "source": "/home/rahul/.android/build-cache/0c8389f473a066eb54af3374a4538b42437fdefc/output/res/anim/abc_popup_exit.xml"
+    },
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/anim/design_bottom_sheet_slide_out.xml",
+        "source": "/home/rahul/.android/build-cache/95f2c4aae0cb6467c6911341221b50b09f9f8c7b/output/res/anim/design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/anim/abc_slide_out_bottom.xml",
+        "source": "/home/rahul/.android/build-cache/0c8389f473a066eb54af3374a4538b42437fdefc/output/res/anim/abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/anim/design_snackbar_out.xml",
+        "source": "/home/rahul/.android/build-cache/95f2c4aae0cb6467c6911341221b50b09f9f8c7b/output/res/anim/design_snackbar_out.xml"
+    },
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
+        "source": "/home/rahul/.android/build-cache/0c8389f473a066eb54af3374a4538b42437fdefc/output/res/anim/abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/anim/design_fab_out.xml",
+        "source": "/home/rahul/.android/build-cache/95f2c4aae0cb6467c6911341221b50b09f9f8c7b/output/res/anim/design_fab_out.xml"
+    },
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/anim/design_fab_in.xml",
+        "source": "/home/rahul/.android/build-cache/95f2c4aae0cb6467c6911341221b50b09f9f8c7b/output/res/anim/design_fab_in.xml"
+    },
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml",
+        "source": "/home/rahul/.android/build-cache/0c8389f473a066eb54af3374a4538b42437fdefc/output/res/anim/abc_slide_out_top.xml"
+    },
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/anim/abc_fade_out.xml",
+        "source": "/home/rahul/.android/build-cache/0c8389f473a066eb54af3374a4538b42437fdefc/output/res/anim/abc_fade_out.xml"
+    },
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/anim/abc_slide_in_top.xml",
+        "source": "/home/rahul/.android/build-cache/0c8389f473a066eb54af3374a4538b42437fdefc/output/res/anim/abc_slide_in_top.xml"
+    },
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/anim/design_bottom_sheet_slide_in.xml",
+        "source": "/home/rahul/.android/build-cache/95f2c4aae0cb6467c6911341221b50b09f9f8c7b/output/res/anim/design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
+        "source": "/home/rahul/.android/build-cache/0c8389f473a066eb54af3374a4538b42437fdefc/output/res/anim/abc_fade_in.xml"
+    },
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/anim/design_snackbar_in.xml",
+        "source": "/home/rahul/.android/build-cache/95f2c4aae0cb6467c6911341221b50b09f9f8c7b/output/res/anim/design_snackbar_in.xml"
+    },
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/anim/abc_slide_in_bottom.xml",
+        "source": "/home/rahul/.android/build-cache/0c8389f473a066eb54af3374a4538b42437fdefc/output/res/anim/abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
+        "source": "/home/rahul/.android/build-cache/0c8389f473a066eb54af3374a4538b42437fdefc/output/res/anim/abc_popup_enter.xml"
+    }
+]

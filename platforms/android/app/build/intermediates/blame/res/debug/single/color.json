@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
+        "source": "/home/rahul/.android/build-cache/0c8389f473a066eb54af3374a4538b42437fdefc/output/res/color/abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
+        "source": "/home/rahul/.android/build-cache/0c8389f473a066eb54af3374a4538b42437fdefc/output/res/color/abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_light.xml",
+        "source": "/home/rahul/.android/build-cache/0c8389f473a066eb54af3374a4538b42437fdefc/output/res/color/abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
+        "source": "/home/rahul/.android/build-cache/0c8389f473a066eb54af3374a4538b42437fdefc/output/res/color/abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/color/switch_thumb_material_dark.xml",
+        "source": "/home/rahul/.android/build-cache/0c8389f473a066eb54af3374a4538b42437fdefc/output/res/color/switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
+        "source": "/home/rahul/.android/build-cache/0c8389f473a066eb54af3374a4538b42437fdefc/output/res/color/abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml",
+        "source": "/home/rahul/.android/build-cache/0c8389f473a066eb54af3374a4538b42437fdefc/output/res/color/switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
+        "source": "/home/rahul/.android/build-cache/0c8389f473a066eb54af3374a4538b42437fdefc/output/res/color/abc_search_url_text.xml"
+    },
+    {
+        "merged": "/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
+        "source": "/home/rahul/.android/build-cache/0c8389f473a066eb54af3374a4538b42437fdefc/output/res/color/abc_primary_text_disable_only_material_light.xml"
+    }
+]
