@@ -26,7 +26,7 @@ export class ItemService {
         ).then(
             (res=>{
 
-                console.log(res)
+                console.log("something should come here",res)
             })
         ).catch((res=>{
             console.log("does this give error?",res)}))
