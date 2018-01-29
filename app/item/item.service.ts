@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
-
 import { Item } from "./item";
+import firebase = require("nativescript-plugin-firebase");
+
 
 @Injectable()
 export class ItemService {
@@ -11,6 +12,25 @@ export class ItemService {
     );
 
     getItems(): Item[] {
+
+        var a = firebase.query(
+            ()=>{},
+            "/businessName/cafe",
+            {
+                singleEvent: true,
+                orderBy:{
+                    type: firebase.QueryOrderByType.KEY
+                }
+            }
+
+        ).then(
+            (res=>{
+
+                console.log(res)
+            })
+        ).catch((res=>{
+            console.log("does this give error?",res)}))
+
         return this.items;
     }
 

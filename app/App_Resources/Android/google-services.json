@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "932640169460",
+    "firebase_url": "https://dekyou-cafe.firebaseio.com",
+    "project_id": "dekyou-cafe",
+    "storage_bucket": "dekyou-cafe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:932640169460:android:47cf50bf18023fe1",
+        "android_client_info": {
+          "package_name": "org.nativescript.DQCafe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "932640169460-hcvah1pr1umq0fij8h048kmmd69td03v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwZGakcJGZCcmzRyqZNY8VnwEw4I7JzUw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

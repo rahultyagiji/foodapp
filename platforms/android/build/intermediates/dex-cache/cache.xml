@@ -12,12 +12,183 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/rahul/.android/build-cache/9d6daba696576fe004162004b643115f84892e09/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
+        <dex dex="/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/pre-dexed/F0/debug/classes_d0942ac472772d920ad4ee6ba8d923485f613901.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/rahul/.android/build-cache/a9c21d21e86e1740ece8872355baf05ab78201e0/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
+        <dex dex="/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/pre-dexed/F0/debug/classes_e9361a04b124f387cbeed496988534070ee4954f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/rahul/.android/build-cache/615d2f82bfb750c80054df0cd59f17b20505a3e5/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d2af2ef4d987d753f2e8ee2d1480ab964d5c7273">
+        <dex dex="/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/pre-dexed/F0/debug/classes_905c4409054a83f9b07669eeaf390d7b7fe63a9b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/rahul/.android/build-cache/6f72c049752e3ec76ccd91772e5fd7c1e9c6575e/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fe66404378d7791a232cc3331811b2ce402f44c7">
+        <dex dex="/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/pre-dexed/F0/debug/classes_1eeb172471eec576b4cb853af71b2ce423c59293.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/rahul/.android/build-cache/393b1892dbd774f096668df65160c90e6dd1d97f/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="233d88c6f961d2a84758dfe27b7af61318190c7b">
+        <dex dex="/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/pre-dexed/F0/debug/classes_43007f66bfaea3925e3bb61da0098be6f3e03385.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/rahul/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.2/3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf/gson-2.8.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf">
+        <dex dex="/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/pre-dexed/F0/debug/gson-2.8.2_3e95621c85ab0178eaccfb5f5e6159bdc59ae9b6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/rahul/.android/build-cache/41ee19b969edfeb5f0b52942c89dea4c11618767/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2d1eaa9e0b98f8fc4c2b989d9b30d4f1480648ac">
+        <dex dex="/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/pre-dexed/F0/debug/classes_d94b6af33b95e8739cd136dfae056a9e0383ea39.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/rahul/.android/build-cache/4c1a2ebe11ffa18cd702918fe2204d71f5616b40/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5ad3911825107d8dd4b017fdecebfd23c08048dd">
+        <dex dex="/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/pre-dexed/F0/debug/classes_65bb12505fd3b1b0445d85ff5bd51676b19bbcaa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/rahul/.android/build-cache/1278418890eae6610c3a865240f7ffb6c0a563b1/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="264ad23f9752aabecfa41115c52a25a023a08839">
+        <dex dex="/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/pre-dexed/F0/debug/classes_655e2eb954f3e0ade942a70b901d56b0219f2cbd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/rahul/.android/build-cache/18e17d5d0b208f8328dc4ca9c13438bec9f404c3/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
+        <dex dex="/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/pre-dexed/F0/debug/classes_14310e3fa7527ddea1364a3a2dc10f0cc8d4d9cf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/rahul/.android/build-cache/7d21fadc52c6996648ad33c53f0180261db6f591/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
+        <dex dex="/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/pre-dexed/F0/debug/classes_3535a8a178149d2f3bbcbbddcabd83f5fe4159f1.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/rahul/.android/build-cache/d4b6e38b6c678f0de256778fbfeec53b3cc8dcc3/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="dd431d6aa9ce9dc0d429fcd239d412a82ea0e9a7">
         <dex dex="/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/pre-dexed/debug/classes_290b87ad91815de6a2e5132e46d930eb9cd91c06.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/rahul/.android/build-cache/501fe4748989ba5615282cf04f5cb7b6de3592df/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="122de0d704f76d2bb5cb9db66e00fe90a0a41e78">
+        <dex dex="/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/pre-dexed/F0/debug/classes_0dccda3d6f8477684ed745893ee469b1329f10f7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/rahul/.android/build-cache/2e1227c303ecd7d35d5e6496183a1d8cbf04e660/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d9ecde39b460470e655de6e47c05573d2d5a8bfb">
+        <dex dex="/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/pre-dexed/F0/debug/classes_503fea1103f97385fb98efba3a537c6a4f283f0e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/rahul/.android/build-cache/ad431fa3eede82f243e70606db8e73bdd0d0b06a/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="42c9659c973e311ffdb645ed057e5053e0ab5c78">
+        <dex dex="/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/pre-dexed/F0/debug/classes_07a8fa9f64b1b304142ec8f98a1b9dc15777e7bd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/rahul/.android/build-cache/6b523fbb247fd4e181d03dcffd244d12bec45577/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/pre-dexed/F0/debug/classes_b218c79a47fbaa802349a63062a5774558f0f88c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/rahul/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/25.2.0/support-annotations-25.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
+        <dex dex="/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/pre-dexed/F0/debug/support-annotations-25.2.0_553bce3b311c3e445fce7173d071a6f8d393684e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/rahul/.android/build-cache/d6db590c89bf89205d0ee87d536a351fd19317ff/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e6aeff19a2ce1eb896557be73cb9ceb56f8d1cf3">
+        <dex dex="/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/pre-dexed/F0/debug/classes_10a316d1419d0df785128b6b4731b890028545f5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/rahul/.android/build-cache/2e6b853e5acc78f42550bb5f25f988a9af3c395b/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c5bc72ad3250d065128d1d7514279be703e57bd0">
+        <dex dex="/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/pre-dexed/F0/debug/classes_3e755a74ac97d3da04dbc88597e624c29f9cb656.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/rahul/.android/build-cache/884ba6b839f207df26487bcfe8eeaf93281e91cb/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
+        <dex dex="/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/pre-dexed/F0/debug/classes_bc8f2fb32b980cdd00bf802b770f1c7d604f0225.jar" />
     </item>
 
 </items>

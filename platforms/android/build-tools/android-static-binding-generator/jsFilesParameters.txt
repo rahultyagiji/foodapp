@@ -222,6 +222,17 @@
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-angular/router/ns-router-link.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-angular/router/index.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-angular/router/private-imports/router-url-tree.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-plugin-firebase/preuninstall-hooks.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-plugin-firebase/firebase.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-plugin-firebase/postinstall-hooks.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-plugin-firebase/firebase-common.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-plugin-firebase/app/index.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-plugin-firebase/app/auth/index.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-plugin-firebase/app/database/index.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-plugin-firebase/app/firestore/index.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-plugin-firebase/scripts/entitlements-before-prepare.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-plugin-firebase/scripts/entitlements-after-prepare.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-plugin-firebase/scripts/postinstall.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-toast/toast.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/item/item.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/item/items.component.js

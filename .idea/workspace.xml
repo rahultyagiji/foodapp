@@ -1,7 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f185d1ec-f8fa-4414-a208-2dc6e32a2b10" name="Default" comment="" />
+    <list default="true" id="f185d1ec-f8fa-4414-a208-2dc6e32a2b10" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/App_Resources/Android/google-services.json" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/app.component.js" afterPath="$PROJECT_DIR$/app/app.component.js" />
+      <change beforePath="$PROJECT_DIR$/app/app.component.ts" afterPath="$PROJECT_DIR$/app/app.component.ts" />
+      <change beforePath="$PROJECT_DIR$/app/item/item.service.js" afterPath="$PROJECT_DIR$/app/item/item.service.js" />
+      <change beforePath="$PROJECT_DIR$/app/item/item.service.ts" afterPath="$PROJECT_DIR$/app/item/item.service.ts" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileContent/annotation-processors.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileContent/annotation-processors.bin" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileContent/fileContent.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileContent/fileContent.lock" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileHashes/fileHashes.bin" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileHashes/fileHashes.lock" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileHashes/resourceHashesCache.bin" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/fileSnapshots.bin" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/taskHistory.bin" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/taskHistory.lock" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/.nsprepareinfo" afterPath="$PROJECT_DIR$/platforms/android/.nsprepareinfo" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/0/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/0/classes.jar" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/1/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/1/classes.jar" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/2/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/2/classes.jar" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/3/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/3/classes.jar" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/4/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/4/classes.jar" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/5/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/5/classes.jar" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/build/outputs/apk/.nsbuildinfo" afterPath="$PROJECT_DIR$/platforms/android/app/build/outputs/apk/.nsbuildinfo" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/build/outputs/apk/DQCafe-debug.apk" afterPath="$PROJECT_DIR$/platforms/android/app/build/outputs/apk/DQCafe-debug.apk" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/metadata/output/assets/metadata/treeNodeStream.dat" afterPath="$PROJECT_DIR$/platforms/android/app/metadata/output/assets/metadata/treeNodeStream.dat" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/metadata/output/assets/metadata/treeStringsStream.dat" afterPath="$PROJECT_DIR$/platforms/android/app/metadata/output/assets/metadata/treeStringsStream.dat" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/metadata/output/assets/metadata/treeValueStream.dat" afterPath="$PROJECT_DIR$/platforms/android/app/metadata/output/assets/metadata/treeValueStream.dat" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.component.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.component.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.component.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.component.ts" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/item.service.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/item.service.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/item.service.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/item.service.ts" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/metadata/treeNodeStream.dat" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/metadata/treeNodeStream.dat" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/metadata/treeStringsStream.dat" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/metadata/treeStringsStream.dat" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/metadata/treeValueStream.dat" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/metadata/treeValueStream.dat" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/bindings.txt" afterPath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/bindings.txt" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/cached.txt" afterPath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/cached.txt" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/interfaces-names.txt" afterPath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/interfaces-names.txt" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/jsFilesParameters.txt" afterPath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/jsFilesParameters.txt" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/build.gradle" afterPath="$PROJECT_DIR$/platforms/android/build.gradle" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/platforms/android/build/intermediates/dex-cache/cache.xml" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/build/intermediates/prepared-platforms.json" afterPath="$PROJECT_DIR$/platforms/android/build/intermediates/prepared-platforms.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/dependencies.json" afterPath="$PROJECT_DIR$/platforms/android/dependencies.json" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -17,7 +61,7 @@
       <file leaf-file-name="item-detail.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/item/item-detail.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
+            <state relative-caret-position="594">
               <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
@@ -26,21 +70,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menu.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/item/menu.service.ts">
+      <file leaf-file-name="item.service.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/item/item.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="25" />
+            <state relative-caret-position="311">
+              <caret line="20" column="11" lean-forward="false" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="item-detail.component.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/item/item-detail.component.html">
+      <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+            <state relative-caret-position="52">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -56,6 +100,13 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>src/</find>
+      <find>appmodule.android.fore</find>
+      <find>foregroundActivity</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -69,12 +120,13 @@
         <option value="$PROJECT_DIR$/app/item/item.ts" />
         <option value="$PROJECT_DIR$/app/item/items.component.ts" />
         <option value="$PROJECT_DIR$/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/app/app.component.ts" />
         <option value="$PROJECT_DIR$/app/item/item-detail.component.ts" />
         <option value="$PROJECT_DIR$/app/item/menu.ts" />
         <option value="$PROJECT_DIR$/app/item/menu.service.ts" />
-        <option value="$PROJECT_DIR$/app/item/item.service.ts" />
         <option value="$PROJECT_DIR$/app/item/item-detail.component.html" />
+        <option value="$PROJECT_DIR$/node_modules/nativescript-plugin-firebase/firebase.android.js" />
+        <option value="$PROJECT_DIR$/app/app.component.ts" />
+        <option value="$PROJECT_DIR$/app/item/item.service.ts" />
       </list>
     </option>
   </component>
@@ -106,6 +158,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -123,13 +176,18 @@
               <item name="DQCafe" type="b2602c69:ProjectViewProjectNode" />
               <item name="DQCafe" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="App_Resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DQCafe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DQCafe" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="item" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -138,6 +196,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/App_Resources/Android" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -166,7 +229,8 @@
       <updated>1516967074268</updated>
       <workItem from="1516967075466" duration="8508000" />
       <workItem from="1516975674673" duration="2286000" />
-      <workItem from="1517105634435" duration="927000" />
+      <workItem from="1517105634435" duration="3735000" />
+      <workItem from="1517132365264" duration="5911000" />
     </task>
     <task id="LOCAL-00001" summary="First version">
       <created>1517106110300</created>
@@ -179,28 +243,37 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11721000" />
+    <option name="totallyTimeSpent" value="20440000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1303" height="780" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24960877" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3051643" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29082426" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -241,6 +314,32 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/item/item-detail.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/item/menu.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/item/item-detail.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="30" column="16" lean-forward="true" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/item/item-detail.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -313,31 +412,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/item/item.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/item/items.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="7" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -355,10 +433,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/item/item.service.ts">
+    <entry file="file://$PROJECT_DIR$/app/item/items.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -370,9 +448,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/item/item.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/App_Resources/Android/google-services.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="56" lean-forward="false" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="26" column="25" lean-forward="false" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/nativescript-plugin-firebase/firebase.android.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/nativescript-plugin-firebase/firebase.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/nativescript-plugin-firebase/firebase.android.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="436" column="55" lean-forward="false" selection-start-line="436" selection-start-column="37" selection-end-line="436" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/item/item-detail.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="30" column="16" lean-forward="false" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/item/item-detail.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
+        <state relative-caret-position="594">
           <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
@@ -380,10 +516,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/item/item-detail.component.html">
+    <entry file="file://$PROJECT_DIR$/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+        <state relative-caret-position="52">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/item/item.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="20" column="11" lean-forward="false" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
           <folding />
         </state>
       </provider>
