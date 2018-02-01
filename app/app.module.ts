@@ -3,10 +3,10 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
 
-import { ItemService } from "./Services/item.service";
+import { ItemService } from "./services/item.service";
 import { ItemsComponent } from "./item/items.component";
 import { ItemDetailComponent } from "./item/item-detail.component";
-import {MenuService} from "./Services/menu.service";
+import {MenuService} from "./services/menu.service";
 import {CartComponent} from "./cart/cart/cart.component";
 
 // Uncomment and add to NgModule imports if you need to use two-way binding

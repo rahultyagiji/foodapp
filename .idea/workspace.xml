@@ -3,41 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="f185d1ec-f8fa-4414-a208-2dc6e32a2b10" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Services/menu.js" afterPath="$PROJECT_DIR$/app/datatypes/menu.js" />
-      <change beforePath="$PROJECT_DIR$/app/Services/menu.service.js" afterPath="$PROJECT_DIR$/app/Services/menu.service.js" />
-      <change beforePath="$PROJECT_DIR$/app/Services/menu.service.ts" afterPath="$PROJECT_DIR$/app/Services/menu.service.ts" />
-      <change beforePath="$PROJECT_DIR$/app/Services/menu.ts" afterPath="$PROJECT_DIR$/app/datatypes/menu.ts" />
-      <change beforePath="$PROJECT_DIR$/app/app.module.js" afterPath="$PROJECT_DIR$/app/app.module.js" />
+      <change beforePath="$PROJECT_DIR$/app/Services/item.service.js" afterPath="$PROJECT_DIR$/app/services/item.service.js" />
+      <change beforePath="$PROJECT_DIR$/app/Services/item.service.ts" afterPath="$PROJECT_DIR$/app/services/item.service.ts" />
+      <change beforePath="$PROJECT_DIR$/app/Services/menu.service.js" afterPath="$PROJECT_DIR$/app/services/menu.service.js" />
+      <change beforePath="$PROJECT_DIR$/app/Services/menu.service.ts" afterPath="$PROJECT_DIR$/app/services/menu.service.ts" />
       <change beforePath="$PROJECT_DIR$/app/app.module.ts" afterPath="$PROJECT_DIR$/app/app.module.ts" />
-      <change beforePath="$PROJECT_DIR$/app/item/item-detail.component.js" afterPath="$PROJECT_DIR$/app/item/item-detail.component.js" />
       <change beforePath="$PROJECT_DIR$/app/item/item-detail.component.ts" afterPath="$PROJECT_DIR$/app/item/item-detail.component.ts" />
-      <change beforePath="$PROJECT_DIR$/app/item/item.js" afterPath="$PROJECT_DIR$/app/datatypes/item.js" />
-      <change beforePath="$PROJECT_DIR$/app/item/item.service.js" afterPath="$PROJECT_DIR$/app/Services/item.service.js" />
-      <change beforePath="$PROJECT_DIR$/app/item/item.service.ts" afterPath="$PROJECT_DIR$/app/Services/item.service.ts" />
-      <change beforePath="$PROJECT_DIR$/app/item/item.ts" afterPath="$PROJECT_DIR$/app/datatypes/item.ts" />
-      <change beforePath="$PROJECT_DIR$/app/item/items.component.js" afterPath="$PROJECT_DIR$/app/item/items.component.js" />
       <change beforePath="$PROJECT_DIR$/app/item/items.component.ts" afterPath="$PROJECT_DIR$/app/item/items.component.ts" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileHashes/fileHashes.bin" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/fileSnapshots.bin" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/taskHistory.lock" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/.nsprepareinfo" afterPath="$PROJECT_DIR$/platforms/android/.nsprepareinfo" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/build/outputs/apk/.nsbuildinfo" afterPath="$PROJECT_DIR$/platforms/android/app/build/outputs/apk/.nsbuildinfo" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/build/outputs/apk/DQCafe-debug.apk" afterPath="$PROJECT_DIR$/platforms/android/app/build/outputs/apk/DQCafe-debug.apk" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.module.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.module.js" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.module.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.module.ts" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/item-detail.component.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/item-detail.component.js" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/item-detail.component.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/item-detail.component.ts" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/item.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/item.service.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/item.service.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/item.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/items.component.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/items.component.js" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/items.component.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/items.component.ts" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/bindings.txt" afterPath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/bindings.txt" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/jsFilesParameters.txt" afterPath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/jsFilesParameters.txt" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/google-services.json" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -314,7 +286,7 @@
       <workItem from="1517105634435" duration="3735000" />
       <workItem from="1517132365264" duration="11637000" />
       <workItem from="1517225081165" duration="5786000" />
-      <workItem from="1517448119381" duration="9633000" />
+      <workItem from="1517448119381" duration="9715000" />
     </task>
     <task id="LOCAL-00001" summary="First version">
       <created>1517106110300</created>
@@ -337,11 +309,18 @@
       <option name="project" value="LOCAL" />
       <updated>1517474713662</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Firebase added but not working on android">
+      <created>1517475686645</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1517475686646</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41585000" />
+    <option name="totallyTimeSpent" value="41667000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -446,7 +425,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/item.service.ts">
+    <entry file="file://$PROJECT_DIR$/app/services/item.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="28" column="48" lean-forward="false" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
@@ -492,7 +471,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/menu.service.ts">
+    <entry file="file://$PROJECT_DIR$/app/services/menu.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="13" column="6" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
@@ -508,7 +487,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/menu.service.ts">
+    <entry file="file://$PROJECT_DIR$/app/services/menu.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="25" />
@@ -535,7 +514,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/menu.service.ts">
+    <entry file="file://$PROJECT_DIR$/app/services/menu.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="25" />
@@ -595,7 +574,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/menu.service.ts">
+    <entry file="file://$PROJECT_DIR$/app/services/menu.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="41">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
@@ -741,7 +720,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/item.service.js">
+    <entry file="file://$PROJECT_DIR$/app/services/item.service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -749,7 +728,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/item.service.ts">
+    <entry file="file://$PROJECT_DIR$/app/services/item.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
           <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
