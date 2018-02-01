@@ -3,8 +3,8 @@ import { ActivatedRoute } from "@angular/router";
 
 import { Item } from "./item";
 import { ItemService } from "./item.service";
-import {Menu} from "./menu";
-import {MenuService} from "./menu.service";
+import {Menu} from "../Services/menu";
+import {MenuService} from "../Services/menu.service";
 
 import * as Toast from 'nativescript-toast';
 
@@ -30,6 +30,7 @@ export class ItemDetailComponent implements OnInit {
     }
 
     ontapMenu(id){
+        console.log("something ordered")
         var toast = Toast.makeText(id+" ordered");
         toast.show();
     }

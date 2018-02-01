@@ -29,7 +29,7 @@ export class ItemService {
                 console.log("something should come here",res)
             })
         ).catch((res=>{
-            console.log("does this give error?",res)}))
+            console.log("yahan kuch panga hai...",res)}))
 
         return this.items;
     }

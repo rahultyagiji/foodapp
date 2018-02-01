@@ -3,6 +3,9 @@
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/app.module.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/app.component.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/app.routing.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/Services/menu.service.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/Services/item.service.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/cart/cart/cart.component.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-intl/nativescript-intl-common.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-intl/nativescript-intl.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-intl/index.js
@@ -236,7 +239,5 @@
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-toast/toast.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/item/item.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/item/items.component.js
-/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/item/menu.service.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/item/item-detail.component.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/item/menu.js
-/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/item/item.service.js

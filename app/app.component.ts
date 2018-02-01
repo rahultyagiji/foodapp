@@ -13,7 +13,7 @@ export class AppComponent implements OnInit{
  ngOnInit(){
 
 
-       firebase.init({
+     firebase.init({
            // Optionally pass in properties for database, authentication and cloud messaging,
            // see their respective docs.
            persist: false,
@@ -22,7 +22,7 @@ export class AppComponent implements OnInit{
                console.log("firebase.init done");
            },
            error => {
-               console.log(`firebase.init error: ${error}`);
+               console.log(`firebase.init error... apps: ${error}`);
            }
        );
 

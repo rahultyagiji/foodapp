@@ -6,7 +6,8 @@ import { AppComponent } from "./app.component";
 import { ItemService } from "./item/item.service";
 import { ItemsComponent } from "./item/items.component";
 import { ItemDetailComponent } from "./item/item-detail.component";
-import {MenuService} from "./item/menu.service";
+import {MenuService} from "./Services/menu.service";
+import {CartComponent} from "./cart/cart/cart.component";
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -25,7 +26,8 @@ import {MenuService} from "./item/menu.service";
     declarations: [
         AppComponent,
         ItemsComponent,
-        ItemDetailComponent
+        ItemDetailComponent,
+        CartComponent
     ],
     providers: [
         ItemService,
