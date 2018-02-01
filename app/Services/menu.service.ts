@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 
-import { Item } from "../item/item";
-import {Menu} from "./menu";
+import { Item } from "../datatypes/item";
+import {Menu} from "../datatypes/menu";
 
 @Injectable()
 export class MenuService {

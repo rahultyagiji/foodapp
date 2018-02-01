@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
-import { Item } from "./item";
-import { ItemService } from "./item.service";
-import {Menu} from "../Services/menu";
+import { Item } from "../datatypes/item";
+import { ItemService } from "../Services/item.service";
+import {Menu} from "../datatypes/menu";
 import {MenuService} from "../Services/menu.service";
 
 import * as Toast from 'nativescript-toast';
