@@ -1,5 +1,41 @@
 
-<ActionBar title="DQCafe" class="action-bar">
+<ActionBar title="DQ" class="action-bar">
+</ActionBar>
+<StackLayout class="page" orientation="vertical">
+    <StackLayout>
+        <Label text="Nearest to you"></Label>
+        <ScrollView orientation="horizontal">
+            <StackLayout orientation="horizontal">
+                <StackLayout *ngFor="let row of items">
+                    <GridLayout columns="300, 10" rows="250" backgroundColor="blue">
+                        <StackLayout height="250" backgroundColor="white">
+                            <Image [nsRouterLink]="['/item', row.id]" class="pull-left" src="{{row.imgSrc}}" height="200" width="300"></Image>
+                            <Label [text]="row.id"></Label>
+                            <Label [text]="row.category"></Label>
+                        </StackLayout>
+                        <StackLayout row="0" col="1" height="" width="10" backgroundColor="white">
+                        </StackLayout>
+                    </GridLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</StackLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<ActionBar title="DQCafe" class="action-bar">
 </ActionBar>
 
 <StackLayout class="page">
@@ -9,4 +45,4 @@
                 class="list-group-item"></Label>
         </ng-template>
     </ListView>
-</StackLayout>
+</StackLayout>-->

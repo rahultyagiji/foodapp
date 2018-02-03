@@ -10,3 +10,14 @@ of writing your own CSS rules. For a full list of class names in the theme
 refer to http://docs.nativescript.org/ui/theme.
 */
 @import '~nativescript-theme-core/css/core.light.css';
+
+img {
+    display: block;
+}
+
+img.wrap { max-width: 70%; margin: 30px 0px; }
+
+img.align-left {
+    float: left;
+    margin-right: 10px;
+}
