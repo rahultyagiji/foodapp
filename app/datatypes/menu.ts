@@ -1,6 +1,5 @@
 export interface Menu {
-    cafe: number;
-    item: number;
+    imgSrc: string;
     name: string;
     price: string;
 }

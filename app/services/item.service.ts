@@ -58,6 +58,7 @@ export class ItemService {
     }
 
     getItem(id: number): Item {
+        console.log("items gotten back " + id);
         return this.items.filter(item => item.id === id)[0];
     }
 }

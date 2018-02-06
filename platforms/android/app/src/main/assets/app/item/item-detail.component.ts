@@ -2,16 +2,16 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
 import { Item } from "../datatypes/item";
-import { ItemService } from "../Services/item.service";
+import { ItemService } from "../services/item.service";
 import {Menu} from "../datatypes/menu";
-import {MenuService} from "../Services/menu.service";
+import {MenuService} from "../services/menu.service";
 
 import * as Toast from 'nativescript-toast';
 
 @Component({
     selector: "ns-details",
     moduleId: module.id,
-    templateUrl: "./item-detail.component.html",
+    templateUrl: "./item-detail.component.html"
 })
 export class ItemDetailComponent implements OnInit {
     item: Item;
@@ -24,9 +24,9 @@ export class ItemDetailComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        const id = +this.route.snapshot.params["id"];
+        const id = this.route.snapshot.params["id"];
         this.item = this.itemService.getItem(id);
-        this.menu=this.menuservice.getMenuItems();
+        this.menu=this.menuservice.getMenuItems(id);
     }
 
     ontapMenu(id){
