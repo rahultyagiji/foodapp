@@ -1,39 +1,42 @@
 {
-  "_from": "@angular/compiler@~5.2.0",
-  "_id": "@angular/compiler@5.2.2",
+  "_args": [
+    [
+      "@angular/compiler@5.2.3",
+      "/media/rahul/storage/DQCafe"
+    ]
+  ],
+  "_from": "@angular/compiler@5.2.3",
+  "_id": "@angular/compiler@5.2.3",
   "_inBundle": false,
-  "_integrity": "sha512-QkliIJJb9J2y4Y1yiSweP1eOStClOOOj46awVQ5wT+WzyvmIVAccx2u+r5TPRu676GlqrFfn6FD+zV6Zw7G+Tw==",
+  "_integrity": "sha512-OynSzUdEHwajQMoV2JuYq5IdiR2dlTCTAHhTLzrym85wOihvTvovEQwVhYYHyKERu85JIoaF1sXA42KIjMGfkw==",
   "_location": "/@angular/compiler",
   "_phantomChildren": {},
   "_requested": {
-    "type": "range",
+    "type": "version",
     "registry": true,
-    "raw": "@angular/compiler@~5.2.0",
+    "raw": "@angular/compiler@5.2.3",
     "name": "@angular/compiler",
     "escapedName": "@angular%2fcompiler",
     "scope": "@angular",
-    "rawSpec": "~5.2.0",
+    "rawSpec": "5.2.3",
     "saveSpec": null,
-    "fetchSpec": "~5.2.0"
+    "fetchSpec": "5.2.3"
   },
   "_requiredBy": [
-    "/tns-template-hello-world-ng"
+    "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@angular/compiler/-/compiler-5.2.2.tgz",
-  "_shasum": "cf6ef310c5ca2fdae9551af62d10ab24d4feb51a",
-  "_spec": "@angular/compiler@~5.2.0",
-  "_where": "/media/rahul/storage/DQCafe/node_modules/tns-template-hello-world-ng",
+  "_resolved": "https://registry.npmjs.org/@angular/compiler/-/compiler-5.2.3.tgz",
+  "_spec": "5.2.3",
+  "_where": "/media/rahul/storage/DQCafe",
   "author": {
     "name": "angular"
   },
   "bugs": {
     "url": "https://github.com/angular/angular/issues"
   },
-  "bundleDependencies": false,
   "dependencies": {
     "tslib": "^1.7.1"
   },
-  "deprecated": false,
   "description": "Angular - the compiler library",
   "es2015": "./esm2015/compiler.js",
   "homepage": "https://github.com/angular/angular#readme",
@@ -46,5 +49,5 @@
     "url": "git+https://github.com/angular/angular.git"
   },
   "typings": "./compiler.d.ts",
-  "version": "5.2.2"
+  "version": "5.2.3"
 }

@@ -7,6 +7,13 @@ import { ItemService } from "./services/item.service";
 import { ItemsComponent } from "./item/items.component";
 import { ItemDetailComponent } from "./item/item-detail.component";
 import {MenuService} from "./services/menu.service";
+
+
+import { registerElement } from "nativescript-angular/element-registry";
+registerElement("Mapbox", () => require("nativescript-mapbox").MapboxView);
+registerElement("FAB", () => require("nativescript-floatingactionbutton").Fab);
+
+
 //import {CartComponent} from "./cart/cart/cart.component";
 
 // Uncomment and add to NgModule imports if you need to use two-way binding

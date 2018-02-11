@@ -15,21 +15,27 @@ import * as Toast from 'nativescript-toast';
 })
 export class ItemDetailComponent implements OnInit {
     item: Item;
-    menu:Menu[];
+    menu:Menu[]=[];
 
     constructor(
         private itemService: ItemService,
         private menuservice: MenuService,
         private route: ActivatedRoute
-    ) { }
+    ) {
+    }
 
     ngOnInit(): void {
-        const id = this.route.snapshot.params["id"];
-        this.item = this.itemService.getItem(id);
-        this.menu=this.menuservice.getMenuItems(id);
+
+        const cafeId = this.route.snapshot.params["cafeId"];
+
+        this.item = this.itemService.getItem(cafeId);
+        this.menu=this.menuservice.getMenuItems(cafeId);
+
+        console.log(JSON.stringify(this.menu))
     }
 
     ontapMenu(id){
+
         console.log("something ordered")
         var toast = Toast.makeText(id+" ordered");
         toast.show();

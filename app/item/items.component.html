@@ -1,79 +1,30 @@
 <ActionBar title="DQ" class="action-bar">
 </ActionBar>
-<ScrollView backgroundColor="black">
-    <StackLayout class="page" margin="10" orientation="vertical" backgroundColor="black">
-        <SearchBar hint="Search hint" backgroundColor="black" [text]="searchPhrase" (submit)="onSearchSubmit($event)"></SearchBar>
-        <Scrolliew>
-            <StackLayout>
-                <Label text="Nearest to you"></Label>
-                <ScrollView orientation="horizontal">
-                    <StackLayout orientation="horizontal">
-                        <StackLayout *ngFor="let row of items">
-                            <GridLayout columns="300, 10" rows="250" backgroundColor="white">
-                                <StackLayout height="250" backgroundColor="gray">
-                                    <Image [nsRouterLink]="['/item', row.id]" class="pull-left" src="{{row.imgSrc}}"
-                                           height="200" width="300"></Image>
-                                    <Label [text]="row.id"></Label>
-                                    <Label [text]="row.category"></Label>
-                                </StackLayout>
-                                <StackLayout row="0" col="1" height="" width="10" backgroundColor="black">
-                                </StackLayout>
-                            </GridLayout>
-                        </StackLayout>
-                    </StackLayout>
-                </ScrollView>
-            </StackLayout>
-            <StackLayout>
-                <Label text="Nearest to you"></Label>
-                <ScrollView orientation="horizontal">
-                    <StackLayout orientation="horizontal">
-                        <StackLayout *ngFor="let row of items">
-                            <GridLayout columns="300, 10" rows="250" backgroundColor="white">
-                                <StackLayout height="250" backgroundColor="gray">
-                                    <Image [nsRouterLink]="['/item', row.id]" class="pull-left" src="{{row.imgSrc}}"
-                                           height="200" width="300"></Image>
-                                    <Label [text]="row.id"></Label>
-                                    <Label [text]="row.category"></Label>
-                                </StackLayout>
-                                <StackLayout row="0" col="1" height="" width="10" backgroundColor="black">
-                                </StackLayout>
-                            </GridLayout>
-                        </StackLayout>
-                    </StackLayout>
-                </ScrollView>
-            </StackLayout>
-            <StackLayout>
-                <Label text="Nearest to you"></Label>
-                <ScrollView orientation="horizontal">
-                    <StackLayout orientation="horizontal">
-                        <StackLayout *ngFor="let row of items">
-                            <GridLayout columns="300, 10" rows="250" backgroundColor="black">
-                                <StackLayout height="250" backgroundColor="gray">
-                                    <Image [nsRouterLink]="['/item', row.id]" class="pull-left" src="{{row.imgSrc}}"
-                                           height="200" width="300"></Image>
-                                    <Label [text]="row.id"></Label>
-                                    <Label [text]="row.category"></Label>
-                                </StackLayout>
-                                <StackLayout row="0" col="1" height="" width="10" backgroundColor="black">
-                                </StackLayout>
-                            </GridLayout>
-                        </StackLayout>
-                    </StackLayout>
-                </ScrollView>
-            </StackLayout>
-        </Scrolliew>
+
+<StackLayout class="page" orientation="vertical">
+
+<StackLayout style="width: 95%;height:70%">
+            <Mapbox
+        [accessToken]="access_token"
+        [mapStyle]="map_style"
+        [latitude]="latitude"
+        [longitude]="longitude"
+        [zoomLevel]="zoomlevel"
+        [delay]=""
+        [showUserLocation]="true"
+        [hideCompass]="false"
+        [disableZoom]="false"
+        [disableRotation]="false"
+        [disableScroll]="false"
+        [disableTilt]="false"
+        (mapReady)="onMapReady($event)">
+            </Mapbox>
+
+</StackLayout>
+
+    <StackLayout>
+        <Image src="http://www.pngmart.com/files/4/Cool-PNG-Image.png"></Image>
+
     </StackLayout>
-</ScrollView>
 
-
-<!--<ActionBar title="DQCafe" class="action-bar">
-</ActionBar>
-
-<StackLayout class="page">
-    <ListView [items]="items" class="list-group">
-        <ng-template let-item="item">
-            <Label [nsRouterLink]="['/item', item.id]" [text]="item.name"
-                class="list-group-item"></Label>
-        </ng-template>
-    </ListView>
-</StackLayout>-->
+</StackLayout>

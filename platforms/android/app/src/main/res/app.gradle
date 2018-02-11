@@ -11,6 +11,7 @@ android {
     applicationId = "org.nativescript.DQCafe"  
   }  
   aaptOptions {  
-    additionalParameters "--no-version-vectors"  
-  }  
-} 
+    additionalParameters "--no-version-vectors"
+  }
+
+}

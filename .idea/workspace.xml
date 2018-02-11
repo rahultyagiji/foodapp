@@ -1,36 +1,497 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f185d1ec-f8fa-4414-a208-2dc6e32a2b10" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileHashes/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileHashes/fileHashes.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/taskHistory.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/taskHistory.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/0/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/0/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/1/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/1/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/2/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/2/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/3/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/3/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/4/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/4/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/5/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/5/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/datatypes/menu.js" afterPath="$PROJECT_DIR$/app/datatypes/menu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/datatypes/menu.ts" afterPath="$PROJECT_DIR$/app/datatypes/menu.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/item/items.component.html" afterPath="$PROJECT_DIR$/app/item/items.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/services/item.service.js" afterPath="$PROJECT_DIR$/app/services/item.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/services/item.service.ts" afterPath="$PROJECT_DIR$/app/services/item.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/services/menu.service.js" afterPath="$PROJECT_DIR$/app/services/menu.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/services/menu.service.ts" afterPath="$PROJECT_DIR$/app/services/menu.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.nsprepareinfo" afterPath="$PROJECT_DIR$/platforms/android/.nsprepareinfo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.css" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.module.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.module.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/item-detail.component.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/item-detail.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/item-detail.component.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/item-detail.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/items.component.html" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/items.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/items.component.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/items.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/items.component.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/items.component.ts" />
+    <list default="true" id="f185d1ec-f8fa-4414-a208-2dc6e32a2b10" name="Default" comment="First version">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/App_Resources/Android/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/App_Resources/Android/AndroidManifest.xml" />
+      <change beforePath="$PROJECT_DIR$/app/App_Resources/Android/app.gradle" afterPath="$PROJECT_DIR$/app/App_Resources/Android/app.gradle" />
+      <change beforePath="$PROJECT_DIR$/app/app.component.html" afterPath="$PROJECT_DIR$/app/app.component.html" />
+      <change beforePath="$PROJECT_DIR$/app/app.component.js" afterPath="$PROJECT_DIR$/app/app.component.js" />
+      <change beforePath="$PROJECT_DIR$/app/app.component.ts" afterPath="$PROJECT_DIR$/app/app.component.ts" />
+      <change beforePath="$PROJECT_DIR$/app/app.module.js" afterPath="$PROJECT_DIR$/app/app.module.js" />
+      <change beforePath="$PROJECT_DIR$/app/app.module.ts" afterPath="$PROJECT_DIR$/app/app.module.ts" />
+      <change beforePath="$PROJECT_DIR$/app/app.routing.js" afterPath="$PROJECT_DIR$/app/app.routing.js" />
+      <change beforePath="$PROJECT_DIR$/app/app.routing.ts" afterPath="$PROJECT_DIR$/app/app.routing.ts" />
+      <change beforePath="$PROJECT_DIR$/app/datatypes/item.js" afterPath="$PROJECT_DIR$/app/datatypes/item.js" />
+      <change beforePath="$PROJECT_DIR$/app/datatypes/item.ts" afterPath="$PROJECT_DIR$/app/datatypes/item.ts" />
+      <change beforePath="$PROJECT_DIR$/app/datatypes/menu.js" afterPath="$PROJECT_DIR$/app/datatypes/menu.js" />
+      <change beforePath="$PROJECT_DIR$/app/datatypes/menu.ts" afterPath="$PROJECT_DIR$/app/datatypes/menu.ts" />
+      <change beforePath="$PROJECT_DIR$/app/item/item-detail.component.html" afterPath="$PROJECT_DIR$/app/item/item-detail.component.html" />
+      <change beforePath="$PROJECT_DIR$/app/item/item-detail.component.js" afterPath="$PROJECT_DIR$/app/item/item-detail.component.js" />
+      <change beforePath="$PROJECT_DIR$/app/item/item-detail.component.ts" afterPath="$PROJECT_DIR$/app/item/item-detail.component.ts" />
+      <change beforePath="$PROJECT_DIR$/app/item/items.component.html" afterPath="$PROJECT_DIR$/app/item/items.component.html" />
+      <change beforePath="$PROJECT_DIR$/app/item/items.component.js" afterPath="$PROJECT_DIR$/app/item/items.component.js" />
+      <change beforePath="$PROJECT_DIR$/app/item/items.component.ts" afterPath="$PROJECT_DIR$/app/item/items.component.ts" />
+      <change beforePath="$PROJECT_DIR$/app/services/item.service.js" afterPath="$PROJECT_DIR$/app/services/item.service.js" />
+      <change beforePath="$PROJECT_DIR$/app/services/item.service.ts" afterPath="$PROJECT_DIR$/app/services/item.service.ts" />
+      <change beforePath="$PROJECT_DIR$/app/services/menu.service.js" afterPath="$PROJECT_DIR$/app/services/menu.service.js" />
+      <change beforePath="$PROJECT_DIR$/app/services/menu.service.ts" afterPath="$PROJECT_DIR$/app/services/menu.service.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/esm2015/animations.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/esm2015/animations.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/esm2015/browser.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/esm2015/browser.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/esm2015/browser/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/esm2015/browser/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/esm5/animations.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/esm5/animations.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/esm5/browser.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/esm5/browser.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/esm5/browser/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/esm5/browser/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http-testing.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http-testing.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http-testing.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http-testing.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http-testing.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-testing.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-testing.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-testing.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-testing.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-testing.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/common.metadata.json" afterPath="$PROJECT_DIR$/node_modules/@angular/common/common.metadata.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/esm2015/common.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/esm2015/common.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/esm2015/common.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/common/esm2015/common.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/esm2015/http.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/esm2015/http.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/esm2015/http.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/common/esm2015/http.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/esm2015/http/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/esm2015/http/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/esm2015/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/esm2015/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/esm5/common.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/esm5/common.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/esm5/common.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/common/esm5/common.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/esm5/http.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/esm5/http.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/esm5/http.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/common/esm5/http.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/esm5/http/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/esm5/http/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/esm5/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/esm5/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/http.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/common/http.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/http/http.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/common/http/http.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/http/http.metadata.json" afterPath="$PROJECT_DIR$/node_modules/@angular/common/http/http.metadata.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/http/src/module.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/common/http/src/module.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/http/testing.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/common/http/testing.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/common/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/src/directives/ng_template_outlet.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/common/src/directives/ng_template_outlet.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/testing.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/common/testing.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler-testing.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler-testing.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler-testing.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler-testing.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler-testing.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm2015/compiler.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm2015/compiler.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm2015/compiler.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm2015/compiler.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm2015/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm2015/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/compiler.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/compiler.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/compiler.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/compiler.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/testing.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/testing.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core-testing.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core-testing.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core-testing.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core-testing.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core-testing.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/core.metadata.json" afterPath="$PROJECT_DIR$/node_modules/@angular/core/core.metadata.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/esm2015/core.js" afterPath="$PROJECT_DIR$/node_modules/@angular/core/esm2015/core.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/esm2015/core.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/core/esm2015/core.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/esm2015/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/core/esm2015/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/esm5/core.js" afterPath="$PROJECT_DIR$/node_modules/@angular/core/esm5/core.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/esm5/core.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/core/esm5/core.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/esm5/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/core/esm5/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/core/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/testing.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/core/testing.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/bundles/forms.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/bundles/forms.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/bundles/forms.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/bundles/forms.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/bundles/forms.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/bundles/forms.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/bundles/forms.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/bundles/forms.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/esm2015/forms.js" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/esm2015/forms.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/esm2015/forms.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/esm2015/forms.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/esm5/forms.js" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/esm5/forms.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/esm5/forms.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/esm5/forms.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/forms.metadata.json" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/forms.metadata.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/src/form_builder.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/src/form_builder.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/src/model.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/src/model.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http-testing.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http-testing.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http-testing.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http-testing.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http-testing.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/esm2015/http.js" afterPath="$PROJECT_DIR$/node_modules/@angular/http/esm2015/http.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/esm2015/http.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/http/esm2015/http.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/esm2015/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/http/esm2015/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/esm5/http.js" afterPath="$PROJECT_DIR$/node_modules/@angular/http/esm5/http.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/esm5/http.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/http/esm5/http.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/esm5/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/http/esm5/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/http.metadata.json" afterPath="$PROJECT_DIR$/node_modules/@angular/http/http.metadata.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/http/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/testing.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/http/testing.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/esm2015/platform-browser-dynamic.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/esm2015/platform-browser-dynamic.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/esm2015/platform-browser-dynamic.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/esm2015/platform-browser-dynamic.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/esm2015/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/esm2015/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/esm5/platform-browser-dynamic.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/esm5/platform-browser-dynamic.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/esm5/platform-browser-dynamic.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/esm5/platform-browser-dynamic.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/esm5/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/esm5/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/platform-browser-dynamic.metadata.json" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/platform-browser-dynamic.metadata.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/testing.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/testing.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/animations.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/animations.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser-testing.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser-testing.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser-testing.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser-testing.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser-testing.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/esm2015/animations.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/esm2015/animations.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/esm2015/platform-browser.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/esm2015/platform-browser.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/esm2015/platform-browser.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/esm2015/platform-browser.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/esm2015/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/esm2015/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/esm5/animations.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/esm5/animations.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/esm5/platform-browser.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/esm5/platform-browser.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/esm5/platform-browser.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/esm5/platform-browser.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/esm5/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/esm5/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/platform-browser.metadata.json" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/platform-browser.metadata.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/testing.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/testing.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router-testing.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router-testing.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router-testing.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router-testing.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router-testing.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router-upgrade.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router-upgrade.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router-upgrade.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router-upgrade.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router-upgrade.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router-upgrade.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/esm2015/router.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/esm2015/router.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/esm2015/router.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/router/esm2015/router.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/esm2015/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/esm2015/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/esm2015/upgrade.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/esm2015/upgrade.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/esm5/router.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/esm5/router.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/esm5/router.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/router/esm5/router.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/esm5/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/esm5/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/esm5/upgrade.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/esm5/upgrade.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/router/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/router.metadata.json" afterPath="$PROJECT_DIR$/node_modules/@angular/router/router.metadata.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/src/router_state.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/router/src/router_state.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/testing.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/router/testing.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/upgrade.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/router/upgrade.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ansi-regex/package.json" afterPath="$PROJECT_DIR$/node_modules/ansi-regex/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ansi-styles/package.json" afterPath="$PROJECT_DIR$/node_modules/ansi-styles/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/babel-code-frame/package.json" afterPath="$PROJECT_DIR$/node_modules/babel-code-frame/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/babel-messages/package.json" afterPath="$PROJECT_DIR$/node_modules/babel-messages/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/babel-runtime/package.json" afterPath="$PROJECT_DIR$/node_modules/babel-runtime/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/babel-traverse/package.json" afterPath="$PROJECT_DIR$/node_modules/babel-traverse/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/babel-types/package.json" afterPath="$PROJECT_DIR$/node_modules/babel-types/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/babylon/package.json" afterPath="$PROJECT_DIR$/node_modules/babylon/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/balanced-match/package.json" afterPath="$PROJECT_DIR$/node_modules/balanced-match/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/brace-expansion/package.json" afterPath="$PROJECT_DIR$/node_modules/brace-expansion/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/chalk/package.json" afterPath="$PROJECT_DIR$/node_modules/chalk/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/concat-map/package.json" afterPath="$PROJECT_DIR$/node_modules/concat-map/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/core-js/package.json" afterPath="$PROJECT_DIR$/node_modules/core-js/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/debug/package.json" afterPath="$PROJECT_DIR$/node_modules/debug/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/escape-string-regexp/package.json" afterPath="$PROJECT_DIR$/node_modules/escape-string-regexp/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/esutils/package.json" afterPath="$PROJECT_DIR$/node_modules/esutils/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/glob/package.json" afterPath="$PROJECT_DIR$/node_modules/glob/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/globals/package.json" afterPath="$PROJECT_DIR$/node_modules/globals/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/has-ansi/package.json" afterPath="$PROJECT_DIR$/node_modules/has-ansi/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/inflight/package.json" afterPath="$PROJECT_DIR$/node_modules/inflight/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/inherits/package.json" afterPath="$PROJECT_DIR$/node_modules/inherits/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/invariant/package.json" afterPath="$PROJECT_DIR$/node_modules/invariant/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/js-tokens/package.json" afterPath="$PROJECT_DIR$/node_modules/js-tokens/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/lazy/package.json" afterPath="$PROJECT_DIR$/node_modules/lazy/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/lodash/package.json" afterPath="$PROJECT_DIR$/node_modules/lodash/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/loose-envify/package.json" afterPath="$PROJECT_DIR$/node_modules/loose-envify/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/minimatch/package.json" afterPath="$PROJECT_DIR$/node_modules/minimatch/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/minimist/package.json" afterPath="$PROJECT_DIR$/node_modules/minimist/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mkdirp/package.json" afterPath="$PROJECT_DIR$/node_modules/mkdirp/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ms/package.json" afterPath="$PROJECT_DIR$/node_modules/ms/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nativescript-angular/package.json" afterPath="$PROJECT_DIR$/node_modules/nativescript-angular/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nativescript-dev-typescript/package.json" afterPath="$PROJECT_DIR$/node_modules/nativescript-dev-typescript/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nativescript-hook/package.json" afterPath="$PROJECT_DIR$/node_modules/nativescript-hook/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nativescript-intl/package.json" afterPath="$PROJECT_DIR$/node_modules/nativescript-intl/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nativescript-theme-core/package.json" afterPath="$PROJECT_DIR$/node_modules/nativescript-theme-core/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/nativescript-toast/package.json" afterPath="$PROJECT_DIR$/node_modules/nativescript-toast/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/once/package.json" afterPath="$PROJECT_DIR$/node_modules/once/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/path-is-absolute/package.json" afterPath="$PROJECT_DIR$/node_modules/path-is-absolute/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/reflect-metadata/package.json" afterPath="$PROJECT_DIR$/node_modules/reflect-metadata/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/regenerator-runtime/package.json" afterPath="$PROJECT_DIR$/node_modules/regenerator-runtime/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rxjs/package.json" afterPath="$PROJECT_DIR$/node_modules/rxjs/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/strip-ansi/package.json" afterPath="$PROJECT_DIR$/node_modules/strip-ansi/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/supports-color/package.json" afterPath="$PROJECT_DIR$/node_modules/supports-color/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/symbol-observable/package.json" afterPath="$PROJECT_DIR$/node_modules/symbol-observable/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tns-core-modules-widgets/LICENSE.md" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/tns-core-modules-widgets/LICENSE" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tns-core-modules-widgets/package.json" afterPath="$PROJECT_DIR$/node_modules/tns-core-modules-widgets/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tns-core-modules-widgets/platforms/android/widgets-release.aar" afterPath="$PROJECT_DIR$/node_modules/tns-core-modules-widgets/platforms/android/widgets-release.aar" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tns-core-modules-widgets/platforms/ios/TNSWidgets.framework/Info.plist" afterPath="$PROJECT_DIR$/node_modules/tns-core-modules-widgets/platforms/ios/TNSWidgets.framework/Info.plist" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tns-core-modules-widgets/platforms/ios/TNSWidgets.framework/TNSWidgets" afterPath="$PROJECT_DIR$/node_modules/tns-core-modules-widgets/platforms/ios/TNSWidgets.framework/TNSWidgets" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tns-core-modules/package.json" afterPath="$PROJECT_DIR$/node_modules/tns-core-modules/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/to-fast-properties/package.json" afterPath="$PROJECT_DIR$/node_modules/to-fast-properties/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tslib/package.json" afterPath="$PROJECT_DIR$/node_modules/tslib/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/typescript/package.json" afterPath="$PROJECT_DIR$/node_modules/typescript/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/wrappy/package.json" afterPath="$PROJECT_DIR$/node_modules/wrappy/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/zone.js/package.json" afterPath="$PROJECT_DIR$/node_modules/zone.js/package.json" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileContent/annotation-processors.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileContent/annotation-processors.bin" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileContent/fileContent.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileContent/fileContent.lock" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileHashes/fileHashes.bin" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileHashes/fileHashes.lock" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileHashes/resourceHashesCache.bin" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/fileSnapshots.bin" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/taskHistory.bin" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/taskHistory.lock" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/.gradle/buildOutputCleanup/cache.properties" afterPath="$PROJECT_DIR$/platforms/android/.gradle/buildOutputCleanup/cache.properties" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/.nsprepareinfo" afterPath="$PROJECT_DIR$/platforms/android/.nsprepareinfo" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/0/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/0/classes.jar" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/1/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/1/classes.jar" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/2/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/2/classes.jar" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/3/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/3/classes.jar" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/4/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/4/classes.jar" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/5/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/5/classes.jar" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/build/outputs/apk/.nsbuildinfo" afterPath="$PROJECT_DIR$/platforms/android/app/build/outputs/apk/.nsbuildinfo" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/build/outputs/apk/DQCafe-debug.apk" afterPath="$PROJECT_DIR$/platforms/android/app/build/outputs/apk/DQCafe-debug.apk" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/metadata/output/assets/metadata/treeNodeStream.dat" afterPath="$PROJECT_DIR$/platforms/android/app/metadata/output/assets/metadata/treeNodeStream.dat" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/metadata/output/assets/metadata/treeStringsStream.dat" afterPath="$PROJECT_DIR$/platforms/android/app/metadata/output/assets/metadata/treeStringsStream.dat" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/metadata/output/assets/metadata/treeValueStream.dat" afterPath="$PROJECT_DIR$/platforms/android/app/metadata/output/assets/metadata/treeValueStream.dat" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/AndroidManifest.xml" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.component.html" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.component.html" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.component.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.component.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.component.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.component.ts" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.module.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.module.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.module.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.module.ts" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.routing.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.routing.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.routing.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.routing.ts" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/item-detail.component.html" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/item-detail.component.html" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/item-detail.component.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/item-detail.component.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/item-detail.component.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/item-detail.component.ts" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/items.component.html" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/items.component.html" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/items.component.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/items.component.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/items.component.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/items.component.ts" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/browser.d.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/browser.d.ts" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/browser/testing.d.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/browser/testing.d.ts" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/bundles/animations-browser-testing.umd.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/bundles/animations-browser-testing.umd.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/bundles/animations-browser.umd.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/bundles/animations-browser.umd.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/bundles/animations-browser.umd.min.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/bundles/animations-browser.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/bundles/animations-browser.umd.min.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/bundles/animations-browser.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/bundles/animations.umd.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/bundles/animations.umd.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/bundles/animations.umd.min.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/bundles/animations.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/bundles/animations.umd.min.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/bundles/animations.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/esm2015/animations.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/esm2015/animations.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/esm2015/browser.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/esm2015/browser.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/esm2015/browser/testing.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/esm2015/browser/testing.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/esm5/animations.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/esm5/animations.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/esm5/browser.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/esm5/browser.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/esm5/browser/testing.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/esm5/browser/testing.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/package.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/animations/package.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common-http-testing.umd.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common-http-testing.umd.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common-http-testing.umd.min.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common-http-testing.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common-http-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common-http-testing.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common-http.umd.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common-http.umd.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common-http.umd.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common-http.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common-http.umd.min.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common-http.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common-http.umd.min.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common-http.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common-testing.umd.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common-testing.umd.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common-testing.umd.min.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common-testing.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common-testing.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common.umd.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common.umd.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common.umd.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common.umd.min.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common.umd.min.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/bundles/common.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/common.metadata.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/common.metadata.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/esm2015/common.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/esm2015/common.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/esm2015/common.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/esm2015/common.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/esm2015/http.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/esm2015/http.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/esm2015/http.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/esm2015/http.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/esm2015/http/testing.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/esm2015/http/testing.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/esm2015/testing.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/esm2015/testing.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/esm5/common.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/esm5/common.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/esm5/common.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/esm5/common.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/esm5/http.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/esm5/http.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/esm5/http.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/esm5/http.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/esm5/http/testing.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/esm5/http/testing.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/esm5/testing.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/esm5/testing.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/http.d.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/http.d.ts" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/http/http.d.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/http/http.d.ts" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/http/http.metadata.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/http/http.metadata.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/http/src/module.d.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/http/src/module.d.ts" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/http/testing.d.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/http/testing.d.ts" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/package.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/package.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/src/directives/ng_template_outlet.d.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/src/directives/ng_template_outlet.d.ts" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/testing.d.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/common/testing.d.ts" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/bundles/compiler-testing.umd.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/bundles/compiler-testing.umd.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/bundles/compiler-testing.umd.min.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/bundles/compiler-testing.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/bundles/compiler-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/bundles/compiler-testing.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/bundles/compiler.umd.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/bundles/compiler.umd.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/bundles/compiler.umd.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/bundles/compiler.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/bundles/compiler.umd.min.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/bundles/compiler.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/bundles/compiler.umd.min.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/bundles/compiler.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/esm2015/compiler.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/esm2015/compiler.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/esm2015/compiler.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/esm2015/compiler.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/esm2015/testing.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/esm2015/testing.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/esm5/compiler.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/esm5/compiler.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/esm5/compiler.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/esm5/compiler.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/esm5/testing.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/esm5/testing.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/package.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/package.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/testing.d.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/compiler/testing.d.ts" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/bundles/core-testing.umd.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/bundles/core-testing.umd.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/bundles/core-testing.umd.min.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/bundles/core-testing.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/bundles/core-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/bundles/core-testing.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/bundles/core.umd.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/bundles/core.umd.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/bundles/core.umd.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/bundles/core.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/bundles/core.umd.min.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/bundles/core.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/bundles/core.umd.min.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/bundles/core.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/core.metadata.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/core.metadata.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/esm2015/core.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/esm2015/core.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/esm2015/core.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/esm2015/core.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/esm2015/testing.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/esm2015/testing.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/esm5/core.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/esm5/core.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/esm5/core.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/esm5/core.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/esm5/testing.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/esm5/testing.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/package.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/package.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/testing.d.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/core/testing.d.ts" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/forms/bundles/forms.umd.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/forms/bundles/forms.umd.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/forms/bundles/forms.umd.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/forms/bundles/forms.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/forms/bundles/forms.umd.min.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/forms/bundles/forms.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/forms/bundles/forms.umd.min.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/forms/bundles/forms.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/forms/esm2015/forms.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/forms/esm2015/forms.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/forms/esm2015/forms.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/forms/esm2015/forms.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/forms/esm5/forms.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/forms/esm5/forms.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/forms/esm5/forms.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/forms/esm5/forms.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/forms/forms.metadata.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/forms/forms.metadata.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/forms/package.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/forms/package.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/forms/src/form_builder.d.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/forms/src/form_builder.d.ts" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/forms/src/model.d.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/forms/src/model.d.ts" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/bundles/http-testing.umd.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/bundles/http-testing.umd.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/bundles/http-testing.umd.min.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/bundles/http-testing.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/bundles/http-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/bundles/http-testing.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/bundles/http.umd.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/bundles/http.umd.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/bundles/http.umd.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/bundles/http.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/bundles/http.umd.min.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/bundles/http.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/bundles/http.umd.min.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/bundles/http.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/esm2015/http.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/esm2015/http.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/esm2015/http.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/esm2015/http.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/esm2015/testing.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/esm2015/testing.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/esm5/http.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/esm5/http.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/esm5/http.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/esm5/http.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/esm5/testing.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/esm5/testing.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/http.metadata.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/http.metadata.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/package.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/package.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/testing.d.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/http/testing.d.ts" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.min.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.min.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.min.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/esm2015/platform-browser-dynamic.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/esm2015/platform-browser-dynamic.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/esm2015/platform-browser-dynamic.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/esm2015/platform-browser-dynamic.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/esm2015/testing.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/esm2015/testing.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/esm5/platform-browser-dynamic.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/esm5/platform-browser-dynamic.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/esm5/platform-browser-dynamic.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/esm5/platform-browser-dynamic.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/esm5/testing.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/esm5/testing.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/package.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/package.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/platform-browser-dynamic.metadata.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/platform-browser-dynamic.metadata.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/testing.d.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser-dynamic/testing.d.ts" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/animations.d.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/animations.d.ts" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.min.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.min.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/bundles/platform-browser-testing.umd.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/bundles/platform-browser-testing.umd.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/bundles/platform-browser-testing.umd.min.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/bundles/platform-browser-testing.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/bundles/platform-browser-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/bundles/platform-browser-testing.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/bundles/platform-browser.umd.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/bundles/platform-browser.umd.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/bundles/platform-browser.umd.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/bundles/platform-browser.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/bundles/platform-browser.umd.min.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/bundles/platform-browser.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/bundles/platform-browser.umd.min.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/bundles/platform-browser.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/esm2015/animations.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/esm2015/animations.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/esm2015/platform-browser.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/esm2015/platform-browser.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/esm2015/platform-browser.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/esm2015/platform-browser.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/esm2015/testing.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/esm2015/testing.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/esm5/animations.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/esm5/animations.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/esm5/platform-browser.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/esm5/platform-browser.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/esm5/platform-browser.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/esm5/platform-browser.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/esm5/testing.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/esm5/testing.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/package.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/package.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/platform-browser.metadata.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/platform-browser.metadata.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/testing.d.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/platform-browser/testing.d.ts" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/bundles/router-testing.umd.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/bundles/router-testing.umd.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/bundles/router-testing.umd.min.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/bundles/router-testing.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/bundles/router-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/bundles/router-testing.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/bundles/router-upgrade.umd.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/bundles/router-upgrade.umd.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/bundles/router-upgrade.umd.min.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/bundles/router-upgrade.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/bundles/router-upgrade.umd.min.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/bundles/router-upgrade.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/bundles/router.umd.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/bundles/router.umd.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/bundles/router.umd.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/bundles/router.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/bundles/router.umd.min.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/bundles/router.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/bundles/router.umd.min.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/bundles/router.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/esm2015/router.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/esm2015/router.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/esm2015/router.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/esm2015/router.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/esm2015/testing.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/esm2015/testing.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/esm2015/upgrade.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/esm2015/upgrade.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/esm5/router.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/esm5/router.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/esm5/router.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/esm5/router.js.map" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/esm5/testing.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/esm5/testing.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/esm5/upgrade.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/esm5/upgrade.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/package.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/package.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/router.metadata.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/router.metadata.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/src/router_state.d.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/src/router_state.d.ts" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/testing.d.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/testing.d.ts" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/upgrade.d.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/@angular/router/upgrade.d.ts" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/nativescript-angular/package.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/nativescript-angular/package.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/nativescript-intl/package.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/nativescript-intl/package.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/nativescript-theme-core/package.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/nativescript-theme-core/package.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/nativescript-toast/package.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/nativescript-toast/package.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/reflect-metadata/package.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/reflect-metadata/package.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/rxjs/package.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/rxjs/package.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/symbol-observable/package.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/symbol-observable/package.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/tns-core-modules-widgets/LICENSE.md" afterPath="$PROJECT_DIR$/node_modules/tns-core-modules-widgets/LICENSE" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/tns-core-modules-widgets/package.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/tns-core-modules-widgets/package.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/tns-core-modules/package.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/tns-core-modules/package.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/tslib/package.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/tslib/package.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/zone.js/package.json" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/tns_modules/zone.js/package.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/metadata/treeNodeStream.dat" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/metadata/treeNodeStream.dat" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/metadata/treeStringsStream.dat" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/metadata/treeStringsStream.dat" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/metadata/treeValueStream.dat" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/metadata/treeValueStream.dat" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/java/com/tns/gen/android/animation/Animator_AnimatorListener.java" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/java/com/tns/gen/android/animation/Animator_AnimatorListener.java" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/java/com/tns/gen/android/webkit/WebViewClient_frnal_ts_helpers_l58_c38__WebViewClientImpl.java" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/java/com/tns/gen/android/webkit/WebViewClient_frnal_ts_helpers_l58_c38__WebViewClientImpl.java" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/java/com/tns/gen/java/lang/Object_frnal_ts_helpers_l58_c38__AnimationListnerImpl.java" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/java/com/tns/gen/java/lang/Object_frnal_ts_helpers_l58_c38__AnimationListnerImpl.java" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/res/AndroidManifest.xml" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/res/AndroidManifest.xml" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/res/app.gradle" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/res/app.gradle" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/bindings.txt" afterPath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/bindings.txt" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/cached.txt" afterPath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/cached.txt" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/interfaces-names.txt" afterPath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/interfaces-names.txt" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/jsFilesParameters.txt" afterPath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/jsFilesParameters.txt" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/platforms/android/build/intermediates/dex-cache/cache.xml" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/build/intermediates/prepared-platforms.json" afterPath="$PROJECT_DIR$/platforms/android/build/intermediates/prepared-platforms.json" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/dependencies.json" afterPath="$PROJECT_DIR$/platforms/android/dependencies.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -42,34 +503,30 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="DQ-Cafe" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="item-detail.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/item/item-detail.component.ts">
+      <file leaf-file-name="items.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/item/items.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-15">
-              <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
+            <state relative-caret-position="0">
+              <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menu.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/services/menu.service.ts">
+      <file leaf-file-name="item-detail.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/item/item-detail.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="18">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -77,8 +534,8 @@
       <file leaf-file-name="item-detail.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/item/item-detail.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="252">
+              <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -87,30 +544,18 @@
       <file leaf-file-name="items.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/item/items.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+            <state relative-caret-position="304">
+              <caret line="86" column="1" lean-forward="false" selection-start-line="86" selection-start-column="1" selection-end-line="86" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="item.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/services/item.service.ts">
+      <file leaf-file-name="menu.service.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/services/menu.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-156">
-              <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+            <state relative-caret-position="324">
+              <caret line="22" column="1" lean-forward="false" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -119,38 +564,8 @@
       <file leaf-file-name="menu.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/datatypes/menu.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="items.component.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/item/items.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="35" column="69" selection-start-line="35" selection-start-column="69" selection-end-line="35" selection-end-column="69" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/app.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/app.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+            <state relative-caret-position="18">
+              <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -179,52 +594,49 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/app.routing.ts" />
         <option value="$PROJECT_DIR$/app/Cafe/cafelist.ts" />
         <option value="$PROJECT_DIR$/app/Cafe/cafelist.component.html" />
         <option value="$PROJECT_DIR$/app/item/item.ts" />
         <option value="$PROJECT_DIR$/app/item/menu.ts" />
         <option value="$PROJECT_DIR$/app/item/menu.service.ts" />
-        <option value="$PROJECT_DIR$/app/item/item-detail.component.html" />
         <option value="$PROJECT_DIR$/node_modules/nativescript-plugin-firebase/firebase.android.js" />
-        <option value="$PROJECT_DIR$/firebase.nativescript.json" />
         <option value="$PROJECT_DIR$/node_modules/nativescript-plugin-firebase/firebase.ios.js" />
         <option value="$PROJECT_DIR$/app/App_Resources/iOS/GoogleService-Info.plist" />
-        <option value="$PROJECT_DIR$/app/app.component.ts" />
         <option value="$PROJECT_DIR$/app/item/item.service.ts" />
-        <option value="$PROJECT_DIR$/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/app/app.css" />
-        <option value="$PROJECT_DIR$/app/datatypes/item.ts" />
+        <option value="$PROJECT_DIR$/firebase.nativescript.json" />
+        <option value="$PROJECT_DIR$/platforms/android/build.gradle" />
+        <option value="$PROJECT_DIR$/app/app.component.html" />
+        <option value="$PROJECT_DIR$/app/App_Resources/Android/app.gradle" />
+        <option value="$PROJECT_DIR$/app/app.component.ts" />
+        <option value="$PROJECT_DIR$/app/App_Resources/Android/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/app/services/item.service.ts" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/app/item/items.component.html" />
+        <option value="$PROJECT_DIR$/app/app.routing.ts" />
         <option value="$PROJECT_DIR$/app/item/items.component.ts" />
+        <option value="$PROJECT_DIR$/app/datatypes/item.ts" />
+        <option value="$PROJECT_DIR$/app/item/item-detail.component.html" />
         <option value="$PROJECT_DIR$/app/item/item-detail.component.ts" />
         <option value="$PROJECT_DIR$/app/datatypes/menu.ts" />
         <option value="$PROJECT_DIR$/app/services/menu.service.ts" />
-        <option value="$PROJECT_DIR$/app/services/item.service.ts" />
-        <option value="$PROJECT_DIR$/app/item/items.component.html" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" />
-  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="65" />
     <option name="y" value="24" />
-    <option name="width" value="1299" />
-    <option name="height" value="836" />
+    <option name="width" value="1297" />
+    <option name="height" value="700" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -240,95 +652,41 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DQ-Cafe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DQ-Cafe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DQ-Cafe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DQ-Cafe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DQ-Cafe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DQ-Cafe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DQ-Cafe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DQ-Cafe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DQ-Cafe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="item" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DQ-Cafe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DQ-Cafe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="datatypes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="DQCafe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DQCafe" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DQCafe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DQCafe" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DQCafe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DQCafe" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="datatypes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DQCafe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DQCafe" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="item" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DQCafe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DQCafe" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -345,6 +703,144 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/App_Resources/Android" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/datatypes/menu.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/datatypes/menu.ts</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/item/items.component.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/services/item.service.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/services/item.service.ts</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/services/menu.service.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/services/menu.service.ts</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/platforms/android/.gradle/4.1/fileHashes/fileHashes.bin</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/platforms/android/.gradle/4.1/fileHashes/fileHashes.lock</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/fileSnapshots.bin</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/taskHistory.bin</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/taskHistory.lock</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/platforms/android/.nsprepareinfo</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/0/classes.jar</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/1/classes.jar</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/2/classes.jar</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/3/classes.jar</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/4/classes.jar</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/5/classes.jar</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/platforms/android/app/src/main/AndroidManifest.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.module.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.module.ts</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/item-detail.component.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/item-detail.component.ts</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/items.component.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/items.component.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/items.component.ts</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -383,15 +879,20 @@
       <option name="filePath" />
       <method />
     </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
       <command value="run-script" />
       <scripts />
       <node-interpreter value="project" />
       <envs />
       <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
     </configuration>
     <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
       <node-interpreter>project</node-interpreter>
@@ -404,7 +905,6 @@
       <test-kind>DIRECTORY</test-kind>
       <test-directory />
       <recursive>false</recursive>
-      <method />
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -424,7 +924,15 @@
       <workItem from="1516975674673" duration="2286000" />
       <workItem from="1517105634435" duration="3735000" />
       <workItem from="1517132365264" duration="5911000" />
-      <workItem from="1517305542947" duration="40613000" />
+      <workItem from="1517305542947" duration="32099000" />
+      <workItem from="1517664643381" duration="1916000" />
+      <workItem from="1517745123948" duration="800000" />
+      <workItem from="1517830037789" duration="15000" />
+      <workItem from="1517831100516" duration="603000" />
+      <workItem from="1517831845762" duration="284000" />
+      <workItem from="1518089304261" duration="4169000" />
+      <workItem from="1518145255627" duration="51272000" />
+      <workItem from="1518326538688" duration="953000" />
     </task>
     <task id="LOCAL-00001" summary="First version">
       <created>1517106110300</created>
@@ -433,18 +941,11 @@
       <option name="project" value="LOCAL" />
       <updated>1517106110300</updated>
     </task>
-    <task id="LOCAL-00002" summary="First version">
-      <created>1517663782563</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1517663782563</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61053000" />
+    <option name="totallyTimeSpent" value="112551000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -456,26 +957,25 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1299" height="836" extended-state="0" />
-    <editor active="true" />
+    <frame x="65" y="24" width="1303" height="780" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3048499" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.256651" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3285528" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281493" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39243808" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29393467" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -490,18 +990,7 @@
         <option value="$PROJECT_DIR$/app/main.js" />
         <option value="$PROJECT_DIR$/app/main.aot.js" />
         <option value="$PROJECT_DIR$/app/item/items.component.js" />
-        <option value="$PROJECT_DIR$/app/item/item.service.js" />
         <option value="$PROJECT_DIR$/app/item/item-detail.component.js" />
-        <option value="$PROJECT_DIR$/app/item/item.js" />
-        <option value="$PROJECT_DIR$/app/item/menu.js" />
-        <option value="$PROJECT_DIR$/app/item/menu.service.js" />
-        <option value="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/app/item/menu.js" />
-        <option value="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/app/item/menu.service.js" />
-        <option value="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.routing.js" />
-        <option value="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.module.js" />
-        <option value="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.component.js" />
-        <option value="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/main.js" />
-        <option value="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/main.aot.js" />
       </list>
     </option>
   </component>
@@ -513,94 +1002,47 @@
     <option name="LAST_COMMIT_MESSAGE" value="First version" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/item/item-detail.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/item/item.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/item/item.service.ts" />
     <entry file="file://$PROJECT_DIR$/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/item/item-detail.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
-          <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
+          <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/item/menu.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/item/menu.service.ts" />
     <entry file="file://$PROJECT_DIR$/app/item/item-detail.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
-          <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
-          <folding />
+          <caret line="30" column="16" lean-forward="false" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/item/item-detail.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/item/menu.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/item/menu.service.ts" />
     <entry file="file://$PROJECT_DIR$/app/item/item-detail.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="41" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -609,43 +1051,18 @@
     <entry file="file://$PROJECT_DIR$/app/main.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/item/item.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/item/menu.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/item/menu.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/item/item.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/item/item.js" />
+    <entry file="file://$PROJECT_DIR$/app/item/menu.ts" />
+    <entry file="file://$PROJECT_DIR$/app/item/menu.service.ts" />
+    <entry file="file://$PROJECT_DIR$/app/item/item.ts" />
     <entry file="file://$PROJECT_DIR$/app/App_Resources/Android/google-services.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="17" column="56" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
+          <caret line="17" column="56" lean-forward="false" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -655,211 +1072,225 @@
     <entry file="file://$PROJECT_DIR$/node_modules/nativescript-plugin-firebase/firebase-common.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2779">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/firebase.nativescript.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-          <folding />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/App_Resources/iOS/Info.plist">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-357">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/nativescript-plugin-firebase/firebase.ios.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24555">
-          <caret line="1637" column="9" selection-start-line="1637" selection-start-column="9" selection-end-line="1637" selection-end-column="9" />
-          <folding />
+          <caret line="1637" column="9" lean-forward="false" selection-start-line="1637" selection-start-column="9" selection-end-line="1637" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/nativescript-plugin-firebase/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/item/item.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="50" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="52" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/App_Resources/iOS/GoogleService-Info.plist">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="37" column="46" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/item/item.service.ts" />
+    <entry file="file://$PROJECT_DIR$/app/App_Resources/iOS/GoogleService-Info.plist" />
     <entry file="file://$PROJECT_DIR$/app/item/item-detail.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-192">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/nativescript-theme-core/scss/_action-bar.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/nativescript-theme-core/scss/_list-view.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/nativescript-theme-core/css/brown.ios.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="5" column="6910" selection-start-line="5" selection-start-column="6907" selection-end-line="5" selection-end-column="6910" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.routing.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/datatypes/item.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
+          <caret line="5" column="6910" lean-forward="false" selection-start-line="5" selection-start-column="6907" selection-end-line="5" selection-end-column="6910" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-          <folding />
+        <state relative-caret-position="198">
+          <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/cart/cart/cart.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/nativescript-plugin-firebase/app/database/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platforms/android/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="10" column="55" lean-forward="false" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/App_Resources/Android/app.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/App_Resources/Android/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-249">
+          <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding />
+        <state relative-caret-position="252">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#59#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/firebase.nativescript.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-156">
-          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-          <folding />
+        <state relative-caret-position="72">
+          <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/datatypes/menu.ts">
+    <entry file="file://$PROJECT_DIR$/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+        <state relative-caret-position="234">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/services/item.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.routing.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="16" column="36" lean-forward="false" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="41" lean-forward="false" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/item/items.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/item/item-detail.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/item/items.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+        <state relative-caret-position="304">
+          <caret line="86" column="1" lean-forward="false" selection-start-line="86" selection-start-column="1" selection-end-line="86" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/item/item-detail.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
-          <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
+        <state relative-caret-position="18">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/datatypes/item.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/datatypes/menu.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/services/menu.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/item/item-detail.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/item/items.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="35" column="69" selection-start-line="35" selection-start-column="69" selection-end-line="35" selection-end-column="69" />
+        <state relative-caret-position="324">
+          <caret line="22" column="1" lean-forward="false" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
           <folding />
         </state>
       </provider>

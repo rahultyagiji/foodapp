@@ -1,7 +1,9 @@
 export interface Item {
-    id: number;
+cafeId:string,
+    id: string;
     name: string;
     category: string;
     imgSrc: string;
-    menu: string;
+
+
 }

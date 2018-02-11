@@ -7,26 +7,21 @@ const firebase = require("nativescript-plugin-firebase");
     templateUrl: "app.component.html",
 })
 
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
 
 
- ngOnInit(){
+    constructor() {
 
 
-     firebase.init({
-           // Optionally pass in properties for database, authentication and cloud messaging,
-           // see their respective docs.
-           persist: false,
-       }).then(
-           instance => {
-               console.log("firebase.init done");
-           },
-           error => {
-               console.log(`firebase.init error... apps: ${error}`);
-           }
-       );
+    }
 
 
-       }
+    ngOnInit() {
+
+        firebase.init({
+            persist: false
+        });
+
+    }
 
 }

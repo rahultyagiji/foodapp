@@ -3,10 +3,10 @@
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/app.module.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/app.component.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/app.routing.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/services/menu.service.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/services/item.service.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/datatypes/item.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/datatypes/menu.js
-/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/Services/menu.service.js
-/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/Services/item.service.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/cart/cart/cart.component.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-intl/nativescript-intl-common.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-intl/nativescript-intl.js
@@ -163,6 +163,8 @@
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/tns-core-modules/text/text.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/tns-core-modules/text/span.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/tns-core-modules/text/formatted-string.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-mapbox/mapbox.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-mapbox/mapbox.common.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-angular/resource-loader.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-angular/platform.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-angular/renderer.js

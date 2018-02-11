@@ -1,7 +1,7 @@
-<ActionBar title="{{item.name}}" class="action-bar"></ActionBar>
-<FlexboxLayout flexDirection="column" class="page" verticalAlignment="top">
-
-    <FlexboxLayout class="m-15" style="height: 50%">
+<ActionBar title="{{item?.name}}" class="action-bar"></ActionBar>
+<!--<ActionBar title="Test." class="action-bar"></ActionBar>-->
+<StackLayout >
+    <StackLayout class="m-15" style="height: 50%">
 
         <ListView [items]="menu" class="list-group">
             <ng-template let-item="item">
@@ -10,11 +10,11 @@
             </ng-template>
         </ListView>
 
-    </FlexboxLayout>
+    </StackLayout>
 
-    <FlexboxLayout class="m-12" style="height:50%">
-        <ns-cart></ns-cart>
-    </FlexboxLayout>
+    <StackLayout class="m-12" style="height:50%">
+        <!--<ns-cart></ns-cart>-->
+    </StackLayout>
 
 
-</FlexboxLayout>
+</StackLayout>
