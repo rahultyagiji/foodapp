@@ -5,11 +5,12 @@ import { AppComponent } from "./app.component";
 
 import { ItemService } from "./services/item.service";
 import { ItemsComponent } from "./item/items.component";
-import { ItemDetailComponent } from "./item/item-detail.component";
 import {MenuService} from "./services/menu.service";
 
 
 import { registerElement } from "nativescript-angular/element-registry";
+import {OrderService} from "./services/order.service";
+import {CafeComponent} from "./cafe.component";
 registerElement("Mapbox", () => require("nativescript-mapbox").MapboxView);
 registerElement("FAB", () => require("nativescript-floatingactionbutton").Fab);
 
@@ -33,12 +34,12 @@ registerElement("FAB", () => require("nativescript-floatingactionbutton").Fab);
     declarations: [
         AppComponent,
         ItemsComponent,
-        ItemDetailComponent//,
-        //CartComponent
+        CafeComponent
     ],
     providers: [
         ItemService,
-        MenuService
+        MenuService,
+        OrderService
     ],
     schemas: [
         NO_ERRORS_SCHEMA

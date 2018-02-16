@@ -1,9 +1,9 @@
-<ActionBar title="DQ" class="action-bar">
+<ActionBar title="DQ" class="action-bar" style="background-color: #0A4C58;color: white">
 </ActionBar>
 
 <StackLayout class="page" orientation="vertical">
 
-<StackLayout style="width: 95%;height:70%">
+<StackLayout style="height:70%">
             <Mapbox
         [accessToken]="access_token"
         [mapStyle]="map_style"
@@ -23,7 +23,8 @@
 </StackLayout>
 
     <StackLayout>
-        <Image src="http://www.pngmart.com/files/4/Cool-PNG-Image.png"></Image>
+        <Image src="http://www.pngmart.com/files/4/Cool-PNG-Image.png"
+               (tap)="jumptoMenu('cafe1')"></Image>
 
     </StackLayout>
 

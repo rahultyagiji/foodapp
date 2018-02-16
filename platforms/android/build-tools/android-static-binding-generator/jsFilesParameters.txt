@@ -1,13 +1,15 @@
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/main.aot.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/main.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/cafe.component.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/app.module.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/app.component.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/app.routing.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/services/order.service.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/services/menu.service.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/services/item.service.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/datatypes/item.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/datatypes/menu.js
-/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/cart/cart/cart.component.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/datatypes/order.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-intl/nativescript-intl-common.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-intl/nativescript-intl.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-intl/index.js
@@ -229,6 +231,7 @@
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-angular/router/ns-router-link.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-angular/router/index.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-angular/router/private-imports/router-url-tree.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-pro-ui/scripts/eula-prompt.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-plugin-firebase/preuninstall-hooks.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-plugin-firebase/firebase.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-plugin-firebase/postinstall-hooks.js
@@ -236,10 +239,10 @@
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-plugin-firebase/app/index.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-plugin-firebase/app/auth/index.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-plugin-firebase/app/database/index.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-plugin-firebase/app/database/util/NextPushId.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-plugin-firebase/app/firestore/index.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-plugin-firebase/scripts/entitlements-before-prepare.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-plugin-firebase/scripts/entitlements-after-prepare.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-plugin-firebase/scripts/postinstall.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-toast/toast.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/item/items.component.js
-/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/item/item-detail.component.js

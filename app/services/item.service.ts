@@ -35,9 +35,9 @@ export class ItemService {
 
     }
 
-    getItem(cafeId): Item {
-
+    getSingleItem(cafeId){
         return this.items.filter(item => item.cafeId == cafeId)[0];
-
     }
+
+
 }

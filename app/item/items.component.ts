@@ -20,68 +20,73 @@ export class ItemsComponent implements OnInit{
     map_style:string="streets";
     latitude:string="-37.8136";
     longitude:string="144.9631";
-    zoomlevel:string="14";
+    zoomlevel:string="15";
     ///
 
     constructor(private itemService: ItemService,
                 private router:Router,
-                private routerextension:RouterExtensions) {
+                private routerextensions:RouterExtensions) {
     }
 
     ngOnInit(): void {
+
         this.items = this.itemService.getItems();
+
     }
 
     onMapReady(args): void {
         this.map = args.map;
-        this.map.addMarkers([
-            {
-                id: 1,
-                lat: -37.8136,
-                lng: 144.9631,
-                title: 'Cafe1',
-                // subtitle: 'Check out Cafe1',
-                onCalloutTap: () => {
-                    console.log("Cafe 1 was tapped");
-                    this.jumptoMenu("cafe1")
-                }
-            },
-            {
-                id: 2,
-                lat: -37.811989,
-                lng: 144.965845,
-                title: 'Cafe2',
-                // subtitle: 'Check out Cafe1',
-                onCalloutTap: () => {
-                    console.log("Cafe 2 was tapped");
-                    this.jumptoMenu("cafe2")
-                }
-            },
-            {
-                id: 3,
-                lat: -37.811040,
-                lng: 144.965802,
-                title: 'Cafe3',
-                // subtitle: 'Check out Cafe3',
-                onCalloutTap: () => {
-                    console.log("Cafe 3 was tapped");
-                    this.jumptoMenu("cafe3")
-                }
-            }
+
+
+            this.map.addMarkers([
+                    {
+                        id: 1,
+                        lat: -37.8136,
+                        lng: 144.9631,
+                        title: 'Cafe1',
+                        // subtitle: 'Check out Cafe1',
+                        onCalloutTap: ()=> {
+                            this.jumptoMenu('cafe1')
+                        }
+                    },
+                    {
+                        id: 2,
+                        lat: -37.811989,
+                        lng: 144.965845,
+                        title: 'Cafe2',
+                        // subtitle: 'Check out Cafe1',
+                        onCalloutTap: ()=> {
+                            console.log("Cafe 2 was tapped");
+                            this.jumptoMenu('cafe2')
+                        }
+                    },
+                    {
+                        id: 3,
+                        lat: -37.811040,
+                        lng: 144.965802,
+                        title: 'Cafe3',
+                        // subtitle: 'Check out Cafe3',
+                        onCalloutTap: () => {
+                            console.log("Cafe 3 was tapped");
+                            this.jumptoMenu('cafe3')
+                        }
+                    }
                 ]
-        )
+            )
+
+
             }
 
-            jumptoMenu(cafeId){
-                console.log("test..",cafeId)
+            jumptoMenu(cafeId) {
 
-                setTimeout(()=>{
-                    this.routerextension.navigate(["item/",cafeId], { clearHistory: true })
-                        .then(console.log)
-                        .catch((err)=>{console.log("error navigating",err)})
-
-                },100)
-
-
+               setTimeout(() =>{this.routerextensions.navigate(["/cafe", cafeId],
+                    {
+                        animated: true,
+                        transition: {
+                            name: "slide",
+                            duration: 200,
+                            curve: "ease"
+                        }
+                    }),100});
             }
 }

@@ -1,5 +1,5 @@
 /**
- * @license Angular v5.2.3
+ * @license Angular v5.2.4
  * (c) 2010-2018 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -7,6 +7,7 @@ import { Observable } from 'rxjs/Observable';
 import { merge } from 'rxjs/observable/merge';
 import { share } from 'rxjs/operator/share';
 import { Subject } from 'rxjs/Subject';
+import { Subscription } from 'rxjs/Subscription';
 
 /**
  * @fileoverview added by tsickle
@@ -682,7 +683,7 @@ class Version {
 /**
  * \@stable
  */
-const VERSION = new Version('5.2.3');
+const VERSION = new Version('5.2.4');
 
 /**
  * @fileoverview added by tsickle
@@ -796,6 +797,7 @@ const __self = typeof self !== 'undefined' && typeof WorkerGlobalScope !== 'unde
     self instanceof WorkerGlobalScope && self;
 const __global = typeof global !== 'undefined' && global;
 const _global = __window || __global || __self;
+const promise = Promise.resolve(0);
 let _symbolIterator = null;
 /**
  * @return {?}
@@ -825,7 +827,13 @@ function getSymbolIterator() {
  * @return {?}
  */
 function scheduleMicroTask(fn) {
-    Zone.current.scheduleMicroTask('scheduleMicrotask', fn);
+    if (typeof Zone === 'undefined') {
+        // use promise to schedule microTask instead of use Zone
+        promise.then(() => { fn && fn.apply(null, null); });
+    }
+    else {
+        Zone.current.scheduleMicroTask('scheduleMicrotask', fn);
+    }
 }
 /**
  * @param {?} a
@@ -3703,7 +3711,11 @@ class EventEmitter extends Subject {
                     this.__isAsync ? () => { setTimeout(() => complete()); } : () => { complete(); };
             }
         }
-        return super.subscribe(schedulerFn, errorFn, completeFn);
+        const /** @type {?} */ sink = super.subscribe(schedulerFn, errorFn, completeFn);
+        if (generatorOrNext instanceof Subscription) {
+            generatorOrNext.add(sink);
+        }
+        return sink;
     }
 }
 
