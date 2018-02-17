@@ -1,0 +1,36 @@
+<ActionBar title="{{items[0].name}}" class="action-bar"
+           style="background-color: #0A4C58;color: white"></ActionBar>
+<StackLayout>
+
+   <StackLayout class="page page-content" style="height: 50%">
+        <ListView [items]="menu" class="list-group">
+            <ng-template  let-item="item">
+
+                <StackLayout id="food1" (tap)="ontapMenu(item)"
+                             (swipe)="addtoOrderlist(item,$event)" orientation="horizontal">
+                    <Label [text]=" item.name" class="list-group-item"></Label>
+                    <Label [text]="item.price" class="list-group-item" ></Label>
+                </StackLayout>
+
+            </ng-template>
+        </ListView>
+
+    </StackLayout>
+
+
+    <StackLayout>
+    <Button (tap)="OnOrder()" text="Confirm Order"
+            style="width: 80%;background-color: #B52E26;color: white;"></Button>
+    <ListView [items]="order" class="list-group">
+        <ng-template let-item="item">
+            <StackLayout id="food2"(tap)="ontapOrder(item)"
+                         (swipe)="removefromOrderlist(item,$event)" orientation="horizontal">
+            <Label [text]="item.name"
+                   class="list-group-item"></Label>
+            <Label [text]="item.price" class="list-group-item" style="horiz-align: right ;"></Label>
+            </StackLayout>
+        </ng-template>
+    </ListView>
+    </StackLayout>
+
+</StackLayout>

@@ -1,6 +1,5 @@
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/main.aot.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/main.js
-/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/cafe.component.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/app.module.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/app.component.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/app.routing.js
@@ -246,3 +245,5 @@
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-plugin-firebase/scripts/postinstall.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-toast/toast.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/item/items.component.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/item/optionspop.component.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/item/cafe.component.js

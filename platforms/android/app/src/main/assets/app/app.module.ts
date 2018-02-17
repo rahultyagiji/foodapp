@@ -10,7 +10,9 @@ import {MenuService} from "./services/menu.service";
 
 import { registerElement } from "nativescript-angular/element-registry";
 import {OrderService} from "./services/order.service";
-import {CafeComponent} from "./cafe.component";
+import {CafeComponent} from "./item/cafe.component";
+import {OptionspopComponent} from "./item/optionspop.component";
+import {ModalDialogService} from "nativescript-angular/modal-dialog";
 registerElement("Mapbox", () => require("nativescript-mapbox").MapboxView);
 registerElement("FAB", () => require("nativescript-floatingactionbutton").Fab);
 
@@ -27,6 +29,7 @@ registerElement("FAB", () => require("nativescript-floatingactionbutton").Fab);
     bootstrap: [
         AppComponent
     ],
+    entryComponents:[OptionspopComponent],
     imports: [
         NativeScriptModule,
         AppRoutingModule
@@ -34,12 +37,14 @@ registerElement("FAB", () => require("nativescript-floatingactionbutton").Fab);
     declarations: [
         AppComponent,
         ItemsComponent,
-        CafeComponent
-    ],
+        CafeComponent,
+        OptionspopComponent
+     ],
     providers: [
         ItemService,
         MenuService,
-        OrderService
+        OrderService,
+        ModalDialogService
     ],
     schemas: [
         NO_ERRORS_SCHEMA
