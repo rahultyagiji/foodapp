@@ -1,16 +1,24 @@
-<GridLayout rows="auto auto auto" columns="* auto" class="m-5" style="width: 60%">
-    <Label class="h3 m-15" [text]="switch1.checked" textWrap="true" row="0" col="0"></Label>
+<StackLayout>
+<StackLayout orientation="horizontal">
+<!--//switch example-->
+    <Label class="h3 m-15" [text]="switch1.checked" textWrap="true"></Label>
     <Switch #switch1 class="m-15 firstSwitchStyle" checked="true"
-            (checkedChange)="switch1.checked"
-            row="0" col="1"></Switch>
+            (checkedChange)="switch1.checked"></Switch>
+</StackLayout>
 
-    <Label class="h3 m-15" [text]="switch2.checked" textWrap="true" row="1" col="0"></Label>
-    <Switch #switch2 class="m-15 secondSwitchStyle" checked="false"
-            (checkedChange)="switch2.checked"
-            row="1" col="1"></Switch>
+<StackLayout orientation="horizontal">
+<!--//slider example-->
 
-    <Label class="h3 m-15" [text]="switch3.checked" textWrap="true" row="2" col="0"></Label>
-    <Switch #switch3 class="m-15 thirdSwitchStyle" checked="true"
-            (checkedChange)="switch3.checked"
-            row="2" col="1"></Switch>
-</GridLayout>
+        <Label class="h3" text="1" textWrap="true"></Label>
+        <Slider minValue="1" maxValue="5" [(ngModel)]="sliderValue1" style="width: 50%"></Slider>
+        <Label class="h3" [text]="sliderValue1" textWrap="true"></Label>
+
+</StackLayout>
+
+<StackLayout style="width: 80%" orientation="horizontal">
+<!--//Listpicker example-->
+    <Label text="Size"></Label>
+    <ListPicker [items]="options" selectedIndex="0"
+            (selectedIndexChange)="selectedIndexChanged($event)" class="p-15"></ListPicker>
+</StackLayout>
+</StackLayout>

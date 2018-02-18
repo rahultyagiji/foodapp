@@ -15,8 +15,8 @@ getOrder(){
 
 }
 
-Order(menu:Menu){
-    this.order.push({'cafeId':menu.cafeId,'name':menu.name,'price':menu.price,'quantity':1});
+Order(menu:Menu,cafeId){
+    this.order.push({'cafeId':cafeId,'name':menu.name,'price':menu.price,'quantity':1});
 }
 
 removeOrder(order:Order){

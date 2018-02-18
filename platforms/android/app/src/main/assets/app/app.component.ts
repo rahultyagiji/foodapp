@@ -22,6 +22,8 @@ export class AppComponent implements OnInit {
             persist: false
         }).then();
 
+
     }
+
 
 }

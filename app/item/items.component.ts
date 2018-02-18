@@ -4,6 +4,9 @@ import { ItemService } from "../services/item.service";
 import { Router} from "@angular/router";
 import { MapboxViewApi, Viewport as MapboxViewport } from "nativescript-mapbox";
 import {RouterExtensions} from "nativescript-angular";
+import {ObservableArray} from "data/observable-array";
+import { SearchBar } from "ui/search-bar";
+
 
 @Component({
     selector: "ns-items",
@@ -12,13 +15,17 @@ import {RouterExtensions} from "nativescript-angular";
 })
 export class ItemsComponent implements OnInit{
     businessName: String[];
-    items: Item[];
+    items: Item[]=[];
+    _items:ObservableArray<Item> = new ObservableArray<Item>([]);
+    public tabSelectedIndex: number;
+    public searchPhrase: string;
+
 
     private map: MapboxViewApi;
     //map parameters
     access_token:string="pk.eyJ1IjoicmFodWx0eWFnaWppIiwiYSI6ImNqZGd1ZTdoZjBwczkycXJsc3M3NGthaXAifQ.8YuDqg7iO8HrAQXF9w1j_w"
     map_style:string="streets";
-    latitude:string="-37.8136";
+    latitude:string ="-37.8136";
     longitude:string="144.9631";
     zoomlevel:string="15";
     ///
@@ -26,14 +33,21 @@ export class ItemsComponent implements OnInit{
     constructor(private itemService: ItemService,
                 private router:Router,
                 private routerextensions:RouterExtensions) {
+        this.tabSelectedIndex = 1;
     }
 
     ngOnInit(): void {
-
-        this.items = this.itemService.getItems();
-
+        this.itemService.load()
+            .subscribe((items: Array<Item>) => {
+                this._items = new ObservableArray(items);
+                this.items=[];
+                this._items.forEach((x)=>{
+                    this.items.push(x);
+                })
+            });
     }
 
+//MapView
     onMapReady(args): void {
         this.map = args.map;
 
@@ -56,7 +70,6 @@ export class ItemsComponent implements OnInit{
                         title: 'Cafe2',
                         // subtitle: 'Check out Cafe1',
                         onCalloutTap: ()=> {
-                            console.log("Cafe 2 was tapped");
                             this.jumptoMenu('cafe2')
                         }
                     },
@@ -67,7 +80,6 @@ export class ItemsComponent implements OnInit{
                         title: 'Cafe3',
                         // subtitle: 'Check out Cafe3',
                         onCalloutTap: () => {
-                            console.log("Cafe 3 was tapped");
                             this.jumptoMenu('cafe3')
                         }
                     }
@@ -77,8 +89,8 @@ export class ItemsComponent implements OnInit{
 
             }
 
+//Navitage to next screen
             jumptoMenu(cafeId) {
-
                setTimeout(() =>{this.routerextensions.navigate(["/cafe", cafeId],
                     {
                         animated: true,
@@ -89,4 +101,25 @@ export class ItemsComponent implements OnInit{
                         }
                     }),100});
             }
+
+//TabView controls
+    changeTab() {
+        if (this.tabSelectedIndex === 0) {
+            this.tabSelectedIndex = 1;
+        } else if (this.tabSelectedIndex === 1) {
+            this.tabSelectedIndex = 2;
+        } else if (this.tabSelectedIndex === 2) {
+            this.tabSelectedIndex = 0;
+        }
+    }
+
+// search bar
+    public onSubmit(args) {
+        let searchBar = <SearchBar>args.object;
+        alert("You are searching for " + searchBar.text);
+    }
+
+    public onTextChanged(args) {
+        let searchBar = <SearchBar>args.object;
+    }
 }

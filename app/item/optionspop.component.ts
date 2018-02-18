@@ -1,6 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import {ModalDialogParams} from "nativescript-angular/directives/dialogs";
 import { Switch } from "ui/switch";
+import { ListPicker } from "ui/list-picker";
+
+let options = ["Smalll", "Medium", "Large"];
 
 @Component({
     selector: "ns-popup",
@@ -10,12 +13,27 @@ import { Switch } from "ui/switch";
 })
 export class OptionspopComponent implements OnInit {
 
+
+
     public firstSwitchState = "OFF";
     public secondSwitchState = "ON";
+    public sliderValue1 = 1;
+
+    public options: Array<string>;
+    public picked: string;
+
+
 
     constructor(
         private params: ModalDialogParams
     ) {
+
+        this.options = [];
+
+        for (let i = 0; i < options.length; i++) {
+            this.options.push(options[i]);
+        }
+
 
     }
 
@@ -32,15 +50,13 @@ export class OptionspopComponent implements OnInit {
         }
     }
 
-     onSecondChecked(args) {
-        let secondSwitch = <Switch>args.object;
-        console.log(secondSwitch)
-        if (secondSwitch.checked) {
-            this.secondSwitchState = "ON";
-        } else {
-            this.secondSwitchState = "OFF";
-        }
+    selectedIndexChanged(args) {
+        let picker = <ListPicker>args.object;
+        console.log("picker selection: " + this.options[picker.selectedIndex]);
+
+        this.picked = this.options[picker.selectedIndex];
     }
+
 
     close(response:string){
 

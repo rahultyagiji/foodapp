@@ -1,31 +1,58 @@
 <ActionBar title="DQ" class="action-bar" style="background-color: #0A4C58;color: white">
 </ActionBar>
 
-<StackLayout class="page" orientation="vertical">
 
-<StackLayout style="height:70%">
+<TabView [(ngModel)]="tabSelectedIndex" borderBottomcolor="#B52E26"
+iosIconRenderingMode="alwaysOriginal" sdkExampleTitle sdkToggleNavButton>
+
+<!--List View-->
+    <StackLayout *tabItem="{title: 'List'}">
+        <StackLayout>
+
+            <StackLayout>
+                <SearchBar [text]="searchPhrase" (textChange)="onTextChanged($event)" (submit)="onSubmit($event)"
+                           color="black"></SearchBar>
+                <ListView [items]="items" class="list-group">
+                    <ng-template  let-item="item">
+                        <StackLayout (tap)="jumptoMenu(item.cafeId)">
+                            <Label [text]=" item.name" class="list-group-item"></Label>
+                        </StackLayout>
+                    </ng-template>
+                </ListView>
+
+            </StackLayout>
+
+        </StackLayout>
+    </StackLayout>
+    <StackLayout *tabItem="{title: 'Map'}">
+
+<!--Map View-->
+            <StackLayout style="height:80%">
             <Mapbox
-        [accessToken]="access_token"
-        [mapStyle]="map_style"
-        [latitude]="latitude"
-        [longitude]="longitude"
-        [zoomLevel]="zoomlevel"
-        [delay]=""
-        [showUserLocation]="true"
-        [hideCompass]="false"
-        [disableZoom]="false"
-        [disableRotation]="false"
-        [disableScroll]="false"
-        [disableTilt]="false"
-        (mapReady)="onMapReady($event)">
+            [accessToken]="access_token"
+            [mapStyle]="map_style"
+            [latitude]="latitude"
+            [longitude]="longitude"
+            [zoomLevel]="zoomlevel"
+            [delay]=""
+            [showUserLocation]="true"
+            [hideCompass]="false"
+            [disableZoom]="false"
+            [disableRotation]="false"
+            [disableScroll]="false"
+            [disableTilt]="false"
+            (mapReady)="onMapReady($event)">
             </Mapbox>
-
-</StackLayout>
-
-    <StackLayout>
-        <Image src="http://www.pngmart.com/files/4/Cool-PNG-Image.png"
-               (tap)="jumptoMenu('cafe1')"></Image>
+        </StackLayout>
 
     </StackLayout>
 
-</StackLayout>
+<!--Recommendations view-->
+    <StackLayout *tabItem="{title: 'YourPick'}">
+            <StackLayout>
+            <Image src="http://www.pngmart.com/files/4/Cool-PNG-Image.png"
+            (tap)="jumptoMenu('cafe1')"></Image>
+
+            </StackLayout>
+    </StackLayout>
+</TabView>
