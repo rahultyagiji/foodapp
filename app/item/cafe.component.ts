@@ -6,6 +6,7 @@ import {MenuService} from "../services/menu.service";
 import {OrderService} from "../services/order.service";
 import {Order} from "../datatypes/order";
 import {ActivatedRoute} from "@angular/router";
+import {RouterExtensions} from "nativescript-angular";
 
 
 import { Label } from 'ui/label';
@@ -39,7 +40,8 @@ export class CafeComponent implements OnInit {
         private orderService:OrderService,
         private route: ActivatedRoute,
         private popup: ModalDialogService,
-        private vcRef: ViewContainerRef
+        private vcRef: ViewContainerRef,
+        private routerextensions:RouterExtensions
 
     ) {
         // this.items = this.itemService.getItems();
@@ -108,10 +110,6 @@ export class CafeComponent implements OnInit {
         setTimeout(()=>{ this.orderService.removeOrder(order)
             this.order = this.orderService.getOrder();
             view.animate({ backgroundColor: new Color("white"), duration: 1000 });},1500)
-
-
-
     }
-
 
 }
