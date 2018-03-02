@@ -21,4 +21,10 @@
     <ListPicker [items]="options" selectedIndex="0"
             (selectedIndexChange)="selectedIndexChanged($event)" class="p-15"></ListPicker>
 </StackLayout>
+    <android>
+        <Button text="android Button" (tap)="close()"></Button>
+    </android>
+    <ios>
+        <Button text="iOS Button" (tap)="close()"></Button>
+    </ios>
 </StackLayout>

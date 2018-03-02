@@ -17,8 +17,6 @@ import {StackLayout} from "tns-core-modules/ui/layouts/stack-layout";
 import {ModalDialogService} from "nativescript-angular/directives/dialogs";
 import {OptionspopComponent} from "./optionspop.component";
 import {ObservableArray} from "tns-core-modules/data/observable-array";
-import {percent} from "tns-core-modules/ui/core/view";
-import {AnimationCurve} from "tns-core-modules/ui/enums";
 
 
 @Component({
@@ -28,16 +26,12 @@ import {AnimationCurve} from "tns-core-modules/ui/enums";
     styleUrls: ["./cafe.component.css"]
 })
 export class CafeComponent implements OnInit {
+    items:Item[];
     cafe: Item;
     menu:Menu[];
-    myMenu:Menu[];
     order:Order[]=[]
-    categories:string[]=[];
     _menu:ObservableArray<Menu> = new ObservableArray<Menu>([]);
-    total$:number=0;
-    cartEmpty:boolean=true;
-    buttondisable:boolean=false;
-    scrollHeight:string="height: 100%";
+
 
     constructor(
         private itemService: ItemService,
@@ -48,15 +42,13 @@ export class CafeComponent implements OnInit {
         private vcRef: ViewContainerRef
 
     ) {
-
+        // this.items = this.itemService.getItems();
     }
 
     ngOnInit(): void {
 
-        //this is buggered..fix it
         this.cafe = this.itemService.getSingleItem(this.route.snapshot.params["cafeid"])
         this.order=this.orderService.getOrder();
-        if(this.order.length>0){this.cartEmpty=false}
 
 //menu load
         this.menuService.loadMenu(this.route.snapshot.params["cafeid"])
@@ -65,12 +57,7 @@ export class CafeComponent implements OnInit {
                 this.menu=[];
                 this._menu.forEach((x)=>{
                     this.menu.push(x);
-                    this.categories.push(x.category);
                 })
-                this.myMenu=this.menu;
-                this.categories = this.categories.filter(function (item, i, array) {
-                    return array.indexOf(item) === i;
-                });
             });
 
     }
@@ -94,30 +81,17 @@ export class CafeComponent implements OnInit {
 
     addtoOrderlist(data,args:EventData){
         let page = <StackLayout>args.object;
-        this.orderService.Order(data,this.route.snapshot.params["cafeid"]);
+        this.orderService.Order(data,this.cafe.cafeId);
         this.order = this.orderService.getOrder();
 
         let view = <StackLayout>page.getViewById("food1");
         view.backgroundColor = new Color("#7CA924");
         view.animate({ backgroundColor: new Color("#BCE46C"), duration: 1000 });
         view.animate({ backgroundColor: new Color("white"), duration: 1500 });
-
-
-
-        if(this.order.length>0){this.cartEmpty=false;this.scrollHeight="height: 60%"}
-
-        this.total$=0;
-        this.order.forEach((x)=>{
-        //for total
-            this.total$=this.total$+x.price
-        })
-
     }
 
     OnOrder(){
-
-        this.orderService.confirmOrder(this.order,this.route.snapshot.params["cafeid"]);
-        this.buttondisable = true
+        console.log("order confirmed....")
 
     }
 
@@ -125,46 +99,19 @@ export class CafeComponent implements OnInit {
         console.log(JSON.stringify(order))
 
     }
-
     removefromOrderlist(order,args:EventData){
 
         let page = <StackLayout>args.object;
         let view = <StackLayout>page.getViewById("food2");
         view.backgroundColor = new Color("#8F130C");
         view.animate({ backgroundColor: new Color("#F57A73"), duration: 1000 });
-        setTimeout(()=>{ this.order = this.orderService.removeOrder(order);
-
-            this.total$=this.total$-order.price;
-            if(this.total$<0){this.total$=0}
+        setTimeout(()=>{ this.orderService.removeOrder(order)
             this.order = this.orderService.getOrder();
-            view.animate({ backgroundColor: new Color("white"), duration: 1000 });
-            if(this.order.length>0){
-            }
-            else{
-                this.cartEmpty=true;
-                this.scrollHeight="height: 100%"
-            }
-            },1500)
-        }
+            view.animate({ backgroundColor: new Color("white"), duration: 1000 });},1500)
 
-    onfiltercategory(category){
-        this.myMenu = this.menu.filter( item =>
-        {
-            return item.category===category
-        })
-     }
 
-    onclickAll(){
 
-        this.myMenu=this.menu;
     }
 
-    onorderCancel(){
-
-        this.order.length=0;
-        this.cartEmpty=true;
-        this.total$=0;
-        this.scrollHeight="height: 100%"
-    }
 
 }
