@@ -13,6 +13,12 @@ import {OrderService} from "./services/order.service";
 import {CafeComponent} from "./item/cafe.component";
 import {OptionspopComponent} from "./item/optionspop.component";
 import {ModalDialogService} from "nativescript-angular/modal-dialog";
+import { NativeScriptUISideDrawerModule } from "nativescript-pro-ui/sidedrawer/angular";
+import {RegisterComponent} from "./auth/register/register.component";
+import {AuthService} from "./services/auth.service";
+import {NativeScriptUIDataFormModule} from "nativescript-pro-ui/dataform/angular";
+import {NativeScriptFormsModule} from "nativescript-angular/forms";
+import {SigninComponent} from "./auth/signin/signin.component";
 registerElement("Mapbox", () => require("nativescript-mapbox").MapboxView);
 registerElement("FAB", () => require("nativescript-floatingactionbutton").Fab);
 
@@ -32,19 +38,25 @@ registerElement("FAB", () => require("nativescript-floatingactionbutton").Fab);
     entryComponents:[OptionspopComponent],
     imports: [
         NativeScriptModule,
-        AppRoutingModule
+        AppRoutingModule,
+        NativeScriptUISideDrawerModule,
+        NativeScriptUIDataFormModule,
+        NativeScriptFormsModule
     ],
     declarations: [
         AppComponent,
         ItemsComponent,
         CafeComponent,
-        OptionspopComponent
+        OptionspopComponent,
+        RegisterComponent,
+        SigninComponent,
      ],
     providers: [
         ItemService,
         MenuService,
         OrderService,
-        ModalDialogService
+        ModalDialogService,
+        AuthService
     ],
     schemas: [
         NO_ERRORS_SCHEMA

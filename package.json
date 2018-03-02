@@ -28,8 +28,10 @@
 		"nativescript-pro-ui": "^3.4.0",
 		"nativescript-theme-core": "~1.0.4",
 		"nativescript-toast": "^1.4.6",
+		"nativescript-ui-sidedrawer": "^3.5.0",
 		"reflect-metadata": "~0.1.8",
 		"rxjs": "~5.5.2",
+		"stripe": "^5.5.0",
 		"tns-core-modules": "^4.0.0-rc-2017.12.18.1",
 		"zone.js": "~0.8.9"
 	},

@@ -13,30 +13,6 @@ export class ItemService {
 
     private items = new Array<Item>();
 
-    // getItems(): Item[] {
-    //
-    //     firebase.query(
-    //         ()=> {
-    //         },
-    //         '/businessName',
-    //         {
-    //             singleEvent: true,
-    //             orderBy: {
-    //                 type: firebase.QueryOrderByType.KEY
-    //             }
-    //         }
-    //     ).then(
-    //         (res)=> {
-    //             for(let uid in res.value){
-    //                 this.items.push(res.value[uid])
-    //             }
-    //         })
-    //
-    //     return this.items;
-    //
-
-    // }
-
     getSingleItem(cafeId){
         return this.items.filter(item => item.cafeId == cafeId)[0];
     }

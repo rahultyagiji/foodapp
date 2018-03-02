@@ -1,58 +1,95 @@
-<ActionBar title="DQ" class="action-bar" style="background-color: #0A4C58;color: white">
+<ActionBar title="DQCafe" class="action-bar" style="background-color: #0A4C58;color: white; vertical-align: center">
 </ActionBar>
 
 
 <TabView [(ngModel)]="tabSelectedIndex" borderBottomcolor="#B52E26"
 iosIconRenderingMode="alwaysOriginal" sdkExampleTitle sdkToggleNavButton>
 
-<!--List View-->
-    <StackLayout *tabItem="{title: 'List'}">
-        <StackLayout>
-
-            <StackLayout>
-                <SearchBar [text]="searchPhrase" (textChange)="onTextChanged($event)" (submit)="onSubmit($event)"
-                           color="black"></SearchBar>
-                <ListView [items]="items" class="list-group">
-                    <ng-template  let-item="item">
-                        <StackLayout (tap)="jumptoMenu(item.cafeId)">
-                            <Label [text]=" item.name" class="list-group-item"></Label>
-                        </StackLayout>
-                    </ng-template>
-                </ListView>
-
-            </StackLayout>
-
-        </StackLayout>
-    </StackLayout>
-    <StackLayout *tabItem="{title: 'Map'}">
-
-<!--Map View-->
-            <StackLayout style="height:80%">
+    <StackLayout *tabItem="{title: 'Around You'}">
+        <!--Map View-->
+        <StackLayout style="height:80%">
             <Mapbox
-            [accessToken]="access_token"
-            [mapStyle]="map_style"
-            [latitude]="latitude"
-            [longitude]="longitude"
-            [zoomLevel]="zoomlevel"
-            [delay]=""
-            [showUserLocation]="true"
-            [hideCompass]="false"
-            [disableZoom]="false"
-            [disableRotation]="false"
-            [disableScroll]="false"
-            [disableTilt]="false"
-            (mapReady)="onMapReady($event)">
+                    [accessToken]="access_token"
+                    [mapStyle]="map_style"
+                    [latitude]="latitude"
+                    [longitude]="longitude"
+                    [zoomLevel]="zoomlevel"
+                    [delay]=""
+                    [showUserLocation]="true"
+                    [hideCompass]="false"
+                    [disableZoom]="false"
+                    [disableRotation]="false"
+                    [disableScroll]="false"
+                    [disableTilt]="false"
+                    (mapReady)="onMapReady($event)">
             </Mapbox>
         </StackLayout>
 
     </StackLayout>
 
+
+
+<!--List View-->
+<StackLayout *tabItem="{title: 'List'}">
+<StackLayout (loaded)="onSearchLayoutLoaded($event)">
+    <SearchBar hint="Type to search" [text]="searchPhrase"
+               (loaded)="searchLoaded($event)" (textChange)="onTextChanged($event)" color="black"></SearchBar>
+    <ListView [items]="myItems" class="list-group container">
+<!--each list item-->
+        <ng-template  let-item="item" class="textpadding">
+<!--first stack-->
+            <StackLayout orientation="horizontal" (tap)="jumptoMenu(item.cafeId)">
+<!--cafe image-->
+                <Image [src]="item.imgSrc"  style="width: 30%"></Image>
+<!--name and description-->
+                <StackLayout orientation="vertical" style="width: 60%">
+                    <Label [text]="item.name" class="list-group-item" style="font-weight: bold"></Label>
+                    <Label [text]="item.description" class="list-group-item" style="font-size: 10pt"></Label>
+                 </StackLayout>
+<!--rating and dollar      -->
+                <StackLayout style="width: 10%" orientation="vertical">
+                <Label text=""></Label>
+                <Label  text="$$" style="color:#FFA8A3"></Label>
+                <Label  text="*"></Label>
+                </StackLayout>
+
+            </StackLayout>
+
+        </ng-template>
+    </ListView>
+
+</StackLayout>
+
+    </StackLayout>
+
+
 <!--Recommendations view-->
-    <StackLayout *tabItem="{title: 'YourPick'}">
-            <StackLayout>
+    <StackLayout *tabItem="{title: 'Your Picks'}">
+
+<!--//Temporary side drawer-->
+        <RadSideDrawer tkExampleTitle tkToggleNavButton (drawerOpened)="onDrawerOpened($event)" >
+            <StackLayout tkDrawerContent class="sideStackLayout">
+                <StackLayout class="sideTitleStackLayout">
+                    <Label text="Navigation Menu"></Label>
+                </StackLayout>
+                <StackLayout class="sideStackLayout">
+                    <Label text="Register" class="sideLabel sideLightGrayLabel" (tap)="onRegister()"></Label>
+                    <Label text="Signin" class="sideLabel" (tap)="onSignin()"></Label>
+                    <Label text="Signout" class="sideLabel sideLightGrayLabel"(tap)="onSignout()"></Label>
+                </StackLayout>
+                <Label text="Close Drawer" color="lightgray" padding="10" style="horizontal-align: center" (tap)="onCloseDrawerTap()"></Label>
+            </StackLayout>
+            <StackLayout tkMainContent>
+                <Label text="mainContentText" textWrap="true" class="drawerContentText"></Label>
+                <Button text="OPEN DRAWER" (tap)="openDrawer()" class="drawerContentButton"></Button>
+            </StackLayout>
+        </RadSideDrawer>
+
+
+
+        <StackLayout>
             <Image src="http://www.pngmart.com/files/4/Cool-PNG-Image.png"
             (tap)="jumptoMenu('cafe1')"></Image>
-
             </StackLayout>
     </StackLayout>
 </TabView>

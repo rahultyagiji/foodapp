@@ -1,36 +1,60 @@
-<ActionBar title="{{items[0].name}}" class="action-bar"
+<ActionBar title="DQ" class="action-bar"
            style="background-color: #0A4C58;color: white"></ActionBar>
+
 <StackLayout>
 
-   <StackLayout class="page page-content" style="height: 50%">
-        <ListView [items]="menu" class="list-group">
-            <ng-template  let-item="item">
+<!--Categories-->
 
-                <StackLayout id="food1" (tap)="ontapMenu(item)"
-                             (swipe)="addtoOrderlist(item,$event)" orientation="horizontal">
-                    <Label [text]=" item.name" class="list-group-item"></Label>
-                    <Label [text]="item.price" class="list-group-item" ></Label>
-                </StackLayout>
+    <StackLayout orientation="horizontal" style="width: 90%">
+            <Label text="All" (tap)="onclickAll()" class="category"></Label>
+            <StackLayout *ngFor=" let categ of categories; let i = index">
+                <Label [text]="categ" (tap)="onfiltercategory(categ)" class="category"></Label>
+            </StackLayout>
+     </StackLayout>
 
-            </ng-template>
-        </ListView>
+
+
+    <StackLayout class="page page-content" style="{{scrollHeight}}">
+            <ListView [items]="myMenu" class="list-group">
+                <ng-template  let-item="item">
+                    <StackLayout id="food1" (tap)="ontapMenu(item)"
+                                 (swipe)="addtoOrderlist(item,$event)" orientation="horizontal">
+                        <Image  [src]="item.imgSrc" class="image" style="width: 10%"></Image>
+                        <StackLayout orientation="vertical">
+                            <Label [text]="item.name" class="list-group-item" style="width: 70%;font-weight:bold"></Label>
+                            <Label [text]="item.description" class="list-group-item" style="font-size: 10pt"></Label>
+                        </StackLayout>
+                        <Label [text]="'$'+item.price" class="list-group-item" style="width: 20%"></Label>
+                    </StackLayout>
+                </ng-template>
+            </ListView>
 
     </StackLayout>
 
+    <StackLayout *ngIf="!cartEmpty">
+            <StackLayout orientation="horizontal" style="background-color: #d6f39b">
+                <Button text="Cancel" (tap)="onorderCancel()" style="width: 25%;background-color: #8F130C;color: white;"
+                        *ngIf="!buttondisable"></Button>
+                <StackLayout style="width: 50%;font-weight: bold;font-size: 15pt">
+                    <Label [text]="'$' + total$" style="width: 50%"></Label>
+                </StackLayout>
+                    <!--<Image src="~/assets/cross.jpeg" (tap)="onorderCancel()" style="width: 10%"></Image>-->
+                <Button text="Confirm" (tap)="OnOrder()" style="width: 25%;background-color: #1A626F;color: white;"
+                        *ngIf="!buttondisable"></Button>
 
-    <StackLayout>
-    <Button (tap)="OnOrder()" text="Confirm Order"
-            style="width: 80%;background-color: #B52E26;color: white;"></Button>
-    <ListView [items]="order" class="list-group">
-        <ng-template let-item="item">
-            <StackLayout id="food2"(tap)="ontapOrder(item)"
-                         (swipe)="removefromOrderlist(item,$event)" orientation="horizontal">
-            <Label [text]="item.name"
-                   class="list-group-item"></Label>
-            <Label [text]="item.price" class="list-group-item" style="horiz-align: right ;"></Label>
             </StackLayout>
-        </ng-template>
-    </ListView>
+
+            <ListView [items]="order" class="list-group">
+                <ng-template let-item="item">
+                    <StackLayout id="food2"(tap)="ontapOrder(item)"
+                                 (swipe)="removefromOrderlist(item,$event)" orientation="horizontal">
+                    <Label [text]="item.name"
+                           class="list-group-item"></Label>
+                    <Label [text]="'$' + item.price" class="list-group-item" style=" horiz-align: right ;"></Label>
+                    </StackLayout>
+                </ng-template>
+            </ListView>
+
     </StackLayout>
 
 </StackLayout>

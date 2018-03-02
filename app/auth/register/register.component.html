@@ -1,0 +1,17 @@
+<StackLayout>
+
+    <RadDataForm [source]="userId">
+
+        <TKEntityProperty  name="username" hintText="Username" index="0">
+            <TKPropertyEditor type="Text"></TKPropertyEditor>
+        </TKEntityProperty>
+
+        <TKEntityProperty name="password" hintText="Password" index="1">
+            <TKPropertyEditor type="Password"></TKPropertyEditor>
+        </TKEntityProperty>
+
+    </RadDataForm>
+
+    <Button text="Register" (tap)="onRegister()"></Button>
+
+</StackLayout>

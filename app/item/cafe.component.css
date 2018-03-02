@@ -1,0 +1,27 @@
+.category {
+
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 40px;
+
+    color: #1a626f;
+    font-weight: bold;font-size: 18pt;
+
+}
+
+.textpadding{
+
+    padding-top: 50px;
+    padding-right: 6px;
+    padding-bottom: 1px;
+    padding-left: 40px;
+
+}
+
+.image{
+    border: 5px solid #ddd; /* Gray border */
+    vertical-align: middle;
+    border-radius: 10%;
+}
+
