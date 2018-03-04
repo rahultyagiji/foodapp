@@ -64,6 +64,7 @@ export class CafeComponent implements OnInit {
                 this._menu = new ObservableArray(menu);
                 this.menu=[];
                 this._menu.forEach((x)=>{
+                    console.log("Menu item is " + x.name);
                     this.menu.push(x);
                     this.categories.push(x.category);
                 })
@@ -79,14 +80,14 @@ export class CafeComponent implements OnInit {
 
     //modalcode
         let options={
-            context:{},
+            context:data,
             fullscreen:true,
-            viewContainerRef:this.vcRef
+            viewContainerRef:this.vcRef,
 
         };
 
         this.popup.showModal(OptionspopComponent,options).then((response)=>{
-            console.log(response);
+            console.log("Options Modal " + response);
         })
 
 

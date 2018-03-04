@@ -2,8 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import {ModalDialogParams} from "nativescript-angular/directives/dialogs";
 import { Switch } from "ui/switch";
 import { ListPicker } from "ui/list-picker";
+import {Menu} from "../datatypes/menu";
 
-let options = ["Smalll", "Medium", "Large"];
+let options = ["Small", "Medium", "Large"];
 
 @Component({
     selector: "ns-popup",
@@ -14,6 +15,8 @@ let options = ["Smalll", "Medium", "Large"];
 export class OptionspopComponent implements OnInit {
 
 
+    selectedMenu:Menu[];
+    selectedMenuItem:Menu;
 
     public firstSwitchState = "OFF";
     public secondSwitchState = "ON";
@@ -24,9 +27,21 @@ export class OptionspopComponent implements OnInit {
 
 
 
+
     constructor(
         private params: ModalDialogParams
     ) {
+
+        console.log ("in the constructor..............");
+
+        this.selectedMenu=[];
+        this.selectedMenu.push(params.context);
+
+        this.selectedMenuItem = this.selectedMenu[0];
+
+        console.log("params are " + this.selectedMenu);
+
+        console.log("Selected Menu Item is " + this.selectedMenuItem);
 
         this.options = [];
 

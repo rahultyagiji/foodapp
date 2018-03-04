@@ -1,13 +1,28 @@
 <StackLayout>
-<StackLayout orientation="horizontal">
-<!--//switch example-->
-    <Label class="h3 m-15" [text]="switch1.checked" textWrap="true"></Label>
-    <Switch #switch1 class="m-15 firstSwitchStyle" checked="true"
-            (checkedChange)="switch1.checked"></Switch>
-</StackLayout>
+
+
+    <StackLayout class="page page-content">
+        <ListView [items]="selectedMenu" class="list-group" style="height:200px;width:80%">
+            <ng-template  let-item="item">
+                <Label [text]="item.name" class="list-group-item" style="width: 70%;font-weight:bold"></Label>
+            </ng-template>
+        </ListView>
+    </StackLayout>
+
+
+    <Label text={{selectedMenuItem.category}} style="width:80%"></Label>
+    <!--<Label text={{selectedMenuItem.category}} class="list-group-item"></Label>-->
+
+    <StackLayout style="width: 80%" orientation="horizontal">
+        <Label text="Size"></Label>
+        <ListPicker [items]="options" selectedIndex="0"
+                    (selectedIndexChange)="selectedIndexChanged($event)" class="p-15"></ListPicker>
+    </StackLayout>
+
+
+<!--
 
 <StackLayout orientation="horizontal">
-<!--//slider example-->
 
         <Label class="h3" text="1" textWrap="true"></Label>
         <Slider minValue="1" maxValue="5" [(ngModel)]="sliderValue1" style="width: 50%"></Slider>
@@ -16,15 +31,14 @@
 </StackLayout>
 
 <StackLayout style="width: 80%" orientation="horizontal">
-<!--//Listpicker example-->
     <Label text="Size"></Label>
     <ListPicker [items]="options" selectedIndex="0"
             (selectedIndexChange)="selectedIndexChanged($event)" class="p-15"></ListPicker>
-</StackLayout>
+</StackLayout> -->
     <android>
         <Button text="android Button" (tap)="close()"></Button>
     </android>
     <ios>
-        <Button text="iOS Button" (tap)="close()"></Button>
+        <Button text="Close" (tap)="close()"></Button>
     </ios>
 </StackLayout>

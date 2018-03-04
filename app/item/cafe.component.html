@@ -5,17 +5,20 @@
 
 <!--Categories-->
 
-    <StackLayout orientation="horizontal" style="width: 90%">
-            <Label text="All" (tap)="onclickAll()" class="category"></Label>
-            <StackLayout *ngFor=" let categ of categories; let i = index">
-                <Label [text]="categ" (tap)="onfiltercategory(categ)" class="category"></Label>
+    <StackLayout>
+        <ScrollView orientation="horizontal">
+            <StackLayout orientation="horizontal">
+                <Label text="All" (tap)="onclickAll()" class="category"></Label>
+                <StackLayout orientation="horizontal" *ngFor=" let categ of categories; let i = index">
+                    <Label [text]="categ" (tap)="onfiltercategory(categ)" class="category"></Label>
+                </StackLayout>
             </StackLayout>
-     </StackLayout>
+        </ScrollView>
 
 
 
-    <StackLayout class="page page-content" style="{{scrollHeight}}">
-            <ListView [items]="myMenu" class="list-group">
+    <StackLayout class="page page-content">
+            <ListView [items]="myMenu" class="list-group" style="height:600px">
                 <ng-template  let-item="item">
                     <StackLayout id="food1" (tap)="ontapMenu(item)"
                                  (swipe)="addtoOrderlist(item,$event)" orientation="horizontal">
@@ -28,7 +31,6 @@
                     </StackLayout>
                 </ng-template>
             </ListView>
-
     </StackLayout>
 
     <StackLayout *ngIf="!cartEmpty">
