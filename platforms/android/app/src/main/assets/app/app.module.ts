@@ -19,6 +19,7 @@ import {AuthService} from "./services/auth.service";
 import {NativeScriptUIDataFormModule} from "nativescript-pro-ui/dataform/angular";
 import {NativeScriptFormsModule} from "nativescript-angular/forms";
 import {SigninComponent} from "./auth/signin/signin.component";
+import {OrderpopComponent} from "./ordermodal/orderpop.component";
 registerElement("Mapbox", () => require("nativescript-mapbox").MapboxView);
 registerElement("FAB", () => require("nativescript-floatingactionbutton").Fab);
 
@@ -50,6 +51,7 @@ registerElement("FAB", () => require("nativescript-floatingactionbutton").Fab);
         OptionspopComponent,
         RegisterComponent,
         SigninComponent,
+        OrderpopComponent
      ],
     providers: [
         ItemService,

@@ -13,6 +13,8 @@ import {Observable} from "rxjs/Observable";
 export class OrderService {
 
     order:Order[]=[];
+    orderList:{"orderNo":string,"status":string}[]=[];
+
 
 getOrder(){
 
@@ -44,26 +46,65 @@ removeOrder(order:Order){
 
 }
 
-confirmOrder(order:Order[],cafe){
+confirmOrder(order:Order[],cafe,payway,uid){
 
-    var uid;
-    firebase.getCurrentUser()
-        .then(
-        function (token) {
-                uid=token.uid
+    //I am trying to control if cafeId is same.. not working yet
+    // var status:boolean=true;
+    if (payway == "Cash") {
+        console.log(cafe,payway,JSON.stringify(order),uid,"2..");
+                    firebase.push('/order-cafe/' + cafe,
+                        {order, "status": "ordered", "uid": uid})
+                        .then((res) => {
+                    console.log(cafe,payway,JSON.stringify(order),uid,"3..");
+                    firebase.push('/order-user/' + uid, {
+                                order,
+                                "status": "ordered",
+                                "cafe": cafe,
+                                "orderNo": res.key
+                            })
+                                .then()
+                        })
 
-            // const stripe=stripePackage('sk_test_azUv3buJQkPoneBWFWY9KAzq');
+                }
+                else {
+        console.log(cafe,payway,JSON.stringify(order),uid,"2..");
+                    firebase.push('/order-cafe/' + cafe, {order, "status": "ordered", "uid": uid})
+                        .then((res) => {
+                            console.log(cafe,payway,JSON.stringify(order),uid,"3..");
+                            firebase.push('/order-user/' + uid, {
+                                order,
+                                "status": "processing",
+                                "cafe": cafe,
+                                "orderNo": res.key
+                            })
+                                .then()
+                        })
+                }
+            }
 
 
+fetchOrder(uid){
 
-            firebase.push('/order-user/'+uid,{order,"status":"ordered","cafe":cafe})
-                .then();
-            firebase.push('/order-cafe/'+cafe,{order,"status":"ordered","uid":uid})
-                .then();
-        },
-        function (errorMessage) {
-        });
+    var onQueryEvent = function(result) {}
+    firebase.query(
+        onQueryEvent,
+        'order-user/'+uid,
+        {
+            singleEvent: true,
+            orderBy: {
+                type: firebase.QueryOrderByType.KEY}
+        }
+    ).then(
+        (res)=>{
+            Object.keys(res.value).map((x)=>{
+                this.orderList.push({"orderNo":res.value[x].orderNo,"status":res.value[x].status});
+            })
+        })
+    .catch();
+
+
+    return this.orderList;
+
 }
-
 
 }

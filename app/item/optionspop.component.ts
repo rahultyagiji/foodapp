@@ -56,7 +56,7 @@ export class OptionspopComponent implements OnInit {
 
     }
 
-     onFirstChecked(args) {
+    onFirstChecked(args) {
         let firstSwitch = <Switch>args.object;
         if (firstSwitch.checked) {
             this.firstSwitchState = "ON";

@@ -165,8 +165,6 @@
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/tns-core-modules/text/text.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/tns-core-modules/text/span.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/tns-core-modules/text/formatted-string.js
-/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-mapbox/mapbox.js
-/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-mapbox/mapbox.common.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-angular/resource-loader.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-angular/platform.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-angular/renderer.js
@@ -253,3 +251,4 @@
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/item/items.component.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/item/optionspop.component.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/item/cafe.component.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/ordermodal/orderpop.component.js

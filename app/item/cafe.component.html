@@ -2,8 +2,10 @@
            style="background-color: #0A4C58;color: white"></ActionBar>
 
 <StackLayout>
+<!--Cafe name and description and other properties later-->
 
-<!--Categories-->
+
+    <!--Categories-->
 
     <StackLayout>
         <ScrollView orientation="horizontal">
@@ -17,30 +19,29 @@
 
 
 
-    <StackLayout class="page page-content">
-            <ListView [items]="myMenu" class="list-group" style="height:600px">
+        <StackLayout class="page page-content">
+            <ListView [items]="myMenu" class="list-group" style="height:70%">
                 <ng-template  let-item="item">
                     <StackLayout id="food1" (tap)="ontapMenu(item)"
                                  (swipe)="addtoOrderlist(item,$event)" orientation="horizontal">
-                        <Image  [src]="item.imgSrc" class="image" style="width: 10%"></Image>
-                        <StackLayout orientation="vertical">
-                            <Label [text]="item.name" class="list-group-item" style="width: 70%;font-weight:bold"></Label>
+                        <StackLayout orientation="vertical" style="width: 75%;">
+                            <Label [text]="item.name" class="list-group-item" style="font-size: 14pt;font-weight: bold;"></Label>
                             <Label [text]="item.description" class="list-group-item" style="font-size: 10pt"></Label>
                         </StackLayout>
-                        <Label [text]="'$'+item.price" class="list-group-item" style="width: 20%"></Label>
+                        <Label [text]="'$'+item.price" class="list-group-item" style="width: 25%;font-size: 14pt"></Label>
                     </StackLayout>
                 </ng-template>
             </ListView>
-    </StackLayout>
+        </StackLayout>
 
-    <StackLayout *ngIf="!cartEmpty">
+        <StackLayout *ngIf="!cartEmpty">
             <StackLayout orientation="horizontal" style="background-color: #d6f39b">
                 <Button text="Cancel" (tap)="onorderCancel()" style="width: 25%;background-color: #8F130C;color: white;"
                         *ngIf="!buttondisable"></Button>
                 <StackLayout style="width: 50%;font-weight: bold;font-size: 15pt">
                     <Label [text]="'$' + total$" style="width: 50%"></Label>
                 </StackLayout>
-                    <!--<Image src="~/assets/cross.jpeg" (tap)="onorderCancel()" style="width: 10%"></Image>-->
+                <!--<Image src="~/assets/cross.jpeg" (tap)="onorderCancel()" style="width: 10%"></Image>-->
                 <Button text="Confirm" (tap)="OnOrder()" style="width: 25%;background-color: #1A626F;color: white;"
                         *ngIf="!buttondisable"></Button>
 
@@ -50,15 +51,14 @@
                 <ng-template let-item="item">
                     <StackLayout id="food2"(tap)="ontapOrder(item)"
                                  (swipe)="removefromOrderlist(item,$event)" orientation="horizontal">
-                    <Label [text]="item.name"
-                           class="list-group-item"></Label>
-                    <Label [text]="'$' + item.price" class="list-group-item" style=" horiz-align: right ;"></Label>
+                        <Label [text]="item.name"
+                               class="list-group-item" style="width: 70%"></Label>
+                        <Label [text]="'$' + item.price" class="list-group-item" style="width: 20%"></Label>
                     </StackLayout>
                 </ng-template>
             </ListView>
 
+        </StackLayout>
+
     </StackLayout>
-
-
-
 </StackLayout>

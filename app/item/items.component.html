@@ -5,27 +5,28 @@
 <TabView [(ngModel)]="tabSelectedIndex" borderBottomcolor="#B52E26"
 iosIconRenderingMode="alwaysOriginal" sdkExampleTitle sdkToggleNavButton>
 
-    <StackLayout *tabItem="{title: 'Around You'}">
-        <!--Map View-->
-        <StackLayout style="height:80%">
-            <Mapbox
-                    [accessToken]="access_token"
-                    [mapStyle]="map_style"
-                    [latitude]="latitude"
-                    [longitude]="longitude"
-                    [zoomLevel]="zoomlevel"
-                    [delay]=""
-                    [showUserLocation]="true"
-                    [hideCompass]="false"
-                    [disableZoom]="false"
-                    [disableRotation]="false"
-                    [disableScroll]="false"
-                    [disableTilt]="false"
-                    (mapReady)="onMapReady($event)">
-            </Mapbox>
-        </StackLayout>
+<!--//Mapview commented for now-->
+    <!--<StackLayout *tabItem="{title: 'Around You'}">-->
+        <!--&lt;!&ndash;Map View&ndash;&gt;-->
+        <!--<StackLayout style="height:80%">-->
+            <!--<Mapbox-->
+                    <!--[accessToken]="access_token"-->
+                    <!--[mapStyle]="map_style"-->
+                    <!--[latitude]="latitude"-->
+                    <!--[longitude]="longitude"-->
+                    <!--[zoomLevel]="zoomlevel"-->
+                    <!--[delay]=""-->
+                    <!--[showUserLocation]="true"-->
+                    <!--[hideCompass]="false"-->
+                    <!--[disableZoom]="false"-->
+                    <!--[disableRotation]="false"-->
+                    <!--[disableScroll]="false"-->
+                    <!--[disableTilt]="false"-->
+                    <!--(mapReady)="onMapReady($event)">-->
+            <!--</Mapbox>-->
+        <!--</StackLayout>-->
 
-    </StackLayout>
+    <!--</StackLayout>-->
 
 
 
@@ -88,8 +89,21 @@ iosIconRenderingMode="alwaysOriginal" sdkExampleTitle sdkToggleNavButton>
 
 
         <StackLayout>
-            <Image src="http://www.pngmart.com/files/4/Cool-PNG-Image.png"
-            (tap)="jumptoMenu('cafe1')"></Image>
-            </StackLayout>
+
+            <ListView [items]="order" class="list-group">
+                <ng-template let-item="item">
+                <StackLayout orientation="horizontal">
+                    <Button text="" style="width: 5%;height:5%;border-radius: 50%;background-color: red;border: none;padding: 10px;margin: 2px 1px;" *ngIf="item.status=='ordered'"  class="list-group-item"></Button>
+                    <Button text="" style="width: 5%;height:5%;border-radius: 50%;background-color: darkgreen;padding: 10px;margin: 2px 1px;" *ngIf="item.status=='processing'"  class="list-group-item"></Button>
+                    <Label [text]="item.orderNo" class="list-group-item" style="width: 70%"></Label>
+                </StackLayout>
+
+                </ng-template>
+
+
+            </ListView>
+
+
+        </StackLayout>
     </StackLayout>
 </TabView>

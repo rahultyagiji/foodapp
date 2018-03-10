@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewContainerRef } from "@angular/core";
+import {Component, OnInit, ViewContainerRef} from "@angular/core";
 import {Item} from "../datatypes/item";
 import {Menu} from "../datatypes/menu";
 import {ItemService} from "../services/item.service";
@@ -6,7 +6,8 @@ import {MenuService} from "../services/menu.service";
 import {OrderService} from "../services/order.service";
 import {Order} from "../datatypes/order";
 import {ActivatedRoute} from "@angular/router";
-
+import * as Toast from 'nativescript-toast';
+import firebase = require("nativescript-plugin-firebase");
 
 import { Label } from 'ui/label';
 let view: Label;
@@ -19,6 +20,7 @@ import {OptionspopComponent} from "./optionspop.component";
 import {ObservableArray} from "tns-core-modules/data/observable-array";
 import {percent} from "tns-core-modules/ui/core/view";
 import {AnimationCurve} from "tns-core-modules/ui/enums";
+import {OrderpopComponent} from "../ordermodal/orderpop.component";
 
 
 @Component({
@@ -52,11 +54,10 @@ export class CafeComponent implements OnInit {
     }
 
     ngOnInit(): void {
-
-        //this is buggered..fix it
-        this.cafe = this.itemService.getSingleItem(this.route.snapshot.params["cafeid"])
-        this.order=this.orderService.getOrder();
-        if(this.order.length>0){this.cartEmpty=false}
+        // /////
+        // this.cafe = this.itemService.getSingleItem(this.route.snapshot.params["cafeid"])
+        // this.order=this.orderService.getOrder();
+        // if(this.order.length>0){this.cartEmpty=false}
 
 //menu load
         this.menuService.loadMenu(this.route.snapshot.params["cafeid"])
@@ -64,7 +65,6 @@ export class CafeComponent implements OnInit {
                 this._menu = new ObservableArray(menu);
                 this.menu=[];
                 this._menu.forEach((x)=>{
-                    console.log("Menu item is " + x.name);
                     this.menu.push(x);
                     this.categories.push(x.category);
                 })
@@ -118,14 +118,33 @@ export class CafeComponent implements OnInit {
 
     OnOrder(){
 
-        this.orderService.confirmOrder(this.order,this.route.snapshot.params["cafeid"]);
-        this.buttondisable = true
+
+        //modalcode
+        let options={
+            fullscreen:false,
+            viewContainerRef:this.vcRef,
+
+        };
+        var uid;
+        this.popup.showModal(OrderpopComponent,options).then((response)=>
+            {
+                firebase.getCurrentUser()
+                    .then((token)=> {
+                        uid = token.uid;
+                        this.orderService.confirmOrder(this.order,this.route.snapshot.params["cafeid"],response.payment,uid);
+                        this.buttondisable = true;
+                        Toast.makeText("Your order has been placed").show();
+                        this.order.length=0;
+                        this.cartEmpty=true;
+                        this.total$=0;
+                        this.scrollHeight="height: 100%"
+                    })
+
+            })
 
     }
 
     ontapOrder(order){
-        console.log(JSON.stringify(order))
-
     }
 
     removefromOrderlist(order,args:EventData){
@@ -168,5 +187,6 @@ export class CafeComponent implements OnInit {
         this.total$=0;
         this.scrollHeight="height: 100%"
     }
+
 
 }

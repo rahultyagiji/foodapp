@@ -1,9 +1,14 @@
 import { Injectable } from "@angular/core";
 import firebase = require("nativescript-plugin-firebase");
+import {Router} from "@angular/router";
 
 
 @Injectable()
 export class AuthService {
+
+    constructor(private route:Router){
+
+    }
 
 
     register(a,b) {
@@ -11,6 +16,7 @@ export class AuthService {
             email: a,
             password: b
         }).then((res) => {
+            this.route.navigate([""])
         })
 
     }
@@ -22,7 +28,7 @@ export class AuthService {
                 email: a,
                 password: b
             }       }
-        ).then((res)=>{console.log(res.uid)})
+        ).then((res)=>{this.route.navigate([""])})
     }
 
     signout(){
@@ -30,5 +36,8 @@ export class AuthService {
         firebase.logout();
     }
 
+    authUid(){
+        return firebase.getCurrentUser();
+    }
 
 }
