@@ -21,7 +21,7 @@
     <Label text="Where are you seated???" style="width:80%"></Label>
 
     <TextField hint="Table #"
-               (returnPress)="onReturnPress($event)"
+               (textChange)="ontextChange($event)"
                [text]="location"
                style="width:80%"></TextField>
 

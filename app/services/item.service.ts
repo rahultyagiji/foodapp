@@ -37,7 +37,24 @@ export class ItemService {
 
             for (const cafeId in data) {
                 if (data.hasOwnProperty(cafeId)) {
+
+                    // firebase.getDownloadUrl({
+                    //     // optional, can also be passed during init() as 'storageBucket' param so we can cache it
+                    //     bucket: 'gs://dekyou-cafe.appspot.com',
+                    //     // the full path of an existing file in your Firebase storage
+                    //     remoteFullPath: 'cafe1/profile.png'
+                    // }).then(
+                    //     function (url) {
+                    //         data[cafeId].imgSrc=url;
+                    //         console.log(JSON.stringify(data[cafeId]))
+                    //     },
+                    //     function (error) {
+                    //         console.log("Error::" + error);
+                    //     }
+                    // );
+
                     this.items.push(new Item(data[cafeId]));
+
                 }
             }
         }

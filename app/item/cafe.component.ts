@@ -76,9 +76,9 @@ export class CafeComponent implements OnInit {
 
     }
 
-    ontapMenu(data){
+    ontapMenu(data:Menu){
 
-    //modalcode
+        //modalcode
         let options={
             context:data,
             fullscreen:true,
@@ -87,15 +87,27 @@ export class CafeComponent implements OnInit {
         };
 
         this.popup.showModal(OptionspopComponent,options).then((response)=>{
-            console.log("Options Modal " + response);
+            if(response.response=='true') {
+                //just trailing ordering via popup
+                this.orderService.Order(data, this.route.snapshot.params["cafeid"],response.specialInstruction);
+                this.order = this.orderService.getOrder();
+                if (this.order.length > 0) {
+                    this.cartEmpty = false;
+                    this.scrollHeight = "height: 60%"
+                }
+
+                this.total$ = 0;
+                this.order.forEach((x) => {
+                    //for total
+                    this.total$ = this.total$ + x.price
+                })
+            }
         })
-
-
     }
 
     addtoOrderlist(data,args:EventData){
         let page = <StackLayout>args.object;
-        this.orderService.Order(data,this.route.snapshot.params["cafeid"]);
+        this.orderService.Order(data,this.route.snapshot.params["cafeid"],"");
         this.order = this.orderService.getOrder();
 
         let view = <StackLayout>page.getViewById("food1");
@@ -131,14 +143,16 @@ export class CafeComponent implements OnInit {
                 firebase.getCurrentUser()
                     .then((token)=> {
                         uid = token.uid;
-                        this.orderService.confirmOrder(this.order,this.route.snapshot.params["cafeid"],response.payment,uid);
-                        this.buttondisable = true;
+                        this.orderService.confirmOrder(this.order,this.route.snapshot.params["cafeid"],response.payment,uid,response.location);
+
                         Toast.makeText("Your order has been placed").show();
                         this.order.length=0;
                         this.cartEmpty=true;
                         this.total$=0;
                         this.scrollHeight="height: 100%"
-                    })
+                    }).catch(()=>{
+                    Toast.makeText("Please login to confirm order").show();
+                })
 
             })
 

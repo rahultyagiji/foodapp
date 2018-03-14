@@ -67,15 +67,13 @@ export class OrderpopComponent implements OnInit {
     }
 
 
-    onReturnPress(args) {
+    ontextChange(args) {
         let textField = <TextField>args.object;
         this.location=textField.text;
     }
 
 
     close(){
-
-
         this.params.closeCallback({"payment":this.picked,"location":this.location});
     }
 

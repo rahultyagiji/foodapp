@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
     ngOnInit() {
 
         firebase.init({
+            // storageBucket: 'gs://dekyou-cafe.appspot.com',
             persist: false
         }).then();
 

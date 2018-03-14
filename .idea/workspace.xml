@@ -2,23 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f185d1ec-f8fa-4414-a208-2dc6e32a2b10" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/ordermodal/orderpop.component.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/ordermodal/orderpop.component.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/ordermodal/orderpop.component.ts" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/app.component.js" afterPath="$PROJECT_DIR$/app/app.component.js" />
+      <change beforePath="$PROJECT_DIR$/app/app.component.ts" afterPath="$PROJECT_DIR$/app/app.component.ts" />
       <change beforePath="$PROJECT_DIR$/app/app.module.js" afterPath="$PROJECT_DIR$/app/app.module.js" />
       <change beforePath="$PROJECT_DIR$/app/app.module.ts" afterPath="$PROJECT_DIR$/app/app.module.ts" />
-      <change beforePath="$PROJECT_DIR$/app/app.routing.js" afterPath="$PROJECT_DIR$/app/app.routing.js" />
-      <change beforePath="$PROJECT_DIR$/app/app.routing.ts" afterPath="$PROJECT_DIR$/app/app.routing.ts" />
+      <change beforePath="$PROJECT_DIR$/app/auth/register/register.component.html" afterPath="$PROJECT_DIR$/app/auth/register/register.component.html" />
+      <change beforePath="$PROJECT_DIR$/app/auth/signin/signin.component.html" afterPath="$PROJECT_DIR$/app/auth/signin/signin.component.html" />
+      <change beforePath="$PROJECT_DIR$/app/datatypes/menu.js" afterPath="$PROJECT_DIR$/app/datatypes/menu.js" />
+      <change beforePath="$PROJECT_DIR$/app/datatypes/menu.ts" afterPath="$PROJECT_DIR$/app/datatypes/menu.ts" />
+      <change beforePath="$PROJECT_DIR$/app/datatypes/order.ts" afterPath="$PROJECT_DIR$/app/datatypes/order.ts" />
       <change beforePath="$PROJECT_DIR$/app/item/cafe.component.css" afterPath="$PROJECT_DIR$/app/item/cafe.component.css" />
       <change beforePath="$PROJECT_DIR$/app/item/cafe.component.html" afterPath="$PROJECT_DIR$/app/item/cafe.component.html" />
       <change beforePath="$PROJECT_DIR$/app/item/cafe.component.ts" afterPath="$PROJECT_DIR$/app/item/cafe.component.ts" />
-      <change beforePath="$PROJECT_DIR$/app/item/items.component.html" afterPath="$PROJECT_DIR$/app/item/items.component.html" />
-      <change beforePath="$PROJECT_DIR$/app/item/items.component.js" afterPath="$PROJECT_DIR$/app/item/items.component.js" />
-      <change beforePath="$PROJECT_DIR$/app/item/items.component.ts" afterPath="$PROJECT_DIR$/app/item/items.component.ts" />
       <change beforePath="$PROJECT_DIR$/app/item/optionspop.component.html" afterPath="$PROJECT_DIR$/app/item/optionspop.component.html" />
       <change beforePath="$PROJECT_DIR$/app/item/optionspop.component.ts" afterPath="$PROJECT_DIR$/app/item/optionspop.component.ts" />
-      <change beforePath="$PROJECT_DIR$/app/services/auth.service.ts" afterPath="$PROJECT_DIR$/app/services/auth.service.ts" />
+      <change beforePath="$PROJECT_DIR$/app/ordermodal/orderpop.component.html" afterPath="$PROJECT_DIR$/app/ordermodal/orderpop.component.html" />
+      <change beforePath="$PROJECT_DIR$/app/ordermodal/orderpop.component.ts" afterPath="$PROJECT_DIR$/app/ordermodal/orderpop.component.ts" />
+      <change beforePath="$PROJECT_DIR$/app/services/item.service.js" afterPath="$PROJECT_DIR$/app/services/item.service.js" />
+      <change beforePath="$PROJECT_DIR$/app/services/item.service.ts" afterPath="$PROJECT_DIR$/app/services/item.service.ts" />
       <change beforePath="$PROJECT_DIR$/app/services/order.service.ts" afterPath="$PROJECT_DIR$/app/services/order.service.ts" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
       <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
@@ -30,40 +32,21 @@
       <change beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/fileSnapshots.bin" />
       <change beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/taskHistory.bin" />
       <change beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/taskHistory.lock" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/.gradle/buildOutputCleanup/cache.properties" afterPath="$PROJECT_DIR$/platforms/android/.gradle/buildOutputCleanup/cache.properties" />
       <change beforePath="$PROJECT_DIR$/platforms/android/.nsprepareinfo" afterPath="$PROJECT_DIR$/platforms/android/.nsprepareinfo" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/build.gradle" afterPath="$PROJECT_DIR$/platforms/android/app/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/0/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/0/classes.jar" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/1/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/1/classes.jar" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/2/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/2/classes.jar" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/3/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/3/classes.jar" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/4/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/4/classes.jar" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/5/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/app/build/exploded-dependencies/5/classes.jar" />
       <change beforePath="$PROJECT_DIR$/platforms/android/app/build/outputs/apk/.nsbuildinfo" afterPath="$PROJECT_DIR$/platforms/android/app/build/outputs/apk/.nsbuildinfo" />
       <change beforePath="$PROJECT_DIR$/platforms/android/app/build/outputs/apk/DQCafe-debug.apk" afterPath="$PROJECT_DIR$/platforms/android/app/build/outputs/apk/DQCafe-debug.apk" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/libs/runtime-libs/nativescript-optimized.aar" afterPath="$PROJECT_DIR$/platforms/android/app/libs/runtime-libs/nativescript-optimized.aar" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/libs/runtime-libs/nativescript-regular.aar" afterPath="$PROJECT_DIR$/platforms/android/app/libs/runtime-libs/nativescript-regular.aar" />
       <change beforePath="$PROJECT_DIR$/platforms/android/app/metadata/output/assets/metadata/treeNodeStream.dat" afterPath="$PROJECT_DIR$/platforms/android/app/metadata/output/assets/metadata/treeNodeStream.dat" />
       <change beforePath="$PROJECT_DIR$/platforms/android/app/metadata/output/assets/metadata/treeStringsStream.dat" afterPath="$PROJECT_DIR$/platforms/android/app/metadata/output/assets/metadata/treeStringsStream.dat" />
       <change beforePath="$PROJECT_DIR$/platforms/android/app/metadata/output/assets/metadata/treeValueStream.dat" afterPath="$PROJECT_DIR$/platforms/android/app/metadata/output/assets/metadata/treeValueStream.dat" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.component.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.component.js" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.component.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.component.ts" />
       <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.module.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.module.js" />
       <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.module.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.module.ts" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.routing.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.routing.js" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.routing.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/app.routing.ts" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/items.component.html" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/items.component.html" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/items.component.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/items.component.js" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/items.component.ts" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/app/item/items.component.ts" />
       <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/metadata/treeNodeStream.dat" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/metadata/treeNodeStream.dat" />
       <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/metadata/treeStringsStream.dat" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/metadata/treeStringsStream.dat" />
       <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/metadata/treeValueStream.dat" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/metadata/treeValueStream.dat" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/java/com/tns/gen/android/animation/Animator_AnimatorListener.java" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/java/com/tns/gen/android/animation/Animator_AnimatorListener.java" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/java/com/tns/gen/java/lang/Object_frnal_ts_helpers_l58_c38__AnimationListnerImpl.java" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/java/com/tns/gen/java/lang/Object_frnal_ts_helpers_l58_c38__AnimationListnerImpl.java" />
       <change beforePath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/bindings.txt" afterPath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/bindings.txt" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/cached.txt" afterPath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/cached.txt" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/interfaces-names.txt" afterPath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/interfaces-names.txt" />
       <change beforePath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/jsFilesParameters.txt" afterPath="$PROJECT_DIR$/platforms/android/build-tools/android-static-binding-generator/jsFilesParameters.txt" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/build-tools/metadata-generator.jar" afterPath="$PROJECT_DIR$/platforms/android/build-tools/metadata-generator.jar" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/platforms/android/build/intermediates/dex-cache/cache.xml" />
       <change beforePath="$PROJECT_DIR$/platforms/android/build/intermediates/prepared-platforms.json" afterPath="$PROJECT_DIR$/platforms/android/build/intermediates/prepared-platforms.json" />
       <change beforePath="$PROJECT_DIR$/platforms/android/dependencies.json" afterPath="$PROJECT_DIR$/platforms/android/dependencies.json" />
     </list>
@@ -85,36 +68,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="cafe.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/item/cafe.component.html">
+      <file leaf-file-name="optionspop.component.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/item/optionspop.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="30" column="76" lean-forward="false" selection-start-line="30" selection-start-column="76" selection-end-line="30" selection-end-column="76" />
-              <folding>
-                <element signature="n#style#0;n#Label#0;n#StackLayout#0;n#ng-template#0;n#ListView#0;n#StackLayout#0;n#StackLayout#0;n#StackLayout#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cafe.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/item/cafe.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="132" column="40" lean-forward="false" selection-start-line="132" selection-start-column="40" selection-end-line="132" selection-end-column="40" />
+            <state relative-caret-position="162">
+              <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="order.service.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/services/order.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -143,6 +102,8 @@
       <find>console</find>
       <find>menu item</find>
       <find>payment</find>
+      <find>list-group-item</find>
+      <find>list-group</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -151,14 +112,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/item/menu.ts" />
-        <option value="$PROJECT_DIR$/app/item/menu.service.ts" />
-        <option value="$PROJECT_DIR$/node_modules/nativescript-plugin-firebase/firebase.android.js" />
         <option value="$PROJECT_DIR$/node_modules/nativescript-plugin-firebase/firebase.ios.js" />
         <option value="$PROJECT_DIR$/app/App_Resources/iOS/GoogleService-Info.plist" />
         <option value="$PROJECT_DIR$/app/item/item.service.ts" />
         <option value="$PROJECT_DIR$/app/app.css" />
-        <option value="$PROJECT_DIR$/firebase.nativescript.json" />
         <option value="$PROJECT_DIR$/platforms/android/build.gradle" />
         <option value="$PROJECT_DIR$/app/app.component.html" />
         <option value="$PROJECT_DIR$/app/App_Resources/Android/app.gradle" />
@@ -172,36 +129,40 @@
         <option value="$PROJECT_DIR$/app/cafe.component.ts" />
         <option value="$PROJECT_DIR$/app/cafe.component.html" />
         <option value="$PROJECT_DIR$/app/item/optionspop.component.css" />
-        <option value="$PROJECT_DIR$/app/app.component.ts" />
-        <option value="$PROJECT_DIR$/app/services/menu.service.ts" />
-        <option value="$PROJECT_DIR$/app/datatypes/order.ts" />
         <option value="$PROJECT_DIR$/app/datatypes/item.ts" />
         <option value="$PROJECT_DIR$/app/pipe.filter.ts" />
-        <option value="$PROJECT_DIR$/app/datatypes/menu.ts" />
         <option value="$PROJECT_DIR$/app/item/items.component.css" />
         <option value="$PROJECT_DIR$/app/auth/auth.component.ts" />
-        <option value="$PROJECT_DIR$/app/services/item.service.ts" />
         <option value="$PROJECT_DIR$/app/auth/register.component.html" />
         <option value="$PROJECT_DIR$/app/auth/register.component.ts" />
         <option value="$PROJECT_DIR$/app/auth/signin/register.component.ts" />
         <option value="$PROJECT_DIR$/app/auth/signin/signin.component.ts" />
-        <option value="$PROJECT_DIR$/app/auth/signin/signin.component.html" />
         <option value="$PROJECT_DIR$/app/auth/signout/signin.component.html" />
         <option value="$PROJECT_DIR$/app/auth/signout/signout.component.ts" />
         <option value="$PROJECT_DIR$/app/auth/signout/signout.component.html" />
-        <option value="$PROJECT_DIR$/app/item/optionspop.component.ts" />
         <option value="$PROJECT_DIR$/app/app.routing.ts" />
-        <option value="$PROJECT_DIR$/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/app/ordermodal/orderpop.component.ts" />
         <option value="$PROJECT_DIR$/app/item/items.component.html" />
         <option value="$PROJECT_DIR$/app/item/items.component.ts" />
-        <option value="$PROJECT_DIR$/app/item/cafe.component.css" />
-        <option value="$PROJECT_DIR$/app/item/optionspop.component.html" />
-        <option value="$PROJECT_DIR$/app/item/cafe.component.html" />
         <option value="$PROJECT_DIR$/app/services/auth.service.ts" />
-        <option value="$PROJECT_DIR$/app/ordermodal/orderpop.component.html" />
+        <option value="$PROJECT_DIR$/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/app/datatypes/menu.ts" />
+        <option value="$PROJECT_DIR$/app/services/menu.service.ts" />
+        <option value="$PROJECT_DIR$/app/App_Resources/Android/values/colors.xml" />
+        <option value="$PROJECT_DIR$/firebase.nativescript.json" />
+        <option value="$PROJECT_DIR$/node_modules/nativescript-plugin-firebase/platforms/android/include.gradle" />
+        <option value="$PROJECT_DIR$/app/services/item.service.ts" />
+        <option value="$PROJECT_DIR$/app/item/cafe.component.css" />
+        <option value="$PROJECT_DIR$/app/item/cafe.component.html" />
+        <option value="$PROJECT_DIR$/app/datatypes/order.ts" />
+        <option value="$PROJECT_DIR$/app/auth/register/register.component.html" />
+        <option value="$PROJECT_DIR$/app/auth/signin/signin.component.html" />
+        <option value="$PROJECT_DIR$/app/app.component.ts" />
+        <option value="$PROJECT_DIR$/app/item/optionspop.component.html" />
         <option value="$PROJECT_DIR$/app/item/cafe.component.ts" />
         <option value="$PROJECT_DIR$/app/services/order.service.ts" />
+        <option value="$PROJECT_DIR$/app/ordermodal/orderpop.component.html" />
+        <option value="$PROJECT_DIR$/app/ordermodal/orderpop.component.ts" />
+        <option value="$PROJECT_DIR$/app/item/optionspop.component.ts" />
       </list>
     </option>
   </component>
@@ -250,6 +211,26 @@
               <item name="DQCafe" type="b2602c69:ProjectViewProjectNode" />
               <item name="DQCafe" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DQCafe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DQCafe" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="register" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DQCafe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DQCafe" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="signin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DQCafe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DQCafe" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="item" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -257,6 +238,12 @@
               <item name="DQCafe" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="ordermodal" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DQCafe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DQCafe" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -416,7 +403,15 @@
       <workItem from="1520502230828" duration="2165000" />
       <workItem from="1520505339027" duration="4748000" />
       <workItem from="1520510913395" duration="146000" />
-      <workItem from="1520594365613" duration="13921000" />
+      <workItem from="1520594365613" duration="19140000" />
+      <workItem from="1520683969825" duration="1050000" />
+      <workItem from="1520762617919" duration="8452000" />
+      <workItem from="1520822555334" duration="6832000" />
+      <workItem from="1520851609624" duration="3783000" />
+      <workItem from="1520878441416" duration="1574000" />
+      <workItem from="1520941567464" duration="5171000" />
+      <workItem from="1521027844975" duration="859000" />
+      <workItem from="1521031983866" duration="9000" />
     </task>
     <task id="LOCAL-00001" summary="First version">
       <created>1517106110300</created>
@@ -467,11 +462,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520419665307</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="TabView update">
+      <created>1520677069318</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1520677069318</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="296948000" />
+    <option name="totallyTimeSpent" value="329897000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -484,25 +486,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1303" height="780" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.4968701" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24021909" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24021909" sideWeight="0.491453" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19595645" sideWeight="0.51251954" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281493" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281493" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960877" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27216175" sideWeight="0.48748043" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2690513" sideWeight="0.48748043" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24021909" sideWeight="0.508547" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -511,20 +514,20 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29237947" sideWeight="0.5062598" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19595645" sideWeight="0.51251954" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281493" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19595645" sideWeight="0.49374023" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23865415" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281493" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27131784" sideWeight="0.48748043" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.4968701" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24021909" sideWeight="0.491453" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960877" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24021909" sideWeight="0.508547" order="2" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -564,27 +567,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/nativescript-theme-core/scss/_action-bar.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/nativescript-theme-core/scss/_list-view.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/nativescript-theme-core/css/brown.ios.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="6910" lean-forward="false" selection-start-line="5" selection-start-column="6907" selection-end-line="5" selection-end-column="6910" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/nativescript-plugin-firebase/app/database/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -652,13 +634,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/datatypes/item.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/pipe.filter.ts" />
     <entry file="file://$PROJECT_DIR$/app/app.module.ngfactory.d.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -674,27 +649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/datatypes/menu.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/datatypes/order.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="19" lean-forward="true" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/nativescript-theme-core/css/core.dark.android.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1620">
@@ -702,17 +656,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="35" lean-forward="false" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/item/items.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="22" column="19" lean-forward="false" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/auth/register/register.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/auth/signout/signout.component.ts" />
+    <entry file="file://$PROJECT_DIR$/app/auth/signout/signout.component.html" />
+    <entry file="file://$PROJECT_DIR$/app/main.aot.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/item/items.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/auth/signin/signin.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="28" column="67" lean-forward="true" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.routing.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/services/auth.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/services/order.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="79" column="12" lean-forward="true" selection-start-line="79" selection-start-column="12" selection-end-line="79" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -724,179 +722,173 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/auth/register/register.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/auth/register/register.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/auth/signin/signin.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/auth/signout/signout.component.ts" />
-    <entry file="file://$PROJECT_DIR$/app/auth/signout/signout.component.html" />
-    <entry file="file://$PROJECT_DIR$/app/services/item.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="54" column="7" lean-forward="true" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
+        <state relative-caret-position="54">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/main.aot.ts">
+    <entry file="file://$PROJECT_DIR$/app/datatypes/menu.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="270">
+          <caret line="15" column="45" lean-forward="false" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/item/optionspop.component.ts">
+    <entry file="file://$PROJECT_DIR$/app/services/menu.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="78" column="5" lean-forward="true" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+        <state relative-caret-position="234">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/ordermodal/orderpop.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1352">
-          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/item/items.component.html">
+    <entry file="file://$PROJECT_DIR$/app/App_Resources/Android/values/colors.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/item/cafe.component.css">
+    <entry file="file://$PROJECT_DIR$/app/datatypes/item.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/item/optionspop.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/item/cafe.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="30" column="76" lean-forward="false" selection-start-line="30" selection-start-column="76" selection-end-line="30" selection-end-column="76" />
-          <folding>
-            <element signature="n#style#0;n#Label#0;n#StackLayout#0;n#ng-template#0;n#ListView#0;n#StackLayout#0;n#StackLayout#0;n#StackLayout#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/auth/signin/signin.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="28" column="67" lean-forward="true" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.routing.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/services/auth.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="144">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/firebase.nativescript.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
-          <caret line="13" column="1" lean-forward="false" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-          <folding />
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/services/order.service.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/nativescript-plugin-firebase/platforms/android/include.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="79" column="12" lean-forward="true" selection-start-line="79" selection-start-column="12" selection-end-line="79" selection-end-column="12" />
-          <folding />
+        <state relative-caret-position="306">
+          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/ordermodal/orderpop.component.html">
+    <entry file="file://$PROJECT_DIR$/app/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#ActionBar#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#Button#0;n#android#0;n#StackLayout#0;n#!!top" expanded="false" />
-          </folding>
+        <state relative-caret-position="202">
+          <caret line="14" column="19" lean-forward="true" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/services/menu.service.ts">
+    <entry file="file://$PROJECT_DIR$/app/services/item.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="33" column="48" lean-forward="true" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
-          <folding />
+        <state relative-caret-position="376">
+          <caret line="50" column="38" lean-forward="false" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/nativescript-theme-core/css/core.light.android.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="5" column="9705" lean-forward="false" selection-start-line="5" selection-start-column="9695" selection-end-line="5" selection-end-column="9705" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/datatypes/order.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/auth/register/register.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/auth/signin/signin.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="59" lean-forward="false" selection-start-line="9" selection-start-column="59" selection-end-line="9" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/item/cafe.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="28" column="11" lean-forward="false" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/item/items.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
+        <state relative-caret-position="-846">
           <caret line="71" column="60" lean-forward="false" selection-start-line="71" selection-start-column="60" selection-end-line="71" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/item/optionspop.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding>
-            <element signature="e#320#374#0" expanded="false" />
+            <element signature="n#style#0;n#Label#0;n#StackLayout#2;n#StackLayout#1;n#StackLayout#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/ordermodal/orderpop.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/item/cafe.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="27" column="82" lean-forward="false" selection-start-line="27" selection-start-column="82" selection-end-line="27" selection-end-column="82" />
+          <folding>
+            <element signature="n#style#0;n#ListView#0;n#StackLayout#0;n#StackLayout#0;n#StackLayout#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/ordermodal/orderpop.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/item/cafe.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="132" column="40" lean-forward="false" selection-start-line="132" selection-start-column="40" selection-end-line="132" selection-end-column="40" />
+        <state relative-caret-position="130">
+          <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/services/order.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="18">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/item/optionspop.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

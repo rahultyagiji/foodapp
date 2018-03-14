@@ -24,3 +24,7 @@
     vertical-align: middle;
     border-radius: 10%;
 }
+
+.list-group-item-copy{
+color:#212121;font-size:14;margin:0;padding:10
+}

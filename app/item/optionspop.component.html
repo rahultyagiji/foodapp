@@ -9,32 +9,46 @@
         </ListView>
     </StackLayout>
 
+    <Label text={{selectedMenuItem.description}} style="font-size: 20pt;font-weight: bold"></Label>
 
-    <Label text={{selectedMenuItem.name}} style="width:80%"></Label>
-    <!--<Label text={{selectedMenuItem.category}} class="list-group-item"></Label>-->
+    <StackLayout>
 
-    <StackLayout style="width: 80%" orientation="horizontal">
-        <Label text="Size"></Label>
-        <ListPicker [items]="options" selectedIndex="0"
-                    (selectedIndexChange)="selectedIndexChanged($event)" class="p-15"></ListPicker>
+        <StackLayout style="width: 90%" *ngIf="choices">
+
+                <StackLayout orientation="horizontal">
+
+                    <Stacklayout style="vertical-align: center;margin: 20%">
+                       <Label [text]="picked" style="font-weight: bold; font-size: 20pt"></Label>
+                        <Label [text]="'+'+'$'+pickedPrice" style="font-weight: bold; font-size: 20pt"></Label>
+                    </Stacklayout>
+
+                    <ListPicker [items]="options" selectedIndex="0"
+                                (selectedIndexChange)="selectedIndexChanged($event)"
+                    style="width: 40%;font-size: 16pt"></ListPicker>
+
+                </StackLayout>
+        </StackLayout>
+        <StackLayout style="width: 20%"></StackLayout>
+
+        <StackLayout style="width: 90%" *ngIf="extras">
+            <Label text="Extras" style="font-weight: bold"></Label>
+            <CheckBox #CB1 text="Penne" checked="true"></CheckBox>
+            <CheckBox #CB1 text="Spaghetti" checked="true"></CheckBox>
+            <Button (tap)="toggleCheck()" text="Toggle"></Button>
+            <Button (tap)="getCheckProp()" text="Check"></Button>
+        </StackLayout>
+
     </StackLayout>
 
+    <TextField hint="any special instructions..." (textChange)="onTextChange($event)"></TextField>
 
-    <!--
-    <StackLayout orientation="horizontal">
-            <Label class="h3" text="1" textWrap="true"></Label>
-            <Slider minValue="1" maxValue="5" [(ngModel)]="sliderValue1" style="width: 50%"></Slider>
-            <Label class="h3" [text]="sliderValue1" textWrap="true"></Label>
-    </StackLayout>
-    <StackLayout style="width: 80%" orientation="horizontal">
-        <Label text="Size"></Label>
-        <ListPicker [items]="options" selectedIndex="0"
-                (selectedIndexChange)="selectedIndexChanged($event)" class="p-15"></ListPicker>
-    </StackLayout> -->
     <android>
-        <Button text="android Button" (tap)="close()"></Button>
+        <Button text=" Add Order" (tap)="close('true')"></Button>
     </android>
     <ios>
         <Button text="Close" (tap)="close()"></Button>
     </ios>
+
+
+
 </StackLayout>

@@ -3,4 +3,5 @@ export interface Order {
     name: string;
     price: number;
     quantity:number;
+    specialInstruction:string;
 }

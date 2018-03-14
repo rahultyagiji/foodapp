@@ -4,7 +4,8 @@ import { Order } from "../datatypes/order";
 import {Menu} from "../datatypes/menu";
 import * as dialogs from "ui/dialogs";
 import {Observable} from "rxjs/Observable";
-
+import {layout} from "tns-core-modules/utils/utils";
+import * as moment from 'moment';
 //Stripe trial
 // import stripePackage from 'stripe';
 
@@ -14,6 +15,7 @@ export class OrderService {
 
     order:Order[]=[];
     orderList:{"orderNo":string,"status":string}[]=[];
+    vorderNo:number=0;
 
 
 getOrder(){
@@ -22,14 +24,14 @@ getOrder(){
 
 }
 
-Order(menu:Menu,cafeId){
+Order(menu:Menu,cafeId,specialInstruction){
 
     if(this.order.length==0){
-    this.order.push({'cafeId':cafeId,'name':menu.name,'price':menu.price,'quantity':1});
+    this.order.push({'cafeId':cafeId,'name':menu.name,'price':menu.price,'quantity':1,'specialInstruction':specialInstruction});
     }
     else {
         if(this.order[0].cafeId==cafeId){
-            this.order.push({'cafeId':cafeId,'name':menu.name,'price':menu.price,'quantity':1});
+            this.order.push({'cafeId':cafeId,'name':menu.name,'price':menu.price,'quantity':1,'specialInstruction':specialInstruction});
         }
         else{
             dialogs.alert("Can only order from one cafe at a time, please clear your cart first").then(()=> {
@@ -46,39 +48,33 @@ removeOrder(order:Order){
 
 }
 
-confirmOrder(order:Order[],cafe,payway,uid){
+confirmOrder(order:Order[],cafe,payway,uid,location){
 
     //I am trying to control if cafeId is same.. not working yet
     // var status:boolean=true;
     if (payway == "Cash") {
-        console.log(cafe,payway,JSON.stringify(order),uid,"2..");
                     firebase.push('/order-cafe/' + cafe,
-                        {order, "status": "ordered", "uid": uid})
+                        {order, "status": "ordered", "uid": uid,"location":location} )
                         .then((res) => {
-                    console.log(cafe,payway,JSON.stringify(order),uid,"3..");
                     firebase.push('/order-user/' + uid, {
-                                order,
                                 "status": "ordered",
                                 "cafe": cafe,
                                 "orderNo": res.key
                             })
-                                .then()
-                        })
+                                .then(()=>{this.orderNo(cafe,res.key)})
+                        }).catch((err)=>{console.log(err)})
 
                 }
                 else {
-        console.log(cafe,payway,JSON.stringify(order),uid,"2..");
-                    firebase.push('/order-cafe/' + cafe, {order, "status": "ordered", "uid": uid})
+                    firebase.push('/order-cafe/' + cafe, {order, "status": "ordered", "uid": uid,"location":location})
                         .then((res) => {
-                            console.log(cafe,payway,JSON.stringify(order),uid,"3..");
-                            firebase.push('/order-user/' + uid, {
-                                order,
+                        firebase.push('/order-user/' + uid, {
                                 "status": "processing",
                                 "cafe": cafe,
                                 "orderNo": res.key
                             })
-                                .then()
-                        })
+                                .then(()=>{this.orderNo(cafe,res.key)})
+                        }).catch((err)=>{console.log(err)})
                 }
             }
 
@@ -104,6 +100,32 @@ fetchOrder(uid){
 
 
     return this.orderList;
+
+}
+
+orderNo(cafe,key) {
+
+// fix this later
+    // var onQueryEvent = function (result) {
+    // }
+    // firebase.query(
+    //     onQueryEvent,
+    //     'orderCounter/' + cafe,
+    //     {
+    //         singleEvent: true,
+    //         orderBy: {
+    //             type: firebase.QueryOrderByType.KEY
+    //         }
+    //     }
+    // ).then(
+    //     (res) => {
+    //         console.log(JSON.stringify(res.value))
+    //     })
+    //     .catch();
+    // const path="orderCounter/"+key;
+// //create entry in synthetic order number table
+//     firebase.push([path],{})
+
 
 }
 
