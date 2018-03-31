@@ -6,6 +6,7 @@ import { AppComponent } from "./app.component";
 import { ItemService } from "./services/item.service";
 import { ItemsComponent } from "./item/items.component";
 import {MenuService} from "./services/menu.service";
+import { SharedModule } from './modules/shared/shared.module';
 
 
 import { registerElement } from "nativescript-angular/element-registry";
@@ -13,7 +14,8 @@ import {OrderService} from "./services/order.service";
 import {CafeComponent} from "./item/cafe.component";
 import {OptionspopComponent} from "./item/optionspop.component";
 import {ModalDialogService} from "nativescript-angular/modal-dialog";
-import { NativeScriptUISideDrawerModule } from "nativescript-pro-ui/sidedrawer/angular";
+//import { NativeScriptUISideDrawerModule } from "nativescript-pro-ui/sidedrawer/angular";
+//import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/sidedrawer/angular";
 import {RegisterComponent} from "./auth/register/register.component";
 import {AuthService} from "./services/auth.service";
 import {NativeScriptUIDataFormModule} from "nativescript-pro-ui/dataform/angular";
@@ -40,10 +42,11 @@ import {TNSCheckBoxModule} from "nativescript-checkbox/angular";
     imports: [
         NativeScriptModule,
         AppRoutingModule,
-        NativeScriptUISideDrawerModule,
+        //NativeScriptUISideDrawerModule,
         NativeScriptUIDataFormModule,
         NativeScriptFormsModule,
-        TNSCheckBoxModule
+        TNSCheckBoxModule,
+        SharedModule
     ],
     declarations: [
         AppComponent,

@@ -8,11 +8,12 @@ import {ObservableArray} from "data/observable-array";
 import { SearchBar } from "ui/search-bar";
 import {isAndroid} from "platform"
 
-import { RadSideDrawerComponent, SideDrawerType } from "nativescript-pro-ui/sidedrawer/angular";
-import {DrawerStateChangedEventArgs, RadSideDrawer} from 'nativescript-pro-ui/sidedrawer';
+//import { RadSideDrawerComponent, SideDrawerType } from "nativescript-pro-ui/sidedrawer/angular";
+//import {DrawerStateChangedEventArgs, RadSideDrawer} from 'nativescript-pro-ui/sidedrawer';
 import {AuthService} from "../services/auth.service";
 import {Order} from "../datatypes/order";
 import {OrderService} from "../services/order.service";
+import { SideDrawerPageComponent } from '../modules/shared/side-drawer-page';
 
 
 @Component({
@@ -43,16 +44,16 @@ export class ItemsComponent implements OnInit{
     // ///
 
     constructor(private itemService: ItemService,
-                private router:Router,
+                //private router:Router,
                 private routerextensions:RouterExtensions,
-                private _changeDetectionRef: ChangeDetectorRef,
+                //private _changeDetectionRef: ChangeDetectorRef,
                 private auth:AuthService,
                 private orderservice:OrderService) {
         this.tabSelectedIndex = 0;
     }
 
-    @ViewChild(RadSideDrawerComponent) public drawerComponent: RadSideDrawerComponent;
-    private drawer: RadSideDrawer;
+    //@ViewChild(RadSideDrawerComponent) public drawerComponent: RadSideDrawerComponent;
+    //private drawer: RadSideDrawer;
 
     ngOnInit(): void {
 
@@ -67,7 +68,7 @@ export class ItemsComponent implements OnInit{
             });
 
 
-    //Load orders
+        //Load orders
         this.auth.authUid().then((res)=>{
             this.order = this.orderservice.fetchOrder(res.uid);
         })
@@ -117,17 +118,17 @@ export class ItemsComponent implements OnInit{
 //             }
 
 //Navitage to next screen
-            jumptoMenu(cafeId) {
-               setTimeout(() =>{this.routerextensions.navigate(["/cafe", cafeId],
-                    {
-                        animated: true,
-                        transition: {
-                            name: "slide",
-                            duration: 200,
-                            curve: "ease"
-                        }
-                    }),100});
-            }
+    jumptoMenu(cafeId) {
+        setTimeout(() =>{this.routerextensions.navigate(["/cafe", cafeId],
+            {
+                animated: true,
+                transition: {
+                    name: "slide",
+                    duration: 200,
+                    curve: "ease"
+                }
+            }),100});
+    }
 //
 // //TabView controls
     changeTab() {
@@ -168,28 +169,28 @@ export class ItemsComponent implements OnInit{
 
 
     ngAfterViewInit() {
-        this.drawer = this.drawerComponent.sideDrawer;
-        this._changeDetectionRef.detectChanges();
+        //this.drawer = this.drawerComponent.sideDrawer;
+        //this._changeDetectionRef.detectChanges();
     }
 
 
-    openDrawer() {
-        this.drawer.showDrawer();
-    }
+    /*    openDrawer() {
+     this.drawer.showDrawer();
+     }
 
-onDrawerOpened(args: DrawerStateChangedEventArgs) {
-        this._currentNotification = "Drawer opened";
-    }
+     onDrawerOpened(args: DrawerStateChangedEventArgs) {
+     this._currentNotification = "Drawer opened";
+     }
 
 
-    onCloseDrawerTap() {
-        this.drawer.closeDrawer();
-    }
+     onCloseDrawerTap() {
+     this.drawer.closeDrawer();
+     }*/
 
 
     onRegister(){
 
-    this.routerextensions.navigate(['register']);
+        this.routerextensions.navigate(['register']);
 
     }
 
