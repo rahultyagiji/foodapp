@@ -33,13 +33,13 @@ export class CafeComponent implements OnInit {
     cafe: Item;
     menu:Menu[];
     myMenu:Menu[];
-    order:Order[]=[]
+    order:Order[]=[];
     categories:string[]=[];
     _menu:ObservableArray<Menu> = new ObservableArray<Menu>([]);
     total$:number=0;
     cartEmpty:boolean=true;
     buttondisable:boolean=false;
-    scrollHeight:string="height: 100%";
+    scrollHeight:string="height: 50%";
 
     constructor(
         private itemService: ItemService,
@@ -73,6 +73,11 @@ export class CafeComponent implements OnInit {
                     return array.indexOf(item) === i;
                 });
             });
+
+        //this.orderService.Order(this.myMenu,this.route.snapshot.params["cafeid"],"");
+        this.order = this.orderService.getOrder();
+        if(this.order.length>0){this.cartEmpty=false;this.scrollHeight="height: 60%"}
+
 
     }
 
