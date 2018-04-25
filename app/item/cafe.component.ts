@@ -39,6 +39,7 @@ export class CafeComponent implements OnInit {
     total$:number=0;
     cartEmpty:boolean=true;
     buttondisable:boolean=false;
+    confirmbuttondisable:boolean=false;
     scrollHeight:string="height: 50%";
 
     constructor(
@@ -74,9 +75,15 @@ export class CafeComponent implements OnInit {
                 });
             });
 
-        //this.orderService.Order(this.myMenu,this.route.snapshot.params["cafeid"],"");
         this.order = this.orderService.getOrder();
-        if(this.order.length>0){this.cartEmpty=false;this.scrollHeight="height: 60%"}
+
+        if(this.order.length>0) {
+            if(this.order[0].cafeId!=this.route.snapshot.params["cafeid"]) {
+                this.confirmbuttondisable = true;
+            }
+            this.cartEmpty=false;
+            this.scrollHeight="height: 60%"
+        }
 
 
     }

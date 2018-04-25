@@ -1,11 +1,15 @@
-import {Component, ElementRef, OnInit, ViewChild} from "@angular/core";
+import {Component, ElementRef, OnInit, ViewChild, ViewContainerRef} from "@angular/core";
 import {ModalDialogParams} from "nativescript-angular/directives/dialogs";
 import { Switch } from "ui/switch";
 import { ListPicker } from "ui/list-picker";
-import {Menu} from "../datatypes/menu";
+import { Menu } from "../datatypes/menu";
 import {TextField} from "tns-core-modules/ui/text-field";
+import { FlexboxLayout } from "tns-core-modules/ui/layouts/flexbox-layout";
+//import { CheckBox } from 'nativescript-checkbox';
+import { topmost } from 'ui/frame';
+import { RadioOption } from "./radio-option";
 
-let options = ["Small", "Medium", "Large"];
+//let options = ["Small", "Medium", "Large"];
 
 @Component({
     selector: "ns-popup",
@@ -28,10 +32,13 @@ export class OptionspopComponent implements OnInit {
     // public secondSwitchState = "ON";
     // public sliderValue1 = 1;
 
-    public options: Array<string>=[];
+    options: Array<string>=[];
     public optionsPrice:Array<number>=[];
     public picked: string="";
     public pickedPrice:number=0;
+
+    radioOptions?: Array<RadioOption>;
+    checkOptions?: Array<RadioOption>;
 
 
     constructor(
@@ -59,7 +66,19 @@ export class OptionspopComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        
+        console.log("the item name is " + this.selectedMenuItem.name);
+        this.radioOptions = [
+            new RadioOption("Radio option 1"),
+            new RadioOption("Radio option 2"),
+            new RadioOption("Radio option 3")
+        ];
 
+        this.checkOptions = [
+            new RadioOption("Check option 1"),
+            new RadioOption("Check option 2"),
+            new RadioOption("Check option 3")
+        ];
     }
 
     // onFirstChecked(args) {
@@ -100,5 +119,25 @@ export class OptionspopComponent implements OnInit {
         this.specialInstruction=textfield.text;
 
     }
+
+    public checkedChange(modelRef) {
+        console.log("checkedChange:", modelRef.checked);
+    }
+
+    changeCheckedRadio(radioOption: RadioOption): void {
+        radioOption.selected = !radioOption.selected;
+
+        if (!radioOption.selected) {
+            return;
+        }
+
+        // uncheck all other options
+        this.radioOptions.forEach(option => {
+            if (option.text !== radioOption.text) {
+                option.selected = false;
+            }
+        });
+    }
+
 
 }
