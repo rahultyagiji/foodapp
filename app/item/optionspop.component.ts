@@ -69,15 +69,15 @@ export class OptionspopComponent implements OnInit {
         
         console.log("the item name is " + this.selectedMenuItem.name);
         this.radioOptions = [
-            new RadioOption("Radio option 1"),
-            new RadioOption("Radio option 2"),
-            new RadioOption("Radio option 3")
+            new RadioOption("Radio option 1", "$1"),
+            new RadioOption("Radio option 2", "$2"),
+            new RadioOption("Radio option 3", "$3")
         ];
 
         this.checkOptions = [
-            new RadioOption("Check option 1"),
-            new RadioOption("Check option 2"),
-            new RadioOption("Check option 3")
+            new RadioOption("Check option 1", "1"),
+            new RadioOption("Check option 2", "2"),
+            new RadioOption("Check option 3", "3")
         ];
     }
 

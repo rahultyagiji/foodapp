@@ -21,6 +21,7 @@ import {ObservableArray} from "tns-core-modules/data/observable-array";
 import {percent} from "tns-core-modules/ui/core/view";
 import {AnimationCurve} from "tns-core-modules/ui/enums";
 import {OrderpopComponent} from "../ordermodal/orderpop.component";
+import {OnChanges} from "../../platforms/ios/build/emulator/DQCafe.app/app/tns_modules/@angular/core/src/metadata/lifecycle_hooks";
 
 
 @Component({
@@ -29,7 +30,7 @@ import {OrderpopComponent} from "../ordermodal/orderpop.component";
     templateUrl: "./cafe.component.html",
     styleUrls: ["./cafe.component.css"]
 })
-export class CafeComponent implements OnInit {
+export class CafeComponent implements OnInit, OnChanges {
     cafe: Item;
     menu:Menu[];
     myMenu:Menu[];
@@ -40,7 +41,8 @@ export class CafeComponent implements OnInit {
     cartEmpty:boolean=true;
     buttondisable:boolean=false;
     confirmbuttondisable:boolean=false;
-    scrollHeight:string="height: 50%";
+    scrollHeight:string="height: 90%";
+    scrollHeightBase:string="height:10%;width: 100%;border-width: 1px";
 
     constructor(
         private itemService: ItemService,
@@ -82,11 +84,27 @@ export class CafeComponent implements OnInit {
                 this.confirmbuttondisable = true;
             }
             this.cartEmpty=false;
-            this.scrollHeight="height: 60%"
+            this.scrollHeight="height: 85%"
         }
 
 
     }
+
+    ngOnChanges(){
+        this.order = this.orderService.getOrder();
+
+        if(this.order.length>0) {
+            if(this.order[0].cafeId!=this.route.snapshot.params["cafeid"]) {
+                this.confirmbuttondisable = true;
+            }
+            this.cartEmpty=false;
+            this.scrollHeight="height: 60%"
+        } else if (this.order.length == 0) {
+            this.cartEmpty=true;
+        }
+    }
+
+
 
     ontapMenu(data:Menu){
 
@@ -105,7 +123,7 @@ export class CafeComponent implements OnInit {
                 this.order = this.orderService.getOrder();
                 if (this.order.length > 0) {
                     this.cartEmpty = false;
-                    this.scrollHeight = "height: 60%"
+                    this.scrollHeight = "height: 80%"
                 }
 
                 this.total$ = 0;
@@ -189,7 +207,7 @@ export class CafeComponent implements OnInit {
             }
             else{
                 this.cartEmpty=true;
-                this.scrollHeight="height: 100%"
+                this.scrollHeight="height: 90%"
             }
             },1500)
         }
@@ -211,7 +229,9 @@ export class CafeComponent implements OnInit {
         this.order.length=0;
         this.cartEmpty=true;
         this.total$=0;
-        this.scrollHeight="height: 100%"
+        this.scrollHeight="height: 90%";
+
+        console.log("cart is " + this.cartEmpty);
     }
 
 

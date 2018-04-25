@@ -7,9 +7,6 @@
     </ActionBar>
 
     <StackLayout orientation="vertical" horizontalAlignment="left" height="40" width="100%" backgroundColor="#1a626f">
-        <android>
-            <Button text=" Add Order" (tap)="close('true')"></Button>
-        </android>
         <ios>
             <Button text="X" horizontalAlignment="left" (tap)="close()" style="color:black;font-size: 20px"></Button>
         </ios>
@@ -29,9 +26,10 @@
     <Label class="p-10" text="Select Radio Options" textWrap="true" style="font-weight: bold"></Label>
     <StackLayout class="p-10" *ngFor="let option of radioOptions">
         <StackLayout orientation="horizontal" verticalAlignment="center">
-            <CheckBox #elem boxType="circle" [checked]="option.selected" (checkedChange)="elem.checked !== option.selected && changeCheckedRadio(option)" class="checkbox"></CheckBox>
+            <CheckBox #elem fillColor="greenyellow" boxType="circle" [checked]="option.selected" (checkedChange)="elem.checked !== option.selected && changeCheckedRadio(option)" class="checkbox"></CheckBox>
             <StackLayout verticalAlignment="center">
                 <Label [text]="option.text" textWrap="true" (tap)="changeCheckedRadio(option)"></Label>
+                <Label [text]="option.price"></Label>
             </StackLayout>
         </StackLayout>
     </StackLayout>
@@ -39,7 +37,7 @@
     <Label class="p-10" text="Select Check Options" textWrap="true" style="font-weight: bold"></Label>
     <StackLayout class="p-10" *ngFor="let option of checkOptions">
         <StackLayout orientation="horizontal" verticalAlignment="center">
-            <CheckBox #elem [checked]="false" class="checkbox"></CheckBox>
+            <CheckBox #elem fillColor="greenyellow" [checked]="false" class="checkbox"></CheckBox>
             <StackLayout verticalAlignment="center">
                 <Label [text]="option.text" textWrap="true"></Label>
             </StackLayout>

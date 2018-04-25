@@ -2,7 +2,7 @@
            style="background-color: #0A4C58;color: white"></ActionBar>
 
 <StackLayout>
-<!--Cafe name and description and other properties later-->
+    <!--Cafe name and description and other properties later-->
 
 
     <!--Categories-->
@@ -20,7 +20,7 @@
 
 
         <StackLayout class="page page-content">
-            <ListView [items]="myMenu" class="list-group" style="height: 60%">
+            <ListView [items]="myMenu" class="list-group" style="{{scrollHeight}}">
                 <ng-template  let-item="item">
                     <StackLayout id="food1" (tap)="ontapMenu(item)"
                                  (swipe)="addtoOrderlist(item,$event)" orientation="horizontal">
@@ -34,24 +34,27 @@
             </ListView>
         </StackLayout>
 
-        <StackLayout>
-
+        <StackLayout *ngIf="cartEmpty" style="{{scrollHeightBase}}" backgroundColor="#1a626f">
+            <Label text="Cart empty!"  horizontalAlignment="center" verticalAlignment="middle" style="color:white; font-size: 18px;text-align: center;padding-top: 20px"></Label>
         </StackLayout>
 
-        <StackLayout *ngIf="cartEmpty" style="width: 90%;">
-            <Label text="Nothing Selected Yet..." style="align-items: baseline;font-size: 14px;; width: 50%;"></Label>
-        </StackLayout>
+        <!--<Label text="Cart empty!" *ngIf="cartEmpty"></Label>-->
 
-        <StackLayout *ngIf="!cartEmpty" style="border-color:#1a626f ; border-width: 2px ; width: 100%;">
-            <Label text="Order Summary" style="align-items: flex-start;font-size: 12px;font-weight: bold;color: #1a626f"></Label>
+        <StackLayout *ngIf="!cartEmpty" style="border-color:#1a626f ; border-width: 1px ; height:100%;width: 100%;">
             <StackLayout orientation="horizontal">
                 <Button text="Cancel" (tap)="onorderCancel()" style="width: 25%;background-color: #8F130C;color: white;"
                         *ngIf="!buttondisable"></Button>
                 <Button [text]="'$' + total$" style="width: 50%;background-color: #d6f39b;"></Button>
-                <Button text="Confirm" (tap)="OnOrder()" style="width: 25%;background-color: #1A626F;color: white;"
+                <Button text="Confirm" (tap)="OnOrder()" style="width: 25%;background-color:cornflowerblue;color: white;"
                         *ngIf="!confirmbuttondisable"></Button>
 
             </StackLayout>
+
+
+            <StackLayout backgroundColor="#1a626f" height="20" >
+                <Label text="Order Summary" horizontalAlignment="center" style="align-items:center;font-size: 12px;font-weight: bold;color:white"></Label>
+            </StackLayout>
+
 
             <ListView [items]="order" class="list-group">
                 <ng-template let-item="item">
