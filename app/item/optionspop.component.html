@@ -32,6 +32,7 @@
             <CheckBox #elem boxType="circle" [checked]="option.selected" (checkedChange)="elem.checked !== option.selected && changeCheckedRadio(option)" class="checkbox"></CheckBox>
             <StackLayout verticalAlignment="center">
                 <Label [text]="option.text" textWrap="true" (tap)="changeCheckedRadio(option)"></Label>
+                <Label [text]="option.price"></Label>
             </StackLayout>
         </StackLayout>
     </StackLayout>
