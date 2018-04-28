@@ -63,7 +63,8 @@ confirmOrder(order:Order[],cafe,payway,uid,location){
                     firebase.push('/order-user/' + uid, {
                                 "status": "ordered",
                                 "cafe": cafe,
-                                "orderNo": res.key
+                                "orderNo": res.key,
+                                "orderNo2":Math.random() * 20
                             })
                                 .then(()=>{this.orderNo(cafe,res.key)})
                         }).catch((err)=>{console.log(err)})
@@ -75,7 +76,8 @@ confirmOrder(order:Order[],cafe,payway,uid,location){
                         firebase.push('/order-user/' + uid, {
                                 "status": "processing",
                                 "cafe": cafe,
-                                "orderNo": res.key
+                                "orderNo": res.key,
+                                "orderNo2":Math.random() * 20
                             })
                                 .then(()=>{this.orderNo(cafe,res.key)})
                         }).catch((err)=>{console.log(err)})
