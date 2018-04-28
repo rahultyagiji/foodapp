@@ -6,14 +6,12 @@ import { AppComponent } from "./app.component";
 import { ItemService } from "./services/item.service";
 import { ItemsComponent } from "./item/items.component";
 import {MenuService} from "./services/menu.service";
-
-
-import { registerElement } from "nativescript-angular/element-registry";
+import {SharedModule} from './modules/shared/shared.module';
 import {OrderService} from "./services/order.service";
 import {CafeComponent} from "./item/cafe.component";
 import {OptionspopComponent} from "./item/optionspop.component";
 import {ModalDialogService} from "nativescript-angular/modal-dialog";
-import { NativeScriptUISideDrawerModule } from "nativescript-pro-ui/sidedrawer/angular";
+
 import {RegisterComponent} from "./auth/register/register.component";
 import {AuthService} from "./services/auth.service";
 import {NativeScriptUIDataFormModule} from "nativescript-pro-ui/dataform/angular";
@@ -21,16 +19,6 @@ import {NativeScriptFormsModule} from "nativescript-angular/forms";
 import {SigninComponent} from "./auth/signin/signin.component";
 import {OrderpopComponent} from "./ordermodal/orderpop.component";
 import {TNSCheckBoxModule} from "nativescript-checkbox/angular";
-// registerElement("Mapbox", () => require("nativescript-mapbox").MapboxView);
-// registerElement("FAB", () => require("nativescript-floatingactionbutton").Fab);
-
-//import {CartComponent} from "./cart/cart/cart.component";
-
-// Uncomment and add to NgModule imports if you need to use two-way binding
-// import { NativeScriptFormsModule } from "nativescript-angular/forms";
-
-// Uncomment and add to NgModule imports  if you need to use the HTTP wrapper
-// import { NativeScriptHttpModule } from "nativescript-angular/http";
 
 @NgModule({
     bootstrap: [
@@ -40,10 +28,11 @@ import {TNSCheckBoxModule} from "nativescript-checkbox/angular";
     imports: [
         NativeScriptModule,
         AppRoutingModule,
-        NativeScriptUISideDrawerModule,
+        //NativeScriptUISideDrawerModule,
         NativeScriptUIDataFormModule,
         NativeScriptFormsModule,
-        TNSCheckBoxModule
+        TNSCheckBoxModule,
+        SharedModule
     ],
     declarations: [
         AppComponent,
@@ -53,7 +42,7 @@ import {TNSCheckBoxModule} from "nativescript-checkbox/angular";
         RegisterComponent,
         SigninComponent,
         OrderpopComponent
-     ],
+    ],
     providers: [
         ItemService,
         MenuService,

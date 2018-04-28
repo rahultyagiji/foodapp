@@ -21,7 +21,6 @@ import {ObservableArray} from "tns-core-modules/data/observable-array";
 import {percent} from "tns-core-modules/ui/core/view";
 import {AnimationCurve} from "tns-core-modules/ui/enums";
 import {OrderpopComponent} from "../ordermodal/orderpop.component";
-import {OnChanges} from "../../platforms/ios/build/emulator/DQCafe.app/app/tns_modules/@angular/core/src/metadata/lifecycle_hooks";
 
 
 @Component({
@@ -30,7 +29,7 @@ import {OnChanges} from "../../platforms/ios/build/emulator/DQCafe.app/app/tns_m
     templateUrl: "./cafe.component.html",
     styleUrls: ["./cafe.component.css"]
 })
-export class CafeComponent implements OnInit, OnChanges {
+export class CafeComponent implements OnInit {
     cafe: Item;
     menu:Menu[];
     myMenu:Menu[];
@@ -41,7 +40,7 @@ export class CafeComponent implements OnInit, OnChanges {
     cartEmpty:boolean=true;
     buttondisable:boolean=false;
     confirmbuttondisable:boolean=false;
-    scrollHeight:string="height: 80%";
+    scrollHeight:string="height: 50%";
 
     constructor(
         private itemService: ItemService,
@@ -60,14 +59,14 @@ export class CafeComponent implements OnInit, OnChanges {
         // this.cafe = this.itemService.getSingleItem(this.route.snapshot.params["cafeid"])
         // this.order=this.orderService.getOrder();
         // if(this.order.length>0){this.cartEmpty=false}
-
 //menu load
         this.menuService.loadMenu(this.route.snapshot.params["cafeid"])
             .subscribe((menu: Array<Menu>) => {
                 this._menu = new ObservableArray(menu);
                 this.menu=[];
+                this.menu=this._menu.sort((a,b)=>a.item-b.item);
                 this._menu.forEach((x)=>{
-                    this.menu.push(x);
+                    // this.menu.push(x);
                     this.categories.push(x.category);
                 })
                 this.myMenu=this.menu;
@@ -102,7 +101,6 @@ export class CafeComponent implements OnInit, OnChanges {
             this.cartEmpty=true;
         }
     }
-
 
 
     ontapMenu(data:Menu){
@@ -146,12 +144,11 @@ export class CafeComponent implements OnInit, OnChanges {
 
         ///
 
-
         if(this.order.length>0){this.cartEmpty=false;this.scrollHeight="height: 60%"}
 
         this.total$=0;
         this.order.forEach((x)=>{
-        //for total
+            //for total
             this.total$=this.total$+x.price
         })
 
@@ -168,22 +165,21 @@ export class CafeComponent implements OnInit, OnChanges {
         };
         var uid;
         this.popup.showModal(OrderpopComponent,options).then((response)=>
-            {
-                firebase.getCurrentUser()
-                    .then((token)=> {
-                        uid = token.uid;
-                        this.orderService.confirmOrder(this.order,this.route.snapshot.params["cafeid"],response.payment,uid,response.location);
-
-                        Toast.makeText("Your order has been placed").show();
-                        this.order.length=0;
-                        this.cartEmpty=true;
-                        this.total$=0;
-                        this.scrollHeight="height: 100%"
-                    }).catch(()=>{
-                    Toast.makeText("Please login to confirm order").show();
-                })
-
+        {
+            firebase.getCurrentUser()
+                .then((token)=> {
+                    uid = token.uid;
+                    this.orderService.confirmOrder(this.order,this.route.snapshot.params["cafeid"],response.payment,uid,response.location);
+                    Toast.makeText("Your order has been placed").show();
+                    this.order.length=0;
+                    this.cartEmpty=true;
+                    this.total$=0;
+                    this.scrollHeight="height: 100%"
+                }).catch(()=>{
+                Toast.makeText("Please login to confirm order").show();
             })
+
+        })
 
     }
 
@@ -208,15 +204,15 @@ export class CafeComponent implements OnInit, OnChanges {
                 this.cartEmpty=true;
                 this.scrollHeight="height: 100%"
             }
-            },1500)
-        }
+        },1500)
+    }
 
     onfiltercategory(category){
         this.myMenu = this.menu.filter( item =>
         {
             return item.category===category
         })
-     }
+    }
 
     onclickAll(){
 
@@ -228,9 +224,7 @@ export class CafeComponent implements OnInit, OnChanges {
         this.order.length=0;
         this.cartEmpty=true;
         this.total$=0;
-        this.scrollHeight="height: 80%"
-
-        console.log("cars is " + this.cartEmpty);
+        this.scrollHeight="height: 100%"
     }
 
 

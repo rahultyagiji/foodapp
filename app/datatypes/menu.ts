@@ -1,11 +1,12 @@
 export class Menu {
-    item:string;
+    item:number;
     imgSrc: string;
     name: string;
     price: number;
     category:string;
     description:string;
     option:{"name":string,"extraPrice":number}[];
+    extra:{"name":string,"extraPrice":number}[];
 
     constructor(options){
         this.item=options.item;
@@ -15,6 +16,7 @@ export class Menu {
         this.price=options.price;
         this.description=options.description;
         this.option=options.option;
+        this.extra=options.extra;
     }
 
 }

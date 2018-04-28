@@ -1,19 +1,19 @@
 <side-drawer-page>
-<StackLayout>
+    <StackLayout>
 
-    <RadDataForm [source]="userId">
+        <RadDataForm [source]="userId">
 
-        <TKEntityProperty  name="username" hintText="Username" index="0">
-            <TKPropertyEditor type="Text"></TKPropertyEditor>
-        </TKEntityProperty>
+            <TKEntityProperty  name="username" hintText="Username" index="0">
+                <TKPropertyEditor type="Text"></TKPropertyEditor>
+            </TKEntityProperty>
 
-        <TKEntityProperty name="password" hintText="Password" index="1">
-            <TKPropertyEditor type="Password" secure="true"></TKPropertyEditor>
-        </TKEntityProperty>
+            <TKEntityProperty name="password" hintText="Password" index="1">
+                <TKPropertyEditor type="Password" secure="true"></TKPropertyEditor>
+            </TKEntityProperty>
 
-    </RadDataForm>
+        </RadDataForm>
 
-    <Button text="Signin" (tap)="onSignin()"></Button>
+        <Button text="Signin" (tap)="onSignin()"></Button>
 
-</StackLayout>
-    </side-drawer-page>
+    </StackLayout>
+</side-drawer-page>

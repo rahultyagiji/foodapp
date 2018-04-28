@@ -251,7 +251,13 @@
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-toast/toast.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/auth/register/register.component.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/auth/signin/signin.component.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/modules/shared/borderless-btn.directive.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/modules/shared/shared.module.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/modules/shared/index.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/modules/shared/side-drawer-page/side-drawer-page.component.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/modules/shared/side-drawer-page/index.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/item/items.component.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/item/optionspop.component.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/item/radio-option.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/item/cafe.component.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/ordermodal/orderpop.component.js
