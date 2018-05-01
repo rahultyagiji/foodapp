@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, OnInit, ViewChild, ViewContainerRef} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import { Item } from "../datatypes/item";
 import { ItemService } from "../services/item.service";
 import { Router} from "@angular/router";
@@ -6,15 +6,12 @@ import { Router} from "@angular/router";
 import {RouterExtensions} from "nativescript-angular";
 import {ObservableArray} from "data/observable-array";
 import { SearchBar } from "ui/search-bar";
-import {isAndroid} from "platform"
 
-//import { RadSideDrawerComponent, SideDrawerType } from "nativescript-pro-ui/sidedrawer/angular";
-//import {DrawerStateChangedEventArgs, RadSideDrawer} from 'nativescript-pro-ui/sidedrawer';
+
+
 import {AuthService} from "../services/auth.service";
 import {Order} from "../datatypes/order";
 import {OrderService} from "../services/order.service";
-import { SideDrawerPageComponent } from '../modules/shared/side-drawer-page';
-
 
 @Component({
     selector: "ns-items",
@@ -31,7 +28,7 @@ export class ItemsComponent implements OnInit{
     _items:ObservableArray<Item> = new ObservableArray<Item>([]);
     public tabSelectedIndex: number;
     public searchPhrase: string;
-
+    username:string="";
     private _currentNotification: string;
 
     // private map: MapboxViewApi;
@@ -44,18 +41,16 @@ export class ItemsComponent implements OnInit{
     // ///
 
     constructor(private itemService: ItemService,
-                //private router:Router,
+                private router:Router,
                 private routerextensions:RouterExtensions,
-                //private _changeDetectionRef: ChangeDetectorRef,
                 private auth:AuthService,
                 private orderservice:OrderService) {
         this.tabSelectedIndex = 0;
     }
 
-    //@ViewChild(RadSideDrawerComponent) public drawerComponent: RadSideDrawerComponent;
-    //private drawer: RadSideDrawer;
-
     ngOnInit(): void {
+
+        // vibrator.vibrate(2000);
 
         this.itemService.load()
             .subscribe((items: Array<Item>) => {
@@ -68,10 +63,12 @@ export class ItemsComponent implements OnInit{
             });
 
 
-        //Load orders
+    //Load orders
         this.auth.authUid().then((res)=>{
+            this.username=res.uid;
             this.order = this.orderservice.fetchOrder(res.uid);
-        })
+            console.log(res.uid)
+        }).catch(()=>console.log("not logged in...."))
 
     }
 
@@ -118,20 +115,22 @@ export class ItemsComponent implements OnInit{
 //             }
 
 //Navitage to next screen
-    jumptoMenu(cafeId) {
-        setTimeout(() =>{this.routerextensions.navigate(["/cafe", cafeId],
-            {
-                animated: true,
-                transition: {
-                    name: "slide",
-                    duration: 200,
-                    curve: "ease"
-                }
-            }),100});
-    }
+            jumptoMenu(cafeId) {
+               setTimeout(() =>{this.routerextensions.navigate(["/cafe", cafeId],
+                    {
+                        animated: true,
+                        transition: {
+                            name: "slide",
+                            duration: 200,
+                            curve: "ease"
+                        }
+                    }),100});
+            }
 //
 // //TabView controls
     changeTab() {
+
+        console.log("order refreshed")
         if (this.tabSelectedIndex === 0) {
             this.tabSelectedIndex = 1;
         } else if (this.tabSelectedIndex === 1) {
@@ -139,6 +138,14 @@ export class ItemsComponent implements OnInit{
         } else if (this.tabSelectedIndex === 2) {
             this.tabSelectedIndex = 0;
         }
+
+        //Load orders
+        this.auth.authUid().then((res)=>{
+            this.username=res.uid;
+            this.order = this.orderservice.fetchOrder(res.uid);
+            console.log(res.uid)
+        }).catch(()=>console.log("not logged in...."))
+
     }
 
 // search bar
@@ -169,28 +176,12 @@ export class ItemsComponent implements OnInit{
 
 
     ngAfterViewInit() {
-        //this.drawer = this.drawerComponent.sideDrawer;
-        //this._changeDetectionRef.detectChanges();
     }
-
-
-    /*    openDrawer() {
-     this.drawer.showDrawer();
-     }
-
-     onDrawerOpened(args: DrawerStateChangedEventArgs) {
-     this._currentNotification = "Drawer opened";
-     }
-
-
-     onCloseDrawerTap() {
-     this.drawer.closeDrawer();
-     }*/
 
 
     onRegister(){
 
-        this.routerextensions.navigate(['register']);
+    this.routerextensions.navigate(['register']);
 
     }
 
@@ -204,4 +195,14 @@ export class ItemsComponent implements OnInit{
 
         this.auth.signout();
     }
+
+
+//For your picks...
+        topThreeCafes(){
+
+            console.log("frequent fired")
+            this.orderservice.frequentCafe("CBNUluA6FogVIkOSlD4WKOFvMjf1");
+
+        }
+
 }

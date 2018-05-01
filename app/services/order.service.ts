@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable , NgZone} from "@angular/core";
 import firebase = require("nativescript-plugin-firebase");
 import { Order } from "../datatypes/order";
 import {Menu} from "../datatypes/menu";
@@ -6,6 +6,7 @@ import * as dialogs from "ui/dialogs";
 import {Observable} from "rxjs/Observable";
 import {layout} from "tns-core-modules/utils/utils";
 import * as moment from 'moment';
+import {ObservableArray} from "tns-core-modules/data/observable-array";
 //Stripe trial
 // import stripePackage from 'stripe';
 
@@ -17,6 +18,9 @@ export class OrderService {
     orderList:{"orderNo":string,"status":string}[]=[];
     vorderNo:number=0;
 
+    constructor(private _ngZone:NgZone){
+
+    }
 
 getOrder(){
 
@@ -59,7 +63,8 @@ confirmOrder(order:Order[],cafe,payway,uid,location){
                     firebase.push('/order-user/' + uid, {
                                 "status": "ordered",
                                 "cafe": cafe,
-                                "orderNo": res.key
+                                "orderNo": res.key,
+                                "orderNo2":Math.random() * 20
                             })
                                 .then(()=>{this.orderNo(cafe,res.key)})
                         }).catch((err)=>{console.log(err)})
@@ -71,7 +76,8 @@ confirmOrder(order:Order[],cafe,payway,uid,location){
                         firebase.push('/order-user/' + uid, {
                                 "status": "processing",
                                 "cafe": cafe,
-                                "orderNo": res.key
+                                "orderNo": res.key,
+                                "orderNo2":Math.random() * 20
                             })
                                 .then(()=>{this.orderNo(cafe,res.key)})
                         }).catch((err)=>{console.log(err)})
@@ -80,7 +86,7 @@ confirmOrder(order:Order[],cafe,payway,uid,location){
 
 
 fetchOrder(uid){
-
+    this.orderList=[];
     var onQueryEvent = function(result) {}
     firebase.query(
         onQueryEvent,
@@ -93,7 +99,10 @@ fetchOrder(uid){
     ).then(
         (res)=>{
             Object.keys(res.value).map((x)=>{
-                this.orderList.push({"orderNo":res.value[x].orderNo,"status":res.value[x].status});
+                if(res.value[x].status!="collected") {
+                    this.orderList.push({"orderNo": res.value[x].orderNo,
+                        "status": res.value[x].status});
+                }
             })
         })
     .catch();
@@ -126,6 +135,35 @@ orderNo(cafe,key) {
 // //create entry in synthetic order number table
 //     firebase.push([path],{})
 
+
+}
+
+frequentCafe(uid) {
+
+    var onQueryEvent = function (result) {
+    }
+    firebase.query(
+        onQueryEvent,
+        'order-user/' + uid,
+        {
+            singleEvent: true,
+            orderBy: {
+                type: firebase.QueryOrderByType.CHILD,
+                value: 'uid'
+            },
+            ranges: [
+                {
+                    type: firebase.QueryRangeType.EQUAL_TO,
+                    value: uid
+                }]
+        }
+    ).then(
+        (res) => {
+            Object.keys(res.value).map((x) => {
+                console.log("testing...", JSON.stringify(x))
+            })
+        })
+        .catch();
 
 }
 

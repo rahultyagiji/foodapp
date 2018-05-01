@@ -5,7 +5,7 @@ import { ListPicker } from "ui/list-picker";
 import {Menu} from "../datatypes/menu";
 import {TextField} from "tns-core-modules/ui/text-field";
 
-let options = ["Cash", "Card"];
+let options = ["Card", "Cash"];
 
 @Component({
     selector: "ns-order",

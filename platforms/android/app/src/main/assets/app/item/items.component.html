@@ -2,33 +2,9 @@
 </ActionBar>
 
 
+<side-drawer-page>
 <TabView [(ngModel)]="tabSelectedIndex" borderBottomcolor="#B52E26"
 iosIconRenderingMode="alwaysOriginal" sdkExampleTitle sdkToggleNavButton>
-
-<!--//Mapview commented for now-->
-    <!--<StackLayout *tabItem="{title: 'Around You'}">-->
-        <!--&lt;!&ndash;Map View&ndash;&gt;-->
-        <!--<StackLayout style="height:80%">-->
-            <!--<Mapbox-->
-                    <!--[accessToken]="access_token"-->
-                    <!--[mapStyle]="map_style"-->
-                    <!--[latitude]="latitude"-->
-                    <!--[longitude]="longitude"-->
-                    <!--[zoomLevel]="zoomlevel"-->
-                    <!--[delay]=""-->
-                    <!--[showUserLocation]="true"-->
-                    <!--[hideCompass]="false"-->
-                    <!--[disableZoom]="false"-->
-                    <!--[disableRotation]="false"-->
-                    <!--[disableScroll]="false"-->
-                    <!--[disableTilt]="false"-->
-                    <!--(mapReady)="onMapReady($event)">-->
-            <!--</Mapbox>-->
-        <!--</StackLayout>-->
-
-    <!--</StackLayout>-->
-
-
 
 <!--List View-->
 <StackLayout *tabItem="{title: 'List'}">
@@ -45,7 +21,7 @@ iosIconRenderingMode="alwaysOriginal" sdkExampleTitle sdkToggleNavButton>
 <!--name and description-->
                 <StackLayout orientation="vertical" style="width: 60%">
                     <Label [text]="item.name" class="list-group-item" style="font-weight: bold"></Label>
-                    <Label [text]="item.description" class="list-group-item" style="font-size: 10pt"></Label>
+                    <Label [text]="item.description" textWrap="true" class="list-group-item" style="font-size: 10pt"></Label>
                  </StackLayout>
 <!--rating and dollar      -->
                 <StackLayout style="width: 10%" orientation="vertical">
@@ -65,28 +41,7 @@ iosIconRenderingMode="alwaysOriginal" sdkExampleTitle sdkToggleNavButton>
 
 
 <!--Recommendations view-->
-    <StackLayout *tabItem="{title: 'Your Picks'}">
-
-<!--//Temporary side drawer-->
-        <RadSideDrawer tkExampleTitle tkToggleNavButton (drawerOpened)="onDrawerOpened($event)" >
-            <StackLayout tkDrawerContent class="sideStackLayout">
-                <StackLayout class="sideTitleStackLayout">
-                    <Label text="Navigation Menu"></Label>
-                </StackLayout>
-                <StackLayout class="sideStackLayout">
-                    <Label text="Register" class="sideLabel sideLightGrayLabel" (tap)="onRegister()"></Label>
-                    <Label text="Signin" class="sideLabel" (tap)="onSignin()"></Label>
-                    <Label text="Signout" class="sideLabel sideLightGrayLabel"(tap)="onSignout()"></Label>
-                </StackLayout>
-                <Label text="Close Drawer" color="lightgray" padding="10" style="horizontal-align: center" (tap)="onCloseDrawerTap()"></Label>
-            </StackLayout>
-            <StackLayout tkMainContent>
-                <Label text="mainContentText" textWrap="true" class="drawerContentText"></Label>
-                <Button text="OPEN DRAWER" (tap)="openDrawer()" class="drawerContentButton"></Button>
-            </StackLayout>
-        </RadSideDrawer>
-
-
+    <StackLayout *tabItem="{title: 'Your Picks'}" (tap)="changeTab()">
 
         <StackLayout>
 
@@ -97,13 +52,12 @@ iosIconRenderingMode="alwaysOriginal" sdkExampleTitle sdkToggleNavButton>
                     <Button text="" style="width: 5%;height:5%;border-radius: 50%;background-color: darkgreen;padding: 10px;margin: 2px 1px;" *ngIf="item.status=='processing'"  class="list-group-item"></Button>
                     <Label [text]="item.orderNo" class="list-group-item" style="width: 70%"></Label>
                 </StackLayout>
-
                 </ng-template>
 
-
             </ListView>
-
 
         </StackLayout>
     </StackLayout>
 </TabView>
+
+</side-drawer-page>
