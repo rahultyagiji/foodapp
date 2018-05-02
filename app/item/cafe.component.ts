@@ -40,7 +40,8 @@ export class CafeComponent implements OnInit {
     cartEmpty:boolean=true;
     buttondisable:boolean=false;
     confirmbuttondisable:boolean=false;
-    scrollHeight:string="height: 50%";
+    scrollHeight:string="height: 90%";
+    scrollHeightBase:string="height:10%;width: 100%;border-width: 1px";
 
     constructor(
         private itemService: ItemService,
@@ -84,8 +85,10 @@ export class CafeComponent implements OnInit {
             this.cartEmpty=false;
             this.scrollHeight="height: 60%"
         }
-
-
+        else if(this.order.length==0) {
+            this.scrollHeight="height:90%"
+        }
+        
     }
 
     ngOnChanges(){
@@ -120,7 +123,7 @@ export class CafeComponent implements OnInit {
                 this.order = this.orderService.getOrder();
                 if (this.order.length > 0) {
                     this.cartEmpty = false;
-                    this.scrollHeight = "height: 60%"
+                    this.scrollHeight = "height: 80%"
                 }
 
                 this.total$ = 0;
@@ -202,7 +205,7 @@ export class CafeComponent implements OnInit {
             }
             else{
                 this.cartEmpty=true;
-                this.scrollHeight="height: 100%"
+                this.scrollHeight="height: 80%"
             }
         },1500)
     }
@@ -224,7 +227,7 @@ export class CafeComponent implements OnInit {
         this.order.length=0;
         this.cartEmpty=true;
         this.total$=0;
-        this.scrollHeight="height: 100%"
+        this.scrollHeight="height: 90%"
     }
 
 

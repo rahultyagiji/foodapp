@@ -19,8 +19,8 @@
 
 
 
-        <StackLayout class="page page-content" style="{{scrollHeight}}">
-            <ListView [items]="myMenu" class="list-group" style="height: 60%">
+        <StackLayout class="page page-content">
+            <ListView [items]="myMenu" class="list-group" style="{{scrollHeight}}">
                 <ng-template  let-item="item">
                     <StackLayout id="food1" (tap)="ontapMenu(item)"
                                  (swipe)="addtoOrderlist(item,$event)" orientation="horizontal">
@@ -34,9 +34,13 @@
             </ListView>
         </StackLayout>
 
-        <AbsoluteLayout *ngIf="cartEmpty" style="width: 100%;border-width: 1px" backgroundColor="#1a626f">
+        <StackLayout *ngIf="cartEmpty" style="{{scrollHeightBase}}" backgroundColor="#1a626f">
+            <Label text="Cart empty!"  horizontalAlignment="center" verticalAlignment="middle" style="color:white; font-size: 18px;text-align: center;padding-top: 15px"></Label>
+        </StackLayout>
+
+        <!--<AbsoluteLayout *ngIf="cartEmpty" style="width: 100%;border-width: 1px" backgroundColor="#1a626f">
             <Label text="Cart empty!" left="150" top="0" width="100%" height="50" style="color:white; align-items: center;font-size: 14px;; width: 50%;"></Label>
-        </AbsoluteLayout>
+        </AbsoluteLayout>-->
 
         <!--<Label text="Cart empty!" *ngIf="cartEmpty"></Label>-->
 
