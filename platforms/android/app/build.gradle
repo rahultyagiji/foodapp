@@ -707,3 +707,5 @@ deleteMetadata.dependsOn(":asbg:clean")
 deleteFlavors.dependsOn(deleteMetadata)
 deleteGeneratedBindings.dependsOn(deleteFlavors)
 clean.dependsOn(deleteGeneratedBindings)
+
+apply plugin: "com.google.gms.google-services"

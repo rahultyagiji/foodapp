@@ -3,12 +3,354 @@
 
     <item
         is-multidex="false"
-        jar="/home/rahul/.android/build-cache/e5907d78fa191cb997b8004bfe02924061421153/output/jars/classes.jar"
+        jar="/Users/kushagramehra/.android/build-cache/10f4f4f5d6088db3a596a1b7b7c4ab488b00126a/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="27.0.3"
+        revision="26.0.0"
+        sha1="ed04a0ae7198b0d5d0e965d6afdb0fe784dcfbee">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_da806d99f49f51a1f28db7b5e74e88776d9783cf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/1702cc4ad35e032745a8cf4ecceb165d7ef3ff89/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_1d261c9338360857529a0225fea2315d698fa02e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/deff9cb9b9b8f97bfc042133072fe52e65640670/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_df6c99840e101af7f7ab8f0ddb6aa3176a4ff099.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/61860593d5ca8b8798ce9a95666e7477837087ff/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="c2806325d672678e8d5445b1feaccd0b27c799cb">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_980c3ba20651fc849e654824e19835b0138dff78.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/7125864964d086b55d86d2542c353b77a71cf6bf/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="5a74189ec3dc61210da5bee7eb39a3bfc845209b">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_f86838ea5a2fe6f401909068f90f53393210a8be.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/f6b4edded80638290437916826225897b6c8bacc/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_fa25e72a2f72078fdf7c595d9a40c7b8dc2d5302.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/e8e45a1cc9ad6898f3951047683112c3610fffb4/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="5ad3911825107d8dd4b017fdecebfd23c08048dd">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_651a52f0ac5054799e1c40de20fcdaec4bc40946.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/usr/local/Caskroom/android-sdk/3859397/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/support-annotations-25.3.1_27440ef56bc6a6791a4be3388de0b252ba7974e8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/87f22b5b515c676b9ede2b42a1ccff55a1976e60/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
         sha1="746274223beb11b1cda7854d7eec3038695c2c93">
-        <dex dex="/media/rahul/storage/DQCafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_cd361a4ff842038298100f7942dd9c74f10fc72d.jar" />
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_c2039be678fc296941fddc38ca6055fc2547b912.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/d7242e791d1e7f0b20ec962064575c03861db9dc/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="d2af2ef4d987d753f2e8ee2d1480ab964d5c7273">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_e51fa7ab3d4f7ffd31372110cd7a2df16ea8da89.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/348f294e66bff21f9195eed5bf423d7c2e98594f/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="d9a09584e04eb95d247f251d5d498eb57fcf6e41">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_dcf79b2a5846bfcae6dff16e0d6ea4559286f45c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/6d9cff1496542854b8e2039043f45fef89047c55/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_0c01a0869a0496fc332e08770bf6734ad9d3a015.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/6b6aad78ba95b8d2f9418f5fbb45bb98f5eb5866/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="233d88c6f961d2a84758dfe27b7af61318190c7b">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_cc788c0a59a9df73f694f7e32f7c090c4dc8df1b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/c23ff2f6cab3ceddcf0a487ad5ba92fa7bcbb4db/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_f217634f86c0fb5f8483f8fac21b1c80b6f14298.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/3c4eef72d9d8b1f3e85cb79986a17c975a4ea357/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="87a252a5f0475f2597b3ca528b423d8a8477b2f7">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_dad362b2f39088a98b121ad3dd382fc30ddded4c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/b07f172931152f3254939f55b88eb7f8a39db15e/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_a99ae5ff9b86d4afa455f18ad6cd46232038bd31.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/c2b7db489eefcdfa920d1f007b2b6f99393746c7/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="9e1723e2b7291ed86aef50a6231b98951acd5ab5">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_d277e65c99e5aa4dee038681f757c27e4cb03c9b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/2b38f175afbe2f9cea5f22b45ad6e05411e86182/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="42c9659c973e311ffdb645ed057e5053e0ab5c78">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_fe07bda2647040f92ca002fdd59045811ff166ff.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/8b36cecf038ab35ab7304023392660f1f066edc5/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="ef198f6c2a75a8ad36f0684783d86e266de2ab4d">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_8ebc4b5dc8e15657f7011015f40616ba1a4eb34c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.4/d0de1ca9b69e69d1d497ee3c6009d015f64dad57/gson-2.8.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="d0de1ca9b69e69d1d497ee3c6009d015f64dad57">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/gson-2.8.4_6ae5eb9d4474af92fbe7dfc7fec662a352b93ce6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/6397f29d076e3a735c0d55f77026c7a7c77eb5be/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_dac2aa9b5e090b5fd0b49776ed6825de3d44d376.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/0868e640d0232c315242cdb96c8356a6e62e9eb9/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="264ad23f9752aabecfa41115c52a25a023a08839">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_f04bce5b98ded3b6e7cd704d4d7226bf3b64be6a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/67d9c9a925617869684419e13567c55f6fbb8e2f/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_6f5d7cd38f7881e8875d90a2bd2700626fe7912e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/29470dfb28c9d34831a9438ac08d12fb3406b8c2/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_adbdba11bcce340430e5d574fe80c0e8213d9114.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/22e97ae2708b4eed95e69dadf31633dbac8595aa/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="624783ca369e06889de0109fa6e19357a9a736ec">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_f19e52561761e3cbe5feb8cb8433de1fb56068b3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/3287783f374611a86c37a8628b6eddc5242a6e02/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_65a8459e5c03f2e80dce9b7d85d4605fcebc00d8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/86a165a225ce655f5fc05df9c3d6e08606f25a23/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="c5bc72ad3250d065128d1d7514279be703e57bd0">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_92d6b6633685ccef1eb8413061adf9d84a6e64be.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/1bbdfad960bef986e9b46ef569268caaad369e77/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="122de0d704f76d2bb5cb9db66e00fe90a0a41e78">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_ec5374da4a93a5217c3f6920f548911115b771b7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/cec61e7006dc4d2e2ed0da56ab1b7403175c9411/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="22ef712472dbfd831a3ac341e9820e76e8c1adeb">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_5bbeda76084ba4b870a848404012f8d1ce5e2551.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/3d6f159a48296d8747474097ad369c8b910fdfd1/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="b15c1c54609d4c573ab38e6e33b3293212a34f09">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_90b9293f4ae8397f56d748d13b1e497aafcb8993.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/e4e93efcabea3fec5cbcee018cd886a0acc43d72/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="807751a24cf96566fd8675517c94d8463cf364db">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_57719def09acb1495b0b3dc07e4e27738cf73131.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/1531b3cbeb55c4d8f8d3d04e3990779e58692a83/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="1b982cc8b5ab6f788690238dbe3ac3bb19f88b1a">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_c7c9d46838b8070ffad361850e41c1bea38f0619.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/f56b4936f3b9b3b8d835a8443515d5f151454c51/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_d234f4acb90968f050ad993246d6b99f17f66cbe.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/8a05916ce4d7dd3a28118ccf734bc469712e9e65/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_a0cb1ccb892841b9d4f0adb49bba69a58d87d4f9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/dbf436e28191a1cabd7d941fd9844241922b54f3/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="fe66404378d7791a232cc3331811b2ce402f44c7">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_48f7a8296ffe3420cf3f11c968408748a42bbd72.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/20b04a165e643e36874b916511e826fa9c74f7a4/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="e6aeff19a2ce1eb896557be73cb9ceb56f8d1cf3">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_31d44dcf11140ae59f36052efe392b69c2feec89.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/860d702f3bfe52d56941e736a83d5fbd836ef5e3/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_062ccd842de980d0573277e902c027b47ba709fb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/8d3ebcf554eae34d052476a172312210ab891479/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="99ca653cc13a87b1724e43ada43f1d9e18cc3814">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_2277f090f8ef5135efd8dedac4febfe9ce535ffc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kushagramehra/.android/build-cache/80cf897624b515f55c99a300a308af1f6091c4f7/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="4144cb9a114baa005a0d4072596698f7dfd606e5">
+        <dex dex="/Users/kushagramehra/Technical_Development/AppDev/NativeScript/DQ-Cafe/platforms/android/app/build/intermediates/pre-dexed/F0F1/debug/classes_d6b939b1da26e7b9ec3392f96d13fe30cfbb3851.jar" />
     </item>
 
 </items>

@@ -6,7 +6,7 @@ import {MenuService} from "../services/menu.service";
 import {OrderService} from "../services/order.service";
 import {Order} from "../datatypes/order";
 import {ActivatedRoute} from "@angular/router";
-import * as Toast from 'nativescript-toast';
+import * as Toast from "nativescript-toast";
 import firebase = require("nativescript-plugin-firebase");
 
 import { Label } from 'ui/label';

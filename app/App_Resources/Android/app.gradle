@@ -3,15 +3,21 @@
 // Uncomment to add recyclerview-v7 dependency
 //dependencies {
 //	compile 'com.android.support:recyclerview-v7:+'
+//    compile 'com.google.firebase:firebase-messaging:11.8.0'
 //}
 
 android {  
   defaultConfig {  
     generatedDensities = []
     applicationId = "org.nativescript.DQCafe"  
-  }  
+  }
+
   aaptOptions {  
     additionalParameters "--no-version-vectors"
+  }
+
+  project.ext {
+    googlePlayServicesVersion = "11.8.0"
   }
 
 }
