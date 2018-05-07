@@ -19,13 +19,17 @@
 
     <Label text={{selectedMenuItem.description}} textWrap="true" style="font-size: 12px"></Label>
 
+    <StackLayout style="border-color:#1a626f ; border-width: 2px ; width: 90%;">
+        <TextField hint="any special instructions..." (textChange)="onTextChange($event)"></TextField>
+    </StackLayout>
+
     <StackLayout *ngIf="choices">
     <Label class="p-10" text="Select Radio Options" textWrap="true" style="font-weight: bold"></Label>
     <StackLayout class="p-10" *ngFor="let option of radioOptions">
         <StackLayout orientation="horizontal" verticalAlignment="center">
             <CheckBox #elem boxType="circle" [checked]="option.selected" (checkedChange)="elem.checked !== option.selected && changeCheckedRadio(option)" class="checkbox"></CheckBox>
             <StackLayout verticalAlignment="center" orientation="horizontal">
-                <Label text="$"></Label>
+                <Label text="+ $"></Label>
                 <Label [text]="option.price" style="width: 10%"></Label>
                 <Label [text]="option.text" textWrap="true" (tap)="changeCheckedRadio(option)"></Label>
             </StackLayout>
@@ -38,18 +42,14 @@
     <Label class="p-10" text="Select Check Options" textWrap="true" style="font-weight: bold"></Label>
     <StackLayout class="p-10" *ngFor="let option of checkOptions">
         <StackLayout orientation="horizontal" verticalAlignment="center">
-            <CheckBox #elem [checked]="false" class="checkbox"></CheckBox>
+            <CheckBox #elem [checked]="false" class="checkbox" (tap)="checkedExtra(option)"></CheckBox>
             <StackLayout verticalAlignment="center" orientation="horizontal">
-                <Label text="$"></Label>
+                <Label text="+ $"></Label>
                 <Label [text]="option.price" style="width: 10%"></Label>
                 <Label [text]="option.text" textWrap="true"></Label>
             </StackLayout>
         </StackLayout>
     </StackLayout>
      </StackLayout>
-
-    <StackLayout style="border-color:#1a626f ; border-width: 2px ; width: 80%;">
-        <TextField hint="any special instructions..." (textChange)="onTextChange($event)"></TextField>
-    </StackLayout>
 
 </StackLayout>

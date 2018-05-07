@@ -2,7 +2,7 @@ export class Menu {
     item:number;
     imgSrc: string;
     name: string;
-    price: number;
+    price: string;
     category:string;
     description:string;
     option:{"name":string,"extraPrice":number}[];

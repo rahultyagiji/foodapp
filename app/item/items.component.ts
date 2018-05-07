@@ -12,6 +12,9 @@ import { SearchBar } from "ui/search-bar";
 import {AuthService} from "../services/auth.service";
 import {Order} from "../datatypes/order";
 import {OrderService} from "../services/order.service";
+import {OrderComplex} from "../datatypes/order.complex";
+import firebase = require("nativescript-plugin-firebase");
+
 
 @Component({
     selector: "ns-items",
@@ -26,6 +29,9 @@ export class ItemsComponent implements OnInit{
     myItems:Item[]=[];
     order:{"orderNo":string,"status":string}[]=[];
     _items:ObservableArray<Item> = new ObservableArray<Item>([]);
+    orderComplex:OrderComplex[]=[];
+    _order:ObservableArray<OrderComplex> = new ObservableArray<OrderComplex>([]);
+
     public tabSelectedIndex: number;
     public searchPhrase: string;
     username:string="";
@@ -63,12 +69,17 @@ export class ItemsComponent implements OnInit{
             });
 
 
-    //Load orders
-        this.auth.authUid().then((res)=>{
-            this.username=res.uid;
-            this.order = this.orderservice.fetchOrder(res.uid);
-            console.log(res.uid)
-        }).catch(()=>console.log("not logged in...."))
+//order load for your picks
+        firebase.getCurrentUser()
+            .then((token)=> {
+                this.orderservice.loadOrder(token.uid)
+                    .subscribe((order: Array<OrderComplex>) => {
+                        this._order = new ObservableArray(order);
+                        this.orderComplex=[];
+                        this._order.forEach((x)=>{
+                            console.log(JSON.stringify(x));
+                        })} );
+            })
 
     }
 
@@ -139,12 +150,6 @@ export class ItemsComponent implements OnInit{
             this.tabSelectedIndex = 0;
         }
 
-        //Load orders
-        this.auth.authUid().then((res)=>{
-            this.username=res.uid;
-            this.order = this.orderservice.fetchOrder(res.uid);
-            console.log(res.uid)
-        }).catch(()=>console.log("not logged in...."))
 
     }
 

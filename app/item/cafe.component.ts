@@ -1,3 +1,4 @@
+
 import {Component, OnInit, ViewContainerRef} from "@angular/core";
 import {Item} from "../datatypes/item";
 import {Menu} from "../datatypes/menu";
@@ -6,7 +7,7 @@ import {MenuService} from "../services/menu.service";
 import {OrderService} from "../services/order.service";
 import {Order} from "../datatypes/order";
 import {ActivatedRoute} from "@angular/router";
-import * as Toast from 'nativescript-toast';
+import * as Toast from "nativescript-toast";
 import firebase = require("nativescript-plugin-firebase");
 
 import { Label } from 'ui/label';
@@ -40,7 +41,8 @@ export class CafeComponent implements OnInit {
     cartEmpty:boolean=true;
     buttondisable:boolean=false;
     confirmbuttondisable:boolean=false;
-    scrollHeight:string="height: 50%";
+    scrollHeight:string="height: 90%";
+    scrollHeightBase:string="height:10%;width: 100%;border-width: 1px";
 
     constructor(
         private itemService: ItemService,
@@ -84,7 +86,9 @@ export class CafeComponent implements OnInit {
             this.cartEmpty=false;
             this.scrollHeight="height: 60%"
         }
-
+        else if(this.order.length==0) {
+            this.scrollHeight="height:90%"
+        }
 
     }
 
@@ -115,8 +119,7 @@ export class CafeComponent implements OnInit {
 
         this.popup.showModal(OptionspopComponent,options).then((response)=>{
             if(response.response=='true') {
-                //just trailing ordering via popup
-                this.orderService.Order(data, this.route.snapshot.params["cafeid"],response.specialInstruction);
+                this.orderService.Order(data, this.route.snapshot.params["cafeid"],response.specialInstruction,response.option,response.extras);
                 this.order = this.orderService.getOrder();
                 if (this.order.length > 0) {
                     this.cartEmpty = false;
@@ -126,7 +129,7 @@ export class CafeComponent implements OnInit {
                 this.total$ = 0;
                 this.order.forEach((x) => {
                     //for total
-                    this.total$ = this.total$ + x.price
+                    this.total$ = this.total$ + parseFloat(x.price)
                 })
             }
         })
@@ -134,7 +137,7 @@ export class CafeComponent implements OnInit {
 
     addtoOrderlist(data,args:EventData){
         let page = <StackLayout>args.object;
-        this.orderService.Order(data,this.route.snapshot.params["cafeid"],"");
+        this.orderService.Order(data,this.route.snapshot.params["cafeid"],"",null,null);
         this.order = this.orderService.getOrder();
 
         let view = <StackLayout>page.getViewById("food1");
@@ -143,13 +146,12 @@ export class CafeComponent implements OnInit {
         view.animate({ backgroundColor: new Color("white"), duration: 1500 });
 
         ///
-
         if(this.order.length>0){this.cartEmpty=false;this.scrollHeight="height: 60%"}
 
         this.total$=0;
         this.order.forEach((x)=>{
             //for total
-            this.total$=this.total$+x.price
+            this.total$=this.total$+ parseFloat(x.price)
         })
 
     }
@@ -194,7 +196,7 @@ export class CafeComponent implements OnInit {
         view.animate({ backgroundColor: new Color("#F57A73"), duration: 1000 });
         setTimeout(()=>{ this.order = this.orderService.removeOrder(order);
 
-            this.total$=this.total$-order.price;
+            this.total$=(this.total$-parseFloat(order.price));
             if(this.total$<0){this.total$=0}
             this.order = this.orderService.getOrder();
             view.animate({ backgroundColor: new Color("white"), duration: 1000 });
@@ -202,7 +204,7 @@ export class CafeComponent implements OnInit {
             }
             else{
                 this.cartEmpty=true;
-                this.scrollHeight="height: 100%"
+                this.scrollHeight="height: 80%"
             }
         },1500)
     }
@@ -224,8 +226,7 @@ export class CafeComponent implements OnInit {
         this.order.length=0;
         this.cartEmpty=true;
         this.total$=0;
-        this.scrollHeight="height: 100%"
+        this.scrollHeight="height: 90%"
     }
-
 
 }

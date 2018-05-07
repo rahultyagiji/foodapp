@@ -25,9 +25,7 @@ export class SigninComponent implements OnInit {
     }
 
     onSignin(){
-        console.log(this.userId.username)
         this.auth.signin(this.userId.username,this.userId.password);
-
     }
 
 

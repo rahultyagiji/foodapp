@@ -120,7 +120,7 @@ export class SideDrawerPageComponent implements AfterViewInit, OnDestroy {
 
   private getNavigationButton() {
     let navActionItem = new ActionItem();
-    navActionItem.icon = 'res://ic_menu_black';
+    navActionItem.icon = 'res://ic_menu_2x';
     if (navActionItem.ios) {
       console.log("test")
       navActionItem.ios.position = 'left';

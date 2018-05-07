@@ -32,16 +32,21 @@ export class OptionspopComponent implements OnInit {
     choices:boolean=false;
     extra:boolean=false;
     specialInstruction:string="";
+    optionText:string;
+    optionPrice:number;
 
     public options: Array<string>=[];
     public optionsPrice:Array<number>=[];
 
     public extras: Array<{"name":string,"extrasPrice":number,"selected":boolean}>=[];
     public extras1:{"name":string,"extrasPrice":number,"selected":boolean}={name:"",extrasPrice:0,selected:false};
+    public extrasAdded: Array<{"text":string,"price":number}>=[];
 
 
+    //this is for the actual values sent back as response
     public picked: string="";
     public pickedPrice:number=0;
+
 
 
     constructor(
@@ -60,7 +65,6 @@ export class OptionspopComponent implements OnInit {
 
         if(this.selectedMenuItem.option){
             this.selectedMenuItem.option.forEach((x)=>{
-                console.log(JSON.stringify(x))
                 this.options.push(x.name);
                 this.optionsPrice.push(x.extraPrice);
                 var a = new RadioOption(x.name,x.extraPrice);
@@ -74,28 +78,16 @@ export class OptionspopComponent implements OnInit {
                 this.extras1.name=x.name;
                 this.extras1.extrasPrice=x.extraPrice;
                 this.extras1.selected=false;
-                console.log(JSON.stringify(x));
                 this.extras.push(this.extras1);
                 var a = new RadioOption(x.name,x.extraPrice);
                 this.checkOptions.push(a)
             });
-            console.log(JSON.stringify(this.extras));
             this.extra=true;
         }
 
 
-        console.log("the item name is " + this.selectedMenuItem.name);
-        // this.radioOptions = [
-        //     new RadioOption("Radio option 1","$1"),
-        //     new RadioOption("Radio option 2","$2"),
-        //     new RadioOption("Radio option 3","$3")
-        // ];
-        //
-        // this.checkOptions = [
-        //     new RadioOption("Radio option 1","$1"),
-        //     new RadioOption("Radio option 2","$2"),
-        //     new RadioOption("Radio option 3","$3")
-        // ];
+        // console.log("the item name is " + this.selectedMenuItem.name);
+
     }
 
 
@@ -107,11 +99,16 @@ export class OptionspopComponent implements OnInit {
 
 
     close(response:string){
-        var response1:{'response':string,'specialInstruction':string}={'response':"",'specialInstruction':''};
+        var response1:{'response':string,'specialInstruction':string,'option':
+        {'text':string,'price':number},
+        'extras':{'text':string,'price':number}[]}={'response':"",'specialInstruction':'','option':
+        {'text':"",'price':0},extras:null};
 
         response1.response=response;
+        response1.option.text=this.optionText;
+        response1.option.price=this.optionPrice
         response1.specialInstruction=this.specialInstruction;
-
+        response1.extras=this.extrasAdded;
         this.params.closeCallback(response1);
     }
 
@@ -135,7 +132,10 @@ export class OptionspopComponent implements OnInit {
 
     changeCheckedRadio(radioOption: RadioOption): void {
 
-        console.log(JSON.stringify(radioOption));
+        this.optionText=radioOption.text;
+        this.optionPrice=radioOption.price;
+
+
         radioOption.selected = !radioOption.selected;
 
         if (!radioOption.selected) {
@@ -150,6 +150,22 @@ export class OptionspopComponent implements OnInit {
         });
     }
 
+    checkedExtra(checkOption: RadioOption){
+        checkOption.selected = !checkOption.selected;
+        if (checkOption.selected) {
+            this.extrasAdded.push({"text": checkOption.text, "price": checkOption.price});
+            this.extrasAdded = this.extrasAdded.reduce(function(a,b){if(a.indexOf(b)<0)a.push(b);return a;},[]);
+        }
+        else{
+        //    remove from this.extrasAdded
+
+            this.extrasAdded = this.extrasAdded.filter((e)=>{
+                return e.text !=checkOption.text;
+            })
+        }
+
+
+    }
 
 }
 

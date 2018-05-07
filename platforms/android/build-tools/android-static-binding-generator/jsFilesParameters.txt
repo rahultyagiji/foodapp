@@ -8,6 +8,7 @@
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/services/item.service.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/services/auth.service.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/datatypes/item.js
+/media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/datatypes/order.complex.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/datatypes/menu.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/datatypes/order.js
 /media/rahul/storage/DQCafe/platforms/android/app/src/main/assets/app/tns_modules/nativescript-checkbox/checkbox.js
