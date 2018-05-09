@@ -17,7 +17,7 @@ export class OrderService {
 
     order:Order[]=[];
     orderComplex:OrderComplex[]=[];
-    orderList:{"orderNo":string,"status":string}[]=[];
+    orderList:{"orderNo":string,"cafe":string,"status":string}[]=[];
     vorderNo:number=0;
 
     constructor(private _ngZone:NgZone){
@@ -74,7 +74,7 @@ removeOrder(order:Order){
 
 confirmOrder(order:Order[],cafe,payway,uid,location){
 
-        var a = Math.random() * 20;
+        var a = Math.floor(Math.random() * (50 - 1 + 1)) + 1;
     if (payway == "Cash") {
                     firebase.push('/order-cafe/' + cafe,
                         {order, "status": "ordered", "uid": uid,"location":location,"orderNo2":a} )
@@ -93,7 +93,7 @@ confirmOrder(order:Order[],cafe,payway,uid,location){
                     firebase.push('/order-cafe/' + cafe, {order, "status": "ordered", "uid": uid,"location":location,"orderNo2":a})
                         .then((res) => {
                         firebase.push('/order-user/' + uid, {
-                                "status": "processing",
+                                "status": "ordered",
                                 "cafe": cafe,
                                 "orderNo": res.key,
                                 "orderNo2": a
@@ -106,32 +106,29 @@ confirmOrder(order:Order[],cafe,payway,uid,location){
 
     loadOrder(uid) : Observable<any> {
         return new Observable((observer: any) => {
-            const path = 'order-user/';
+            const path = 'order-user/'+uid;
             const onValueEvent = (snapshot: any) => {
                 this._ngZone.run(() => {
-                    const results = this.handleSnapshot(snapshot.value,uid);
+                    const results = this.handleSnapshot(snapshot.value);
                     observer.next(results);
                 });
             };
             firebase.addValueEventListener(onValueEvent, `/${path}`);
         })
-
     }
 
 
-
-    handleSnapshot(data,uid:string){
-        this.orderComplex=[];
+    handleSnapshot(data){
 
         if(data){
+            this.orderList=[];
+            let that = this
             Object.keys(data).forEach((x)=>{
-                if(data[x].orderNo=uid){
-                    this.orderComplex.push({"key":x,"order":data[x].order,"status":data[x].status,
-                        "uid":data[x].uid,"cafeOwner":data[x].cafeOwner,"location":data[x].location,"orderNo2":data[x].orderNo2});
-                }
+                        that.orderList.push({"orderNo":data[x].orderNo,"cafe":data[x].cafe
+                        ,"status":data[x].status});
             })
         }
-        return this.orderComplex
+        return this.orderList
 
     }
 
@@ -183,12 +180,15 @@ confirmOrder(order:Order[],cafe,payway,uid,location){
         ).then(
             (res) => {
                 Object.keys(res.value).map((x) => {
-                    console.log("testing...", JSON.stringify(x))
                 })
             })
             .catch();
 
     }
 
+
+    getOrderDetails(cafe,key){
+        return firebase.getValue('/order-cafe/'+cafe+'/'+key);
+    }
 
 }

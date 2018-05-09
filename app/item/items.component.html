@@ -43,20 +43,24 @@ iosIconRenderingMode="alwaysOriginal" sdkExampleTitle sdkToggleNavButton style="
 <!--Recommendations view-->
     <StackLayout *tabItem="{title: 'Your Picks'}" (tap)="changeTab()">
 
-        <StackLayout>
-
-            <ListView [items]="order" class="list-group">
-                <ng-template let-item="item">
-                <StackLayout orientation="horizontal">
-                    <Button text="" style="width: 5%;height:5%;border-radius: 50%;background-color: red;border: none;padding: 10px;margin: 2px 1px;" *ngIf="item.status=='ordered'"  class="list-group-item"></Button>
-                    <Button text="" style="width: 5%;height:5%;border-radius: 50%;background-color: darkgreen;padding: 10px;margin: 2px 1px;" *ngIf="item.status=='processing'"  class="list-group-item"></Button>
-                    <Label [text]="item.orderNo" class="list-group-item" style="width: 70%"></Label>
-                </StackLayout>
+            <ListView [items]="orderComplexLocal" class="list-group" style="height: 100%">
+                <ng-template let-item="item" let-i="index">
+                        <StackLayout>
+                        <Label [text]="'Order #:  ' + item.orderNo2"
+                               class="list-group-item"></Label>
+                        <StackLayout *ngFor="let order of item.order">
+                            <StackLayout orientation="horizontal">
+                                <Label [text]="order.quantity" style="margin-left: 5%"></Label>
+                                <Label text="x"></Label>
+                                <Label [text]="order.name"></Label>
+                            </StackLayout>
+                            <Label [text]="order.specialInstruction"></Label>
+                        </StackLayout>
+                            <StackLayout style="height: 0.5%;width: 80%"
+                                         class="{{item.status=='completed'?'processed':'inProgress'}}"> </StackLayout>
+                        </StackLayout>
                 </ng-template>
-
             </ListView>
-
-        </StackLayout>
     </StackLayout>
 </TabView>
 

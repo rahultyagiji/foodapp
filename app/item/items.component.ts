@@ -27,9 +27,10 @@ export class ItemsComponent implements OnInit{
     businessName: String[];
     items: Item[]=[];
     myItems:Item[]=[];
-    order:{"orderNo":string,"status":string}[]=[];
+    orderList:{"orderNo":string,"cafe":string,"status":string}[]=[];
+    _orderList:ObservableArray<{"orderNo":string,"cafe":string,"status":string}> = new ObservableArray<{"orderNo":string,"cafe":string,"status":string}>([]);
     _items:ObservableArray<Item> = new ObservableArray<Item>([]);
-    orderComplex:OrderComplex[]=[];
+    orderComplexLocal:OrderComplex[]=[];
     _order:ObservableArray<OrderComplex> = new ObservableArray<OrderComplex>([]);
 
     public tabSelectedIndex: number;
@@ -73,57 +74,20 @@ export class ItemsComponent implements OnInit{
         firebase.getCurrentUser()
             .then((token)=> {
                 this.orderservice.loadOrder(token.uid)
-                    .subscribe((order: Array<OrderComplex>) => {
-                        this._order = new ObservableArray(order);
-                        this.orderComplex=[];
-                        this._order.forEach((x)=>{
-                            console.log(JSON.stringify(x));
-                        })} );
-            })
-
+                    .subscribe((orderlist: Array<{"orderNo":string,"cafe":string,"status":string}>) => {
+                        this.orderComplexLocal=[];
+                        this._orderList = new ObservableArray(orderlist);
+                        this.orderList=[];
+                        this._orderList.forEach((x)=>{
+                            this.orderList.push(x);
+                            this.orderservice.getOrderDetails(x.cafe,x.orderNo)
+                                .then((result)=>{
+                                    this.orderComplexLocal.push(result.value);
+                                });
+                        });
+                    });
+            });
     }
-
-// //MapView
-//     onMapReady(args): void {
-//         this.map = args.map;
-//
-// //this is hard coded this needs to be made dynamic
-//             this.map.addMarkers([
-//                     {
-//                         id: 1,
-//                         lat: -37.8136,
-//                         lng: 144.9631,
-//                         title: 'Cafe1',
-//                         // subtitle: 'Check out Cafe1',
-//                         onCalloutTap: ()=> {
-//                             this.jumptoMenu('cafe1')
-//                         }
-//                     },
-//                     {
-//                         id: 2,
-//                         lat: -37.811989,
-//                         lng: 144.965845,
-//                         title: 'Cafe2',
-//                         // subtitle: 'Check out Cafe1',
-//                         onCalloutTap: ()=> {
-//                             this.jumptoMenu('cafe2')
-//                         }
-//                     },
-//                     {
-//                         id: 3,
-//                         lat: -37.811040,
-//                         lng: 144.965802,
-//                         title: 'Cafe3',
-//                         // subtitle: 'Check out Cafe3',
-//                         onCalloutTap: () => {
-//                             this.jumptoMenu('cafe3')
-//                         }
-//                     }
-//                 ]
-//             )
-//
-//
-//             }
 
 //Navitage to next screen
             jumptoMenu(cafeId) {

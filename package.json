@@ -7,9 +7,6 @@
 		"id": "org.nativescript.DQCafe",
 		"tns-ios": {
 			"version": "4.0.0-2018-02-01-01"
-		},
-		"tns-android": {
-			"version": "3.4.2"
 		}
 	},
 	"dependencies": {

@@ -22,6 +22,7 @@ import {ObservableArray} from "tns-core-modules/data/observable-array";
 import {percent} from "tns-core-modules/ui/core/view";
 import {AnimationCurve} from "tns-core-modules/ui/enums";
 import {OrderpopComponent} from "../ordermodal/orderpop.component";
+import {OrderComplex} from "../datatypes/order.complex";
 
 
 @Component({
