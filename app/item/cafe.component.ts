@@ -59,9 +59,6 @@ export class CafeComponent implements OnInit {
 
     ngOnInit(): void {
         // /////
-        // this.cafe = this.itemService.getSingleItem(this.route.snapshot.params["cafeid"])
-        // this.order=this.orderService.getOrder();
-        // if(this.order.length>0){this.cartEmpty=false}
 //menu load
         this.menuService.loadMenu(this.route.snapshot.params["cafeid"])
             .subscribe((menu: Array<Menu>) => {

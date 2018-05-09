@@ -77,7 +77,7 @@ confirmOrder(order:Order[],cafe,payway,uid,location){
         var a = Math.floor(Math.random() * (50 - 1 + 1)) + 1;
     if (payway == "Cash") {
                     firebase.push('/order-cafe/' + cafe,
-                        {order, "status": "ordered", "uid": uid,"location":location,"orderNo2":a} )
+                        {order, "status": "ordered", "uid": uid,"location":location,"orderNo2":a,"timestamp":Math.floor(Date.now() / 1000)} )
                         .then((res) => {
                     firebase.push('/order-user/' + uid, {
                                 "status": "ordered",
@@ -90,7 +90,7 @@ confirmOrder(order:Order[],cafe,payway,uid,location){
 
                 }
                 else {
-                    firebase.push('/order-cafe/' + cafe, {order, "status": "ordered", "uid": uid,"location":location,"orderNo2":a})
+                    firebase.push('/order-cafe/' + cafe, {order, "status": "ordered", "uid": uid,"location":location,"orderNo2":a,"timestamp":Math.floor(Date.now() / 1000)})
                         .then((res) => {
                         firebase.push('/order-user/' + uid, {
                                 "status": "ordered",

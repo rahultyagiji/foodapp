@@ -42,7 +42,6 @@ iosIconRenderingMode="alwaysOriginal" sdkExampleTitle sdkToggleNavButton style="
 
 <!--Recommendations view-->
     <StackLayout *tabItem="{title: 'Your Picks'}" (tap)="changeTab()">
-
             <ListView [items]="orderComplexLocal" class="list-group" style="height: 100%">
                 <ng-template let-item="item" let-i="index">
                         <StackLayout>
