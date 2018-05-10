@@ -26,7 +26,7 @@
                     <StackLayout id="food1" (tap)="ontapMenu(item)"
                                  (swipe)="addtoOrderlist(item,$event)" orientation="horizontal">
                         <StackLayout orientation="vertical" style="width: 75%;">
-                            <Label [text]="item.name" class="list-group-item-copy" style="font-size: 14pt;font-weight: bold;"></Label>
+                            <Label [text]="item.name" textWrap="true" class="list-group-item-copy" style="font-size: 14pt;font-weight: bold;"></Label>
                             <Label [text]="item.description" textWrap="true" class="list-group-item-copy" style="font-size: 10pt"></Label>
                         </StackLayout>
                         <Label [text]="'$'+item.price" class="list-group-item-copy" style="width: 25%;font-size: 14pt"></Label>
