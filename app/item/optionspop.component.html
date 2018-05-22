@@ -14,13 +14,17 @@
         </ios>
     </StackLayout>
 
-    <Label text={{selectedMenuItem.name}} style="horizontal-align: center;font-size: 20pt;font-weight: bold"></Label>
+    <Label text={{selectedMenuItem.name}} style="horizontal-align: center;font-size: 20pt;font-weight: bold" textWrap="true"></Label>
 
 
     <Label text={{selectedMenuItem.description}} textWrap="true" style="font-size: 12px"></Label>
 
     <StackLayout style="border-color:#1a626f ; border-width: 2px ; width: 90%;">
-        <TextField hint="any special instructions..." (textChange)="onTextChange($event)"></TextField>
+        <TextView   (textChange)="onTextChange($event)"
+                   borderColor="#DEDEDE" borderWidth="1" height="200px" hint="special instructions..."
+                   returnKeyType="send" class="input input-border"></TextView>
+
+        <!--<TextField hint="any special instructions..." (textChange)="onTextChange($event)"></TextField>-->
     </StackLayout>
 
     <StackLayout *ngIf="choices">

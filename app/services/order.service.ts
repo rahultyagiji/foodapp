@@ -19,6 +19,7 @@ export class OrderService {
     orderComplex:OrderComplex[]=[];
     orderList:{"orderNo":string,"cafe":string,"status":string}[]=[];
     vorderNo:number=0;
+    price:string="0";
 
     constructor(private _ngZone:NgZone){
 
@@ -32,36 +33,34 @@ getOrder(){
 
 Order(menu:Menu,cafeId,specialInstruction,option:{'text':string,'price':string}
 ,extras:{'text':string,'price':string}[]){
-
-        var price = menu.price;
+    this.price="0";
+    this.price = menu.price;
     //    add options price
     if(option){
-        if(option.text!="")
-        price = (parseFloat(price)+parseFloat(option.price)).toString();
+    if(option.price!=null)
+        this.price = (parseFloat(this.price)+parseFloat(option.price)).toString();}
+    //add extras prices
+    if(extras){
+       extras.forEach((x)=>{
+           if(x.price!=null)
+        this.price = (parseFloat(this.price)+parseFloat(x.price)).toString();
+       });
     }
 
-    //add extras price
-    if(extras){
-        if(extras.length){
-       extras.forEach((x)=>{
-        price = (parseFloat(price)+parseFloat(x.price)).toString();
-       })};}
-
-
     if(this.order.length==0){
-    this.order.push({'cafeId':cafeId,'name':menu.name,'price':price,
+    this.order.push({'cafeId':cafeId,'name':menu.name,'price':this.price,
         'quantity':1,'specialInstruction':specialInstruction,'option':option,'extras':extras});
     }
     else {
         if(this.order[0].cafeId==cafeId){
-            this.order.push({'cafeId':cafeId,'name':menu.name,'price':price,'quantity':1,'specialInstruction':specialInstruction
+            this.order.push({'cafeId':cafeId,'name':menu.name,'price':this.price,'quantity':1,'specialInstruction':specialInstruction
                 ,'option':option,'extras':extras});
         }
         else{
             dialogs.alert("Can only order from one cafe at a time, please clear your cart first").then(()=> {
             });        }
 }
-
+    this.price="0";
 }
 
 removeOrder(order:Order){
@@ -75,28 +74,31 @@ removeOrder(order:Order){
 confirmOrder(order:Order[],cafe,payway,uid,location){
 
         var a = Math.floor(Math.random() * (50 - 1 + 1)) + 1;
+        var time = Math.floor(Date.now() / 1000);
     if (payway == "Cash") {
                     firebase.push('/order-cafe/' + cafe,
-                        {order, "status": "ordered", "uid": uid,"location":location,"orderNo2":a,"timestamp":Math.floor(Date.now() / 1000)} )
+                        {order, "status": "ordered", "uid": uid,"location":location,"orderNo2":a,"timestamp":time} )
                         .then((res) => {
                     firebase.push('/order-user/' + uid, {
                                 "status": "ordered",
                                 "cafe": cafe,
                                 "orderNo": res.key,
-                                "orderNo2":a
+                                "orderNo2":a,
+                                "timestamp":time
                             })
                                 .then(()=>{this.orderNo(cafe,res.key)})
                         }).catch((err)=>{console.log(err)})
 
                 }
                 else {
-                    firebase.push('/order-cafe/' + cafe, {order, "status": "ordered", "uid": uid,"location":location,"orderNo2":a,"timestamp":Math.floor(Date.now() / 1000)})
+                    firebase.push('/order-cafe/' + cafe, {order, "status": "ordered", "uid": uid,"location":location,"orderNo2":a,"timestamp":time})
                         .then((res) => {
                         firebase.push('/order-user/' + uid, {
                                 "status": "ordered",
                                 "cafe": cafe,
                                 "orderNo": res.key,
-                                "orderNo2": a
+                                "orderNo2": a,
+                                "timestamp":time
                             })
                                 .then(()=>{this.orderNo(cafe,res.key)})
                         }).catch((err)=>{console.log(err)})
@@ -162,27 +164,16 @@ confirmOrder(order:Order[],cafe,payway,uid,location){
 
         var onQueryEvent = function (result) {
         }
-        firebase.query(
+        return firebase.query(
             onQueryEvent,
             'order-user/' + uid,
             {
                 singleEvent: true,
                 orderBy: {
-                    type: firebase.QueryOrderByType.CHILD,
-                    value: 'uid'
-                },
-                ranges: [
-                    {
-                        type: firebase.QueryRangeType.EQUAL_TO,
-                        value: uid
-                    }]
+                    type: firebase.QueryOrderByType.KEY
+                }
             }
-        ).then(
-            (res) => {
-                Object.keys(res.value).map((x) => {
-                })
-            })
-            .catch();
+        )
 
     }
 

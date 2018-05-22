@@ -37,24 +37,7 @@ export class ItemService {
 
             for (const cafeId in data) {
                 if (data.hasOwnProperty(cafeId)) {
-
-                    // firebase.getDownloadUrl({
-                    //     // optional, can also be passed during init() as 'storageBucket' param so we can cache it
-                    //     bucket: 'gs://dekyou-cafe.appspot.com',
-                    //     // the full path of an existing file in your Firebase storage
-                    //     remoteFullPath: 'cafe1/profile.png'
-                    // }).then(
-                    //     function (url) {
-                    //         data[cafeId].imgSrc=url;
-                    //         console.log(JSON.stringify(data[cafeId]))
-                    //     },
-                    //     function (error) {
-                    //         console.log("Error::" + error);
-                    //     }
-                    // );
-
                     this.items.push(new Item(data[cafeId]));
-
                 }
             }
         }
@@ -62,4 +45,29 @@ export class ItemService {
     return this.items
 
     }
+
+    fetchCafeInfo(cafeId){
+
+    var onQueryEvent = function(result) {
+        if (!result.error) {
+        }
+    };
+
+   return firebase.query(
+        onQueryEvent,
+    "/businessName",
+{
+    singleEvent: true,
+    orderBy: {
+        type: firebase.QueryOrderByType.CHILD,
+        value: 'cafeId' // mandatory when type is 'child'
+            },
+    ranges: [
+        {
+            type: firebase.QueryRangeType.EQUAL_TO,
+            value: cafeId
+        }]
+        })
+}
+
 }

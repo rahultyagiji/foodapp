@@ -1,7 +1,5 @@
 import {Component, OnInit} from "@angular/core";
 import {AuthService} from "../../services/auth.service";
-import { RadDataFormComponent } from "nativescript-pro-ui/dataform/angular";
-import {NativeScriptUIDataFormModule} from "nativescript-pro-ui/dataform/angular";
 import { NativeScriptFormsModule } from 'nativescript-angular/forms';
 
 @Component({
@@ -24,10 +22,8 @@ export class RegisterComponent implements OnInit {
 
     }
 
-    onRegister(){
-        console.log(this.userId.username)
-        this.auth.register(this.userId.username,this.userId.password);
-
+    onRegister(email,password){
+        this.auth.register(email.text,password.text);
     }
 
 

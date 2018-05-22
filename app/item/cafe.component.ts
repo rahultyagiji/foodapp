@@ -7,11 +7,15 @@ import {MenuService} from "../services/menu.service";
 import {OrderService} from "../services/order.service";
 import {Order} from "../datatypes/order";
 import {ActivatedRoute} from "@angular/router";
-import * as Toast from "nativescript-toast";
+import * as Toast from 'nativescript-toast';
 import firebase = require("nativescript-plugin-firebase");
 
 import { Label } from 'ui/label';
 let view: Label;
+import {
+    GestureTypes, SwipeGestureEventData, TouchGestureEventData, PanGestureEventData} from "ui/gestures";
+import labelModule = require("ui/label");
+var label = new labelModule.Label();
 
 import { Color } from 'color';
 import {EventData} from "tns-core-modules/data/observable";
@@ -23,6 +27,8 @@ import {percent} from "tns-core-modules/ui/core/view";
 import {AnimationCurve} from "tns-core-modules/ui/enums";
 import {OrderpopComponent} from "../ordermodal/orderpop.component";
 import {OrderComplex} from "../datatypes/order.complex";
+import { View } from "ui/core/view";
+import {RouterExtensions} from "nativescript-angular";
 
 
 @Component({
@@ -44,6 +50,9 @@ export class CafeComponent implements OnInit {
     confirmbuttondisable:boolean=false;
     scrollHeight:string="height: 90%";
     scrollHeightBase:string="height:10%;width: 100%;border-width: 1px";
+    imageVisible:boolean=true;
+    touchDirection:number=0;
+    opacity:string="1";
 
     constructor(
         private itemService: ItemService,
@@ -51,7 +60,8 @@ export class CafeComponent implements OnInit {
         private orderService:OrderService,
         private route: ActivatedRoute,
         private popup: ModalDialogService,
-        private vcRef: ViewContainerRef
+        private vcRef: ViewContainerRef,
+        private routerextensions: RouterExtensions
 
     ) {
 
@@ -59,6 +69,15 @@ export class CafeComponent implements OnInit {
 
     ngOnInit(): void {
         // /////
+        // Fetch Cafe Details
+        this.menuService.fetchCafeInfo(this.route.snapshot.params["cafeid"])
+            .then((res)=>{
+                Object.keys(res.value).forEach((x)=>{
+                    this.cafe=res.value[x];
+                })
+            })
+            .catch(()=>{})
+
 //menu load
         this.menuService.loadMenu(this.route.snapshot.params["cafeid"])
             .subscribe((menu: Array<Menu>) => {
@@ -149,7 +168,9 @@ export class CafeComponent implements OnInit {
         this.total$=0;
         this.order.forEach((x)=>{
             //for total
+            console.log(x.price,this.total$)
             this.total$=this.total$+ parseFloat(x.price)
+
         })
 
     }
@@ -227,4 +248,31 @@ export class CafeComponent implements OnInit {
         this.scrollHeight="height: 90%"
     }
 
+
+    scrollingList(args: PanGestureEventData) {
+
+        if(args.deltaY<this.touchDirection){
+            this.opacity=(parseFloat(this.opacity)/1.1).toString();
+            if(parseFloat(this.opacity)<0.1){
+            this.imageVisible=false;}
+
+        }else{
+            this.opacity=(parseFloat(this.opacity)*2).toString();
+            if(parseFloat(this.opacity)>0.9)
+            {this.imageVisible=true;
+            this.opacity="1";}
+        }
+    }
+
+    onCancelNav(){
+        setTimeout(() =>{this.routerextensions.navigate([""]),
+            {
+                animated: true,
+                transition: {
+                    name: "slide",
+                    duration: 300,
+                    curve: "ease"
+                }
+            },100});
+    }
 }

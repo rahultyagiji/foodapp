@@ -1,19 +1,12 @@
 <side-drawer-page>
     <StackLayout>
 
-        <RadDataForm [source]="userId">
+        <TextField #email hint="Username" autocorrect="false" returnKeyType="done"
+                   class="input input-border"></TextField>
+        <TextField #password hint="Password" autocorrect="false" returnKeyType="done"
+                   class="input input-border" secure="true"></TextField>
 
-            <TKEntityProperty  name="username" hintText="Username" index="0">
-                <TKPropertyEditor type="Text"></TKPropertyEditor>
-            </TKEntityProperty>
-
-            <TKEntityProperty name="password" hintText="Password" index="1">
-                <TKPropertyEditor type="Password" secure="true"></TKPropertyEditor>
-            </TKEntityProperty>
-
-        </RadDataForm>
-
-        <Button text="Signin" (tap)="onSignin()"></Button>
+        <Button text="Signin" (tap)="onSignin(email,password)"></Button>
 
     </StackLayout>
 </side-drawer-page>

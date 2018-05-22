@@ -14,7 +14,6 @@ import {ModalDialogService} from "nativescript-angular/modal-dialog";
 
 import {RegisterComponent} from "./auth/register/register.component";
 import {AuthService} from "./services/auth.service";
-import {NativeScriptUIDataFormModule} from "nativescript-pro-ui/dataform/angular";
 import {NativeScriptFormsModule} from "nativescript-angular/forms";
 import {SigninComponent} from "./auth/signin/signin.component";
 import {OrderpopComponent} from "./ordermodal/orderpop.component";
@@ -29,7 +28,6 @@ import {TNSCheckBoxModule} from "nativescript-checkbox/angular";
         NativeScriptModule,
         AppRoutingModule,
         //NativeScriptUISideDrawerModule,
-        NativeScriptUIDataFormModule,
         NativeScriptFormsModule,
         TNSCheckBoxModule,
         SharedModule

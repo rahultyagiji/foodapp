@@ -5,35 +5,32 @@
 	"repository": "<fill-your-repository-here>",
 	"nativescript": {
 		"id": "org.nativescript.DQCafe",
-		"tns-ios": {
-			"version": "4.0.0-2018-02-01-01"
-		},
 		"tns-android": {
-			"version": "3.4.2"
+			"version": "4.0.1"
 		}
 	},
 	"dependencies": {
-		"@angular/animations": "^5.2.4",
-		"@angular/common": "^5.2.4",
-		"@angular/compiler": "^5.2.4",
-		"@angular/core": "^5.2.4",
-		"@angular/forms": "^5.2.4",
-		"@angular/http": "^5.2.4",
-		"@angular/platform-browser": "^5.2.4",
-		"@angular/platform-browser-dynamic": "^5.2.4",
-		"@angular/router": "^5.2.4",
-		"moment": "^2.21.0",
+		"@angular/animations": "^5.2.11",
+		"@angular/common": "^5.2.11",
+		"@angular/compiler": "^5.2.11",
+		"@angular/core": "^5.2.11",
+		"@angular/forms": "^5.2.11",
+		"@angular/http": "^5.2.11",
+		"@angular/platform-browser": "^5.2.11",
+		"@angular/platform-browser-dynamic": "^5.2.11",
+		"@angular/router": "^5.2.11",
+		"moment": "^2.22.1",
 		"nativescript-angular": "~5.2.0",
 		"nativescript-checkbox": "^3.0.3",
-		"nativescript-plugin-firebase": "^5.1.7",
-		"nativescript-pro-ui": "^3.4.0",
+		"nativescript-geolocation": "^4.2.6",
+		"nativescript-plugin-firebase": "^6.0.0",
 		"nativescript-theme-core": "~1.0.4",
 		"nativescript-toast": "^1.4.6",
-		"nativescript-ui-sidedrawer": "^3.5.0",
+		"nativescript-ui-sidedrawer": "^3.5.2",
 		"reflect-metadata": "~0.1.8",
-		"rxjs": "~5.5.2",
-		"tns-core-modules": "^4.0.0-rc-2017.12.18.1",
-		"zone.js": "~0.8.9"
+		"rxjs": "^5.5.10",
+		"tns-core-modules": "^4.0.1",
+		"zone.js": "^0.8.26"
 	},
 	"devDependencies": {
 		"babel-traverse": "6.26.0",

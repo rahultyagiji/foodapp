@@ -54,16 +54,23 @@
     background-color: #b4ed55;
     padding-top: 16;
     padding-bottom: 16;
-    padding-left: 16;
     padding-right: 16;
 }
 
 .inProgress {
     height: 48;
     font-size: 16;
+    background-color: #4883ed;
+    padding-top: 16;
+    padding-bottom: 16;
+    padding-right: 16;
+}
+
+.ordered {
+    height: 48;
+    font-size: 16;
     background-color: #ed1f2a;
     padding-top: 16;
     padding-bottom: 16;
-    padding-left: 16;
     padding-right: 16;
 }

@@ -1,4 +1,5 @@
-<ActionBar title="DQCafe" class="action-bar" style="background-color: #0A4C58;color: white; vertical-align: center">
+<ActionBar  class="action-bar" style="background-color: #0A4C58;color: white; vertical-align: center">
+<Label text="DQCafe" style="color: white; vertical-align: center;font-size: 22pt;font-weight: bold"></Label>
 </ActionBar>
 
 
@@ -8,9 +9,12 @@ iosIconRenderingMode="alwaysOriginal" sdkExampleTitle sdkToggleNavButton style="
 
 <!--List View-->
 <StackLayout *tabItem="{title: 'List'}">
-<StackLayout (loaded)="onSearchLayoutLoaded($event)">
-    <SearchBar hint="Type to search" [text]="searchPhrase"
-               (loaded)="searchLoaded($event)" (textChange)="onTextChanged($event)" color="black"></SearchBar>
+<StackLayout>
+    <SearchBar #sb id="searchbar" [text]="searchPhrase" hint="Type to search" (submit)="onSubmit()" (loaded)="searchLoaded()" (textChange)="onTextChanged()"
+               (clear)="onClear()" color="black"></SearchBar>
+
+    <!--<SearchBar id="searchbarid"  -->
+               <!--(loaded)="searchLoaded($event)" (textChange)="onTextChanged($event)" color="black"></SearchBar>-->
     <ListView [items]="myItems" class="list-group container">
 <!--each list item-->
         <ng-template  let-item="item" class="textpadding">
@@ -40,27 +44,51 @@ iosIconRenderingMode="alwaysOriginal" sdkExampleTitle sdkToggleNavButton style="
     </StackLayout>
 
 
-<!--Recommendations view-->
-    <StackLayout *tabItem="{title: 'Your Picks'}" (tap)="changeTab()">
-            <ListView [items]="orderComplexLocal" class="list-group" style="height: 100%">
+<!--Your Orders view-->
+    <StackLayout *tabItem="{title: 'Your Orders'}" (tap)="changeTab()">
+            <ListView [items]="orderComplexLocalFilter" class="list-group" style="height: 90%">
                 <ng-template let-item="item" let-i="index">
-                        <StackLayout>
+                    <StackLayout>
+                       <Label [text]="item.cafeOwner" style="font-weight: bold;font-size:16pt"> </Label>
                         <Label [text]="'Order #:  ' + item.orderNo2"
-                               class="list-group-item"></Label>
-                        <StackLayout *ngFor="let order of item.order">
-                            <StackLayout orientation="horizontal">
-                                <Label [text]="order.quantity" style="margin-left: 5%"></Label>
-                                <Label text="x"></Label>
-                                <Label [text]="order.name"></Label>
+                               style="font-weight: bold;font-size:14pt"></Label>
+                        <StackLayout orientation="horizontal">
+                            <Image [src]="item.imgSrc"  style="width: 20%"></Image>
+                            <StackLayout orientation="vertical">
+                            <StackLayout *ngFor="let order of item.order" style="width: 60%">
+                                <StackLayout orientation="horizontal">
+                                    <Label [text]="order.quantity" style="margin-left: 5%"></Label>
+                                    <Label text="x"></Label>
+                                    <Label [text]="order.name"></Label>
+                                </StackLayout>
+                                <Label [text]="order.specialInstruction"></Label>
                             </StackLayout>
-                            <Label [text]="order.specialInstruction"></Label>
+                            </StackLayout>
+                            <StackLayout verticalAligment="middle">
+                            <Label text="Total" style="font-size: 14pt" style.verticalAlignment="center" style.textAlignment="center"></Label>
+                            <Label [text]="'$' + item.total" style="font-size: 14pt" style.verticalAlignment="center" style.textAlignment="center"></Label>
+                            </StackLayout>
                         </StackLayout>
-                            <StackLayout style="height: 0.5%;width: 80%"
-                                         class="{{item.status=='completed'?'processed':'inProgress'}}"> </StackLayout>
-                        </StackLayout>
+
+                            <StackLayout *ngIf="item.status=='completed'" style="height: 0.25%;width: 100%"
+                                         class="processed"><Label text="Order is ready!!!" style="color: white"></Label> </StackLayout>
+                            <StackLayout *ngIf="item.status=='processing'" style="height: 0.25%;width: 100%"
+                                         class="inProgress" ><Label text="Order is being prepared!!!" style="color: white"></Label> </StackLayout>
+                            <StackLayout *ngIf="item.status=='ordered'" style="height: 0.25%;width: 100%"
+                                         class="ordered"><Label text="Order has been placed!!!" style="color: white"></Label> </StackLayout>
+
+                    </StackLayout>
                 </ng-template>
             </ListView>
+
+        <StackLayout orientation="horizontal" style="height: 10%">
+            <Button text="Current Orders" (tap)="onTapCurrentOrder()" style="width: 50%"></Button>
+            <Button text="Past Orders" (tap)="onTapPastOrders()" style="width: 50%"></Button>
+        </StackLayout>
+
     </StackLayout>
+
+
 </TabView>
 
 </side-drawer-page>

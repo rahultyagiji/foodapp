@@ -1,6 +1,4 @@
 import {Component, OnInit} from "@angular/core";
-import { RadDataFormComponent } from "nativescript-pro-ui/dataform/angular";
-import {NativeScriptUIDataFormModule} from "nativescript-pro-ui/dataform/angular";
 import { NativeScriptFormsModule } from 'nativescript-angular/forms';
 import {AuthService} from "../../services/auth.service";
 
@@ -24,8 +22,10 @@ export class SigninComponent implements OnInit {
 
     }
 
-    onSignin(){
-        this.auth.signin(this.userId.username,this.userId.password);
+    onSignin(email,password){
+        // this.auth.signin(this.userId.username,this.userId.password);
+        console.log(email.text);
+            this.auth.signin(email.text,password.text);
     }
 
 

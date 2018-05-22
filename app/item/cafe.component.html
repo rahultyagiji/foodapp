@@ -1,13 +1,17 @@
-<ActionBar title="DQ" class="action-bar"
-           style="background-color: #0A4C58;color: white"></ActionBar>
+<ActionBar class="action-bar" >
+<Stacklaout orientation="horizontal">
+    <Label text="X" style="width: 30% ;font-size: 20pt;font-weight: bold" (tap)="onCancelNav()"></Label>
+    <Label text="                "></Label>
+    <Label [text]="cafe.name" style="font-size:  18pt;vertical-align: center;font-weight: bold"></Label>
+</Stacklaout>
+</ActionBar>
 
-<side-drawer-page>
-<StackLayout>
-    <!--Cafe name and description and other properties later-->
+    <StackLayout>
 
+        <Image [src]="cafe.imgSrc" width="90%" top="0"  right="0"
+               opacity="{{opacity}}" *ngIf="imageVisible"></Image>
 
     <!--Categories-->
-
     <StackLayout>
         <ScrollView orientation="horizontal">
             <StackLayout orientation="horizontal">
@@ -18,10 +22,8 @@
             </StackLayout>
         </ScrollView>
 
-
-
-        <StackLayout class="page page-content">
-            <ListView [items]="myMenu" class="list-group" style="{{scrollHeight}}">
+        <StackLayout class="page page-content" >
+            <ListView [items]="myMenu" class="list-group" style="{{scrollHeight}}" (pan)="scrollingList($event)">
                 <ng-template  let-item="item">
                     <StackLayout id="food1" (tap)="ontapMenu(item)"
                                  (swipe)="addtoOrderlist(item,$event)" orientation="horizontal">
@@ -39,12 +41,6 @@
             <Label text="Cart empty!"  horizontalAlignment="center" verticalAlignment="middle" style="color:white; font-size: 18px;text-align: center;padding-top: 15px"></Label>
         </StackLayout>
 
-        <!--<AbsoluteLayout *ngIf="cartEmpty" style="width: 100%;border-width: 1px" backgroundColor="#1a626f">
-            <Label text="Cart empty!" left="150" top="0" width="100%" height="50" style="color:white; align-items: center;font-size: 14px;; width: 50%;"></Label>
-        </AbsoluteLayout>-->
-
-        <!--<Label text="Cart empty!" *ngIf="cartEmpty"></Label>-->
-
         <StackLayout *ngIf="!cartEmpty" style="border-color:#1a626f ; border-width: 1px ; height:100%;width: 100%;">
             <StackLayout orientation="horizontal">
                 <Button text="Cancel" (tap)="onorderCancel()" style="width: 25%;background-color: #8F130C;color: white;"
@@ -52,7 +48,6 @@
                 <Button [text]="'$' + total$" style="width: 50%;background-color: #d6f39b;"></Button>
                 <Button text="Confirm" (tap)="OnOrder()" style="width: 25%;background-color:cornflowerblue;color: white;"
                         *ngIf="!confirmbuttondisable"></Button>
-
             </StackLayout>
 
 
@@ -71,8 +66,7 @@
                     </StackLayout>
                 </ng-template>
             </ListView>
-
         </StackLayout>
     </StackLayout>
+
 </StackLayout>
-</side-drawer-page>
