@@ -68,6 +68,7 @@ export class CafeComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        console.log("ng triggered")
         // /////
         // Fetch Cafe Details
         this.menuService.fetchCafeInfo(this.route.snapshot.params["cafeid"])
@@ -95,6 +96,7 @@ export class CafeComponent implements OnInit {
             });
 
         this.order = this.orderService.getOrder();
+        this.totalPrice(this.orderService.getOrder());
 
         if(this.order.length>0) {
             if(this.order[0].cafeId!=this.route.snapshot.params["cafeid"]) {
@@ -110,8 +112,9 @@ export class CafeComponent implements OnInit {
     }
 
     ngOnChanges(){
+        console.log("changes triggered")
         this.order = this.orderService.getOrder();
-
+        this.totalPrice(this.orderService.getOrder());
         if(this.order.length>0) {
             if(this.order[0].cafeId!=this.route.snapshot.params["cafeid"]) {
                 this.confirmbuttondisable = true;
@@ -142,12 +145,7 @@ export class CafeComponent implements OnInit {
                     this.cartEmpty = false;
                     this.scrollHeight = "height: 60%"
                 }
-
-                this.total$ = 0;
-                this.order.forEach((x) => {
-                    //for total
-                    this.total$ = this.total$ + parseFloat(x.price)
-                })
+                this.totalPrice(this.order);
             }
         })
     }
@@ -163,15 +161,17 @@ export class CafeComponent implements OnInit {
         view.animate({ backgroundColor: new Color("white"), duration: 1500 });
 
         ///
-        if(this.order.length>0){this.cartEmpty=false;this.scrollHeight="height: 60%"}
-
-        this.total$=0;
-        this.order.forEach((x)=>{
-            //for total
-            console.log(x.price,this.total$)
-            this.total$=this.total$+ parseFloat(x.price)
-
-        })
+        if(this.order.length>0){
+            this.cartEmpty=false;this.scrollHeight="height: 60%";
+            this.totalPrice(this.order);
+        }
+        // this.total$=0;
+        // this.order.forEach((x)=>{
+        //     //for total
+        //     console.log(x.price,this.total$)
+        //     this.total$=this.total$+ parseFloat(x.price)
+        //
+        // })
 
     }
 
@@ -215,9 +215,10 @@ export class CafeComponent implements OnInit {
         view.animate({ backgroundColor: new Color("#F57A73"), duration: 1000 });
         setTimeout(()=>{ this.order = this.orderService.removeOrder(order);
 
-            this.total$=(this.total$-parseFloat(order.price));
+            // this.total$=Math.round((this.total$-parseFloat(order.price))*100)/100;
             if(this.total$<0){this.total$=0}
             this.order = this.orderService.getOrder();
+            this.totalPrice(this.order);
             view.animate({ backgroundColor: new Color("white"), duration: 1000 });
             if(this.order.length>0){
             }
@@ -274,5 +275,13 @@ export class CafeComponent implements OnInit {
                     curve: "ease"
                 }
             },100});
+    }
+
+    totalPrice(order:Order[]){
+         this.total$=0;
+        order.forEach((x)=>{
+            //for total
+            this.total$=Math.round((this.total$+ parseFloat(x.price))*100)/100;
+        })
     }
 }

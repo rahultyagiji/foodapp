@@ -194,6 +194,7 @@ ontapListofFrequent(token){
 
     searchLoaded(event) {
         this.searchPhrase = "";
+        event.object.android.setFocusableInTouchMode(false);
     }
 
     public onSubmit(args) {
@@ -262,8 +263,8 @@ ontapListofFrequent(token){
         var total="0";
         order.forEach((x)=>{
             //for total
-            total=(parseFloat(total)+ parseFloat(x.price)).toString();
-        })
+            total=(Math.round((parseFloat(total)+ parseFloat(x.price))*100)/100).toString();
+        });
         return total;
     }
 

@@ -5,14 +5,7 @@
         <ActionItem ios.systemIcon="2" android.systemIcon="ic_menu_edit" ios.position="right"></ActionItem>
     </ActionBar>
 
-    <StackLayout orientation="vertical" horizontalAlignment="left" height="40" width="100%" backgroundColor="#1a626f">
-        <android>
-            <Button text=" Add Order" (tap)="close('true')"></Button>
-        </android>
-        <ios>
-            <Button text="X" horizontalAlignment="left" (tap)="close()" style="color:black;font-size: 20px"></Button>
-        </ios>
-    </StackLayout>
+
 
     <Label text={{selectedMenuItem.name}} style="horizontal-align: center;font-size: 20pt;font-weight: bold" textWrap="true"></Label>
 
@@ -28,7 +21,7 @@
     </StackLayout>
 
     <StackLayout *ngIf="choices">
-    <Label class="p-10" text="Select Radio Options" textWrap="true" style="font-weight: bold"></Label>
+    <Label class="p-10" text="Select Options" textWrap="true" style="font-weight: bold"></Label>
     <StackLayout class="p-10" *ngFor="let option of radioOptions">
         <StackLayout orientation="horizontal" verticalAlignment="center">
             <CheckBox #elem boxType="circle" [checked]="option.selected" (checkedChange)="elem.checked !== option.selected && changeCheckedRadio(option)" class="checkbox"></CheckBox>
@@ -43,7 +36,7 @@
 
 
      <StackLayout *ngIf="extra">
-    <Label class="p-10" text="Select Check Options" textWrap="true" style="font-weight: bold"></Label>
+    <Label class="p-10" text="Select Extras" textWrap="true" style="font-weight: bold"></Label>
     <StackLayout class="p-10" *ngFor="let option of checkOptions">
         <StackLayout orientation="horizontal" verticalAlignment="center">
             <CheckBox #elem [checked]="false" class="checkbox" (tap)="checkedExtra(option)"></CheckBox>
@@ -55,5 +48,15 @@
         </StackLayout>
     </StackLayout>
      </StackLayout>
+
+    <StackLayout orientation="vertical" horizontalAlignment="left" height="40" width="100%" backgroundColor="#1a626f">
+        <android>
+            <Button text=" Add Order" (tap)="close('true')"></Button>
+        </android>
+        <ios>
+            <Button text="X" horizontalAlignment="left" (tap)="close()" style="color:black;font-size: 20px"></Button>
+            <Button text=" Add Order" (tap)="close('true')"></Button>
+        </ios>
+    </StackLayout>
 
 </StackLayout>
