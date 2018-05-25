@@ -8,10 +8,14 @@
 
     <StackLayout>
 
-        <Image [src]="cafe.imgSrc" width="90%" top="0"  right="0"
-               opacity="{{opacity}}" *ngIf="imageVisible"></Image>
+    <TabView [(ngModel)]="tabSelectedIndex" borderBottomcolor="#B52E26"
+                 iosIconRenderingMode="alwaysOriginal" sdkExampleTitle sdkToggleNavButton style="height: 100%">
+
+            <!--List View-->
+    <StackLayout *tabItem="{title: 'Menu'}">
 
     <!--Categories-->
+
     <StackLayout>
         <ScrollView orientation="horizontal">
             <StackLayout orientation="horizontal">
@@ -23,15 +27,15 @@
         </ScrollView>
 
         <StackLayout class="page page-content" >
-            <ListView [items]="myMenu" class="list-group" style="{{scrollHeight}}" (pan)="scrollingList($event)">
+            <ListView [items]="myMenu" class="list-group" style="{{scrollHeight}}">
                 <ng-template  let-item="item">
                     <StackLayout id="food1" (tap)="ontapMenu(item)"
                                  (swipe)="addtoOrderlist(item,$event)" orientation="horizontal">
-                        <StackLayout orientation="vertical" style="width: 75%;">
+                        <StackLayout orientation="vertical" style="width: 85%;">
                             <Label [text]="item.name" textWrap="true" class="list-group-item-copy" style="font-size: 14pt;font-weight: bold;"></Label>
                             <Label [text]="item.description" textWrap="true" class="list-group-item-copy" style="font-size: 10pt"></Label>
                         </StackLayout>
-                        <Label [text]="'$'+item.price" class="list-group-item-copy" style="width: 25%;font-size: 14pt"></Label>
+                        <Label [text]="'$'+item.price" class="list-group-item-copy" style="width: 20%;font-size: 12pt"></Label>
                     </StackLayout>
                 </ng-template>
             </ListView>
@@ -41,32 +45,47 @@
             <Label text="Cart empty!"  horizontalAlignment="center" verticalAlignment="middle" style="color:white; font-size: 18px;text-align: center;padding-top: 15px"></Label>
         </StackLayout>
 
-        <StackLayout *ngIf="!cartEmpty" style="border-color:#1a626f ; border-width: 1px ; height:100%;width: 100%;">
-            <StackLayout orientation="horizontal">
-                <Button text="Cancel" (tap)="onorderCancel()" style="width: 25%;background-color: #8F130C;color: white;"
-                        *ngIf="!buttondisable"></Button>
-                <Button [text]="'$' + total$" style="width: 50%;background-color: #d6f39b;"></Button>
-                <Button text="Confirm" (tap)="OnOrder()" style="width: 25%;background-color:cornflowerblue;color: white;"
-                        *ngIf="!confirmbuttondisable"></Button>
-            </StackLayout>
-
-
-            <StackLayout backgroundColor="#1a626f" height="20" >
-                <Label text="Order Summary" horizontalAlignment="center" style="align-items:center;font-size: 12px;font-weight: bold;color:white"></Label>
-            </StackLayout>
-
-
-            <ListView [items]="order" class="list-group">
-                <ng-template let-item="item">
-                    <StackLayout id="food2"(tap)="ontapOrder(item)"
-                                 (swipe)="removefromOrderlist(item,$event)" orientation="horizontal">
-                        <Label [text]="item.name" textWrap="true"
-                               class="list-group-item-copy" style="width: 70%"></Label>
-                        <Label [text]="'$' + item.price" class="list-group-item-copy" style="width: 20%"></Label>
-                    </StackLayout>
-                </ng-template>
-            </ListView>
+        <StackLayout *ngIf="!cartEmpty" style="{{scrollHeightBase}}" backgroundColor="#1a626f">
+            <Label text="Proceed to Checkout"  horizontalAlignment="center" verticalAlignment="middle"
+                   style="color:white; font-size: 18px;text-align: center;padding-top: 15px" (tap)="OnOrder()"></Label>
         </StackLayout>
+
+        <!--<StackLayout *ngIf="!cartEmpty" style="border-color:#1a626f ; border-width: 1px ; height:100%;width: 100%;">-->
+            <!--<StackLayout orientation="horizontal">-->
+                <!--<Button text="Cancel" (tap)="onorderCancel()" style="width: 25%;background-color: #8F130C;color: white;"-->
+                        <!--*ngIf="!buttondisable"></Button>-->
+                <!--<Button [text]="'$' + total$" style="width: 50%;background-color: #d6f39b;"></Button>-->
+                <!--<Button text="Confirm" (tap)="OnOrder()" style="width: 25%;background-color:cornflowerblue;color: white;"-->
+                        <!--*ngIf="!confirmbuttondisable"></Button>-->
+            <!--</StackLayout>-->
+
+
+            <!--<StackLayout backgroundColor="#1a626f" height="20" >-->
+                <!--<Label text="Order Summary" horizontalAlignment="center" style="align-items:center;font-size: 12px;font-weight: bold;color:white"></Label>-->
+            <!--</StackLayout>-->
+
+
+            <!--<ListView [items]="order" class="list-group">-->
+                <!--<ng-template let-item="item">-->
+                    <!--<StackLayout id="food2"(tap)="ontapOrder(item)"-->
+                                 <!--(swipe)="removefromOrderlist(item,$event)" orientation="horizontal">-->
+                        <!--<Label [text]="item.name" textWrap="true"-->
+                               <!--class="list-group-item-copy" style="width: 70%"></Label>-->
+                        <!--<Label [text]="'$' + item.price" class="list-group-item-copy" style="width: 20%"></Label>-->
+                    <!--</StackLayout>-->
+                <!--</ng-template>-->
+            <!--</ListView>-->
+        <!--</StackLayout>-->
     </StackLayout>
+    </StackLayout>>
+    <StackLayout *tabItem="{title: 'Info'}">
+
+        <Image [src]="cafe.imgSrc" top="0"  right="0"></Image>
+
+        <Label style="font-size: 20pt" textWrap="true"
+               text="Space for displaying information on cafe... maybe"></Label>
+    </StackLayout>>
+
+    </TabView>>
 
 </StackLayout>

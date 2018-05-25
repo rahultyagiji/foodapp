@@ -81,6 +81,8 @@ export class ItemsComponent implements OnInit{
                            that.items.push(x);
                     }
                     else{
+                        //remove this when we want to enable location based ....
+                        that.items.push(x);
                     }
                             }
                         }, function(e){
@@ -108,14 +110,10 @@ export class ItemsComponent implements OnInit{
 
                         this.orderList.forEach((x)=>{
 //get Cafe details
-                            this.itemService.fetchCafeInfo(x.cafe)
-                            .then((res)=>{
-                                Object.keys(res.value).forEach((y)=>
-                                    {
                                 this.orderservice.getOrderDetails(x.cafe,x.orderNo)
                                 .then((result)=>{
-                                    this.orderDisplay.cafeOwner=res.value[y].name;
-                                    this.orderDisplay.imgSrc = res.value[y].imgSrc;
+                                    this.orderDisplay.cafeOwner=this.itemService.getCafeInfo(x.cafe).name;
+                                    this.orderDisplay.imgSrc = this.itemService.getCafeInfo(x.cafe).imgSrc;
                                     this.orderDisplay.key = result.value.key;
                                     this.orderDisplay.uid = result.value.uid;
                                     this.orderDisplay.status = result.value.status;
@@ -127,15 +125,13 @@ export class ItemsComponent implements OnInit{
                                         "cafeOwner":"","location":"","orderNo2":"","imgSrc":"","total":""};
                                 })
                                     });
-                                });
-                                    });
                         });
                 this.ontapListofFrequent(token.uid);
             });
 
     }
 
-//Frequently visited
+//Frequently visited - to be completed ....
 ontapListofFrequent(token){
     var counts: {}[];
         this.orderservice.frequentCafe(token)

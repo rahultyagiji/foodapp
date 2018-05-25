@@ -11,7 +11,7 @@ import {OrderpopComponent} from "./ordermodal/orderpop.component";
 const routes: Routes = [
     { path: "", redirectTo: "items", pathMatch: "full" },
     { path: "items", component: ItemsComponent },
-    { path: "cafe/:cafeid", component:CafeComponent },
+    { path: "cafe/:cafeId", component:CafeComponent },
     { path: "register", component:RegisterComponent },
     { path: "signin", component:SigninComponent },
     {path: "signin", component:OrderpopComponent}

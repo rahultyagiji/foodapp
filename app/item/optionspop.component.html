@@ -7,10 +7,10 @@
 
 
 
-    <Label text={{selectedMenuItem.name}} style="horizontal-align: center;font-size: 20pt;font-weight: bold" textWrap="true"></Label>
+    <Label text={{selectedMenuItem.name}} style="width:90%;horizontal-align: center;font-size: 20pt;font-weight: bold" textWrap="true"></Label>
 
 
-    <Label text={{selectedMenuItem.description}} textWrap="true" style="font-size: 12px"></Label>
+    <Label text={{selectedMenuItem.description}} textWrap="true" style="width:90%;font-size: 12px"></Label>
 
     <StackLayout style="border-color:#1a626f ; border-width: 2px ; width: 90%;">
         <TextView   (textChange)="onTextChange($event)"
@@ -51,7 +51,7 @@
 
     <StackLayout orientation="vertical" horizontalAlignment="left" height="40" width="100%" backgroundColor="#1a626f">
         <android>
-            <Button text=" Add Order" (tap)="close('true')"></Button>
+            <Button text=" Add Order" (tap)="close('true')" style="width: 80%"></Button>
         </android>
         <ios>
             <Button text="X" horizontalAlignment="left" (tap)="close()" style="color:black;font-size: 20px"></Button>

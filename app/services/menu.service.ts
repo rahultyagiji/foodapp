@@ -12,7 +12,7 @@ export class MenuService {
 
     }
 
-    loadMenu(cafeId:string): Observable<any>{
+    loadMenu(cafeId): Observable<any>{
         return new Observable((observer: any) => {
             const path = "/menu/"+cafeId;
             const onValueEvent = (snapshot: any) => {
@@ -39,30 +39,4 @@ export class MenuService {
 
         return this.menu;
     }
-
-
-    fetchCafeInfo(cafeId){
-
-        var onQueryEvent = function(result) {
-            if (!result.error) {
-            }
-        };
-
-        return firebase.query(
-            onQueryEvent,
-            "/businessName",
-            {
-                singleEvent: true,
-                orderBy: {
-                    type: firebase.QueryOrderByType.CHILD,
-                    value: 'cafeId' // mandatory when type is 'child'
-                },
-                ranges: [
-                    {
-                        type: firebase.QueryRangeType.EQUAL_TO,
-                        value: cafeId
-                    }]
-            })
-    }
-
 }

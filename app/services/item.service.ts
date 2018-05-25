@@ -12,6 +12,7 @@ export class ItemService {
     }
 
     private items = new Array<Item>();
+    private item:Item;
 
     getSingleItem(cafeId){
         return this.items.filter(item => item.cafeId == cafeId)[0];
@@ -46,28 +47,14 @@ export class ItemService {
 
     }
 
-    fetchCafeInfo(cafeId){
+    getCafeInfo(cafeId){
 
-    var onQueryEvent = function(result) {
-        if (!result.error) {
-        }
-    };
-
-   return firebase.query(
-        onQueryEvent,
-    "/businessName",
-{
-    singleEvent: true,
-    orderBy: {
-        type: firebase.QueryOrderByType.CHILD,
-        value: 'cafeId' // mandatory when type is 'child'
-            },
-    ranges: [
-        {
-            type: firebase.QueryRangeType.EQUAL_TO,
-            value: cafeId
-        }]
-        })
-}
+        this.items.filter((x)=>{
+            return (x.cafeId === cafeId);
+        }).forEach((y)=>{
+            this.item=y;
+        });
+        return this.item
+    }
 
 }

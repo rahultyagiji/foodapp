@@ -41,6 +41,7 @@ export class CafeComponent implements OnInit {
     cafe: Item;
     menu:Menu[];
     myMenu:Menu[];
+    uid:string;
     order:Order[]=[];
     categories:string[]=[];
     _menu:ObservableArray<Menu> = new ObservableArray<Menu>([]);
@@ -54,6 +55,11 @@ export class CafeComponent implements OnInit {
     touchDirection:number=0;
     opacity:string="1";
 
+    public tabSelectedIndex: number;
+
+
+
+
     constructor(
         private itemService: ItemService,
         private menuService: MenuService,
@@ -64,23 +70,16 @@ export class CafeComponent implements OnInit {
         private routerextensions: RouterExtensions
 
     ) {
+        firebase.getCurrentUser()
+            .then((token)=> {
+                this.uid = token.uid; console.log("logged in as",token.uid)});
 
     }
 
     ngOnInit(): void {
-        console.log("ng triggered")
-        // /////
-        // Fetch Cafe Details
-        this.menuService.fetchCafeInfo(this.route.snapshot.params["cafeid"])
-            .then((res)=>{
-                Object.keys(res.value).forEach((x)=>{
-                    this.cafe=res.value[x];
-                })
-            })
-            .catch(()=>{})
-
+        this.cafe=this.itemService.getCafeInfo(this.route.snapshot.params["cafeId"]);
 //menu load
-        this.menuService.loadMenu(this.route.snapshot.params["cafeid"])
+        this.menuService.loadMenu(this.route.snapshot.params["cafeId"])
             .subscribe((menu: Array<Menu>) => {
                 this._menu = new ObservableArray(menu);
                 this.menu=[];
@@ -103,7 +102,7 @@ export class CafeComponent implements OnInit {
                 this.confirmbuttondisable = true;
             }
             this.cartEmpty=false;
-            this.scrollHeight="height: 60%"
+            this.scrollHeight="height: 90%"
         }
         else if(this.order.length==0) {
             this.scrollHeight="height:90%"
@@ -120,7 +119,7 @@ export class CafeComponent implements OnInit {
                 this.confirmbuttondisable = true;
             }
             this.cartEmpty=false;
-            this.scrollHeight="height: 60%"
+            this.scrollHeight="height: 90%"
         } else if (this.order.length == 0) {
             this.cartEmpty=true;
         }
@@ -143,7 +142,7 @@ export class CafeComponent implements OnInit {
                 this.order = this.orderService.getOrder();
                 if (this.order.length > 0) {
                     this.cartEmpty = false;
-                    this.scrollHeight = "height: 60%"
+                    this.scrollHeight = "height: 90%"
                 }
                 this.totalPrice(this.order);
             }
@@ -162,17 +161,9 @@ export class CafeComponent implements OnInit {
 
         ///
         if(this.order.length>0){
-            this.cartEmpty=false;this.scrollHeight="height: 60%";
+            this.cartEmpty=false;this.scrollHeight="height: 90%";
             this.totalPrice(this.order);
         }
-        // this.total$=0;
-        // this.order.forEach((x)=>{
-        //     //for total
-        //     console.log(x.price,this.total$)
-        //     this.total$=this.total$+ parseFloat(x.price)
-        //
-        // })
-
     }
 
     OnOrder(){
@@ -184,27 +175,28 @@ export class CafeComponent implements OnInit {
             viewContainerRef:this.vcRef,
 
         };
-        var uid;
+
+        if(this.uid){
         this.popup.showModal(OrderpopComponent,options).then((response)=>
         {
-            firebase.getCurrentUser()
-                .then((token)=> {
-                    uid = token.uid;
-                    this.orderService.confirmOrder(this.order,this.route.snapshot.params["cafeid"],response.payment,uid,response.location);
+
+         this.orderService.confirmOrder(this.order,this.route.snapshot.params["cafeid"],response.payment,this.uid,response.location);
                     Toast.makeText("Your order has been placed").show();
                     this.order.length=0;
                     this.cartEmpty=true;
                     this.total$=0;
                     this.scrollHeight="height: 100%"
                 }).catch(()=>{
-                Toast.makeText("Please login to confirm order").show();
+                Toast.makeText("").show();
             })
 
-        })
-
+    }
+    else{
+        Toast.makeText("Please login to order").show()}
     }
 
     ontapOrder(order){
+        console.log(JSON.stringify(order))
     }
 
     removefromOrderlist(order,args:EventData){
@@ -250,31 +242,24 @@ export class CafeComponent implements OnInit {
     }
 
 
-    scrollingList(args: PanGestureEventData) {
-
-        if(args.deltaY<this.touchDirection){
-            this.opacity=(parseFloat(this.opacity)/1.1).toString();
-            if(parseFloat(this.opacity)<0.1){
-            this.imageVisible=false;}
-
-        }else{
-            this.opacity=(parseFloat(this.opacity)*2).toString();
-            if(parseFloat(this.opacity)>0.9)
-            {this.imageVisible=true;
-            this.opacity="1";}
-        }
-    }
+    // scrollingList(args: PanGestureEventData) {
+    //
+    //     if(args.deltaY<this.touchDirection){
+    //         this.opacity=(parseFloat(this.opacity)/1.1).toString();
+    //         if(parseFloat(this.opacity)<0.1){
+    //         this.imageVisible=false;}
+    //
+    //     }else{
+    //         this.opacity=(parseFloat(this.opacity)*2).toString();
+    //         if(parseFloat(this.opacity)>0.9)
+    //         {this.imageVisible=true;
+    //         this.opacity="1";}
+    //     }
+    // }
 
     onCancelNav(){
-        setTimeout(() =>{this.routerextensions.navigate([""]),
-            {
-                animated: true,
-                transition: {
-                    name: "slide",
-                    duration: 300,
-                    curve: "ease"
-                }
-            },100});
+        this.routerextensions.back();
+
     }
 
     totalPrice(order:Order[]){

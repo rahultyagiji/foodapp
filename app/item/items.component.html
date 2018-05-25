@@ -8,13 +8,12 @@
 iosIconRenderingMode="alwaysOriginal" sdkExampleTitle sdkToggleNavButton style="height: 100%">
 
 <!--List View-->
-<StackLayout *tabItem="{title: 'List'}">
+<StackLayout *tabItem="{title: 'Around You'}">
 <StackLayout>
     <SearchBar #sb id="searchbar" [text]="searchPhrase" hint="Type to search" (submit)="onSubmit()" (loaded)="searchLoaded()" (textChange)="onTextChanged()"
                (clear)="onClear()" color="black"></SearchBar>
 
     <!--<SearchBar id="searchbarid"  -->
-               <!--(loaded)="searchLoaded($event)" (textChange)="onTextChanged($event)" color="black"></SearchBar>-->
     <ListView [items]="myItems" class="list-group container">
 <!--each list item-->
         <ng-template  let-item="item" class="textpadding">
