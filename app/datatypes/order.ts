@@ -5,5 +5,6 @@ export interface Order {
     quantity:number;
     specialInstruction:string;
     option:{'text':string,'price':string};
-    extras:{'text':string,'price':string}[]
+    extras:{'text':string,'price':string}[];
+    priceQuantity:string;
 }

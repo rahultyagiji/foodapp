@@ -18,6 +18,8 @@ import firebase = require("nativescript-plugin-firebase");
 //trying location
 import {Location, isEnabled, enableLocationRequest, getCurrentLocation, watchLocation, distance, clearWatch } from "nativescript-geolocation";
 import {Accuracy} from "tns-core-modules/ui/enums/enums";
+import {StackLayout} from "tns-core-modules/ui/layouts/stack-layout";
+import {Color} from "tns-core-modules/color";
 // var Vibrate = require("nativescript-vibrate").Vibrate;
 // let vibrator = new Vibrate();
 
@@ -43,6 +45,7 @@ export class ItemsComponent implements OnInit{
     _order:ObservableArray<OrderDisplay> = new ObservableArray<OrderDisplay>([]);
     frequentCafes:string[]=[];
 
+
     startLocation:Location=new Location();
 
     public tabSelectedIndex: number;
@@ -60,38 +63,15 @@ export class ItemsComponent implements OnInit{
 
     ngOnInit(): void {
 
-        const date: Date = new Date();
-
         this.itemService.load()
             .subscribe((items: Array<Item>) => {
                 this._items = new ObservableArray(items);
                 this.items=[];
                 this._items.forEach((x)=>{
-
-                    let that = this;
-
-        //Testing current location
-                var location = getCurrentLocation({desiredAccuracy: 1, updateDistance: 10, maximumAge: 20000, timeout: 5000}).
-                    then(function(loc) {
-                        if (loc) {
-                    var a = distance(loc,{"latitude":x.lat,"longitude":x.lng, "direction":0, "horizontalAccuracy":14,
-                    "verticalAccuracy":14,"speed":0,"altitude":89,"timestamp":date});
-
-                    if(a<10000){
-                           that.items.push(x);
-                    }
-                    else{
-                        //remove this when we want to enable location based ....
-                        that.items.push(x);
-                    }
-                            }
-                        }, function(e){
-                    //push anyway
-                        that.items.push(x);
-                    });
-
+                    this.items.push(x);
                 });
-                this.myItems=this.items;
+                this.myItems.length=0;
+                this.filterByLocation();
             });
 
 
@@ -104,7 +84,6 @@ export class ItemsComponent implements OnInit{
                         this._orderList = new ObservableArray(orderlist);
                         this.orderList=[];
                         this._orderList.forEach((x)=>{
-                            // vibrator.vibrate(2000);
                             this.orderList.push(x);
                         });
 
@@ -145,16 +124,13 @@ ontapListofFrequent(token){
         }
 
 //Navitage to next screen
-            jumptoMenu(cafeId) {
-               setTimeout(() =>{this.routerextensions.navigate(["/cafe", cafeId],
-                    {
-                        animated: true,
-                        transition: {
-                            name: "slide",
-                            duration: 200,
-                            curve: "ease"
-                        }
-                    }),100});
+            jumptoMenu(cafeId,args) {
+                let page = <StackLayout>args.object;
+                let view = <StackLayout>page.getViewById("cafename");
+                view.backgroundColor = new Color("#f0f0f0");
+                view.animate({ backgroundColor: new Color("white"), duration: 200 });
+
+                   this.routerextensions.navigate(["/cafe", cafeId]);
             }
 //
 // //TabView controls
@@ -174,17 +150,24 @@ ontapListofFrequent(token){
 // search bar
 
     public onTextChanged(args) {
-        let searchBar = <SearchBar>args.object;
-        let searchValue = searchBar.text.toLowerCase();
 
+        let searchBar = <SearchBar>args.object;
+        if (searchBar.text!=""){
+        let searchValue = searchBar.text.toLowerCase();
         if (searchBar.text != ""){
             this.myItems = this.items.filter( item => {
             return `${item.name} ${item.name}`.toLowerCase().indexOf(searchValue.toLowerCase()) > -1;
-        });}
+        });
+        }
         else {
             setTimeout(function() {
                 searchBar.dismissSoftInput();
             }, 300);
+        }
+    }
+    else{
+            // this.myItems.length=0;
+            // this.filterByLocation();
         }
     }
 
@@ -195,21 +178,12 @@ ontapListofFrequent(token){
 
     public onSubmit(args) {
         let searchbar = <SearchBar>args.object;
-
-        console.log("onSubmit");
         searchbar.dismissSoftInput();
     }
 
 
-    // onSearchLayoutLoaded(event) {
-    //     if (event.object.android) {
-    //         event.object.android.setFocusableInTouchMode(false);
-    //     }
-    // }
     public onClear(args) {
         let searchbar = <SearchBar>args.object;
-
-        console.log("onClear");
         searchbar.dismissSoftInput();
     }
 
@@ -242,7 +216,6 @@ ontapListofFrequent(token){
 
     onTapCurrentOrder(){
         this.orderComplexLocalFilter = this.orderComplexLocal.filter(function (x) {
-            console.log("current order triggered");
             return x.status != "collected"
 
         })
@@ -262,6 +235,34 @@ ontapListofFrequent(token){
             total=(Math.round((parseFloat(total)+ parseFloat(x.price))*100)/100).toString();
         });
         return total;
+    }
+
+    filterByLocation(){
+        const date: Date = new Date();
+        this.items.forEach((x)=>{
+
+        this.myItems.length=0;
+        let that = this;
+
+        getCurrentLocation({desiredAccuracy: 1, updateDistance: 10, maximumAge: 20000, timeout: 5000}).
+        then(function(loc) {
+            if (loc) {
+                var a = distance(loc,{"latitude":x.lat,"longitude":x.lng, "direction":0, "horizontalAccuracy":14,
+                    "verticalAccuracy":14,"speed":0,"altitude":89,"timestamp":date});
+                if(a<15000){
+                    that.myItems.push(x);
+                }
+                else{
+                    //remove this when we need filtering by location
+                    // that.myItems.push(x);
+                }
+            }
+        }, function(e){
+            //push anyway
+            that.myItems.push(x);
+        });
+
+        })
     }
 
 }

@@ -18,6 +18,7 @@ import {NativeScriptFormsModule} from "nativescript-angular/forms";
 import {SigninComponent} from "./auth/signin/signin.component";
 import {OrderpopComponent} from "./ordermodal/orderpop.component";
 import {TNSCheckBoxModule} from "nativescript-checkbox/angular";
+import {OrderConfirmComponent} from "./item/order.component";
 
 @NgModule({
     bootstrap: [
@@ -39,7 +40,8 @@ import {TNSCheckBoxModule} from "nativescript-checkbox/angular";
         OptionspopComponent,
         RegisterComponent,
         SigninComponent,
-        OrderpopComponent
+        OrderpopComponent,
+        OrderConfirmComponent
     ],
     providers: [
         ItemService,

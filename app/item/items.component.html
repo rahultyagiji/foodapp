@@ -10,15 +10,15 @@ iosIconRenderingMode="alwaysOriginal" sdkExampleTitle sdkToggleNavButton style="
 <!--List View-->
 <StackLayout *tabItem="{title: 'Around You'}">
 <StackLayout>
-    <SearchBar #sb id="searchbar" [text]="searchPhrase" hint="Type to search" (submit)="onSubmit()" (loaded)="searchLoaded()" (textChange)="onTextChanged()"
-               (clear)="onClear()" color="black"></SearchBar>
+    <SearchBar #sb id="searchbar" [text]="searchPhrase" hint="Type to search" (submit)="onSubmit($event)" (loaded)="searchLoaded()" (textChange)="onTextChanged($event)"
+               (clear)="onClear($event)" color="black"></SearchBar>
 
     <!--<SearchBar id="searchbarid"  -->
     <ListView [items]="myItems" class="list-group container">
 <!--each list item-->
         <ng-template  let-item="item" class="textpadding">
 <!--first stack-->
-            <StackLayout orientation="horizontal" (tap)="jumptoMenu(item.cafeId)">
+            <StackLayout id="cafename" orientation="horizontal" (tap)="jumptoMenu(item.cafeId,$event)">
 <!--cafe image-->
                 <Image [src]="item.imgSrc"  style="width: 30%"></Image>
 <!--name and description-->
@@ -32,7 +32,7 @@ iosIconRenderingMode="alwaysOriginal" sdkExampleTitle sdkToggleNavButton style="
                 <Label  text="$$" style="color:#FFA8A3"></Label>
                 <Label  text="*"></Label>
                 </StackLayout>
-
+                <Label text=" X " class="h-block" ></Label>
             </StackLayout>
 
         </ng-template>

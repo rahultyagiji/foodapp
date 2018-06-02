@@ -7,6 +7,7 @@ import {CafeComponent} from "./item/cafe.component";
 import {RegisterComponent} from "./auth/register/register.component";
 import {SigninComponent} from "./auth/signin/signin.component";
 import {OrderpopComponent} from "./ordermodal/orderpop.component";
+import {OrderConfirmComponent} from "./item/order.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "items", pathMatch: "full" },
@@ -14,8 +15,8 @@ const routes: Routes = [
     { path: "cafe/:cafeId", component:CafeComponent },
     { path: "register", component:RegisterComponent },
     { path: "signin", component:SigninComponent },
-    {path: "signin", component:OrderpopComponent}
-
+    {path: "signin", component:OrderpopComponent},
+    {path:"order", component:OrderConfirmComponent}
 ];
 
 @NgModule({

@@ -1,0 +1,42 @@
+<StackLayout *ngIf="displayCart" style="height: 70%">
+    <Label text="Your Order" class="h-block" ></Label>
+    <ListView [items]="order" class="list-group">
+        <ng-template  let-item="item" let-i="index">
+            <StackLayout>
+            <StackLayout orientation="horizontal">
+               <Label text="+" style="width: 10%" class="list-group-item-copy2" (tap)="increaseQuantity(item,i)"></Label>
+               <Label [text]="item.quantity" style="width: 10%" class="list-group-item-copy2"></Label>
+               <Label text="-" style="width: 10%" class="list-group-item-copy2" (tap)="decreaseQuantity(item,i)"></Label>
+
+                <Label [text]="item.name" textWrap="true"
+                 class="list-group-item-copy" style="width: 50%"></Label>
+                <Label [text]="'$' + item.priceQuantity" class="list-group-item-copy" style="width: 20%"></Label>
+
+            </StackLayout>
+
+            <StackLayout>
+                <!--Add display of options and extras here-->
+                <Label [text]="'-' + item.option.text" *ngIf="item.option.text" class="list-group-item-copy"></Label>
+                <StackLayout *ngFor="let extra of item.extras">
+                <Label [text]="'-' + extra.text" class="list-group-item-copy"></Label>
+                </StackLayout>
+                <Label [text]="item.specialInstruction" class="list-group-item-copy"></Label>
+
+            </StackLayout>
+            </StackLayout>
+        </ng-template>
+    </ListView>
+</StackLayout>
+
+    <StackLayout>
+
+    <StackLayout orientation="horizontal">
+        <Label text="Total" textWrap="true"
+               class="list-group-item-copy" style="width: 80%"></Label>
+        <Label [text]="'$' + total$" textWrap="true"
+               class="list-group-item-copy" style="width: 50%"></Label>
+    </StackLayout>
+
+    <Button text="Click to pay" (tap)="onOrder()" style="background-color: #B52D26;color: white"></Button>
+
+    </StackLayout>

@@ -21,6 +21,7 @@ export class OrderService {
     vorderNo:number=0;
     price:string="0";
 
+
     constructor(private _ngZone:NgZone){
 
     }
@@ -30,6 +31,11 @@ getOrder(){
     return this.order;
 
 }
+
+setOrder(order:Order[]){
+        this.order = order;
+}
+
 
 Order(menu:Menu,cafeId,specialInstruction,option:{'text':string,'price':string}
 ,extras:{'text':string,'price':string}[]){
@@ -49,12 +55,24 @@ Order(menu:Menu,cafeId,specialInstruction,option:{'text':string,'price':string}
 
     if(this.order.length==0){
     this.order.push({'cafeId':cafeId,'name':menu.name,'price':this.price,
-        'quantity':1,'specialInstruction':specialInstruction,'option':option,'extras':extras});
+        'quantity':1,'specialInstruction':specialInstruction,'option':option,'extras':extras,
+    'priceQuantity':this.price});
     }
     else {
         if(this.order[0].cafeId==cafeId){
+
+         if(this.order.some(e=>e.name===menu.name))
+         {   this.order.map((x)=>{
+             if(x.name===menu.name){
+                 x.quantity=x.quantity+1;
+                 x.priceQuantity=(parseFloat(x.price)*x.quantity).toString();
+             }})
+         }
+         else{
             this.order.push({'cafeId':cafeId,'name':menu.name,'price':this.price,'quantity':1,'specialInstruction':specialInstruction
-                ,'option':option,'extras':extras});
+                ,'option':option,'extras':extras,
+                'priceQuantity':this.price});
+        }
         }
         else{
             dialogs.alert("Can only order from one cafe at a time, please clear your cart first").then(()=> {
@@ -73,6 +91,8 @@ removeOrder(order:Order){
 
 confirmOrder(order:Order[],cafe,payway,uid,location){
 
+        order = order.filter((x)=>{x.quantity!=0});
+
         var a = Math.floor(Math.random() * (50 - 1 + 1)) + 1;
         var time = Math.floor(Date.now() / 1000);
     if (payway == "Cash") {
@@ -86,7 +106,10 @@ confirmOrder(order:Order[],cafe,payway,uid,location){
                                 "orderNo2":a,
                                 "timestamp":time
                             })
-                                .then(()=>{this.orderNo(cafe,res.key)})
+                                .then(()=>{
+                                    this.orderNo(cafe,res.key)
+                                    firebase.remove('/cart/'+uid+'/'+cafe)}
+                                    )
                         }).catch((err)=>{console.log(err)})
 
                 }
@@ -100,7 +123,8 @@ confirmOrder(order:Order[],cafe,payway,uid,location){
                                 "orderNo2": a,
                                 "timestamp":time
                             })
-                                .then(()=>{this.orderNo(cafe,res.key)})
+                                .then(()=>{this.orderNo(cafe,res.key)
+                                    firebase.remove('/cart/'+uid+'/'+cafe)})
                         }).catch((err)=>{console.log(err)})
                 }
             }
@@ -181,5 +205,33 @@ confirmOrder(order:Order[],cafe,payway,uid,location){
     getOrderDetails(cafe,key){
         return firebase.getValue('/order-cafe/'+cafe+'/'+key);
     }
+
+    addToCart(cafe,cart,uid){
+        firebase.push(
+            '/cart/'+uid+'/',
+            {
+                'cart':cart,
+                'cafe':cafe
+                }
+            ).then(
+            function (result) {
+                console.log("created key: " + result.key);
+            }
+        );
+    }
+
+    getCart(uid){
+      return  firebase.getValue('/cart/'+uid)
+
+    }
+
+    removeCart(uid){
+        firebase.remove('cart/'+uid);
+    }
+
+    deleteCart(){
+        this.order.length=0;
+    }
+
 
 }

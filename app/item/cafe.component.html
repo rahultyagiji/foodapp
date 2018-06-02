@@ -1,27 +1,29 @@
 <ActionBar class="action-bar" >
-<Stacklaout orientation="horizontal">
-    <Label text="X" style="width: 30% ;font-size: 20pt;font-weight: bold" (tap)="onCancelNav()"></Label>
-    <Label text="                "></Label>
-    <Label [text]="cafe.name" style="font-size:  18pt;vertical-align: center;font-weight: bold"></Label>
-</Stacklaout>
+    <Stacklaout orientation="horizontal">
+        <Label text="X" style="width: 30% ;font-size: 20pt;font-weight: bold" (tap)="onCancelNav()"></Label>
+        <Label text="                "></Label>
+        <Label [text]="cafe.name" style="font-size:  18pt;vertical-align: center;font-weight: bold"></Label>
+    </Stacklaout>
 </ActionBar>
 
-    <StackLayout>
+    <StackLayout >
 
-    <TabView [(ngModel)]="tabSelectedIndex" borderBottomcolor="#B52E26"
+    <TabView
+            [(ngModel)]="tabSelectedIndex" borderBottomcolor="#B52E26"
                  iosIconRenderingMode="alwaysOriginal" sdkExampleTitle sdkToggleNavButton style="height: 100%">
 
             <!--List View-->
+
     <StackLayout *tabItem="{title: 'Menu'}">
 
     <!--Categories-->
-
     <StackLayout>
+    <StackLayout *ngIf="toggleMenuCart">
         <ScrollView orientation="horizontal">
             <StackLayout orientation="horizontal">
-                <Label text="All" (tap)="onclickAll()" class="category"></Label>
+                <Label text="All" id="all" (tap)="onclickAll($event)" class="category"></Label>
                 <StackLayout orientation="horizontal" *ngFor=" let categ of categories; let i = index">
-                    <Label [text]="categ" (tap)="onfiltercategory(categ)" class="category"></Label>
+                    <Label [text]="categ" id="category" (tap)="onfiltercategory(categ,$event)" class="category"></Label>
                 </StackLayout>
             </StackLayout>
         </ScrollView>
@@ -29,7 +31,7 @@
         <StackLayout class="page page-content" >
             <ListView [items]="myMenu" class="list-group" style="{{scrollHeight}}">
                 <ng-template  let-item="item">
-                    <StackLayout id="food1" (tap)="ontapMenu(item)"
+                    <StackLayout id="menuitem" (tap)="ontapMenu(item,$event)"
                                  (swipe)="addtoOrderlist(item,$event)" orientation="horizontal">
                         <StackLayout orientation="vertical" style="width: 85%;">
                             <Label [text]="item.name" textWrap="true" class="list-group-item-copy" style="font-size: 14pt;font-weight: bold;"></Label>
@@ -40,52 +42,43 @@
                 </ng-template>
             </ListView>
         </StackLayout>
-
-        <StackLayout *ngIf="cartEmpty" style="{{scrollHeightBase}}" backgroundColor="#1a626f">
-            <Label text="Cart empty!"  horizontalAlignment="center" verticalAlignment="middle" style="color:white; font-size: 18px;text-align: center;padding-top: 15px"></Label>
         </StackLayout>
 
-        <StackLayout *ngIf="!cartEmpty" style="{{scrollHeightBase}}" backgroundColor="#1a626f">
-            <Label text="Proceed to Checkout"  horizontalAlignment="center" verticalAlignment="middle"
-                   style="color:white; font-size: 18px;text-align: center;padding-top: 15px" (tap)="OnOrder()"></Label>
-        </StackLayout>
-
-        <!--<StackLayout *ngIf="!cartEmpty" style="border-color:#1a626f ; border-width: 1px ; height:100%;width: 100%;">-->
-            <!--<StackLayout orientation="horizontal">-->
-                <!--<Button text="Cancel" (tap)="onorderCancel()" style="width: 25%;background-color: #8F130C;color: white;"-->
-                        <!--*ngIf="!buttondisable"></Button>-->
-                <!--<Button [text]="'$' + total$" style="width: 50%;background-color: #d6f39b;"></Button>-->
-                <!--<Button text="Confirm" (tap)="OnOrder()" style="width: 25%;background-color:cornflowerblue;color: white;"-->
-                        <!--*ngIf="!confirmbuttondisable"></Button>-->
-            <!--</StackLayout>-->
-
-
-            <!--<StackLayout backgroundColor="#1a626f" height="20" >-->
-                <!--<Label text="Order Summary" horizontalAlignment="center" style="align-items:center;font-size: 12px;font-weight: bold;color:white"></Label>-->
-            <!--</StackLayout>-->
-
-
-            <!--<ListView [items]="order" class="list-group">-->
-                <!--<ng-template let-item="item">-->
-                    <!--<StackLayout id="food2"(tap)="ontapOrder(item)"-->
-                                 <!--(swipe)="removefromOrderlist(item,$event)" orientation="horizontal">-->
-                        <!--<Label [text]="item.name" textWrap="true"-->
-                               <!--class="list-group-item-copy" style="width: 70%"></Label>-->
-                        <!--<Label [text]="'$' + item.price" class="list-group-item-copy" style="width: 20%"></Label>-->
-                    <!--</StackLayout>-->
-                <!--</ng-template>-->
-            <!--</ListView>-->
-        <!--</StackLayout>-->
     </StackLayout>
-    </StackLayout>>
+
+        <!--<StackLayout *ngIf="cartEmpty" style="{{scrollHeightBase}}" backgroundColor="#1a626f">-->
+            <!--<Label text="Cart empty!"  horizontalAlignment="center" verticalAlignment="middle" style="color:white; font-size: 18px;text-align: center;padding-top: 15px"></Label>-->
+        <!--</StackLayout>-->
+
+        <StackLayout id="viewcart" *ngIf="!cartEmpty && toggleMenuCart" style="{{scrollHeightBase}}" backgroundColor="#1a626f" (tap)="OnViewCart($event)" orientation="horizontal">
+            <Label [text]="'$' + total$" verticalAlignment="middle" horizontalAlignment="left"
+                   style="color:white; font-size: 18px;text-align: center;padding-top: 15px"></Label>
+            <Label text="                     View cart                          "  horizontalAlignment="center" verticalAlignment="middle"
+                   style="color:white; font-size: 18px;text-align: center;padding-top: 15px"></Label>
+            <Label [text]="itemCount" verticalAlignment="middle" horizontalAlignment="right"
+                   style="color:white; font-size: 18px;text-align: center;padding-top: 15px"></Label>
+        </StackLayout>
+
+        <StackLayout id="checkout" *ngIf="!cartEmpty && !toggleMenuCart" style="{{scrollHeightBase}}" backgroundColor="#1a626f" (tap)="OnViewMenu($event)">
+            <Label text="Return to menu"  horizontalAlignment="center" verticalAlignment="middle"
+                   style="color:white; font-size: 18px;text-align: center;padding-top: 15px"></Label >
+        </StackLayout>
+
+        <ns-confirm-order *ngIf="!toggleMenuCart" [cafeid]="cafe"
+                          (cartEmpty)="cartInfoReturned($event)"></ns-confirm-order>
+
+    </StackLayout>
     <StackLayout *tabItem="{title: 'Info'}">
 
         <Image [src]="cafe.imgSrc" top="0"  right="0"></Image>
 
         <Label style="font-size: 20pt" textWrap="true"
                text="Space for displaying information on cafe... maybe"></Label>
-    </StackLayout>>
+    </StackLayout>
 
-    </TabView>>
+    </TabView>
 
-</StackLayout>
+
+
+    </StackLayout>
+

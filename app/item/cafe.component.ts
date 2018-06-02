@@ -1,5 +1,4 @@
-
-import {Component, OnInit, ViewContainerRef} from "@angular/core";
+import {Component, OnDestroy, OnInit, ViewContainerRef} from "@angular/core";
 import {Item} from "../datatypes/item";
 import {Menu} from "../datatypes/menu";
 import {ItemService} from "../services/item.service";
@@ -12,8 +11,6 @@ import firebase = require("nativescript-plugin-firebase");
 
 import { Label } from 'ui/label';
 let view: Label;
-import {
-    GestureTypes, SwipeGestureEventData, TouchGestureEventData, PanGestureEventData} from "ui/gestures";
 import labelModule = require("ui/label");
 var label = new labelModule.Label();
 
@@ -23,11 +20,6 @@ import {StackLayout} from "tns-core-modules/ui/layouts/stack-layout";
 import {ModalDialogService} from "nativescript-angular/directives/dialogs";
 import {OptionspopComponent} from "./optionspop.component";
 import {ObservableArray} from "tns-core-modules/data/observable-array";
-import {percent} from "tns-core-modules/ui/core/view";
-import {AnimationCurve} from "tns-core-modules/ui/enums";
-import {OrderpopComponent} from "../ordermodal/orderpop.component";
-import {OrderComplex} from "../datatypes/order.complex";
-import { View } from "ui/core/view";
 import {RouterExtensions} from "nativescript-angular";
 
 
@@ -37,7 +29,7 @@ import {RouterExtensions} from "nativescript-angular";
     templateUrl: "./cafe.component.html",
     styleUrls: ["./cafe.component.css"]
 })
-export class CafeComponent implements OnInit {
+export class CafeComponent implements OnInit, OnDestroy {
     cafe: Item;
     menu:Menu[];
     myMenu:Menu[];
@@ -46,6 +38,7 @@ export class CafeComponent implements OnInit {
     categories:string[]=[];
     _menu:ObservableArray<Menu> = new ObservableArray<Menu>([]);
     total$:number=0;
+    itemCount:number=0;
     cartEmpty:boolean=true;
     buttondisable:boolean=false;
     confirmbuttondisable:boolean=false;
@@ -54,11 +47,11 @@ export class CafeComponent implements OnInit {
     imageVisible:boolean=true;
     touchDirection:number=0;
     opacity:string="1";
+    cartCafe:string="";
+    toggleMenuCart:boolean=true;
+    menuorcart:string="Menu"
 
     public tabSelectedIndex: number;
-
-
-
 
     constructor(
         private itemService: ItemService,
@@ -68,15 +61,38 @@ export class CafeComponent implements OnInit {
         private popup: ModalDialogService,
         private vcRef: ViewContainerRef,
         private routerextensions: RouterExtensions
-
     ) {
         firebase.getCurrentUser()
             .then((token)=> {
                 this.uid = token.uid; console.log("logged in as",token.uid)});
-
-    }
+        }
 
     ngOnInit(): void {
+        console.log("ng triggered")
+
+ //Also load cart...
+        this.orderService.getCart(this.uid)
+            .then((res)=> {
+                Object.keys(res.value).forEach((x)=>{
+
+                    if(res.value[x].cafe!=this.route.snapshot.params["cafeId"]){
+                        Toast.makeText("Removed cart items from another cafe","2500").show();
+                        this.orderService.removeCart(this.uid);
+                        this.orderService.deleteCart();
+                    }
+                    else{
+                        this.order = res.value[x].cart;
+                        this.cartCafe=res.value[x].cafe;
+                        console.log(JSON.stringify(res.value[x].cart),"testing...");
+                        this.checkCartStatus();
+                        this.orderService.setOrder(this.order);
+                        this.itemCount=this.order.length;
+                        this.totalPrice(res.value[x].cart);
+                    }
+                });
+                this.orderService.removeCart(this.uid)
+            });
+
         this.cafe=this.itemService.getCafeInfo(this.route.snapshot.params["cafeId"]);
 //menu load
         this.menuService.loadMenu(this.route.snapshot.params["cafeId"])
@@ -93,21 +109,6 @@ export class CafeComponent implements OnInit {
                     return array.indexOf(item) === i;
                 });
             });
-
-        this.order = this.orderService.getOrder();
-        this.totalPrice(this.orderService.getOrder());
-
-        if(this.order.length>0) {
-            if(this.order[0].cafeId!=this.route.snapshot.params["cafeid"]) {
-                this.confirmbuttondisable = true;
-            }
-            this.cartEmpty=false;
-            this.scrollHeight="height: 90%"
-        }
-        else if(this.order.length==0) {
-            this.scrollHeight="height:90%"
-        }
-
     }
 
     ngOnChanges(){
@@ -123,10 +124,19 @@ export class CafeComponent implements OnInit {
         } else if (this.order.length == 0) {
             this.cartEmpty=true;
         }
+        this.order = this.orderService.getOrder();
+        this.itemCount=this.order.length;
+        this.totalPrice(this.orderService.getOrder());
     }
 
 
-    ontapMenu(data:Menu){
+    ontapMenu(data:Menu,args){
+
+        let page = <StackLayout>args.object;
+        let view = <StackLayout>page.getViewById("menuitem");
+        view.backgroundColor = new Color("#f0f0f0");
+        view.animate({ backgroundColor: new Color("white"), duration: 200 });
+
 
         //modalcode
         let options={
@@ -145,19 +155,15 @@ export class CafeComponent implements OnInit {
                     this.scrollHeight = "height: 90%"
                 }
                 this.totalPrice(this.order);
+                this.itemCount=this.order.length;
+                Toast.makeText(data.name+" added to Cart!","1500").show()
             }
         })
     }
 
     addtoOrderlist(data,args:EventData){
-        let page = <StackLayout>args.object;
         this.orderService.Order(data,this.route.snapshot.params["cafeid"],"",null,null);
         this.order = this.orderService.getOrder();
-
-        let view = <StackLayout>page.getViewById("food1");
-        view.backgroundColor = new Color("#7CA924");
-        view.animate({ backgroundColor: new Color("#BCE46C"), duration: 1000 });
-        view.animate({ backgroundColor: new Color("white"), duration: 1500 });
 
         ///
         if(this.order.length>0){
@@ -166,69 +172,37 @@ export class CafeComponent implements OnInit {
         }
     }
 
-    OnOrder(){
-
-
-        //modalcode
-        let options={
-            fullscreen:false,
-            viewContainerRef:this.vcRef,
-
-        };
-
-        if(this.uid){
-        this.popup.showModal(OrderpopComponent,options).then((response)=>
-        {
-
-         this.orderService.confirmOrder(this.order,this.route.snapshot.params["cafeid"],response.payment,this.uid,response.location);
-                    Toast.makeText("Your order has been placed").show();
-                    this.order.length=0;
-                    this.cartEmpty=true;
-                    this.total$=0;
-                    this.scrollHeight="height: 100%"
-                }).catch(()=>{
-                Toast.makeText("").show();
-            })
-
-    }
-    else{
-        Toast.makeText("Please login to order").show()}
+    OnViewCart(args){
+        this.toggleMenuCart=false;
+        this.menuorcart="Cart";
     }
 
     ontapOrder(order){
         console.log(JSON.stringify(order))
     }
 
-    removefromOrderlist(order,args:EventData){
+
+    onfiltercategory(category,args){
 
         let page = <StackLayout>args.object;
-        let view = <StackLayout>page.getViewById("food2");
-        view.backgroundColor = new Color("#8F130C");
-        view.animate({ backgroundColor: new Color("#F57A73"), duration: 1000 });
-        setTimeout(()=>{ this.order = this.orderService.removeOrder(order);
+        let view = <StackLayout>page.getViewById("category");
+        view.backgroundColor = new Color("#1a626f");
+        view.animate({ backgroundColor: new Color("#1a626f"), duration: 200 });
+        view.animate({ backgroundColor: new Color("white"), duration: 200 });
 
-            // this.total$=Math.round((this.total$-parseFloat(order.price))*100)/100;
-            if(this.total$<0){this.total$=0}
-            this.order = this.orderService.getOrder();
-            this.totalPrice(this.order);
-            view.animate({ backgroundColor: new Color("white"), duration: 1000 });
-            if(this.order.length>0){
-            }
-            else{
-                this.cartEmpty=true;
-                this.scrollHeight="height: 80%"
-            }
-        },1500)
-    }
-
-    onfiltercategory(category){
         this.myMenu = this.menu.filter( item =>
         {
             return item.category===category
         })
     }
 
-    onclickAll(){
+    onclickAll(args){
+        let page = <StackLayout>args.object;
+        let view = <StackLayout>page.getViewById("all");
+        view.backgroundColor = new Color("#1a626f");
+        view.animate({ backgroundColor: new Color("#1a626f"), duration: 200 });
+        view.animate({ backgroundColor: new Color("white"), duration: 200 });
+
 
         this.myMenu=this.menu;
     }
@@ -242,31 +216,55 @@ export class CafeComponent implements OnInit {
     }
 
 
-    // scrollingList(args: PanGestureEventData) {
-    //
-    //     if(args.deltaY<this.touchDirection){
-    //         this.opacity=(parseFloat(this.opacity)/1.1).toString();
-    //         if(parseFloat(this.opacity)<0.1){
-    //         this.imageVisible=false;}
-    //
-    //     }else{
-    //         this.opacity=(parseFloat(this.opacity)*2).toString();
-    //         if(parseFloat(this.opacity)>0.9)
-    //         {this.imageVisible=true;
-    //         this.opacity="1";}
-    //     }
-    // }
-
     onCancelNav(){
         this.routerextensions.back();
-
     }
 
     totalPrice(order:Order[]){
          this.total$=0;
         order.forEach((x)=>{
             //for total
-            this.total$=Math.round((this.total$+ parseFloat(x.price))*100)/100;
-        })
+            this.total$=Math.round((this.total$+ parseFloat(x.priceQuantity))*100)/100;
+        });
+    }
+
+
+    checkCartStatus() {
+        if (this.order.length > 0) {
+            if (this.order[0].cafeId != this.route.snapshot.params["cafeid"]) {
+                this.confirmbuttondisable = true;
+            }
+            this.cartEmpty = false;
+            this.scrollHeight = "height: 90%"
+        }
+        else if (this.order.length == 0) {
+            this.scrollHeight = "height:90%"
+        }
+    }
+
+
+    ngOnDestroy(){
+        if(this.order.length!=0) {
+            this.orderService.addToCart(this.cafe.cafeId, this.order, this.uid)
+        }
+    }
+
+    OnViewMenu(args){
+        this.toggleMenuCart=true;
+        this.menuorcart="Menu";
+
+    }
+
+    cartInfoReturned(cartDisplay){
+
+        // this.cartEmpty=cartDisplay;
+        this.toggleMenuCart=!cartDisplay;
+        this.order=this.orderService.getOrder();
+        this.totalPrice(this.orderService.getOrder());
+        this.itemCount=this.order.length;
+        if (this.order.length===0){
+            this.cartEmpty=true;
+            this.toggleMenuCart=true;
+        }
     }
 }
