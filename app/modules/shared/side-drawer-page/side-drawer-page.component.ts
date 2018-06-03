@@ -15,6 +15,7 @@ import {
 import {
   PushTransition, SlideInOnTopTransition
 } from 'nativescript-ui-sidedrawer';
+import {firebase} from "nativescript-plugin-firebase/firebase-common";
 
 @Component({
   selector: 'side-drawer-page',
@@ -45,6 +46,8 @@ export class SideDrawerPageComponent implements AfterViewInit, OnDestroy {
   ];
 
   private drawer: SideDrawerType;
+  uid:string="";
+  name:string="";
 
   constructor(
     private routerExtensions: RouterExtensions,
@@ -53,9 +56,19 @@ export class SideDrawerPageComponent implements AfterViewInit, OnDestroy {
     private ngZone: NgZone,
     private auth:AuthService,
   ) {
-    this.setActionBarIcon(this.page);
-    this.setDrawerTransition();
-  }
+
+      firebase.getCurrentUser()
+          .then((token)=> {
+              this.uid = token.uid
+
+          firebase.getValue("/userInfo/"+token.uid)
+              .then((res)=>{this.name=res.value.name})
+          })
+
+
+          this.setActionBarIcon(this.page);
+          this.setDrawerTransition();
+    }
 
   ngAfterViewInit() {
     this.drawer = this.drawerComponent.sideDrawer;
@@ -80,6 +93,8 @@ export class SideDrawerPageComponent implements AfterViewInit, OnDestroy {
     console.log("new url is " + newUrl);
     if (newUrl == "/signout") {
       this.onSignout();
+      this.name="";
+      this.uid="";
     }
     if (currentUrl !== newUrl) {
       this.isContentVisible = false;
@@ -120,7 +135,7 @@ export class SideDrawerPageComponent implements AfterViewInit, OnDestroy {
 
   private getNavigationButton() {
     let navActionItem = new ActionItem();
-    navActionItem.icon = 'res://ic_menu_2x';
+    // navActionItem.icon = 'res://ic_menu_2x';
     if (navActionItem.ios) {
       console.log("test")
       navActionItem.ios.position = 'left';

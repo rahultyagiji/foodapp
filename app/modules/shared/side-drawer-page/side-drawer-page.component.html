@@ -7,7 +7,7 @@
       </Image>
       <Label
           class="sidedrawer-header-brand"
-          text="DQ Cafe">
+          [text]="'Hi, ' + name" *ngIf="name">
       </Label>
     </StackLayout>
     <ScrollView>

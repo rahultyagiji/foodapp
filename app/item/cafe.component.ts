@@ -83,7 +83,7 @@ export class CafeComponent implements OnInit, OnDestroy {
                     else{
                         this.order = res.value[x].cart;
                         this.cartCafe=res.value[x].cafe;
-                        console.log(JSON.stringify(res.value[x].cart),"testing...");
+                        this.cartEmpty=false;
                         this.checkCartStatus();
                         this.orderService.setOrder(this.order);
                         this.itemCount=this.order.length;
@@ -148,16 +148,15 @@ export class CafeComponent implements OnInit, OnDestroy {
 
         this.popup.showModal(OptionspopComponent,options).then((response)=>{
             if(response.response=='true') {
-                this.orderService.Order(data, this.route.snapshot.params["cafeid"],response.specialInstruction,response.option,response.extras);
-                this.order = this.orderService.getOrder();
-                if (this.order.length > 0) {
-                    this.cartEmpty = false;
-                    this.scrollHeight = "height: 90%"
-                }
-                this.totalPrice(this.order);
-                this.itemCount=this.order.length;
-                Toast.makeText(data.name+" added to Cart!","1500").show()
-            }
+                    this.orderService.Order(data, this.route.snapshot.params["cafeid"],response.specialInstruction,response.option,response.extras);
+                    this.order = this.orderService.getOrder();
+                    if (this.order.length > 0) {
+                        this.cartEmpty = false;
+                        this.scrollHeight = "height: 90%"
+                    }
+                    this.totalPrice(this.order);
+                    this.itemCount=this.order.length;
+                    Toast.makeText(data.name+" added to Cart!","1500").show()};
         })
     }
 

@@ -5,6 +5,10 @@ import {Order} from "../datatypes/order";
 import {OrderpopComponent} from "../ordermodal/orderpop.component";
 import {firebase} from "nativescript-plugin-firebase/firebase-common";
 import * as Toast from "nativescript-toast";
+import {topmost} from "ui/frame";
+import { ios, run as applicationRun } from "application";
+import {PanGestureEventData} from "tns-core-modules/ui/gestures";
+
 
 @Component({
     selector: "ns-confirm-order",
@@ -38,6 +42,7 @@ export class OrderConfirmComponent implements OnInit, OnDestroy {
 
         this.order=this.orderService.getOrder();
         this.totalPrice(this.order);
+        console.log(this.order);
     }
 
     onCancelNav(){
@@ -127,6 +132,18 @@ export class OrderConfirmComponent implements OnInit, OnDestroy {
         }
         else{
             Toast.makeText("Please login to order").show()}
+    }
+
+
+//    testing slide menu
+
+    onPan(args: PanGestureEventData) {
+        console.log("Pan!",args);
+        console.log("Object that triggered the event: " + args.object);
+        console.log("View that triggered the event: " + args.view);
+        console.log("Event name: " + args.eventName);
+        console.log("Pan delta: [" + args.deltaX + ", " + args.deltaY + "] state: " + args.state);
+
     }
 
 }

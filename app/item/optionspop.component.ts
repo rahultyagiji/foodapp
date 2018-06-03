@@ -105,10 +105,11 @@ export class OptionspopComponent implements OnInit {
         {'text':"",'price':0},extras:null};
 
         response1.response=response;
-        response1.option.text=this.optionText;
-        response1.option.price=this.optionPrice
+        if(this.optionText){response1.option.text=this.optionText;}
+        if(this.optionPrice){response1.option.price=this.optionPrice;}
         response1.specialInstruction=this.specialInstruction;
         response1.extras=this.extrasAdded;
+        console.log(response1);
         this.params.closeCallback(response1);
     }
 

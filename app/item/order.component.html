@@ -1,4 +1,4 @@
-<StackLayout *ngIf="displayCart" style="height: 70%">
+<StackLayout *ngIf="displayCart" style="height: 70%" (pan)="onPan($event)">
     <Label text="Your Order" class="h-block" ></Label>
     <ListView [items]="order" class="list-group">
         <ng-template  let-item="item" let-i="index">
@@ -17,8 +17,10 @@
             <StackLayout>
                 <!--Add display of options and extras here-->
                 <Label [text]="'-' + item.option.text" *ngIf="item.option.text" class="list-group-item-copy"></Label>
+                <StackLayout *ngIf="item.extras">
                 <StackLayout *ngFor="let extra of item.extras">
                 <Label [text]="'-' + extra.text" class="list-group-item-copy"></Label>
+                </StackLayout>
                 </StackLayout>
                 <Label [text]="item.specialInstruction" class="list-group-item-copy"></Label>
 
