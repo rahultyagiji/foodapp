@@ -1,0 +1,27 @@
+<ActionBar  class="action-bar" style="background-color: #0A4C58;color: white; vertical-align: center">
+    <Label text="Manage Cards" style="color: white; vertical-align: center;font-size: 22pt;font-weight: bold"></Label>
+</ActionBar>
+
+<side-drawer-page>
+
+    <StackLayout class="page page-content">
+        <StackLayout class="page page-content" height="85%" xmlns:stripe="nativescript-stripe">
+
+            <!--<Label text="Enter email" style="width:90%;margin-top:5%"></Label>-->
+
+            <TextField hint="Email Address" class="input input-border myTextField" keyboardType="email" style="margin-top:5%;width:90%;border-style:dashed;"></TextField>
+
+            <!--<Label text="Card and Expiry" style="width:90%;margin-top:5%"></Label>-->
+
+            <stripe:CreditCardView #cardView style="margin-top:5%;width:90%"/>
+
+        </StackLayout>
+
+        <StackLayout orientation="vertical" horizontalAlignment="left" height="15%" width="100%">
+            <Button text="Register Card" (tap)="onCardRegister($event)" class="roundedButtons buttons80P-W"></Button>
+        </StackLayout>
+
+    </StackLayout>
+
+</side-drawer-page>
+
