@@ -18,7 +18,7 @@ import firebase = require("nativescript-plugin-firebase");
 //trying location
 import {Location, isEnabled, enableLocationRequest, getCurrentLocation, watchLocation, distance, clearWatch } from "nativescript-geolocation";
 import {Accuracy} from "tns-core-modules/ui/enums/enums";
-import {StackLayout} from "tns-core-modules/ui/layouts/stack-layout";
+import {StackLayout} from "ui/layouts/stack-layout";
 import {Color} from "tns-core-modules/color";
 // var Vibrate = require("nativescript-vibrate").Vibrate;
 // let vibrator = new Vibrate();
@@ -249,7 +249,7 @@ ontapListofFrequent(token){
             if (loc) {
                 var a = distance(loc,{"latitude":x.lat,"longitude":x.lng, "direction":0, "horizontalAccuracy":14,
                     "verticalAccuracy":14,"speed":0,"altitude":89,"timestamp":date});
-                if(a<15000){
+                if(a<25000){
                     that.myItems.push(x);
                 }
                 else{

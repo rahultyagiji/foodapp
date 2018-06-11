@@ -21,3 +21,27 @@ img.align-left {
     float: left;
     margin-right: 10px;
 }
+
+.roundedButtons {
+    border-radius: 10 10 10 10;
+}
+
+.barHeadingBold {
+    font-size: 20pt;
+    color: white;
+    background-color: #1a626f;
+    font-weight: bold;
+}
+
+.buttons80P-W {
+    width: 80% ;
+    background-color: #1a626f;
+    color: white
+}
+
+.myTextField {
+    border-color: black;
+    border-width: 1px;
+    border-radius: 5 5 5 5;
+    border:dashed;
+}

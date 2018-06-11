@@ -8,6 +8,7 @@ import {RegisterComponent} from "./auth/register/register.component";
 import {SigninComponent} from "./auth/signin/signin.component";
 import {OrderpopComponent} from "./ordermodal/orderpop.component";
 import {OrderConfirmComponent} from "./item/order.component";
+import {ManageCardsComponent} from "./manage-cards/manage-cards.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "items", pathMatch: "full" },
@@ -16,7 +17,8 @@ const routes: Routes = [
     { path: "register", component:RegisterComponent },
     { path: "signin", component:SigninComponent },
     {path: "signin", component:OrderpopComponent},
-    {path:"order", component:OrderConfirmComponent}
+    {path:"order", component:OrderConfirmComponent},
+    {path:"cards", component:ManageCardsComponent}
 ];
 
 @NgModule({

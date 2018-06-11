@@ -42,7 +42,8 @@ export class SideDrawerPageComponent implements AfterViewInit, OnDestroy {
     { name: 'Home', commands: ['/items'] },
     { name: 'Register', commands: ['/register'] },
     { name: 'Sign In', commands: ['/signin'] },
-    { name: 'Sign Out', commands: ['/signout'] }
+    { name: 'Sign Out', commands: ['/signout'] },
+    { name: 'Manage Cards', commands: ['/cards'] }
   ];
 
   private drawer: SideDrawerType;
@@ -135,7 +136,7 @@ export class SideDrawerPageComponent implements AfterViewInit, OnDestroy {
 
   private getNavigationButton() {
     let navActionItem = new ActionItem();
-    // navActionItem.icon = 'res://ic_menu_2x';
+     navActionItem.icon = 'res://ic_menu_black';
     if (navActionItem.ios) {
       console.log("test")
       navActionItem.ios.position = 'left';

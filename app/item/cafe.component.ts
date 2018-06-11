@@ -9,8 +9,10 @@ import {ActivatedRoute} from "@angular/router";
 import * as Toast from 'nativescript-toast';
 import firebase = require("nativescript-plugin-firebase");
 
-import { Label } from 'ui/label';
-let view: Label;
+//import { Label } from 'ui/label';
+//const labelModule = require("tns-core-modules/ui/label");
+//const view = new labelModule.Label();
+//let view: Label;
 import labelModule = require("ui/label");
 var label = new labelModule.Label();
 
@@ -19,7 +21,9 @@ import {EventData} from "tns-core-modules/data/observable";
 import {StackLayout} from "tns-core-modules/ui/layouts/stack-layout";
 import {ModalDialogService} from "nativescript-angular/directives/dialogs";
 import {OptionspopComponent} from "./optionspop.component";
-import {ObservableArray} from "tns-core-modules/data/observable-array";
+import {ObservableArray} from "data/observable-array";
+//const ObservableArray = require("data/observablearray");
+//var ObservableArray = new ObservableArray.observable();
 import {RouterExtensions} from "nativescript-angular";
 
 
@@ -37,6 +41,7 @@ export class CafeComponent implements OnInit, OnDestroy {
     order:Order[]=[];
     categories:string[]=[];
     _menu:ObservableArray<Menu> = new ObservableArray<Menu>([]);
+    //_menu:Menu = new ObservableArray<Menu>([]);
     total$:number=0;
     itemCount:number=0;
     cartEmpty:boolean=true;
@@ -49,7 +54,7 @@ export class CafeComponent implements OnInit, OnDestroy {
     opacity:string="1";
     cartCafe:string="";
     toggleMenuCart:boolean=true;
-    menuorcart:string="Menu"
+    menuorcart:string="Menu";
 
     public tabSelectedIndex: number;
 
@@ -68,7 +73,7 @@ export class CafeComponent implements OnInit, OnDestroy {
         }
 
     ngOnInit(): void {
-        console.log("ng triggered")
+        console.log("ng triggered in onInit");
 
  //Also load cart...
         this.orderService.getCart(this.uid)
@@ -93,7 +98,9 @@ export class CafeComponent implements OnInit, OnDestroy {
                 this.orderService.removeCart(this.uid)
             });
 
+        console.log("after order service");
         this.cafe=this.itemService.getCafeInfo(this.route.snapshot.params["cafeId"]);
+        console.log("after item service");
 //menu load
         this.menuService.loadMenu(this.route.snapshot.params["cafeId"])
             .subscribe((menu: Array<Menu>) => {
@@ -109,10 +116,11 @@ export class CafeComponent implements OnInit, OnDestroy {
                     return array.indexOf(item) === i;
                 });
             });
+        console.log("after menu service");
     }
 
     ngOnChanges(){
-        console.log("changes triggered")
+        console.log("changes triggered");
         this.order = this.orderService.getOrder();
         this.totalPrice(this.orderService.getOrder());
         if(this.order.length>0) {

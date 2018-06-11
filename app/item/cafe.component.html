@@ -1,22 +1,23 @@
-<ActionBar class="action-bar" >
-    <Stacklaout orientation="horizontal">
-        <Label text="X" style="width: 30% ;font-size: 20pt;font-weight: bold" (tap)="onCancelNav()"></Label>
+<ActionBar class="action-bar" style="background-color: #1a626f;color: white">
+    <StackLayout orientation="horizontal">
+        <android>
+            <Label text="X" style="width: 30% ;font-size: 20pt;font-weight: bold" (tap)="onCancelNav()"></Label>
+        </android>
         <Label text="                "></Label>
         <Label [text]="cafe.name" style="font-size:  18pt;vertical-align: center;font-weight: bold"></Label>
-    </Stacklaout>
+    </StackLayout>
 </ActionBar>
 
-    <StackLayout >
+
+    <StackLayout style="margin-top: 5%">
 
     <TabView
             [(ngModel)]="tabSelectedIndex" borderBottomcolor="#B52E26"
                  iosIconRenderingMode="alwaysOriginal" sdkExampleTitle sdkToggleNavButton style="height: 100%">
 
-            <!--List View-->
 
     <StackLayout *tabItem="{title: 'Menu'}">
 
-    <!--Categories-->
     <StackLayout>
     <StackLayout *ngIf="toggleMenuCart">
         <ScrollView orientation="horizontal">
@@ -53,10 +54,10 @@
         <StackLayout id="viewcart" *ngIf="!cartEmpty && toggleMenuCart" style="{{scrollHeightBase}}" backgroundColor="#1a626f" (tap)="OnViewCart($event)" orientation="horizontal">
             <Label [text]="'$' + total$" verticalAlignment="middle" horizontalAlignment="left"
                    style="color:white; font-size: 18px;text-align: center;padding-top: 15px"></Label>
-            <Label text="                     View cart                          "  horizontalAlignment="center" verticalAlignment="middle"
-                   style="color:white; font-size: 18px;text-align: center;padding-top: 15px"></Label>
+            <Label text="View cart"  horizontalAlignment="center" verticalAlignment="middle"
+                   style="color:white; font-size: 18px;text-align: center;padding-top: 15px;margin-left: 30%"></Label>
             <Label [text]="itemCount" verticalAlignment="middle" horizontalAlignment="right"
-                   style="color:white; font-size: 18px;text-align: center;padding-top: 15px"></Label>
+                   style="color:white; font-size: 18px;text-align: center;padding-top: 15px;margin-left: 30%"></Label>
         </StackLayout>
 
         <StackLayout id="checkout" *ngIf="!cartEmpty && !toggleMenuCart" style="{{scrollHeightBase}}" backgroundColor="#1a626f" (tap)="OnViewMenu($event)">
