@@ -91,13 +91,14 @@ removeOrder(order:Order){
 
 confirmOrder(order:Order[],cafe,payway,uid,location){
 
-        order = order.filter((x)=>{x.quantity!=0});
+        console.log("in confirm order",order,cafe,payway,uid,location);
+        // order = order.filter((x)=>{x.quantity!=0});
 
         var a = Math.floor(Math.random() * (50 - 1 + 1)) + 1;
         var time = Math.floor(Date.now() / 1000);
     if (payway == "Cash") {
                     firebase.push('/order-cafe/' + cafe,
-                        {order, "status": "ordered", "uid": uid,"location":location,"orderNo2":a,"timestamp":time} )
+                            {order, "status": "ordered", "uid": uid,"location":location,"orderNo2":a,"timestamp":time} )
                         .then((res) => {
                     firebase.push('/order-user/' + uid, {
                                 "status": "ordered",

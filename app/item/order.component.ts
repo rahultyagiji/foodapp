@@ -42,7 +42,7 @@ export class OrderConfirmComponent implements OnInit, OnDestroy {
 
         this.order=this.orderService.getOrder();
         this.totalPrice(this.order);
-        console.log(this.order);
+        console.log("order panel triggered",this.order,this.cafeid);
     }
 
     onCancelNav(){
@@ -120,6 +120,7 @@ export class OrderConfirmComponent implements OnInit, OnDestroy {
         if(this.uid){
             this.popup.showModal(OrderpopComponent,options).then((response)=>
             {
+                console.log("passing...",this.cafeid)
 
                 this.orderService.confirmOrder(this.order,this.cafeid,response.payment,this.uid,response.location);
                 Toast.makeText("Your order has been placed").show();

@@ -73,7 +73,6 @@ export class CafeComponent implements OnInit, OnDestroy {
         }
 
     ngOnInit(): void {
-        console.log("ng triggered in onInit");
 
  //Also load cart...
         this.orderService.getCart(this.uid)
@@ -110,6 +109,7 @@ export class CafeComponent implements OnInit, OnDestroy {
                 this._menu.forEach((x)=>{
                     // this.menu.push(x);
                     this.categories.push(x.category);
+                    console.log(x,"checking for inStock")
                 })
                 this.myMenu=this.menu;
                 this.categories = this.categories.filter(function (item, i, array) {
@@ -182,10 +182,6 @@ export class CafeComponent implements OnInit, OnDestroy {
     OnViewCart(args){
         this.toggleMenuCart=false;
         this.menuorcart="Cart";
-    }
-
-    ontapOrder(order){
-        console.log(JSON.stringify(order))
     }
 
 

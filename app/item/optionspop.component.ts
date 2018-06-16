@@ -34,6 +34,8 @@ export class OptionspopComponent implements OnInit {
     specialInstruction:string="";
     optionText:string;
     optionPrice:number;
+    inStock:boolean=false;
+    hasImage:boolean=false;
 
     public options: Array<string>=[];
     public optionsPrice:Array<number>=[];
@@ -42,12 +44,9 @@ export class OptionspopComponent implements OnInit {
     public extras1:{"name":string,"extrasPrice":number,"selected":boolean}={name:"",extrasPrice:0,selected:false};
     public extrasAdded: Array<{"text":string,"price":number}>=[];
 
-
     //this is for the actual values sent back as response
     public picked: string="";
     public pickedPrice:number=0;
-
-
 
     constructor(
         private params: ModalDialogParams
@@ -62,6 +61,16 @@ export class OptionspopComponent implements OnInit {
         this.selectedMenu.push(this.params.context);
 
         this.selectedMenuItem = this.selectedMenu[0];
+
+        if(this.selectedMenuItem.imgSrc)this.hasImage=true;
+
+        if(this.selectedMenuItem.available){
+           this.inStock=true;
+        }
+        else{
+            this.inStock=false;
+        }
+
 
         if(this.selectedMenuItem.option){
             this.selectedMenuItem.option.forEach((x)=>{

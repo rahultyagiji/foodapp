@@ -7,6 +7,7 @@ export class Menu {
     description:string;
     option:{"name":string,"extraPrice":number}[];
     extra:{"name":string,"extraPrice":number}[];
+    available:boolean;
 
     constructor(options){
         this.item=options.item;
@@ -17,6 +18,8 @@ export class Menu {
         this.description=options.description;
         this.option=options.option;
         this.extra=options.extra;
+        this.available=options.available;
+
     }
 
 }

@@ -6,10 +6,21 @@
     </StackLayout>
 
     <StackLayout orientation="vertical" horizontalAlignment="left" height="80%" width="100%" style="margin-top: 5%">
-        <Label text={{selectedMenuItem.name}} style="width:90%;horizontal-align: center;font-size: 20pt;font-weight: bold" textWrap="true"></Label>
 
+        <StackLayout orientation="horizontal" *ngIf="hasImage">
+            <Image [src]="selectedMenuItem.imgSrc"  horizontalAlignment="left"
+                   style="width: 40%;border-image-width: 100%;margin: 20pt;margin-top: 0pt"></Image>
+        <StackLayout>
+        <Label text={{selectedMenuItem.description}} textWrap="true" style="width:90%;font-size: 12px"
+               class="list-group-item"></Label>
+            </StackLayout>
+        </StackLayout>
 
-        <Label text={{selectedMenuItem.description}} textWrap="true" style="width:90%;font-size: 12px"></Label>
+        <StackLayout *ngIf="!hasImage">
+            <Label text={{selectedMenuItem.description}} textWrap="true" style="width:90%;font-size: 12px"
+                   class="list-group-item"></Label>
+        </StackLayout>
+
 
         <StackLayout style="border-color:#1a626f ; border-width: 2px ; width: 90%;">
             <TextView   (textChange)="onTextChange($event)"
@@ -51,7 +62,10 @@
 
 
     <StackLayout orientation="vertical" horizontalAlignment="left" height="15%" width="100%" style="margin-top:0%">
-        <Button text=" Add to Order" (tap)="close('true')" class="roundedButtons" style="width: 80% ;background-color: #1a626f;color: white"></Button>
+        <Button text=" Add to Order" (tap)="close('true')" class="roundedButtons" style="width: 80% ;background-color: #1a626f;color: white"
+        *ngIf="inStock"></Button>
+        <Button text="Not Available" (tap)="close('false')" class="roundedButtons" style="width: 80% ;background-color: #a8a8a8;color: white"
+        *ngIf="!inStock"></Button>
     </StackLayout>
 
 </StackLayout>

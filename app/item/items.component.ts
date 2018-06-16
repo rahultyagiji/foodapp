@@ -63,6 +63,7 @@ export class ItemsComponent implements OnInit{
 
     ngOnInit(): void {
 
+        if(this.items!=[]){
         this.itemService.load()
             .subscribe((items: Array<Item>) => {
                 this._items = new ObservableArray(items);
@@ -73,11 +74,16 @@ export class ItemsComponent implements OnInit{
                 this.myItems.length=0;
                 this.filterByLocation();
             });
+        }
+        else{
+            console.log("not loading again")
+        }
 
 
 //order load for your picks
         firebase.getCurrentUser()
             .then((token)=> {
+                console.log(token)
                 this.orderservice.loadOrder(token.uid)
                     .subscribe((orderlist: Array<{"orderNo":string,"cafe":string,"status":string}>) => {
                         this.orderComplexLocal=[];

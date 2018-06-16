@@ -1,5 +1,5 @@
 import {Component, OnInit} from "@angular/core";
-//import * as pushPlugin from "nativescript-push-notifications";
+// import * as pushPlugin from "nativescript-push-notifications";
 const firebase = require("nativescript-plugin-firebase");
 
 /*const iosSettings = {

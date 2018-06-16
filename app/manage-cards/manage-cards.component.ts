@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild, ElementRef, ViewContainerRef, OnDestroy }
 import { ActivatedRoute } from "@angular/router";
 import { RouterExtensions } from 'nativescript-angular/router';
 import { Stripe, Card, CreditCardView} from 'nativescript-stripe';
-import { CardDetails } from "../datatypes/card";
 //import { Page } from 'ui/page';
 
 const stripe = new Stripe('pk_test_c8UTm5ruajI8YOPQo75bTPKx');
@@ -16,7 +15,6 @@ const stripe = new Stripe('pk_test_c8UTm5ruajI8YOPQo75bTPKx');
 export class ManageCardsComponent implements OnInit {
 
     @ViewChild('cardView') cardRef: ElementRef;
-    card: CardDetails;
     //ccView:CreditCardView;
     //cc: Card;
 

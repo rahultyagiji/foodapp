@@ -1,15 +1,16 @@
 <ActionBar class="action-bar" style="background-color: #1a626f;color: white">
     <StackLayout orientation="horizontal">
-        <android>
-            <Label text="X" style="width: 30% ;font-size: 20pt;font-weight: bold" (tap)="onCancelNav()"></Label>
-        </android>
-        <Label text="                "></Label>
+        <!--<android>-->
+            <!--<Label text="X" style="width:5%;horizontal-align:left;-->
+            <!--font-size: 20pt;font-weight: bold" (tap)="onCancelNav()"></Label>-->
+        <!--</android>-->
+        <!--<Label text="                "></Label>-->
         <Label [text]="cafe.name" style="font-size:  18pt;vertical-align: center;font-weight: bold"></Label>
     </StackLayout>
 </ActionBar>
 
 
-    <StackLayout style="margin-top: 5%">
+    <StackLayout>
 
     <TabView
             [(ngModel)]="tabSelectedIndex" borderBottomcolor="#B52E26"
@@ -65,7 +66,7 @@
                    style="color:white; font-size: 18px;text-align: center;padding-top: 15px"></Label >
         </StackLayout>
 
-        <ns-confirm-order *ngIf="!toggleMenuCart" [cafeid]="cafe"
+        <ns-confirm-order *ngIf="!toggleMenuCart" [cafeid]="cafe.cafeId"
                           (cartEmpty)="cartInfoReturned($event)"></ns-confirm-order>
 
     </StackLayout>

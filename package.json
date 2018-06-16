@@ -5,11 +5,11 @@
   "repository": "<fill-your-repository-here>",
   "nativescript": {
     "id": "org.nativescript.DQCafe",
-    "tns-android": {
-      "version": "4.1.1"
-    },
     "tns-ios": {
       "version": "4.1.0"
+    },
+    "tns-android": {
+      "version": "4.0.1"
     }
   },
   "dependencies": {

@@ -17,6 +17,14 @@ export class AuthService {
             password: b
         }).then((res) => {
             this.route.navigate([""])
+            firebase.sendEmailVerification().then(
+                function (res) {
+                    console.log("Email verification sent",res);
+                },
+                function (error) {
+                    console.log("Error sending email verification: " + error);
+                }
+            );
         })
 
     }
@@ -28,7 +36,9 @@ export class AuthService {
                 email: a,
                 password: b
             }       }
-        ).then((res)=>{this.route.navigate([""])})
+        ).then((res)=>{
+            console.log("done");
+            this.route.navigate([""])})
     }
 
     signout(){

@@ -49,6 +49,7 @@ export class SideDrawerPageComponent implements AfterViewInit, OnDestroy {
   private drawer: SideDrawerType;
   uid:string="";
   name:string="";
+  isVerified:boolean=false;
 
   constructor(
     private routerExtensions: RouterExtensions,
@@ -60,7 +61,9 @@ export class SideDrawerPageComponent implements AfterViewInit, OnDestroy {
 
       firebase.getCurrentUser()
           .then((token)=> {
-              this.uid = token.uid
+            console.log(token);
+              this.uid = token.uid;
+              if(token.emailVerified){this.isVerified=true;}
 
           firebase.getValue("/userInfo/"+token.uid)
               .then((res)=>{this.name=res.value.name})
