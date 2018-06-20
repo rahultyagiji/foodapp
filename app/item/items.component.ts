@@ -76,12 +76,14 @@ export class ItemsComponent implements OnInit{
             });
         }
         else{
+            console.log("not loading again")
         }
 
 
 //order load for your picks
         firebase.getCurrentUser()
             .then((token)=> {
+                console.log(token)
                 this.orderservice.loadOrder(token.uid)
                     .subscribe((orderlist: Array<{"orderNo":string,"cafe":string,"status":string}>) => {
                         this.orderComplexLocal=[];
@@ -104,7 +106,6 @@ export class ItemsComponent implements OnInit{
                                     this.orderDisplay.order=result.value.order;
                                     this.orderDisplay.total=this.totalPrice(this.orderDisplay.order)
                                     this.orderComplexLocal.push(this.orderDisplay);
-                                    this.onTapCurrentOrder();
                                     this.orderDisplay= {"key":"","uid":"","status":"","order": null,
                                         "cafeOwner":"","location":"","orderNo2":"","imgSrc":"","total":""};
                                 })

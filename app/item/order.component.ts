@@ -120,6 +120,7 @@ export class OrderConfirmComponent implements OnInit, OnDestroy {
         if(this.uid){
             this.popup.showModal(OrderpopComponent,options).then((response)=>
             {
+                console.log("passing...",this.cafeid)
 
                 this.orderService.confirmOrder(this.order,this.cafeid,response.payment,this.uid,response.location);
                 Toast.makeText("Your order has been placed").show();

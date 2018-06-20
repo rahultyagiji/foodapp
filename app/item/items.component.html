@@ -14,14 +14,18 @@ iosIconRenderingMode="alwaysOriginal" sdkExampleTitle sdkToggleNavButton style="
                (clear)="onClear($event)" color="black"></SearchBar>
 
     <!--<SearchBar id="searchbarid"  -->
-    <ListView [items]="myItems" class="list-group container">
+    <ListView [items]="myItems" class="list-group container" style="height: 90%">
 <!--each list item-->
         <ng-template  let-item="item" class="textpadding">
 <!--first stack-->
-            <StackLayout id="cafename" orientation="horizontal" (tap)="jumptoMenu(item.cafeId,$event)">
+            <StackLayout id="cafename" orientation="horizontal" (tap)="jumptoMenu(item.cafeId,$event)" style="height: 15%">
 <!--cafe image-->
-                <Image [src]="item.imgSrc"  style="width: 30%;border-image-width: 100%"></Image>
-                <!--<Image src={{item.imgSrc}}   class="img-rounded p-l-15 p-r-15 p-t-15" style="width: 30%;"></Image>-->
+               <!--<android>
+                    <Image [src]="item.imgSrc"  style="width: 30%;border-image-width: 100%"></Image>
+                </android>
+                <ios>-->
+                    <Image [src]="item.imgSrc" stretch="fill" class="img-rounded p-l-15 p-r-15 p-t-15" style="width: 30%;border-image-width: 100%"></Image>
+                <!--</ios>-->
 <!--name and description-->
                 <StackLayout orientation="vertical" style="width: 60%">
                     <Label [text]="item.name" textWrap="true" class="list-group-item" style="font-weight: bold"></Label>

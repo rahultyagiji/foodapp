@@ -90,7 +90,12 @@ export class CafeComponent implements OnInit, OnDestroy {
                         this.cartEmpty=false;
                         this.checkCartStatus();
                         this.orderService.setOrder(this.order);
-                        this.itemCount=this.order.length;
+                        let orderCount = 0;
+                        for (let i=0; i<this.order.length;i++) {
+                            orderCount = orderCount + this.order[i].quantity;
+                        }
+                        this.itemCount = orderCount;
+                        //this.itemCount=this.order.length;
                         this.totalPrice(res.value[x].cart);
                     }
                 });
@@ -128,7 +133,12 @@ export class CafeComponent implements OnInit, OnDestroy {
             this.cartEmpty=true;
         }
         this.order = this.orderService.getOrder();
-        this.itemCount=this.order.length;
+        let orderCount = 0;
+        for (let i=0; i<this.order.length;i++) {
+            orderCount = orderCount + this.order[i].quantity;
+        }
+        this.itemCount = orderCount;
+        //this.itemCount=this.order.length;
         this.totalPrice(this.orderService.getOrder());
     }
 
@@ -158,7 +168,12 @@ export class CafeComponent implements OnInit, OnDestroy {
                         this.scrollHeight = "height: 90%"
                     }
                     this.totalPrice(this.order);
-                    this.itemCount=this.order.length;
+                    let orderCount = 0;
+                    for (let i=0; i<this.order.length;i++) {
+                        orderCount = orderCount + this.order[i].quantity;
+                    }
+                    this.itemCount = orderCount;
+                    //this.itemCount=this.order.length;
                     Toast.makeText(data.name+" added to Cart!","1500").show()};
         })
     }
@@ -219,7 +234,7 @@ export class CafeComponent implements OnInit, OnDestroy {
     }
 
     totalPrice(order:Order[]){
-         this.total$=0;
+        this.total$=0;
         order.forEach((x)=>{
             //for total
             this.total$=Math.round((this.total$+ parseFloat(x.priceQuantity))*100)/100;
@@ -259,7 +274,12 @@ export class CafeComponent implements OnInit, OnDestroy {
         this.toggleMenuCart=!cartDisplay;
         this.order=this.orderService.getOrder();
         this.totalPrice(this.orderService.getOrder());
-        this.itemCount=this.order.length;
+        let orderCount = 0;
+        for (let i=0; i<this.order.length;i++) {
+            orderCount = orderCount + this.order[i].quantity;
+        }
+        this.itemCount = orderCount;
+        //this.itemCount=this.order.length;
         if (this.order.length===0){
             this.cartEmpty=true;
             this.toggleMenuCart=true;
