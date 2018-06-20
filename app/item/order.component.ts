@@ -22,6 +22,7 @@ export class OrderConfirmComponent implements OnInit, OnDestroy {
     total$:number=0;
     displayCart:boolean=true;
     uid:string="";
+    itemCount:number=0;
 
     @Input() cafeid: string;
     @Output() cartEmpty: EventEmitter<boolean> =   new EventEmitter();
@@ -57,10 +58,11 @@ export class OrderConfirmComponent implements OnInit, OnDestroy {
 
     increaseQuantity(item,i){
         //Remember that the quantity has been multiplied with price already... just sum it up for total
+
         this.order[i].quantity=this.order[i].quantity+1;
         this.order[i].priceQuantity=(parseFloat(this.order[i].price)*this.order[i].quantity).toString();
         this.totalPrice(this.order);
-        this.orderService.setOrder(this.order)
+        this.orderService.setOrder(this.order);
         this.cartEmpty.emit(true);
     }
 
@@ -71,11 +73,11 @@ export class OrderConfirmComponent implements OnInit, OnDestroy {
         this.order[i].priceQuantity=(parseFloat(this.order[i].price)*this.order[i].quantity).toString();
         this.totalPrice(this.order);
         this.deleteQuantityZero();
-        this.orderService.setOrder(this.order)
+        this.orderService.setOrder(this.order);
         this.cartEmpty.emit(true);
         }
         else {
-            this.orderService.setOrder(this.order)
+            this.orderService.setOrder(this.order);
             this.cartEmpty.emit(true);
 
         }
@@ -120,7 +122,7 @@ export class OrderConfirmComponent implements OnInit, OnDestroy {
         if(this.uid){
             this.popup.showModal(OrderpopComponent,options).then((response)=>
             {
-                console.log("passing...",this.cafeid)
+                console.log("passing...",this.cafeid);
 
                 this.orderService.confirmOrder(this.order,this.cafeid,response.payment,this.uid,response.location);
                 Toast.makeText("Your order has been placed").show();

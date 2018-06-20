@@ -33,8 +33,8 @@
         <StackLayout class="page page-content" >
             <ListView [items]="myMenu" class="list-group" style="{{scrollHeight}}">
                 <ng-template  let-item="item">
-                    <StackLayout id="menuitem" (tap)="ontapMenu(item,$event)"
-                                 (swipe)="addtoOrderlist(item,$event)" orientation="horizontal">
+                    <StackLayout id="menuitem" (tap)="ontapMenu(item,$event)" orientation="horizontal">
+                                 <!--(swipe)="addtoOrderlist(item,$event)" orientation="horizontal">-->
                         <StackLayout orientation="vertical" style="width: 85%;">
                             <Label [text]="item.name" textWrap="true" class="list-group-item-copy" style="font-size: 14pt;font-weight: bold;"></Label>
                             <Label [text]="item.description" textWrap="true" class="list-group-item-copy" style="font-size: 10pt"></Label>
