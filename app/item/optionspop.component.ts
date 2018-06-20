@@ -126,7 +126,6 @@ export class OptionspopComponent implements OnInit {
         this.FirstCheckBox.nativeElement.toggle();
     }
     public getCheckProp() {
-        console.log('checked prop value =  ' + this.FirstCheckBox.nativeElement.checked);
     }
 
     onTextChange(args){
@@ -137,7 +136,6 @@ export class OptionspopComponent implements OnInit {
     }
 
     public checkedChange(modelRef) {
-        console.log("checkedChange:", modelRef.checked);
     }
 
     changeCheckedRadio(radioOption: RadioOption): void {

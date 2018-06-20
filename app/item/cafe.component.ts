@@ -69,7 +69,7 @@ export class CafeComponent implements OnInit, OnDestroy {
     ) {
         firebase.getCurrentUser()
             .then((token)=> {
-                this.uid = token.uid; console.log("logged in as",token.uid)});
+                this.uid = token.uid;});
         }
 
     ngOnInit(): void {
@@ -97,9 +97,7 @@ export class CafeComponent implements OnInit, OnDestroy {
                 this.orderService.removeCart(this.uid)
             });
 
-        console.log("after order service");
         this.cafe=this.itemService.getCafeInfo(this.route.snapshot.params["cafeId"]);
-        console.log("after item service");
 //menu load
         this.menuService.loadMenu(this.route.snapshot.params["cafeId"])
             .subscribe((menu: Array<Menu>) => {
@@ -109,18 +107,15 @@ export class CafeComponent implements OnInit, OnDestroy {
                 this._menu.forEach((x)=>{
                     // this.menu.push(x);
                     this.categories.push(x.category);
-                    console.log(x,"checking for inStock")
-                })
+                });
                 this.myMenu=this.menu;
                 this.categories = this.categories.filter(function (item, i, array) {
                     return array.indexOf(item) === i;
                 });
             });
-        console.log("after menu service");
     }
 
     ngOnChanges(){
-        console.log("changes triggered");
         this.order = this.orderService.getOrder();
         this.totalPrice(this.orderService.getOrder());
         if(this.order.length>0) {
