@@ -13,6 +13,7 @@ import {ManageCardsComponent} from "./manage-cards/manage-cards.component";
 const routes: Routes = [
     { path: "", redirectTo: "items", pathMatch: "full" },
     { path: "items", component: ItemsComponent },
+    { path: "items/:tabId", component: ItemsComponent },
     { path: "cafe/:cafeId", component:CafeComponent },
     { path: "register", component:RegisterComponent },
     { path: "signin", component:SigninComponent },

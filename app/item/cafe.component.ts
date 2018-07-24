@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit, ViewContainerRef} from "@angular/core";
+import {Component, OnDestroy, OnInit, ViewChild, ViewContainerRef, ElementRef} from "@angular/core";
 import {Item} from "../datatypes/item";
 import {Menu} from "../datatypes/menu";
 import {ItemService} from "../services/item.service";
@@ -34,6 +34,9 @@ import {RouterExtensions} from "nativescript-angular";
     styleUrls: ["./cafe.component.css"]
 })
 export class CafeComponent implements OnInit, OnDestroy {
+
+    @ViewChild('scrollbar') scrollBarRef: ElementRef;
+    
     cafe: Item;
     menu:Menu[];
     myMenu:Menu[];
@@ -69,7 +72,8 @@ export class CafeComponent implements OnInit, OnDestroy {
     ) {
         firebase.getCurrentUser()
             .then((token)=> {
-                this.uid = token.uid;});
+                this.uid = token.uid; console.log("logged in as",token.uid)});
+
         }
 
     ngOnInit(): void {
@@ -102,7 +106,9 @@ export class CafeComponent implements OnInit, OnDestroy {
                 this.orderService.removeCart(this.uid)
             });
 
+        console.log("after order service");
         this.cafe=this.itemService.getCafeInfo(this.route.snapshot.params["cafeId"]);
+        console.log("after item service");
 //menu load
         this.menuService.loadMenu(this.route.snapshot.params["cafeId"])
             .subscribe((menu: Array<Menu>) => {
@@ -112,15 +118,18 @@ export class CafeComponent implements OnInit, OnDestroy {
                 this._menu.forEach((x)=>{
                     // this.menu.push(x);
                     this.categories.push(x.category);
-                });
+                    console.log(x,"checking for inStock")
+                })
                 this.myMenu=this.menu;
                 this.categories = this.categories.filter(function (item, i, array) {
                     return array.indexOf(item) === i;
                 });
             });
+        console.log("after menu service");
     }
 
     ngOnChanges(){
+        console.log("changes triggered");
         this.order = this.orderService.getOrder();
         this.totalPrice(this.orderService.getOrder());
         if(this.order.length>0) {
@@ -210,11 +219,23 @@ export class CafeComponent implements OnInit, OnDestroy {
     }
 
     onclickAll(args){
-        let page = <StackLayout>args.object;
+
+        let scrollBar = this.scrollBarRef.nativeElement;
+        console.log(" the label text is " + scrollBar.text);
+        //let view = this.page.getViewById("all");
+
+
+        scrollBar.backgroundColor = new Color("#1a626f");
+        scrollBar.backgroundColor = new Color("white");
+        //scrollBar.animate({ backgroundColor: new Color("#1a626f"), duration: 200 });
+        //scrollBar.animate({ backgroundColor: new Color("white"), duration: 200 });
+
+        console.log(" the label text is ==== " + scrollBar.text);
+        /*let page = <StackLayout>args.object;
         let view = <StackLayout>page.getViewById("all");
         view.backgroundColor = new Color("#1a626f");
         view.animate({ backgroundColor: new Color("#1a626f"), duration: 200 });
-        view.animate({ backgroundColor: new Color("white"), duration: 200 });
+        view.animate({ backgroundColor: new Color("white"), duration: 200 });*/
 
 
         this.myMenu=this.menu;

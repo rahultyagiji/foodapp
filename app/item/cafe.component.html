@@ -18,7 +18,7 @@
     <StackLayout *ngIf="toggleMenuCart">
         <ScrollView orientation="horizontal">
             <StackLayout orientation="horizontal">
-                <Label text="All" id="all" (tap)="onclickAll($event)" class="category"></Label>
+                <Label text="All" #scrollbar id="all" (tap)="onclickAll($event)" class="category"></Label>
                 <StackLayout orientation="horizontal" *ngFor=" let categ of categories; let i = index">
                     <Label [text]="categ" id="category" (tap)="onfiltercategory(categ,$event)" class="category"></Label>
                 </StackLayout>

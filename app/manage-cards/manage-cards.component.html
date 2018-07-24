@@ -18,7 +18,8 @@
         </StackLayout>
 
         <StackLayout orientation="vertical" horizontalAlignment="left" height="15%" width="100%">
-            <Button text="Register Card" (tap)="onCardRegister($event)" class="roundedButtons buttons80P-W"></Button>
+            <Button text="Register Card" *ngIf="!cardExists" (tap)="onCardRegister($event)" class="roundedButtons buttons80P-W"></Button>
+            <Button text="Update Card" *ngIf="cardExists" (tap)="onCardRegister($event)" class="roundedButtons buttons80P-W"></Button>
         </StackLayout>
 
     </StackLayout>

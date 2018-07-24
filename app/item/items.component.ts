@@ -1,6 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import { Item } from "../datatypes/item";
 import { ItemService } from "../services/item.service";
+import {ActivatedRoute} from "@angular/router";
 import { Router} from "@angular/router";
 // import { MapboxViewApi, Viewport as MapboxViewport } from "nativescript-mapbox";
 import {RouterExtensions} from "nativescript-angular";
@@ -20,6 +21,7 @@ import {Location, isEnabled, enableLocationRequest, getCurrentLocation, watchLoc
 import {Accuracy} from "tns-core-modules/ui/enums/enums";
 import {StackLayout} from "ui/layouts/stack-layout";
 import {Color} from "tns-core-modules/color";
+import {and} from "../../platforms/ios/DQCafev02/app/tns_modules/@angular/router/src/utils/collection";
 // var Vibrate = require("nativescript-vibrate").Vibrate;
 // let vibrator = new Vibrate();
 
@@ -55,10 +57,16 @@ export class ItemsComponent implements OnInit{
 
     constructor(private itemService: ItemService,
                 private router:Router,
+                private route:ActivatedRoute,
                 private routerextensions:RouterExtensions,
                 private auth:AuthService,
                 private orderservice:OrderService) {
-        this.tabSelectedIndex = 0;
+
+        if(this.route.snapshot.params["tabId"] != null && this.route.snapshot.params["tabId"] == 1) {
+            this.tabSelectedIndex = 1;
+        } else {
+            this.tabSelectedIndex = 0;
+        }
     }
 
     ngOnInit(): void {

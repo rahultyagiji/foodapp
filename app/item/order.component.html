@@ -39,7 +39,11 @@
                class="list-group-item-copy" style="width: 50%"></Label>
     </StackLayout>
 
-    <Button text="Click to Pay"
-            (tap)="onOrder()" style="background-color: #B52D26;color: white"></Button>
+        <StackLayout>
+            <Button text="Click to Pay" *ngIf="cardExists" (tap)="onOrder()" (cardExist)="updateButton($event)" style="background-color: #B52D26;color: white"></Button>
+        </StackLayout>
+        <StackLayout>
+            <Button text="Add Card" *ngIf="!cardExists" (tap)="manageCards()" (cardExist)="updateButton($event)" style="background-color: #B52D26;color: white"></Button>
+        </StackLayout>
 
     </StackLayout>
