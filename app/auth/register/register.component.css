@@ -1,0 +1,13 @@
+.validation{
+    color: red;
+}
+
+.buttonactive{
+ background-color: #0A4C58;
+    color: white;
+}
+
+.buttoninactive{
+background-color: lightgrey;
+    color: black;
+}

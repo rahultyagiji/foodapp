@@ -63,12 +63,25 @@ export class SideDrawerPageComponent implements AfterViewInit, OnDestroy {
           .then((token)=> {
             console.log(token);
               this.uid = token.uid;
-              if(token.emailVerified){this.isVerified=true;}
+              if(token.emailVerified){this.isVerified=true;
+              this.navMenu=[
+                  { name: 'Home', commands: ['/items'] },
+                  { name: 'Sign Out', commands: ['/signout'] },
+                  { name: 'Manage Cards', commands: ['/cards'] }
+              ]
+              }
 
           firebase.getValue("/userInfo/"+token.uid)
-              .then((res)=>{this.name=res.value.name})
+              .then((res)=>{this.name=res.value.name
+              })
           })
-
+          .catch(()=>{
+              this.navMenu = [
+                  { name: 'Home', commands: ['/items'] },
+                  { name: 'Register', commands: ['/register'] },
+                  { name: 'Sign In', commands: ['/signin'] },
+              ];
+      });
 
           this.setActionBarIcon(this.page);
           this.setDrawerTransition();
@@ -99,6 +112,11 @@ export class SideDrawerPageComponent implements AfterViewInit, OnDestroy {
       this.onSignout();
       this.name="";
       this.uid="";
+      this.navMenu = [
+            { name: 'Home', commands: ['/items'] },
+            { name: 'Register', commands: ['/register'] },
+            { name: 'Sign In', commands: ['/signin'] },
+        ];
     }
     if (currentUrl !== newUrl) {
       this.isContentVisible = false;
@@ -107,7 +125,7 @@ export class SideDrawerPageComponent implements AfterViewInit, OnDestroy {
         this.ngZone.run(() => {
           this.routerExtensions.navigate(routeCommands,
             {
-              clearHistory: true,
+              clearHistory: false,
               animated: false
             });
           this.isContentVisible = true;

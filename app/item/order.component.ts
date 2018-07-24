@@ -126,6 +126,7 @@ export class OrderConfirmComponent implements OnInit, OnDestroy {
                 Toast.makeText("Your order has been placed").show();
                 this.order.length=0;
                 this.total$=0;
+                this.cartEmpty.emit(false);
             }).catch(()=>{
                 Toast.makeText("").show();
             })

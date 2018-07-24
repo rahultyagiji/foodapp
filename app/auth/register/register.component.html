@@ -1,12 +1,58 @@
 <side-drawer-page>
-    <StackLayout>
+<StackLayout>
+    <StackLayout *ngIf="!processingRegistration">
 
-        <TextField #email hint="Username" autocorrect="false" returnKeyType="done"
-                   class="input input-border"></TextField>
+<!--some image can go here...-->
+        <StackLayout style="height: 20%"></StackLayout>
+
+
+        <StackLayout orientation="horizontal">
+        <Label text="" style="width: 10%"> </Label>
+        <TextField hint="Enter a valid email" autocorrect="false" returnKeyType="done"
+                   class="{{emailValid ? 'input input-border' : 'validation'}}"
+                   style="width: 70%" (textChange)="onEmailTextChange($event.value)"
+                 #email></TextField>
+        </StackLayout>
+
+        <StackLayout orientation="horizontal">
+        <Label text="" style="width: 10%"> </Label>
         <TextField #password hint="Password" autocorrect="false" returnKeyType="done"
-                   class="input input-border" secure="true"></TextField>
+                   class="{{passwordValid ? 'input input-border' : 'validation'}}" secure="true" style="width: 70%"
+        (textChange)="onPasswordTextChange($event.value)"> </TextField>
+        </StackLayout>
 
-        <Button text="Register" (tap)="onRegister(email,password)"></Button>
+        <StackLayout orientation="horizontal">
+            <Label text="" style="width: 10%"> </Label>
+            <TextField #password2 hint="Confirm Password" autocorrect="false" returnKeyType="done"
+                       class="{{password2Valid ? 'input input-border' : 'validation'}}" secure="true" style="width: 70%"
+                        (textChange)="onPassword2TextChange($event.value)"> </TextField>
+        </StackLayout>
+
+
+
+        <Button text="Register" (tap)="onRegister(email,password)"
+                style="width: 90%;"
+                class="{{registerButtonActive?'buttonactive':'buttoninactive'}}"></Button>
+    </StackLayout>
+
+    <StackLayout orientation="horizontal">
+
+        <StackLayout style="width: 10%"></StackLayout>
+        <StackLayout>
+        <Label text="Password rules" class="list-group-item"></Label>
+        <Label text="- minimum 12 characters"> </Label>
+        <Label text="- no spaces" > </Label>
+        <Label text="- that's it!" > </Label>
+        </StackLayout>
+    </StackLayout>
+
+    <StackLayout *ngIf="!processingRegistration">
+        <StackLayout style="height: 20%">
+
+        </StackLayout>
+        <Label text="Registering your details...."></Label>
 
     </StackLayout>
+
+</StackLayout>
 </side-drawer-page>

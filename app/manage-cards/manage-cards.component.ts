@@ -8,7 +8,7 @@ import { Stripe, Card, CreditCardView} from 'nativescript-stripe';
 //import { Page } from 'ui/page';
 
 //const stripe = new Stripe('pk_test_c8UTm5ruajI8YOPQo75bTPKx');
-const stripe = new Stripe('sk_test_YSmrlUFfYw3jTxJodZYiVKlU');
+const stripe = new Stripe('pk_test_c8UTm5ruajl8YOPQo75bTPKx');
 //const FIREBASE_FUNCTION = 'https://[YOUR_FIREBASE_PROJECT].cloudfunctions.net/charge/'; // TODO: PUT YOUR FIREBASE FUNCTIONS URL HERE
 const FIREBASE_FUNCTION = 'https://us-central1-dekyou-cafe.cloudfunctions.net/customer/'; // TODO: PUT YOUR FIREBASE FUNCTIONS URL HERE
 const httpModule = require("http");

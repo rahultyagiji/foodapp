@@ -106,6 +106,7 @@ export class ItemsComponent implements OnInit{
                                     this.orderDisplay.order=result.value.order;
                                     this.orderDisplay.total=this.totalPrice(this.orderDisplay.order)
                                     this.orderComplexLocal.push(this.orderDisplay);
+                                    this.onTapCurrentOrder();
                                     this.orderDisplay= {"key":"","uid":"","status":"","order": null,
                                         "cafeOwner":"","location":"","orderNo2":"","imgSrc":"","total":""};
                                 })
