@@ -40,10 +40,12 @@
     </StackLayout>
 
         <StackLayout>
-            <Button text="Click to Pay" *ngIf="cardExists" (tap)="onOrder()" (cardExist)="updateButton($event)" style="background-color: #B52D26;color: white"></Button>
+            <Button text="Tap to Pay" (tap)="onOrder()" (cardExist)="updateButton($event)" class="roundedButtons"
+                    style="width:80%;background-color: #B52D26;color: white"></Button>
         </StackLayout>
-        <StackLayout>
-            <Button text="Add Card" *ngIf="!cardExists" (tap)="manageCards()" (cardExist)="updateButton($event)" style="background-color: #B52D26;color: white"></Button>
-        </StackLayout>
+        <!--<StackLayout>
+            <Button text="Add Card" *ngIf="!cardExists" (tap)="manageCards()" (cardExist)="updateButton($event)"
+                    style="width:80%;background-color: #B52D26;color: white"></Button>
+        </StackLayout>-->
 
     </StackLayout>

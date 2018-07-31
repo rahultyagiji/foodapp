@@ -91,7 +91,7 @@ export class ItemsComponent implements OnInit{
 //order load for your picks
         firebase.getCurrentUser()
             .then((token)=> {
-                console.log(token)
+                console.log(token);
                 this.orderservice.loadOrder(token.uid)
                     .subscribe((orderlist: Array<{"orderNo":string,"cafe":string,"status":string}>) => {
                         this.orderComplexLocal=[];

@@ -7,20 +7,46 @@
     <StackLayout class="page page-content">
         <StackLayout class="page page-content" height="85%" xmlns:stripe="nativescript-stripe">
 
+            <StackLayout class="form">
+                <Label text="Enter card details" style="width:90%;margin-top:5%;margin-left:3%"></Label>
+                <StackLayout class="input-field">
+                    <TextField class="input input-border myTextField" hint="credit card" maxLength="16" autocorrect="false"
+                               (returnPress)="onCCReturnPress($event)" (blur)="onCCReturnBlur($event)" returnKeyType="done" keyboardType="number"
+                               style="margin-top:2%;height: 100px;width:90%;border-style:dashed;font-weight: bold;font-size:20pt"></TextField>
+                    <StackLayout orientation="horizontal" class="input-field">
+                        <TextField class="input input-border myTextField" hint="MM" maxLength="2" autocorrect="false"
+                                   (returnPress)="onMMReturnPress($event)" (blur)="onMMReturnBlur($event)" returnKeyType="done" keyboardType="number"
+                                   style="margin-left:3%;height: 100px;width:30%;border-style:dashed;font-weight: bold;font-size:20pt"></TextField>
+                        <TextField class="input input-border myTextField" hint="YY" maxLength="2" autocorrect="false"
+                                   (returnPress)="onYYReturnPress($event)" (blur)="onYYReturnBlur($event)" returnKeyType="done" keyboardType="number"
+                                   style="margin-left:2%;height: 100px;width:30%;border-style:dashed;font-weight: bold;font-size:20pt"></TextField>
+                    </StackLayout>
+                    <TextField class="input input-border myTextField" hint="CVC" horizontalAlignment="left" maxLength="4" autocorrect="false"
+                               (returnPress)="onCVCReturnPress($event)" (blur)="onCVCReturnBlur($event)" returnKeyType="done" keyboardType="number"
+                               style="margin-left:5%;height: 100px;width:40%;border-style:dashed;font-weight: bold;font-size:20pt"></TextField>
+                </StackLayout>
+
+                <Button text="Register Card" *ngIf="!cardExists" (tap)="onCardRegister($event)" class="roundedButtons buttons80P-W"></Button>
+                <Button text="Update Card" *ngIf="cardExists" (tap)="onCardRegister($event)" class="roundedButtons buttons80P-W"></Button>
+            </StackLayout>
+
             <!--<Label text="Enter email" style="width:90%;margin-top:5%"></Label>-->
 
-            <TextField hint="Email Address" class="input input-border myTextField" keyboardType="email" style="margin-top:5%;width:90%;border-style:dashed;"></TextField>
+           <!-- <TextField hint="Email Address" class="input input-border myTextField" keyboardType="email" style="margin-top:5%;width:90%;border-style:dashed;"></TextField>
 
-            <!--<Label text="Card and Expiry" style="width:90%;margin-top:5%"></Label>-->
+            <ListPicker [items]="month" selectedIndex="0" (selectedIndexChange)="selectedIndexChanged($event)"
+                                horizontalAlignment="left" style="width:40%;border-style:dashed;"></ListPicker>
 
-            <stripe:CreditCardView #cardView style="margin-top:5%;width:90%"/>
+            <Label text="Card and Expiry" style="width:90%;margin-top:5%"></Label>
+
+            <stripe:CreditCardView #cardView style="margin-top:5%;width:90%"/>-->
 
         </StackLayout>
 
-        <StackLayout orientation="vertical" horizontalAlignment="left" height="15%" width="100%">
+        <!-- <StackLayout orientation="vertical" horizontalAlignment="left" height="15%" width="100%">
             <Button text="Register Card" *ngIf="!cardExists" (tap)="onCardRegister($event)" class="roundedButtons buttons80P-W"></Button>
             <Button text="Update Card" *ngIf="cardExists" (tap)="onCardRegister($event)" class="roundedButtons buttons80P-W"></Button>
-        </StackLayout>
+        </StackLayout> -->
 
     </StackLayout>
 

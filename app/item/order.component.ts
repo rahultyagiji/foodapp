@@ -10,10 +10,11 @@ import * as Toast from "nativescript-toast";
 import {topmost} from "ui/frame";
 import { ios, run as applicationRun } from "application";
 import {PanGestureEventData} from "tns-core-modules/ui/gestures";
+import * as dialogs from "ui/dialogs";
 //import {OnChanges} from "../../platforms/ios/DQCafev02/app/tns_modules/@angular/core/src/metadata/lifecycle_hooks";
 //import firebase = require("nativescript-plugin-firebase");
-const FIREBASE_FUNCTION_ACCOUNT = 'https://us-central1-dekyou-cafe.cloudfunctions.net/account/';
 const FIREBASE_FUNCTION_CHARGE = 'https://us-central1-dekyou-cafe.cloudfunctions.net/charge/';
+const application = require("tns-core-modules/application");
 
 @Component({
     selector: "ns-confirm-order",
@@ -34,6 +35,7 @@ export class OrderConfirmComponent implements OnInit, OnChanges, OnDestroy, DoCh
     payOrCard:string = "Add Card";
     accountID:string = "";
     customerID:string = "";
+    key:string;
 
     @Input() cafeid: string;
     @Output() cartEmpty: EventEmitter<boolean> =   new EventEmitter();
@@ -83,6 +85,28 @@ export class OrderConfirmComponent implements OnInit, OnChanges, OnDestroy, DoCh
                     });
             });
 
+        var onQueryEvent = function(result) {};
+
+        firebase.query(
+            onQueryEvent,
+            '/businessName/',
+            {
+                singleEvent: true,
+                orderBy: {
+                    type: firebase.QueryOrderByType.CHILD,
+                    value:"cafeId"},
+                range: { type: firebase.QueryRangeType.EQUAL_TO, value:this.cafeid }
+            }
+        ).then(
+            (res)=>{
+
+                Object.keys(res.value).map((x)=>{
+                    //this.cafe=res.value[x];
+                    this.key=x;
+                    console.log("key is " + this.key);
+                });
+            })
+            .catch();
 
     }
 
@@ -204,36 +228,55 @@ export class OrderConfirmComponent implements OnInit, OnChanges, OnDestroy, DoCh
 
 
     onOrder(){
+        
+        if(this.cardExists) {
 
-        //modalcode
-        let options={
-            fullscreen:false,
-            viewContainerRef:this.vcRef,
+            dialogs.prompt({
+                title: "Table Number",
+                message: "Please enter your table number",
+                okButtonText: "OK",
+                cancelButtonText: "Cancel text",
+                neutralButtonText: "I'm getting takeaway!",
+                defaultText: "",
+                inputType: dialogs.inputType.text
+            }).then(r => {
+                console.log("Dialog result: " + r.result + ", text: " + r.text);
 
-        };
-        if (this.uid) {
-            this.popup.showModal(OrderpopComponent, options).then((response)=> {
-                console.log("passing...", this.cafeid);
+                //modalcode
+                /*let options = {
+                 fullscreen: false,
+                 viewContainerRef: this.vcRef,
 
-                this.orderService.confirmOrder(this.order,this.cafeid,response.payment,this.uid,response.location);
-                this.processPayment(this.total$);
-                Toast.makeText("Your order has been placed").show();
-                this.order.length=0;
-                this.total$=0;
-                this.cartEmpty.emit(false);
-                this.routerextensions.navigate(["/items", 1]);
-            }).catch(()=>{
-                Toast.makeText("").show();
-            })
+                 };*/
+                if (this.uid) {
+                    //this.popup.showModal(OrderpopComponent, options).then((response)=> {
+                    console.log("passing...", this.cafeid);
+
+                    this.orderService.confirmOrder(this.order, this.cafeid, "card", this.uid, r.text);
+                    this.processPayment(this.total$);
+                    Toast.makeText("Your order has been placed").show();
+                    this.order.length = 0;
+                    this.total$ = 0;
+                    this.cartEmpty.emit(false);
+                    this.routerextensions.navigate(["/items", 1]);
+                    //}).catch(()=> {
+                    Toast.makeText("").show();
+                    //})
+                }
+                else {
+                    Toast.makeText("Please login to order").show();
+                }
+
+            });
         }
         else {
-            Toast.makeText("Please login to order").show();
+            alert("Please add card details under Manage Cards option.");
         }
     }
 
     processPayment(total) {
 
-        console.log("in process payment");
+        console.log("in process payment for cafeid" + this.cafeid);
 
 
         /*firebase.getValue("/userInfo/" + token.uid)
@@ -248,11 +291,13 @@ export class OrderConfirmComponent implements OnInit, OnChanges, OnDestroy, DoCh
 
         var obj;
 
+        console.log("the key is " + this.key);
+
         total = Math.round(total*100);
         this.fees$ = Math.round(this.fees$ + (total * (1.75/100)));
         this.totalCharge$ = Math.round(total - this.fees$);
 
-        firebase.getValue("/businessName/-L6petTdgTRP_HfpTNYA")
+        firebase.getValue('/businessName/'+this.key)
             .then((result) => {
                     console.log("the result is " + result);
                     this.accountID = result.value.aID;

@@ -14,7 +14,7 @@ registerElement("CreditCardView", () => require("nativescript-stripe").CreditCar
 
 app.on(app.launchEvent, (args) => {
     if (platform.isIOS) {
-        STPPaymentConfiguration.sharedConfiguration().publishableKey = "pk_test_c8UTm5ruajI8YOPQo75bTPKx";
+        STPPaymentConfiguration.sharedConfiguration().publishableKey = "pk_test_l6tuKlddwfIkKUWlYj1HnxiB"; //"pk_live_vQDnFzdF5EDZmRqSf7z5b0yG";
         console.log("stripe key is " + STPPaymentConfiguration.sharedConfiguration().publishableKey);
     }
 });
