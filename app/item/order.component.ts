@@ -248,23 +248,30 @@ export class OrderConfirmComponent implements OnInit, OnChanges, OnDestroy, DoCh
                  viewContainerRef: this.vcRef,
 
                  };*/
-                if (this.uid) {
-                    //this.popup.showModal(OrderpopComponent, options).then((response)=> {
-                    console.log("passing...", this.cafeid);
+                if (r.result == false) {
 
-                    this.orderService.confirmOrder(this.order, this.cafeid, "card", this.uid, r.text);
-                    this.processPayment(this.total$);
-                    Toast.makeText("Your order has been placed").show();
-                    this.order.length = 0;
-                    this.total$ = 0;
-                    this.cartEmpty.emit(false);
-                    this.routerextensions.navigate(["/items", 1]);
-                    //}).catch(()=> {
-                    Toast.makeText("").show();
-                    //})
-                }
-                else {
-                    Toast.makeText("Please login to order").show();
+                    console.log ("do nothing");
+
+                } else {
+
+                    if (this.uid) {
+                        //this.popup.showModal(OrderpopComponent, options).then((response)=> {
+                        console.log("passing...", this.cafeid);
+
+                        this.orderService.confirmOrder(this.order, this.cafeid, "card", this.uid, r.text);
+                        this.processPayment(this.total$);
+                        Toast.makeText("Your order has been placed").show();
+                        this.order.length = 0;
+                        this.total$ = 0;
+                        this.cartEmpty.emit(false);
+                        this.routerextensions.navigate(["/items", 1]);
+                        //}).catch(()=> {
+                        Toast.makeText("").show();
+                        //})
+                    }
+                    else {
+                        Toast.makeText("Please login to order").show();
+                    }
                 }
 
             });
