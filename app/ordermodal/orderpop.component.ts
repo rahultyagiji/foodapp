@@ -26,7 +26,7 @@ export class OrderpopComponent implements OnInit {
 
     public options: Array<string>;
     public picked: string;
-    location:string=""
+    location:string="";
 
 
 

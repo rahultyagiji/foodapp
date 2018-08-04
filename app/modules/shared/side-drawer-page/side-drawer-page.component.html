@@ -15,10 +15,10 @@
         <GridLayout
             class="sidedrawer-list-item"
             *ngFor="let nav of navMenu">
-          <Button
+          <Button id="sideDrawerButton"
               class="sidedrawer-list-item-text borderless-btn"
               [text]="nav.name"
-              (tap)="navigateTo(nav.commands)">
+              (tap)="navigateTo(nav.commands,$event)">
           </Button>
         </GridLayout>
       </StackLayout>

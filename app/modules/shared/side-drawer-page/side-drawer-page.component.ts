@@ -6,7 +6,7 @@ import { RouterExtensions } from 'nativescript-angular/router';
 
 import {AuthService} from "../../../services/auth.service";
 
-import { Page } from 'ui/page';
+import { Page } from 'tns-core-modules/ui/page';
 import { isAndroid, isIOS } from 'platform';
 import { ActionItem } from 'ui/action-bar';
 import {
@@ -16,6 +16,10 @@ import {
   PushTransition, SlideInOnTopTransition
 } from 'nativescript-ui-sidedrawer';
 import {firebase} from "nativescript-plugin-firebase/firebase-common";
+import { Color } from 'color';
+import { getViewById } from "tns-core-modules/ui/core/view";
+import { Button } from "tns-core-modules/ui/button";
+import { View } from "tns-core-modules/ui/core/view";
 
 @Component({
   selector: 'side-drawer-page',
@@ -61,7 +65,7 @@ export class SideDrawerPageComponent implements AfterViewInit, OnDestroy {
 
       firebase.getCurrentUser()
           .then((token)=> {
-            console.log(token);
+            console.log(" the token is " + token);
               this.uid = token.uid;
               if(token.emailVerified){this.isVerified=true;
               this.navMenu=[
@@ -102,7 +106,7 @@ export class SideDrawerPageComponent implements AfterViewInit, OnDestroy {
   /**
    * Navigates to next page after drawer is closed.
    */
-  navigateTo(routeCommands: any[]) {
+  navigateTo(routeCommands: any[], args) {
     this.drawer.closeDrawer();
     let currentUrl = this.routerExtensions.router.routerState.snapshot.url;
     let newUrlTree = this.routerExtensions.router.createUrlTree(routeCommands);
@@ -118,6 +122,12 @@ export class SideDrawerPageComponent implements AfterViewInit, OnDestroy {
             { name: 'Sign In', commands: ['/signin'] },
         ];
     }
+
+    let page = <Button>args.object;
+    let view = <Button>page.getViewById("sideDrawerButton");
+    view.backgroundColor = new Color("#1a626f");
+    view.animate({ backgroundColor: new Color("white"), duration: 600 });
+
     if (currentUrl !== newUrl) {
       this.isContentVisible = false;
 
@@ -159,7 +169,7 @@ export class SideDrawerPageComponent implements AfterViewInit, OnDestroy {
     let navActionItem = new ActionItem();
      navActionItem.icon = 'res://ic_menu_black';
     if (navActionItem.ios) {
-      console.log("test")
+      console.log("test");
       navActionItem.ios.position = 'left';
     }
     navActionItem.on('tap', this.toggleDrawer.bind(this));

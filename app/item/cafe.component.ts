@@ -8,23 +8,27 @@ import {Order} from "../datatypes/order";
 import {ActivatedRoute} from "@angular/router";
 import * as Toast from 'nativescript-toast';
 import firebase = require("nativescript-plugin-firebase");
-
-//import { Label } from 'ui/label';
-//const labelModule = require("tns-core-modules/ui/label");
-//const view = new labelModule.Label();
-//let view: Label;
-import labelModule = require("ui/label");
-var label = new labelModule.Label();
-
+import {View} from "ui/core/view";
 import { Color } from 'color';
 import {EventData} from "tns-core-modules/data/observable";
 import {StackLayout} from "tns-core-modules/ui/layouts/stack-layout";
 import {ModalDialogService} from "nativescript-angular/directives/dialogs";
 import {OptionspopComponent} from "./optionspop.component";
 import {ObservableArray} from "data/observable-array";
-//const ObservableArray = require("data/observablearray");
 //var ObservableArray = new ObservableArray.observable();
 import {RouterExtensions} from "nativescript-angular";
+import labelModule = require("ui/label");
+var label = new labelModule.Label();
+
+//import { Label } from 'ui/label';
+//const labelModule = require("tns-core-modules/ui/label");
+//const view = new labelModule.Label();
+//let view: Label;
+
+
+
+//const ObservableArray = require("data/observablearray");
+
 
 
 @Component({
@@ -36,7 +40,8 @@ import {RouterExtensions} from "nativescript-angular";
 export class CafeComponent implements OnInit, OnDestroy {
 
     @ViewChild('scrollbar') scrollBarRef: ElementRef;
-    
+    @ViewChild('categoryScroll') categoryRef: ElementRef;
+
     cafe: Item;
     menu:Menu[];
     myMenu:Menu[];
@@ -209,8 +214,9 @@ export class CafeComponent implements OnInit, OnDestroy {
         let page = <StackLayout>args.object;
         let view = <StackLayout>page.getViewById("category");
         view.backgroundColor = new Color("#1a626f");
-        view.animate({ backgroundColor: new Color("#1a626f"), duration: 200 });
-        view.animate({ backgroundColor: new Color("white"), duration: 200 });
+        //view.color = new Color("white");
+        view.animate({ backgroundColor: new Color("white"), duration: 600 });
+        //view.animate({ backgroundColor: new Color("white"), duration: 200 });
 
         this.myMenu = this.menu.filter( item =>
         {
@@ -226,6 +232,7 @@ export class CafeComponent implements OnInit, OnDestroy {
 
 
         scrollBar.backgroundColor = new Color("#1a626f");
+        scrollBar.animate({ backgroundColor: new Color("white"), duration: 600 });
         scrollBar.backgroundColor = new Color("white");
         //scrollBar.animate({ backgroundColor: new Color("#1a626f"), duration: 200 });
         //scrollBar.animate({ backgroundColor: new Color("white"), duration: 200 });
