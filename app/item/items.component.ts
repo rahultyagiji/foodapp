@@ -7,9 +7,6 @@ import { Router} from "@angular/router";
 import {RouterExtensions} from "nativescript-angular";
 import {ObservableArray} from "data/observable-array";
 import { SearchBar } from "ui/search-bar";
-
-
-
 import {AuthService} from "../services/auth.service";
 import {Order} from "../datatypes/order";
 import {OrderService} from "../services/order.service";
@@ -187,7 +184,7 @@ ontapListofFrequent(token){
     }
 
     searchLoaded(event) {
-        console.log("search loaded triggered")
+        console.log("search loaded triggered");
         this.searchPhrase = "";
         event.object.android.setFocusable(false);
     }

@@ -1,71 +1,110 @@
+<ActionBar  class="action-bar" style="background-color: #0A4C58;color: white; vertical-align: center">
+    <Label text="DQCafe" style="color: white; vertical-align: center;font-size: 22pt;font-weight: bold"></Label>
+</ActionBar>
+
 <side-drawer-page>
-<StackLayout>
-    <StackLayout *ngIf="!processingRegistration">
+    <StackLayout>
+        <StackLayout *ngIf="!processingRegistration">
 
-<!--some image can go here...-->
-        <StackLayout style="height: 20%"></StackLayout>
+            <StackLayout style="margin-top:2%;width: 10%"></StackLayout>
+            <Label text="Registration" style="color: #0A4C58; vertical-align: center;font-size: 22pt;font-weight: bold;
+            text-align: center"></Label>
 
-        <StackLayout orientation="horizontal">
-            <Label text="" style="width: 10%"> </Label>
-            <TextField hint="First name" autocorrect="false" returnKeyType="done"
-                       style="width: 70%"
-                       #name></TextField>
+            <!--some image can go here...-->
+            <ios>
+                <StackLayout style="height:5%"></StackLayout>
+
+                <StackLayout class="form">
+                    <StackLayout class="input-field">
+                        <TextField #name class="input input-border myTextField" hint="First Name"
+                                   autocorrect="false" returnKeyType="done"
+                                   style="margin-top:2%;height: 100px;width:90%;border-style:dashed;font-weight: bold;font-size:20pt">
+                        </TextField>
+
+                        <TextField #email class="{{emailValid ? 'input input-border myTextField' : 'validation'}}" hint="Enter a valid email"
+                                   autocorrect="false" returnKeyType="done" (textChange)="onEmailTextChange($event.value)"
+                                   style="margin-top:2%;height: 100px;width:90%;border-style:dashed;font-weight: bold;font-size:20pt">
+                        </TextField>
+
+                        <TextField #password hint="Password" autocorrect="false" returnKeyType="done"
+                                   class="{{passwordValid ? 'input input-border myTextField' : 'validation'}}" secure="true"
+                                   style="margin-top:2%;height: 100px;width:90%;border-style:dashed;font-weight: bold;font-size:20pt"
+                                   (textChange)="onPasswordTextChange($event.value)"> </TextField>
+
+                        <TextField #password2 hint="Confirm Password" autocorrect="false" returnKeyType="done"
+                                   class="{{password2Valid ? 'input input-border' : 'validation'}}" secure="true"
+                                   style="margin-top:2%;height: 100px;width:90%;border-style:dashed;font-weight: bold;font-size:20pt"
+                                   (textChange)="onPassword2TextChange($event.value)"> </TextField>
+
+                    </StackLayout>
+                </StackLayout>
+            </ios>
+
+            <android>
+
+                <StackLayout style="height: 20%"></StackLayout>
+
+                <StackLayout orientation="horizontal">
+                    <Label text="" style="width: 10%"> </Label>
+                    <TextField hint="First name" autocorrect="false" returnKeyType="done"
+                               style="width: 70%"
+                               #name></TextField>
+                </StackLayout>
+
+                <StackLayout orientation="horizontal">
+                    <Label text="" style="width: 10%"> </Label>
+                    <TextField hint="Enter a valid email" autocorrect="false" returnKeyType="done"
+                               class="{{emailValid ? 'input input-border' : 'validation'}}"
+                               style="width: 70%" (textChange)="onEmailTextChange($event.value)"
+                               #email></TextField>
+                </StackLayout>
+
+                <StackLayout orientation="horizontal">
+                    <Label text="" style="width: 10%"> </Label>
+                    <TextField #password hint="Password" autocorrect="false" returnKeyType="done"
+                               class="{{passwordValid ? 'input input-border' : 'validation'}}" secure="true" style="width: 70%"
+                               (textChange)="onPasswordTextChange($event.value)"> </TextField>
+                </StackLayout>
+
+                <StackLayout orientation="horizontal">
+                    <Label text="" style="width: 10%"> </Label>
+                    <TextField #password2 hint="Confirm Password" autocorrect="false" returnKeyType="done"
+                               class="{{password2Valid ? 'input input-border' : 'validation'}}" secure="true" style="width: 70%"
+                               (textChange)="onPassword2TextChange($event.value)"> </TextField>
+                </StackLayout>
+
+            </android>
+
+            <!--<Button text="Register" (tap)="onRegister(email,password)"-->
+            <!--style="width: 90%;"-->
+            <!--class="{{registerButtonActive?'buttonactive':'buttoninactive'}}"></Button>-->
+
+            <Button text="Register" (tap)="onRegister(name,email,password)"
+                    style="width: 90%;"
+                    *ngIf="registerButtonActive"   class="buttonactive"></Button>
+
+            <Button text="Register" style="width: 90%;"
+                    *ngIf="!registerButtonActive"   class="buttoninactive"></Button>\
+
+        </StackLayout>
+        <StackLayout orientation="horizontal" style="margin-top:2%">
+
+            <StackLayout style="width: 10%"></StackLayout>
+            <StackLayout>
+                <Label text="Password rules" class="list-group-item"></Label>
+                <Label text="- minimum 12 characters"> </Label>
+                <Label text="- no spaces" > </Label>
+                <Label text="- that's it!" > </Label>
+            </StackLayout>
         </StackLayout>
 
-        <StackLayout orientation="horizontal">
-        <Label text="" style="width: 10%"> </Label>
-        <TextField hint="Enter a valid email" autocorrect="false" returnKeyType="done"
-                   class="{{emailValid ? 'input input-border' : 'validation'}}"
-                   style="width: 70%" (textChange)="onEmailTextChange($event.value)"
-                 #email></TextField>
+        <StackLayout *ngIf="processingRegistration">
+            <StackLayout style="height: 20%">
+
+            </StackLayout>
+            <Label text="Registering your details...."></Label>
+
         </StackLayout>
 
-        <StackLayout orientation="horizontal">
-        <Label text="" style="width: 10%"> </Label>
-        <TextField #password hint="Password" autocorrect="false" returnKeyType="done"
-                   class="{{passwordValid ? 'input input-border' : 'validation'}}" secure="true" style="width: 70%"
-        (textChange)="onPasswordTextChange($event.value)"> </TextField>
-        </StackLayout>
-
-        <StackLayout orientation="horizontal">
-            <Label text="" style="width: 10%"> </Label>
-            <TextField #password2 hint="Confirm Password" autocorrect="false" returnKeyType="done"
-                       class="{{password2Valid ? 'input input-border' : 'validation'}}" secure="true" style="width: 70%"
-                        (textChange)="onPassword2TextChange($event.value)"> </TextField>
-        </StackLayout>
-
-
-
-        <!--<Button text="Register" (tap)="onRegister(email,password)"-->
-                <!--style="width: 90%;"-->
-                <!--class="{{registerButtonActive?'buttonactive':'buttoninactive'}}"></Button>-->
-
-        <Button text="Register" (tap)="onRegister(name,email,password)"
-                style="width: 90%;"
-                *ngIf="registerButtonActive"   class="buttonactive"></Button>
-
-        <Button text="Register" style="width: 90%;"
-            *ngIf="!registerButtonActive"   class="buttoninactive"></Button>
     </StackLayout>
-
-    <StackLayout orientation="horizontal">
-
-        <StackLayout style="width: 10%"></StackLayout>
-        <StackLayout>
-        <Label text="Password rules" class="list-group-item"></Label>
-        <Label text="- minimum 12 characters"> </Label>
-        <Label text="- no spaces" > </Label>
-        <Label text="- that's it!" > </Label>
-        </StackLayout>
-    </StackLayout>
-
-    <StackLayout *ngIf="processingRegistration">
-        <StackLayout style="height: 20%">
-
-        </StackLayout>
-        <Label text="Registering your details...."></Label>
-
-    </StackLayout>
-
-</StackLayout>
 </side-drawer-page>
