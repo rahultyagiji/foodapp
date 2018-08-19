@@ -51,35 +51,39 @@ iosIconRenderingMode="alwaysOriginal" sdkExampleTitle sdkToggleNavButton style="
     <StackLayout *tabItem="{title: 'Your Orders'}" (tap)="changeTab()">
             <ListView [items]="orderComplexLocalFilter" class="list-group" style="height: 90%">
                 <ng-template let-item="item" let-i="index">
-                    <StackLayout>
-                       <Label [text]="item.cafeOwner" style="font-weight: bold;font-size:16pt"> </Label>
+                    <StackLayout >
+                       <Label [text]="item.cafeOwner" class="list-group-item" style="font-weight: bold;font-size:16pt"> </Label>
                         <Label [text]="'Order #:  ' + item.orderNo2"
-                               style="font-weight: bold;font-size:14pt"></Label>
+                               class="list-group-item" style="font-weight: bold;font-size:14pt"></Label>
                         <StackLayout orientation="horizontal">
-                            <Image [src]="item.imgSrc"  style="width: 20%"></Image>
                             <StackLayout orientation="vertical">
-                            <StackLayout *ngFor="let order of item.order" style="width: 60%">
+                            <StackLayout *ngFor="let order of item.order" style="width: 80%">
                                 <StackLayout orientation="horizontal">
                                     <Label [text]="order.quantity" style="margin-left: 5%"></Label>
                                     <Label text="x"></Label>
-                                    <Label [text]="order.name"></Label>
+                                    <Label [text]="order.name" textWrap="true"></Label>
                                 </StackLayout>
                                 <Label [text]="order.specialInstruction"></Label>
                             </StackLayout>
                             </StackLayout>
                             <StackLayout verticalAligment="middle">
-                            <Label text="Total" style="font-size: 14pt" style.verticalAlignment="center" style.textAlignment="center"></Label>
-                            <Label [text]="'$' + item.total" style="font-size: 14pt" style.verticalAlignment="center" style.textAlignment="center"></Label>
+                            <Label text="Total" style=" font-size: 14pt" style.verticalAlignment="center" style.textAlignment="center"
+                                   ></Label>
+                            <Label [text]="'$' + item.total"  style=" font-size: 14pt" style.verticalAlignment="center" style.textAlignment="center"></Label>
                             </StackLayout>
                         </StackLayout>
 
-                            <StackLayout *ngIf="item.status=='completed'" style="height: 0.25%;width: 100%"
-                                         class="processed"><Label text="Order is ready!!!" style="color: white"></Label> </StackLayout>
-                            <StackLayout *ngIf="item.status=='processing'" style="height: 0.25%;width: 100%"
-                                         class="inProgress" ><Label text="Order is being prepared!!!" style="color: white"></Label> </StackLayout>
-                            <StackLayout *ngIf="item.status=='ordered'" style="height: 0.25%;width: 100%"
-                                         class="ordered"><Label text="Order has been placed!!!" style="color: white"></Label> </StackLayout>
+                            <StackLayout *ngIf="item.status=='completed'" style="height: 0.25%;width: 100%">
+                                <Label text="Order is ready!!!" class="list-group-item" style=" font-size: 14pt"></Label>
+                            </StackLayout>
+                                         <!--class="processed"-->
 
+                            <StackLayout *ngIf="item.status=='processing'" style="height: 0.25%;width: 100%"  >                              <Label text="Order is being prepared!!!" class="list-group-item" style=" font-size: 14pt"></Label> </StackLayout>
+                                         >
+                                <!--class="inProgress"-->
+
+                            <StackLayout *ngIf="item.status=='ordered'" style="height: 0.25%;width: 100%"><Label text="Order has been placed!!!" class="list-group-item" style="font-size: 14pt"></Label> </StackLayout>
+                    <!--class="ordered"-->
                     </StackLayout>
                 </ng-template>
             </ListView>

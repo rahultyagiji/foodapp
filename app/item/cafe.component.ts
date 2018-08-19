@@ -30,6 +30,9 @@ var label = new labelModule.Label();
 //const ObservableArray = require("data/observablearray");
 
 
+class FavList {
+    constructor(public name: string,public timestamp) { }
+}
 
 @Component({
     selector: "ns-cafe",
@@ -45,6 +48,7 @@ export class CafeComponent implements OnInit, OnDestroy {
     cafe: Item;
     menu:Menu[];
     myMenu:Menu[];
+    favList:Array<FavList>=[];
     uid:string;
     order:Order[]=[];
     categories:string[]=[];
@@ -77,7 +81,7 @@ export class CafeComponent implements OnInit, OnDestroy {
     ) {
         firebase.getCurrentUser()
             .then((token)=> {
-                this.uid = token.uid; console.log("logged in as",token.uid)});
+                this.uid = token.uid});
 
         }
 
@@ -111,9 +115,8 @@ export class CafeComponent implements OnInit, OnDestroy {
                 this.orderService.removeCart(this.uid)
             });
 
-        console.log("after order service");
         this.cafe=this.itemService.getCafeInfo(this.route.snapshot.params["cafeId"]);
-        console.log("after item service");
+
 //menu load
         this.menuService.loadMenu(this.route.snapshot.params["cafeId"])
             .subscribe((menu: Array<Menu>) => {
@@ -123,18 +126,28 @@ export class CafeComponent implements OnInit, OnDestroy {
                 this._menu.forEach((x)=>{
                     // this.menu.push(x);
                     this.categories.push(x.category);
-                    console.log(x,"checking for inStock")
                 })
                 this.myMenu=this.menu;
                 this.categories = this.categories.filter(function (item, i, array) {
                     return array.indexOf(item) === i;
                 });
             });
-        console.log("after menu service");
+
+        //display last few picks from this cafe
+        this.orderService.fetchCafeOrdersForUser(this.route.snapshot.params["cafeId"],this.uid)
+            .then((x)=>{
+
+                Object.keys(x.value).forEach((y)=>{
+                    x.value[y].order.forEach((z)=>{
+                    this.favList.push({name:z.name,timestamp:x.value.timestamp});
+                    });
+                })
+                this.favList=this.favList.sort((a,b)=>a.timestamp-b.timestamp).splice(0,3);
+            })
+            .catch((err)=>{});
     }
 
     ngOnChanges(){
-        console.log("changes triggered");
         this.order = this.orderService.getOrder();
         this.totalPrice(this.orderService.getOrder());
         if(this.order.length>0) {
@@ -187,7 +200,6 @@ export class CafeComponent implements OnInit, OnDestroy {
                         orderCount = orderCount + this.order[i].quantity;
                     }
                     this.itemCount = orderCount;
-                    //this.itemCount=this.order.length;
                     Toast.makeText(data.name+" added to Cart!","1500").show()};
         })
     }
@@ -227,7 +239,6 @@ export class CafeComponent implements OnInit, OnDestroy {
     onclickAll(args){
 
         let scrollBar = this.scrollBarRef.nativeElement;
-        console.log(" the label text is " + scrollBar.text);
         //let view = this.page.getViewById("all");
 
 
@@ -237,7 +248,6 @@ export class CafeComponent implements OnInit, OnDestroy {
         //scrollBar.animate({ backgroundColor: new Color("#1a626f"), duration: 200 });
         //scrollBar.animate({ backgroundColor: new Color("white"), duration: 200 });
 
-        console.log(" the label text is ==== " + scrollBar.text);
         /*let page = <StackLayout>args.object;
         let view = <StackLayout>page.getViewById("all");
         view.backgroundColor = new Color("#1a626f");

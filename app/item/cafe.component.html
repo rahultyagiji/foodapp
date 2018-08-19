@@ -70,7 +70,12 @@
         <Image [src]="cafe.imgSrc" top="0"  right="0"></Image>
 
         <Label style="font-size: 20pt" textWrap="true"
-               text="Space for displaying information on cafe... maybe"></Label>
+               [text]="'Your hot favourites at ' + cafe.name" class="list-group-item"></Label>
+
+                    <StackLayout style="width: 85%;" *ngFor="let item of favList">
+                        <Label [text]="item.name" textWrap="true" class="list-group-item-copy" style="font-size: 12pt"></Label>
+                    </StackLayout>
+
     </StackLayout>
 
     </TabView>

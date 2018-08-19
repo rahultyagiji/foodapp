@@ -2,6 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {AuthService} from "../../services/auth.service";
 import * as Toast from "nativescript-toast";
 import * as EmailValidator from 'email-validator';
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -15,9 +16,11 @@ export class SigninComponent implements OnInit {
     userId:{"username","password"}={"username":"","password":""};
     emailText:string="";
     resetClicked:boolean=false;
+    signinProcessing:boolean=false;
 
 
-    constructor(private auth:AuthService) {
+    constructor(private auth:AuthService,
+                private route: Router) {
 
     }
 
@@ -27,34 +30,40 @@ export class SigninComponent implements OnInit {
     }
 
     onSignin(email,password){
-        var status=false;
-        var message="";
-        var a = this.auth.signin(email.text,password.text);
 
-        status = a.status;
-        message = a.message;
 
-        if(!status){
-            Toast.makeText(message,'1500').show();
-        }
+        this.auth.signin(email.text,password.text)
+            .then((res)=>{
+                this.route.navigate([""])
+                this.signinProcessing=true;
+            })
+            .catch((error)=>{
+                console.log(error)
+                Toast.makeText(error,'1500').show();
+                this.signinProcessing=false;
+            });
     }
 
     onResetActivated(){
-        console.log("not working....")
         this.resetClicked=true;
     }
 
     onForgotPassword(email){
 
-    if(EmailValidator.validate(email.text)){
 
-        var a = this.auth.resetPassword(this.emailText);
-        if(a.status){
-        Toast.makeText("An email has been sent to this account",'1500').show();}
-        else{
-            Toast.makeText(a.message,'1500').show();
+    if(EmailValidator.validate(email.text)) {
+
+        this.auth.resetPassword(email.text)
+            .then((res)=>{
+                Toast.makeText("An email has been sent to this account", '1500').show();
+                setTimeout(()=>{this.route.navigate([""])},1500)
+            })
+            .catch((error)=>{
+                Toast.makeText(error, '1500').show();
+                setTimeout(()=>{this.route.navigate(["signin"])},1500)
+            });
         }
-    }else{
+    else{
         Toast.makeText("Please provide a valid email",'1500').show();
     }
 

@@ -21,7 +21,7 @@ import {Location, isEnabled, enableLocationRequest, getCurrentLocation, watchLoc
 import {Accuracy} from "tns-core-modules/ui/enums/enums";
 import {StackLayout} from "ui/layouts/stack-layout";
 import {Color} from "tns-core-modules/color";
-import {and} from "../../platforms/ios/DQCafev02/app/tns_modules/@angular/router/src/utils/collection";
+// import {and} from "../../platforms/ios/DQCafev02/app/tns_modules/@angular/router/src/utils/collection";
 // var Vibrate = require("nativescript-vibrate").Vibrate;
 // let vibrator = new Vibrate();
 
@@ -187,8 +187,9 @@ ontapListofFrequent(token){
     }
 
     searchLoaded(event) {
+        console.log("search loaded triggered")
         this.searchPhrase = "";
-        event.object.android.setFocusableInTouchMode(false);
+        event.object.android.setFocusable(false);
     }
 
     public onSubmit(args) {

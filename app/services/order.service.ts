@@ -235,4 +235,23 @@ confirmOrder(order:Order[],cafe,payway,uid,location){
     }
 
 
+    fetchCafeOrdersForUser(cafeid, uid) {
+        var onQueryEvent = function (result) {
+        }
+        return firebase.query(
+            onQueryEvent,
+            'order-cafe/' + cafeid,
+            {
+                singleEvent: true,
+                orderBy: {
+                    type: firebase.QueryOrderByType.CHILD,
+                    value:'uid'
+                },
+                range: {
+                   type: firebase.QueryRangeType.EQUAL_TO,
+                   value: uid
+                },
+            }
+        )
+    }
 }

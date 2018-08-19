@@ -135,7 +135,7 @@ export class SideDrawerPageComponent implements AfterViewInit, OnDestroy {
         this.ngZone.run(() => {
           this.routerExtensions.navigate(routeCommands,
             {
-              clearHistory: false,
+              clearHistory: true,
               animated: false
             });
           this.isContentVisible = true;
@@ -169,7 +169,6 @@ export class SideDrawerPageComponent implements AfterViewInit, OnDestroy {
     let navActionItem = new ActionItem();
      navActionItem.icon = 'res://ic_menu_black';
     if (navActionItem.ios) {
-      console.log("test");
       navActionItem.ios.position = 'left';
     }
     navActionItem.on('tap', this.toggleDrawer.bind(this));

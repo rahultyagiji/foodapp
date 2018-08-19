@@ -32,11 +32,10 @@ export class RegisterComponent implements OnInit {
 
 
     ngOnInit() {
-        console.log("in register")
 
     }
 
-    onRegister(email,password){
+    onRegister(name,email,password){
         var status;
 
         if(EmailValidator.validate(email.text)){
@@ -45,7 +44,7 @@ export class RegisterComponent implements OnInit {
         if((this.passwordField==this.passwordField2)&&this.passwordValid) {
             var a;
             if(this.registerButtonActive){
-                a= this.auth.register(email.text, password.text);
+                a= this.auth.register(name,email.text, password.text);
                 this.registrationAttempt = a.message;
                 status = a.status;
                 Toast.makeText(this.registrationAttempt, '1500').show();
@@ -84,12 +83,13 @@ export class RegisterComponent implements OnInit {
             }else{
                 this.emailValid=false;
                 this.checkAllInput();
+                this.registerButtonActive=false;
+
             }
     }
     }
 
     onPasswordTextChange(password){
-        console.log("password is...",password);
         this.passwordField=password;
 
         var schema = new PasswordValidator();
@@ -104,6 +104,7 @@ export class RegisterComponent implements OnInit {
         }
         else{
             this.passwordValid=false;
+            this.registerButtonActive=false;
             this.checkAllInput();
         }
     }
@@ -112,6 +113,7 @@ export class RegisterComponent implements OnInit {
         this.passwordField2=password;
         if(this.passwordField!=password){
             this.password2Valid=false;
+            this.registerButtonActive=false;
             this.checkAllInput();
         }
         else {

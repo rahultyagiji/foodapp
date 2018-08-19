@@ -17,7 +17,7 @@ const routes: Routes = [
     { path: "cafe/:cafeId", component:CafeComponent },
     { path: "register", component:RegisterComponent },
     { path: "signin", component:SigninComponent },
-    {path: "signin", component:OrderpopComponent},
+    // {path: "signin", component:OrderpopComponent},
     {path:"order", component:OrderConfirmComponent},
     {path:"cards", component:ManageCardsComponent}
 ];

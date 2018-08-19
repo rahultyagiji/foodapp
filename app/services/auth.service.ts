@@ -15,9 +15,8 @@ export class AuthService {
     }
 
 
-    register(a, b) {
+    register(name,a, b) {
         var state;
-        console.log("password length is", b.toString().length);
 
         if (b.toString().length > 6) {
 
@@ -25,14 +24,19 @@ export class AuthService {
                 email: a,
                 password: b
             }).then((res) => {
-                this.route.navigate([""]);
+                console.log(res);
+                this.route.navigate(["signin"]);
                 state = true;
+                const path='/userInfo/';
+                firebase.push(path,{'uid':res.key,'name':name})
+                    .then(()=>{
+
+                    });
+
                 firebase.sendEmailVerification().then(
                     function (res) {
-                        console.log("Email verification sent", res);
                     },
                     function (error) {
-                        console.log("Error sending email verification: " + error);
                     }
                 );
                 this.registrationReturnVal = "Welcome to DQ, an email has been sent for verification";
@@ -50,9 +54,8 @@ export class AuthService {
     }
 
     signin(a, b) {
-        var message="";
-        var status=false;
-        firebase.login(
+
+       return firebase.login(
             {
                 type: firebase.LoginType.PASSWORD,
                 passwordOptions: {
@@ -61,17 +64,6 @@ export class AuthService {
                 }
             }
         )
-            .then((res) => {
-            console.log("done");
-            this.route.navigate([""])
-                status=true;
-            message="Login successful"
-        })
-            .catch((err)=>{
-                status=false;
-                message=err;
-            })
-        return {"status":status,"message":message};
     }
 
     signout() {
@@ -87,21 +79,9 @@ export class AuthService {
     resetPassword(email){
         var status=false;
         var message="";
-    firebase.resetPassword({
+
+    return firebase.resetPassword({
                       email: email
-                  }).
-    then(
-    function () {
-        status=true;
-        message="An email has been sent the account!"
-        this.route.navigate([""])
-    }
-    ,
-    function (errorMessage) {
-        status=false;
-        message=errorMessage;
-    }
-);
-return {"status":status,"message":message}
+                  });
     }
 }

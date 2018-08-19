@@ -5,6 +5,12 @@
 <!--some image can go here...-->
         <StackLayout style="height: 20%"></StackLayout>
 
+        <StackLayout orientation="horizontal">
+            <Label text="" style="width: 10%"> </Label>
+            <TextField hint="First name" autocorrect="false" returnKeyType="done"
+                       style="width: 70%"
+                       #name></TextField>
+        </StackLayout>
 
         <StackLayout orientation="horizontal">
         <Label text="" style="width: 10%"> </Label>
@@ -30,9 +36,16 @@
 
 
 
-        <Button text="Register" (tap)="onRegister(email,password)"
+        <!--<Button text="Register" (tap)="onRegister(email,password)"-->
+                <!--style="width: 90%;"-->
+                <!--class="{{registerButtonActive?'buttonactive':'buttoninactive'}}"></Button>-->
+
+        <Button text="Register" (tap)="onRegister(name,email,password)"
                 style="width: 90%;"
-                class="{{registerButtonActive?'buttonactive':'buttoninactive'}}"></Button>
+                *ngIf="registerButtonActive"   class="buttonactive"></Button>
+
+        <Button text="Register" style="width: 90%;"
+            *ngIf="!registerButtonActive"   class="buttoninactive"></Button>
     </StackLayout>
 
     <StackLayout orientation="horizontal">
@@ -46,7 +59,7 @@
         </StackLayout>
     </StackLayout>
 
-    <StackLayout *ngIf="!processingRegistration">
+    <StackLayout *ngIf="processingRegistration">
         <StackLayout style="height: 20%">
 
         </StackLayout>
