@@ -56,13 +56,16 @@
                    style="color:white; font-size: 18px;text-align: center;padding-top: 15px;margin-left: 30%"></Label>
         </StackLayout>
 
-        <StackLayout id="checkout" *ngIf="!cartEmpty && !toggleMenuCart" style="{{scrollHeightBase}}" backgroundColor="#1a626f" (tap)="OnViewMenu($event)">
+        <StackLayout id="checkout" *ngIf="!cartEmpty && !toggleMenuCart" style="{{scrollHeightBase}}" (tap)="OnViewMenu($event)">
             <Label text="Return to menu"  horizontalAlignment="center" verticalAlignment="middle"
-                   style="color:white; font-size: 18px;text-align: center;padding-top: 15px"></Label >
+                   style="font-style: italic;font-size: 18px;text-align: center;padding-top: 15px"></Label >
         </StackLayout>
 
         <ns-confirm-order *ngIf="!toggleMenuCart" [cafeid]="cafe.cafeId"
                           (cartEmpty)="cartInfoReturned($event)"></ns-confirm-order>
+
+
+
 
     </StackLayout>
     <StackLayout *tabItem="{title: 'Info'}">

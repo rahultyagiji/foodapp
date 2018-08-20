@@ -3,6 +3,8 @@ import {AuthService} from "../../services/auth.service";
 import * as Toast from "nativescript-toast";
 import * as EmailValidator from 'email-validator';
 import {Router} from "@angular/router";
+import {Color} from "tns-core-modules/color";
+import {StackLayout} from "tns-core-modules/ui/layouts/stack-layout";
 
 
 @Component({
@@ -16,7 +18,6 @@ export class SigninComponent implements OnInit {
     userId:{"username","password"}={"username":"","password":""};
     emailText:string="";
     resetClicked:boolean=false;
-    signinProcessing:boolean=false;
 
 
     constructor(private auth:AuthService,
@@ -29,18 +30,23 @@ export class SigninComponent implements OnInit {
 
     }
 
-    onSignin(email,password){
+    onSignin(email,password,args){
+
+        let page = <StackLayout>args.object;
+        let view = <StackLayout>page.getViewById("signin");
+        view.backgroundColor = new Color("#f0f0f0");
+        view.animate({ backgroundColor: new Color("white"), duration: 100 });
+        view.animate({ backgroundColor: new Color("#0A4C58"), duration: 100 });
 
 
         this.auth.signin(email.text,password.text)
             .then((res)=>{
                 this.route.navigate([""])
-                this.signinProcessing=true;
+
             })
             .catch((error)=>{
                 console.log(error)
                 Toast.makeText(error,'1500').show();
-                this.signinProcessing=false;
             });
     }
 

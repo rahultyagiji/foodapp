@@ -3,6 +3,9 @@ import {AuthService} from "../../services/auth.service";
 import * as Toast from "nativescript-toast";
 import * as EmailValidator from 'email-validator';
 import * as PasswordValidator from 'password-validator';
+import {Router} from "@angular/router";
+import {Color} from "tns-core-modules/color";
+import {StackLayout} from "tns-core-modules/ui/layouts/stack-layout";
 
 @Component({
     selector: "ns-register",
@@ -27,7 +30,8 @@ export class RegisterComponent implements OnInit {
     registerButtonActive:boolean=false;
 
 
-    constructor(private auth:AuthService) {
+    constructor(private auth:AuthService,
+                private route: Router) {
     }
 
 
@@ -35,29 +39,40 @@ export class RegisterComponent implements OnInit {
 
     }
 
-    onRegister(name,email,password){
-        var status;
+    onRegister(name,email,password,args){
+
+        let page = <StackLayout>args.object;
+        let view = <StackLayout>page.getViewById("register");
+        view.backgroundColor = new Color("#f0f0f0");
+        view.animate({ backgroundColor: new Color("white"), duration: 200 });
+        view.animate({ backgroundColor: new Color("#0A4C58"), duration: 200 });
 
         if(EmailValidator.validate(email.text)){
         this.emailValid=true;
         this.checkAllInput();
         if((this.passwordField==this.passwordField2)&&this.passwordValid) {
-            var a;
             if(this.registerButtonActive){
-                a= this.auth.register(name,email.text, password.text);
-                this.registrationAttempt = a.message;
-                status = a.status;
-                Toast.makeText(this.registrationAttempt, '1500').show();
-                if (status) {
+//
+                this.auth.register(email.text, password.text)
+                    .then((res)=>{
 
-                }
-                else {
-                    this.processingRegistration=false;
-                    this.passwordValid = false;
-                    this.checkAllInput();
-                }
+                        this.auth.sendVerificationEmail()
+                            .then(()=>{
+                                this.route.navigate(["signin"])
+                                Toast.makeText("An email has been sent for verificaton", '1500').show();
+                            })
+
+                        this.processingRegistration=true;
+                        this.passwordValid = true;
+                    })
+                    .catch((err)=>{
+                        this.route.navigate(["register"]);
+                        Toast.makeText("Oops there was some problem with registration", '1500').show();
+                        this.processingRegistration=false;
+                        this.passwordValid = false;
+                        this.checkAllInput();
+                    });
             }
-
         }
         else{
             this.checkAllInput();

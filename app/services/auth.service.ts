@@ -15,43 +15,29 @@ export class AuthService {
     }
 
 
-    register(name,a, b) {
+    register(a, b) {
         var state;
 
-        if (b.toString().length > 6) {
 
-            firebase.createUser({
+        return firebase.createUser({
                 email: a,
                 password: b
-            }).then((res) => {
-                console.log(res);
-                this.route.navigate(["signin"]);
-                state = true;
-                const path='/userInfo/';
-                firebase.push(path,{'uid':res.key,'name':name})
-                    .then(()=>{
-
-                    });
-
-                firebase.sendEmailVerification().then(
-                    function (res) {
-                    },
-                    function (error) {
-                    }
-                );
-                this.registrationReturnVal = "Welcome to DQ, an email has been sent for verification";
-            }).catch((err) => {
-                this.registrationReturnVal = "Please provide a valid email";
             })
-        }
-        else {
-            this.registrationReturnVal = "Please choose a stronger password";
-            state = false;
-        }
-
-        return {"status": state, "message": this.registrationReturnVal};
 
     }
+
+    updateUserInfo(name,key){
+
+        const path='/userInfo/';
+        return firebase.setValue(path,{"uid":key,"name":name});
+    }
+
+
+    sendVerificationEmail(){
+
+     return firebase.sendEmailVerification();
+    }
+
 
     signin(a, b) {
 
