@@ -1,3 +1,7 @@
+<ActionBar  class="action-bar" style="background-color: #0A4C58;color: white; vertical-align: center">
+    <Label text="DQCafe" style="color: white; vertical-align: center;font-size: 22pt;font-weight: bold"></Label>
+</ActionBar>
+
 <side-drawer-page>
     <StackLayout>
 
@@ -5,31 +9,56 @@
 
         <StackLayout style="height: 20%"></StackLayout>
 
-    <StackLayout *ngIf="!resetClicked">
+        <StackLayout *ngIf="!resetClicked">
 
-        <StackLayout orientation="horizontal">
-            <Label text="" style="width: 10%"> </Label>
+            <ios>
+                <StackLayout style="height:5%"></StackLayout>
 
-        <TextField #email hint="Email" autocorrect="false" returnKeyType="done"
-                   class="input input-border" style="width: 80%"></TextField>
+                <StackLayout class="form">
+                    <StackLayout class="input-field">
+                        <TextField #email hint="Email" autocorrect="false" returnKeyType="done" keyboardType="url"
+                                   class="input input-border myTextField"
+                                   style="margin-top:2%;height: 100px;width:90%;border-style:dashed;font-weight: bold;font-size:20pt">
+                        </TextField>
 
 
+                        <TextField #password hint="Password" autocorrect="false" returnKeyType="done"
+                                   class="input input-border" secure="true"
+                                   style="margin-top:2%;height: 100px;width:90%;border-style:dashed;font-weight: bold;font-size:20pt">
+                        </TextField>
+
+                    </StackLayout>
+                </StackLayout>
+            </ios>
+
+
+            <android>
+
+                <StackLayout orientation="horizontal">
+                    <Label text="" style="width: 10%"> </Label>
+
+                    <TextField #email hint="Email" autocorrect="false" returnKeyType="done"
+                               class="input input-border" style="width: 80%"></TextField>
+
+
+                </StackLayout>
+
+                <StackLayout orientation="horizontal">
+                    <Label text="" style="width: 10%"> </Label>
+                    <TextField #password hint="Password" autocorrect="false" returnKeyType="done"
+                               class="input input-border" secure="true" style="width: 80%"></TextField>
+                </StackLayout>
+
+            </android>
+
+            <Button id="signin" text="Signin" (tap)="onSignin(email,password,$event)"
+                    style="background-color: #0A4C58; color: white;width: 90%"></Button>
+
+            <StackLayout orientation="horizontal">
+                <Label text="" style="width:20%"> </Label>
+                <Label text="Forgot password?" (tap)="onResetActivated()"></Label>
+            </StackLayout>
         </StackLayout>
-
-        <StackLayout orientation="horizontal">
-            <Label text="" style="width: 10%"> </Label>
-        <TextField #password hint="Password" autocorrect="false" returnKeyType="done"
-                   class="input input-border" secure="true" style="width: 80%"></TextField>
-        </StackLayout>
-
-        <Button id="signin" text="Signin" (tap)="onSignin(email,password,$event)"
-        style="background-color: #0A4C58; color: white;width: 90%"></Button>
-
-        <StackLayout orientation="horizontal">
-            <Label text="" style="width:20%"> </Label>
-        <Label text="Forgot password?" (tap)="onResetActivated()"></Label>
-        </StackLayout>
-    </StackLayout>
 
         <StackLayout *ngIf="resetClicked">
             <StackLayout orientation="horizontal">
