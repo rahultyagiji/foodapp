@@ -61,9 +61,9 @@
 
 
     <StackLayout orientation="vertical" horizontalAlignment="left" height="15%" width="100%" style="margin-top:0%">
-        <Button text=" Add to Order" (tap)="close('true')" class="roundedButtons" style="width: 80% ;background-color: #1a626f;color: white"
+        <Button text=" Add to Order" (tap)="close('true')" style="width: 90% ;background-color: #1a626f;color: white"
         *ngIf="inStock"></Button>
-        <Button text="Not Available" (tap)="close('false')" class="roundedButtons" style="width: 80% ;background-color: #a8a8a8;color: white"
+        <Button text="Not Available" (tap)="close('false')"  style="width: 90% ;background-color: #a8a8a8;color: white"
         *ngIf="!inStock"></Button>
     </StackLayout>
 

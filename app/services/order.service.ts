@@ -91,12 +91,10 @@ removeOrder(order:Order){
 
 confirmOrder(order:Order[],cafe,payway,uid,location){
 
-        console.log("in confirm order",order,cafe,payway,uid,location);
-        // order = order.filter((x)=>{x.quantity!=0});
-
-        var a = Math.floor(Math.random() * (50 - 1 + 1)) + 1;
         var time = Math.floor(Date.now() / 1000);
-    if (payway == "Cash") {
+        var a = this.orderNo();
+
+        if (payway == "Cash") {
                     firebase.push('/order-cafe/' + cafe,
                             {order, "status": "ordered", "uid": uid,"location":location,"orderNo2":a,"timestamp":time} )
                         .then((res) => {
@@ -108,7 +106,6 @@ confirmOrder(order:Order[],cafe,payway,uid,location){
                                 "timestamp":time
                             })
                                 .then(()=>{
-                                    this.orderNo(cafe,res.key)
                                     firebase.remove('/cart/'+uid+'/'+cafe)}
                                     )
                         }).catch((err)=>{console.log(err)})
@@ -121,10 +118,10 @@ confirmOrder(order:Order[],cafe,payway,uid,location){
                                 "status": "ordered",
                                 "cafe": cafe,
                                 "orderNo": res.key,
-                                "orderNo2": a,
+                                "orderNo2": this.orderNo(),
                                 "timestamp":time
                             })
-                                .then(()=>{this.orderNo(cafe,res.key)
+                                .then(()=>{
                                     firebase.remove('/cart/'+uid+'/'+cafe)})
                         }).catch((err)=>{console.log(err)})
                 }
@@ -159,30 +156,15 @@ confirmOrder(order:Order[],cafe,payway,uid,location){
 
     }
 
-    orderNo(cafe,key) {
+    orderNo() {
 
-// fix this later
-        // var onQueryEvent = function (result) {
-        // }
-        // firebase.query(
-        //     onQueryEvent,
-        //     'orderCounter/' + cafe,
-        //     {
-        //         singleEvent: true,
-        //         orderBy: {
-        //             type: firebase.QueryOrderByType.KEY
-        //         }
-        //     }
-        // ).then(
-        //     (res) => {
-        //         console.log(JSON.stringify(res.value))
-        //     })
-        //     .catch();
-        // const path="orderCounter/"+key;
-// //create entry in synthetic order number table
-//     firebase.push([path],{})
+        var allc = "ABCDEFGHIJKJLMNOPQRSTUVWXYZ";
+        var orderAlphabet = '';
+        for (var i = 0; i < 1; i++) {
+            orderAlphabet += allc.charAt(Math.floor(Math.random() * allc.length));
+        }
 
-
+        return orderAlphabet + (Math.floor(Math.random() * (50 - 1 + 1)) + 1).toString();
     }
 
     frequentCafe(uid) {

@@ -22,10 +22,8 @@
                    class="input input-border" secure="true" style="width: 80%"></TextField>
         </StackLayout>
 
-        <Button text="Signin" (tap)="onSignin(email,password)" *ngIf="!signinProcessing"
+        <Button id="signin" text="Signin" (tap)="onSignin(email,password,$event)"
         style="background-color: #0A4C58; color: white;width: 90%"></Button>
-        <Button text="Processing request..." *ngIf="signinProcessing"
-                style="background-color: #0A4C58; color: white;width: 90%"></Button>
 
         <StackLayout orientation="horizontal">
             <Label text="" style="width:20%"> </Label>

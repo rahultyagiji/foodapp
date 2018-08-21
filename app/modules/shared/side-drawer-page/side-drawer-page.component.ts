@@ -45,9 +45,7 @@ export class SideDrawerPageComponent implements AfterViewInit, OnDestroy {
   navMenu: any[] = [
     { name: 'Home', commands: ['/items'] },
     { name: 'Register', commands: ['/register'] },
-    { name: 'Sign In', commands: ['/signin'] },
-    { name: 'Sign Out', commands: ['/signout'] },
-    { name: 'Manage Cards', commands: ['/cards'] }
+    { name: 'Sign In', commands: ['/signin'] }
   ];
 
   private drawer: SideDrawerType;

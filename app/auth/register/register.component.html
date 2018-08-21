@@ -79,7 +79,7 @@
             <!--style="width: 90%;"-->
             <!--class="{{registerButtonActive?'buttonactive':'buttoninactive'}}"></Button>-->
 
-            <Button text="Register" (tap)="onRegister(name,email,password)"
+            <Button id="register" text="Register" (tap)="onRegister(name,email,password,$event)"
                     style="width: 90%;"
                     *ngIf="registerButtonActive"   class="buttonactive"></Button>
 
