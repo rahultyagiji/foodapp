@@ -11,7 +11,7 @@
 
         <StackLayout *ngIf="!resetClicked">
 
-            <ios>
+            <!--<ios>
                 <StackLayout style="height:5%"></StackLayout>
 
                 <StackLayout class="form">
@@ -32,13 +32,16 @@
             </ios>
 
 
-            <android>
+            <android>-->
 
                 <StackLayout orientation="horizontal">
                     <Label text="" style="width: 10%"> </Label>
 
                     <TextField #email hint="Email" autocorrect="false" returnKeyType="done"
-                               class="input input-border" style="width: 80%"></TextField>
+                               class="input input-border myTextField"
+                               style="margin-top:2%;height: 100px;width:80%;border-style:dashed;font-weight: bold;font-size:20pt">
+
+                    </TextField>
 
 
                 </StackLayout>
@@ -46,18 +49,28 @@
                 <StackLayout orientation="horizontal">
                     <Label text="" style="width: 10%"> </Label>
                     <TextField #password hint="Password" autocorrect="false" returnKeyType="done"
-                               class="input input-border" secure="true" style="width: 80%"></TextField>
+                               class="input input-border myTextField" secure="true"
+                               style="margin-top:2%;height: 100px;width:80%;border-style:dashed;font-weight: bold;font-size:20pt">
+                    </TextField>
                 </StackLayout>
 
+            <!--</android>-->
+
+            <android>
+                <Button id="signin" text="Signin" (tap)="onSignin(email,password,$event)"
+                    style="background-color: #0A4C58; color: white;margin-top:5%;width: 90%"></Button>
             </android>
+            <ios>
+                <Button id="signin" text="Signin" (tap)="onSignin(email,password,$event)"
+                        class="buttons90P-W-ios" style="margin-top: 5%"></Button>
+            </ios>
+        </StackLayout>
 
-            <Button id="signin" text="Signin" (tap)="onSignin(email,password,$event)"
-                    style="background-color: #0A4C58; color: white;width: 90%"></Button>
-
-            <StackLayout orientation="horizontal">
-                <Label text="" style="width:20%"> </Label>
-                <Label text="Forgot password?" (tap)="onResetActivated()"></Label>
-            </StackLayout>
+        <StackLayout orientation="horizontal">
+            <Label text="" style="margin-left:0%;margin-top:20%;width:10%"> </Label>
+            <Label text="Forgot password?" (tap)="onResetActivated()" style="margin-left:0%"></Label>
+            <Label text="" style="margin-left:10%;margin-top:20%;width:10%"> </Label>
+            <Label text="Register" (tap)="onNavigateToRegister()"></Label>
         </StackLayout>
 
         <StackLayout *ngIf="resetClicked">

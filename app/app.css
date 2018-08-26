@@ -33,15 +33,35 @@ img.align-left {
     font-weight: bold;
 }
 
-.buttons80P-W {
-    width: 80% ;
+.buttons90P-W {
+    width: 90% ;
     background-color: #1a626f;
     color: white
+}
+
+.buttons90P-W-ios {
+    width: 90% ;
+    background-color: #1a626f;
+    color: white;
+    height:80px;
+    bold:true;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.buttons90P-W-ios-red {
+    width: 90% ;
+    background-color: #B52D26;
+    color: white;
+    height:80px;
+    bold:true;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .myTextField {
     border-color: black;
     border-width: 1px;
-    border-radius: 5 5 5 5;
+    border-radius: 0 0 0 0;
     border:dashed;
 }

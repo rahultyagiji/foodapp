@@ -5,6 +5,7 @@ import * as EmailValidator from 'email-validator';
 import {Router} from "@angular/router";
 import {Color} from "tns-core-modules/color";
 import {StackLayout} from "tns-core-modules/ui/layouts/stack-layout";
+import {RouterExtensions} from "nativescript-angular";
 
 
 @Component({
@@ -21,7 +22,8 @@ export class SigninComponent implements OnInit {
 
 
     constructor(private auth:AuthService,
-                private route: Router) {
+                private route: Router,
+                private routerextensions:RouterExtensions) {
 
     }
 
@@ -41,13 +43,17 @@ export class SigninComponent implements OnInit {
 
         this.auth.signin(email.text,password.text)
             .then((res)=>{
-                this.route.navigate([""])
+                this.routerextensions.navigate([""],{clearHistory: true});
 
             })
             .catch((error)=>{
-                console.log(error)
+                console.log(error);
                 Toast.makeText(error,'1500').show();
             });
+    }
+
+    onNavigateToRegister() {
+        this.routerextensions.navigate(["register"], {clearHistory: true});
     }
 
     onResetActivated(){

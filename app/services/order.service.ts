@@ -26,106 +26,106 @@ export class OrderService {
 
     }
 
-getOrder(){
+    getOrder(){
 
-    return this.order;
+        return this.order;
 
-}
+    }
 
-setOrder(order:Order[]){
+    setOrder(order:Order[]){
         this.order = order;
-}
-
-
-Order(menu:Menu,cafeId,specialInstruction,option:{'text':string,'price':string}
-,extras:{'text':string,'price':string}[]){
-    this.price="0";
-    this.price = menu.price;
-    //    add options price
-    if(option){
-    if(option.price!=null)
-        this.price = (parseFloat(this.price)+parseFloat(option.price)).toString();}
-    //add extras prices
-    if(extras){
-       extras.forEach((x)=>{
-           if(x.price!=null)
-        this.price = (parseFloat(this.price)+parseFloat(x.price)).toString();
-       });
     }
 
-    if(this.order.length==0){
-    this.order.push({'cafeId':cafeId,'name':menu.name,'price':this.price,
-        'quantity':1,'specialInstruction':specialInstruction,'option':option,'extras':extras,
-    'priceQuantity':this.price});
-    }
-    else {
-        if(this.order[0].cafeId==cafeId){
 
-         if(this.order.some(e=>e.name===menu.name))
-         {   this.order.map((x)=>{
-             if(x.name===menu.name){
-                 x.quantity=x.quantity+1;
-                 x.priceQuantity=(parseFloat(x.price)*x.quantity).toString();
-             }})
-         }
-         else{
-            this.order.push({'cafeId':cafeId,'name':menu.name,'price':this.price,'quantity':1,'specialInstruction':specialInstruction
-                ,'option':option,'extras':extras,
+    Order(menu:Menu,cafeId,specialInstruction,option:{'text':string,'price':string}
+        ,extras:{'text':string,'price':string}[]){
+        this.price="0";
+        this.price = menu.price;
+        //    add options price
+        if(option){
+            if(option.price!=null)
+                this.price = (parseFloat(this.price)+parseFloat(option.price)).toString();}
+        //add extras prices
+        if(extras){
+            extras.forEach((x)=>{
+                if(x.price!=null)
+                    this.price = (parseFloat(this.price)+parseFloat(x.price)).toString();
+            });
+        }
+
+        if(this.order.length==0){
+            this.order.push({'cafeId':cafeId,'name':menu.name,'price':this.price,
+                'quantity':1,'specialInstruction':specialInstruction,'option':option,'extras':extras,
                 'priceQuantity':this.price});
         }
+        else {
+            if(this.order[0].cafeId==cafeId){
+
+                if(this.order.some(e=>e.name===menu.name))
+                {   this.order.map((x)=>{
+                    if(x.name===menu.name){
+                        x.quantity=x.quantity+1;
+                        x.priceQuantity=(parseFloat(x.price)*x.quantity).toString();
+                    }})
+                }
+                else{
+                    this.order.push({'cafeId':cafeId,'name':menu.name,'price':this.price,'quantity':1,'specialInstruction':specialInstruction
+                        ,'option':option,'extras':extras,
+                        'priceQuantity':this.price});
+                }
+            }
+            else{
+                dialogs.alert("Can only order from one cafe at a time, please clear your cart first").then(()=> {
+                });        }
         }
-        else{
-            dialogs.alert("Can only order from one cafe at a time, please clear your cart first").then(()=> {
-            });        }
-}
-    this.price="0";
-}
+        this.price="0";
+    }
 
-removeOrder(order:Order){
+    removeOrder(order:Order){
 
-    var index = this.order.indexOf(order);
-    if(index>=0)
-      return  this.order.splice(index, 1);
+        var index = this.order.indexOf(order);
+        if(index>=0)
+            return  this.order.splice(index, 1);
 
-}
+    }
 
-confirmOrder(order:Order[],cafe,payway,uid,location){
+    confirmOrder(order:Order[],cafe,payway,uid,location){
 
         var time = Math.floor(Date.now() / 1000);
         var a = this.orderNo();
 
         if (payway == "Cash") {
-                    firebase.push('/order-cafe/' + cafe,
-                            {order, "status": "ordered", "uid": uid,"location":location,"orderNo2":a,"timestamp":time} )
-                        .then((res) => {
+            firebase.push('/order-cafe/' + cafe,
+                {order, "status": "ordered", "uid": uid,"location":location,"orderNo2":a,"timestamp":time} )
+                .then((res) => {
                     firebase.push('/order-user/' + uid, {
-                                "status": "ordered",
-                                "cafe": cafe,
-                                "orderNo": res.key,
-                                "orderNo2":a,
-                                "timestamp":time
-                            })
-                                .then(()=>{
-                                    firebase.remove('/cart/'+uid+'/'+cafe)}
-                                    )
-                        }).catch((err)=>{console.log(err)})
+                            "status": "ordered",
+                            "cafe": cafe,
+                            "orderNo": res.key,
+                            "orderNo2":a,
+                            "timestamp":time
+                        })
+                        .then(()=>{
+                            firebase.remove('/cart/'+uid+'/'+cafe)}
+                        )
+                }).catch((err)=>{console.log(err)})
 
-                }
-                else {
-                    firebase.push('/order-cafe/' + cafe, {order, "status": "ordered", "uid": uid,"location":location,"orderNo2":a,"timestamp":time})
-                        .then((res) => {
-                        firebase.push('/order-user/' + uid, {
-                                "status": "ordered",
-                                "cafe": cafe,
-                                "orderNo": res.key,
-                                "orderNo2": this.orderNo(),
-                                "timestamp":time
-                            })
-                                .then(()=>{
-                                    firebase.remove('/cart/'+uid+'/'+cafe)})
-                        }).catch((err)=>{console.log(err)})
-                }
-            }
+        }
+        else {
+            firebase.push('/order-cafe/' + cafe, {order, "status": "ordered", "uid": uid,"location":location,"orderNo2":a,"timestamp":time})
+                .then((res) => {
+                    firebase.push('/order-user/' + uid, {
+                            "status": "ordered",
+                            "cafe": cafe,
+                            "orderNo": res.key,
+                            "orderNo2": this.orderNo(),
+                            "timestamp":time
+                        })
+                        .then(()=>{
+                            firebase.remove('/cart/'+uid+'/'+cafe)})
+                }).catch((err)=>{console.log(err)})
+        }
+    }
 
 
     loadOrder(uid) : Observable<any> {
@@ -148,8 +148,8 @@ confirmOrder(order:Order[],cafe,payway,uid,location){
             this.orderList=[];
             let that = this
             Object.keys(data).forEach((x)=>{
-                        that.orderList.push({"orderNo":data[x].orderNo,"cafe":data[x].cafe
-                        ,"status":data[x].status});
+                that.orderList.push({"orderNo":data[x].orderNo,"cafe":data[x].cafe
+                    ,"status":data[x].status});
             })
         }
         return this.orderList
@@ -195,8 +195,8 @@ confirmOrder(order:Order[],cafe,payway,uid,location){
             {
                 'cart':cart,
                 'cafe':cafe
-                }
-            ).then(
+            }
+        ).then(
             function (result) {
                 console.log("created key: " + result.key);
             }
@@ -204,7 +204,7 @@ confirmOrder(order:Order[],cafe,payway,uid,location){
     }
 
     getCart(uid){
-      return  firebase.getValue('/cart/'+uid)
+        return  firebase.getValue('/cart/'+uid)
 
     }
 
@@ -230,8 +230,8 @@ confirmOrder(order:Order[],cafe,payway,uid,location){
                     value:'uid'
                 },
                 range: {
-                   type: firebase.QueryRangeType.EQUAL_TO,
-                   value: uid
+                    type: firebase.QueryRangeType.EQUAL_TO,
+                    value: uid
                 },
             }
         )

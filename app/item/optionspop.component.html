@@ -1,17 +1,24 @@
 <StackLayout class="page page-content">
 
     <StackLayout orientation="horizontal" style="height:7%;text-align:center; width: 100%">
-        <Label text={{selectedMenuItem.name}} class="barHeadingBold" style="text-align: center;width: 100%;padding-right: 30%"></Label>
+        <ios>
+            <Label text="X" (tap)="close('false')" class="barHeadingBold" style="text-align: center;width: 10%; "></Label>
+            <Label text={{selectedMenuItem.name}} class="barHeadingBold" style="text-align: center;width: 90%;padding-right: 30%"></Label>
+        </ios>
+        <android>
+            <Label text={{selectedMenuItem.name}} class="barHeadingBold" style="text-align: center;width: 100%;padding-right: 30%"></Label>
+        </android>
     </StackLayout>
+
 
     <StackLayout orientation="vertical" horizontalAlignment="left" height="80%" width="100%" style="margin-top: 5%">
 
         <StackLayout orientation="horizontal" *ngIf="hasImage">
             <Image [src]="selectedMenuItem.imgSrc"  horizontalAlignment="left"
                    style="width: 40%;border-image-width: 100%;margin: 20pt;margin-top: 0pt"></Image>
-        <StackLayout>
-        <Label text={{selectedMenuItem.description}} textWrap="true" style="width:90%;font-size: 12px"
-               class="list-group-item"></Label>
+            <StackLayout>
+                <Label text={{selectedMenuItem.description}} textWrap="true" style="width:90%;font-size: 12px"
+                       class="list-group-item"></Label>
             </StackLayout>
         </StackLayout>
 
@@ -22,49 +29,65 @@
 
 
         <StackLayout style="border-color:#1a626f ; border-width: 2px ; width: 90%;">
-            <TextView   (textChange)="onTextChange($event)"
-                        borderColor="#DEDEDE" borderWidth="1" height="200px" hint="special instructions..."
-                        returnKeyType="send" class="input input-border"></TextView>
+            <TextField (textChange)="onTextChange($event)" (returnPress)="onSpecialInstructionBlur($event)"
+                       borderColor="#DEDEDE" borderWidth="1" height="200px" hint="special instructions..."
+                       returnKeyType="done" class="input input-border"></TextField>
 
             <!--<TextField hint="any special instructions..." (textChange)="onTextChange($event)"></TextField>-->
         </StackLayout>
 
-        <StackLayout *ngIf="choices">
-            <Label class="p-10" text="Select Options" textWrap="true" style="font-weight: bold"></Label>
-            <StackLayout class="p-10" *ngFor="let option of radioOptions">
-                <StackLayout orientation="horizontal" verticalAlignment="center">
-                    <CheckBox #elem boxType="circle" [checked]="option.selected" (checkedChange)="elem.checked !== option.selected && changeCheckedRadio(option)" class="checkbox"></CheckBox>
-                    <StackLayout verticalAlignment="center" orientation="horizontal">
-                        <Label text="+ $"></Label>
-                        <Label [text]="option.price" style="width: 10%"></Label>
-                        <Label [text]="option.text" textWrap="true" (tap)="changeCheckedRadio(option)"></Label>
+        <ScrollView style="height: 20%">
+            <StackLayout *ngIf="choices" >
+                <Label class="p-10" text="Select Options" textWrap="true" style="font-weight: bold"></Label>
+                <StackLayout class="p-10" *ngFor="let option of radioOptions">
+                    <StackLayout orientation="horizontal" verticalAlignment="center">
+                        <CheckBox #elem boxType="circle" [checked]="option.selected" (checkedChange)="elem.checked !== option.selected && changeCheckedRadio(option)" class="checkbox"></CheckBox>
+                        <StackLayout verticalAlignment="center" orientation="horizontal">
+                            <Label text="+ $"></Label>
+                            <Label [text]="option.price" style="width: 10%"></Label>
+                            <Label [text]="option.text" textWrap="true" (tap)="changeCheckedRadio(option)"></Label>
+                        </StackLayout>
                     </StackLayout>
                 </StackLayout>
             </StackLayout>
-        </StackLayout>
+        </ScrollView>
 
 
-        <StackLayout *ngIf="extra">
-            <Label class="p-10" text="Select Extras" textWrap="true" style="font-weight: bold"></Label>
-            <StackLayout class="p-10" *ngFor="let option of checkOptions">
-                <StackLayout orientation="horizontal" verticalAlignment="center">
-                    <CheckBox #elem [checked]="false" class="checkbox" (tap)="checkedExtra(option)"></CheckBox>
-                    <StackLayout verticalAlignment="center" orientation="horizontal">
-                        <Label text="+ $"></Label>
-                        <Label [text]="option.price" style="width: 10%"></Label>
-                        <Label [text]="option.text" textWrap="true"></Label>
+        <ScrollView style="height: 20%">
+            <StackLayout *ngIf="extra">
+                <Label class="p-10" text="Select Extras" textWrap="true" style="font-weight: bold"></Label>
+                <StackLayout class="p-10" *ngFor="let option of checkOptions">
+                    <StackLayout orientation="horizontal" verticalAlignment="center">
+                        <CheckBox #elem [checked]="false" class="checkbox" (tap)="checkedExtra(option)"></CheckBox>
+                        <StackLayout verticalAlignment="center" orientation="horizontal">
+                            <Label text="+ $"></Label>
+                            <Label [text]="option.price" style="width: 10%"></Label>
+                            <Label [text]="option.text" textWrap="true"></Label>
+                        </StackLayout>
                     </StackLayout>
                 </StackLayout>
             </StackLayout>
-        </StackLayout>
+        </ScrollView>
     </StackLayout>
 
 
     <StackLayout orientation="vertical" horizontalAlignment="left" height="15%" width="100%" style="margin-top:0%">
-        <Button text=" Add to Order" (tap)="close('true')" style="width: 90% ;background-color: #1a626f;color: white"
-        *ngIf="inStock"></Button>
-        <Button text="Not Available" (tap)="close('false')"  style="width: 90% ;background-color: #a8a8a8;color: white"
-        *ngIf="!inStock"></Button>
+        <android>
+            <Button text=" Add to Order" (tap)="close('true')" style="width: 90% ;background-color: #1a626f;color: white"
+                    *ngIf="inStock && userLoggedIn"></Button>
+            <Button text="Not Available" (tap)="close('false')"  style="width: 90% ;background-color: #a8a8a8;color: white"
+                    *ngIf="!inStock && userLoggedIn"></Button>
+            <Button text="Log in to add!" (tap)="close('signIn')"  style="width: 90% ;background-color: #a8a8a8;color: white"
+                    *ngIf="!userLoggedIn"></Button>
+        </android>
+        <ios>
+            <Button text=" Add to Order" (tap)="close('true')" class="buttons90P-W-ios"
+                    *ngIf="inStock && userLoggedIn"></Button>
+            <Button text="Not Available" (tap)="close('false')"  class="buttons90P-W-ios"
+                    *ngIf="!inStock && userLoggedIn"></Button>
+            <Button text="Log in to add!" (tap)="close('signIn')"  style="width: 90% ;background-color: #a8a8a8;color: white"
+                    *ngIf="!userLoggedIn"></Button>
+        </ios>
     </StackLayout>
 
 </StackLayout>

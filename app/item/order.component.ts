@@ -228,57 +228,57 @@ export class OrderConfirmComponent implements OnInit, OnChanges, OnDestroy, DoCh
 
 
     onOrder(){
-        
-        if(this.cardExists) {
 
-            dialogs.prompt({
-                title: "Table Number",
-                message: "Please enter your table number",
-                okButtonText: "OK",
-                cancelButtonText: "Cancel text",
-                neutralButtonText: "I'm getting takeaway!",
-                defaultText: "",
-                inputType: dialogs.inputType.text
-            }).then(r => {
-                console.log("Dialog result: " + r.result + ", text: " + r.text);
+            if (this.cardExists) {
 
-                //modalcode
-                /*let options = {
-                 fullscreen: false,
-                 viewContainerRef: this.vcRef,
+                dialogs.prompt({
+                    title: "Table Number",
+                    message: "Please enter your table number",
+                    okButtonText: "OK",
+                    cancelButtonText: "Cancel text",
+                    neutralButtonText: "I'm getting takeaway!",
+                    defaultText: "",
+                    inputType: dialogs.inputType.text
+                }).then(r => {
+                    console.log("Dialog result: " + r.result + ", text: " + r.text);
 
-                 };*/
-                if (r.result == false) {
+                    //modalcode
+                    /*let options = {
+                     fullscreen: false,
+                     viewContainerRef: this.vcRef,
 
-                    console.log ("do nothing");
+                     };*/
+                    if (r.result == false) {
 
-                } else {
+                        console.log("do nothing");
 
-                    if (this.uid) {
-                        //this.popup.showModal(OrderpopComponent, options).then((response)=> {
-                        console.log("passing...", this.cafeid);
+                    } else {
 
-                        this.orderService.confirmOrder(this.order, this.cafeid, "card", this.uid, r.text);
-                        this.processPayment(this.total$);
-                        Toast.makeText("Your order has been placed").show();
-                        this.order.length = 0;
-                        this.total$ = 0;
-                        this.cartEmpty.emit(false);
-                        this.routerextensions.navigate(["/items", 1]);
-                        //}).catch(()=> {
-                        Toast.makeText("").show();
-                        //})
+                        if (this.uid) {
+                            //this.popup.showModal(OrderpopComponent, options).then((response)=> {
+                            console.log("passing...", this.cafeid);
+
+                            this.orderService.confirmOrder(this.order, this.cafeid, "card", this.uid, r.text);
+                            this.processPayment(this.total$);
+                            Toast.makeText("Your order has been placed").show();
+                            this.order.length = 0;
+                            this.total$ = 0;
+                            this.cartEmpty.emit(false);
+                            this.routerextensions.navigate(["/items", 1]);
+                            //}).catch(()=> {
+                            Toast.makeText("").show();
+                            //})
+                        }
+                        else {
+                            Toast.makeText("Please login to order").show();
+                        }
                     }
-                    else {
-                        Toast.makeText("Please login to order").show();
-                    }
-                }
 
-            });
-        }
-        else {
-            alert("Please add card details under Manage Cards option.");
-        }
+                });
+            }
+            else {
+                alert("Please add card details under Manage Cards option.");
+            }
     }
 
     processPayment(total) {

@@ -11,83 +11,114 @@
             text-align: center"></Label>
 
             <!--some image can go here...-->
-            <ios>
-                <StackLayout style="height:5%"></StackLayout>
+                <ios>
+                    <StackLayout style="height:5%"></StackLayout>
+                </ios>
 
-                <StackLayout class="form">
-                    <StackLayout class="input-field">
+                <!-- <StackLayout class="form">
+                    <StackLayout class="input-field"> -->
+                <!--<StackLayout orientation="horizontal">
                         <TextField #name class="input input-border myTextField" hint="First Name"
                                    autocorrect="false" returnKeyType="done"
                                    style="margin-top:2%;height: 100px;width:90%;border-style:dashed;font-weight: bold;font-size:20pt">
                         </TextField>
+                    </StackLayout>
 
-                        <TextField #email class="{{emailValid ? 'input input-border myTextField' : 'validation'}}" hint="Enter a valid email"
+                <StackLayout orientation="horizontal">
+                        <TextField #email class="{{emailValid ? 'input input-border' : 'validation'}}" hint="Enter a valid email"
                                    autocorrect="false" returnKeyType="done" (textChange)="onEmailTextChange($event.value)"
                                    style="margin-top:2%;height: 100px;width:90%;border-style:dashed;font-weight: bold;font-size:20pt">
                         </TextField>
+                    </StackLayout>
 
+                <StackLayout orientation="horizontal">
                         <TextField #password hint="Password" autocorrect="false" returnKeyType="done"
-                                   class="{{passwordValid ? 'input input-border myTextField' : 'validation'}}" secure="true"
+                                   class="{{passwordValid ? 'input input-border' : 'validation'}}" secure="true"
                                    style="margin-top:2%;height: 100px;width:90%;border-style:dashed;font-weight: bold;font-size:20pt"
                                    (textChange)="onPasswordTextChange($event.value)"> </TextField>
-
-                        <TextField #password2 hint="Confirm Password" autocorrect="false" returnKeyType="done"
+</StackLayout>
+                <StackLayout orientation="horizontal">
+                    <TextField #password2 hint="Confirm Password" autocorrect="false" returnKeyType="done"
                                    class="{{password2Valid ? 'input input-border' : 'validation'}}" secure="true"
                                    style="margin-top:2%;height: 100px;width:90%;border-style:dashed;font-weight: bold;font-size:20pt"
                                    (textChange)="onPassword2TextChange($event.value)"> </TextField>
+</StackLayout>
+                        <Button id="registerIos" text="Register" (tap)="onRegister(name,email,password,$event)"
+                                style="width: 90%;"
+                                *ngIf="registerButtonActive"   class="buttonactive"></Button>
+
+                        <Button text="Register" style="width: 90%;"
+                                *ngIf="!registerButtonActive"   class="buttoninactive"></Button>
+
+                        </StackLayout>
 
                     </StackLayout>
-                </StackLayout>
-            </ios>
+
+            </ios>-->
 
             <android>
 
                 <StackLayout style="height: 20%"></StackLayout>
+            </android>
 
                 <StackLayout orientation="horizontal">
                     <Label text="" style="width: 10%"> </Label>
-                    <TextField hint="First name" autocorrect="false" returnKeyType="done"
-                               style="width: 70%"
+                    <TextField hint="First name" autocorrect="false" returnKeyType="done" class="input input-border myTextField"
+                               style="margin-top:2%;height: 100px;width:80%;border-style:dashed;font-weight: bold;font-size:20pt"
                                #name></TextField>
                 </StackLayout>
 
                 <StackLayout orientation="horizontal">
                     <Label text="" style="width: 10%"> </Label>
                     <TextField hint="Enter a valid email" autocorrect="false" returnKeyType="done"
-                               class="{{emailValid ? 'input input-border' : 'validation'}}"
-                               style="width: 70%" (textChange)="onEmailTextChange($event.value)"
+                               class="{{emailValid ? 'input input-border myTextField' : 'validation'}}"
+                               style="margin-top:2%;height: 100px;width:80%;border-style:dashed;font-weight: bold;font-size:20pt"
+                               (textChange)="onEmailTextChange($event.value)"
                                #email></TextField>
                 </StackLayout>
 
                 <StackLayout orientation="horizontal">
                     <Label text="" style="width: 10%"> </Label>
                     <TextField #password hint="Password" autocorrect="false" returnKeyType="done"
-                               class="{{passwordValid ? 'input input-border' : 'validation'}}" secure="true" style="width: 70%"
+                               class="{{passwordValid ? 'input input-border myTextField' : 'validation'}}" secure="true"
+                               style="margin-top:2%;height: 100px;width:80%;border-style:dashed;font-weight: bold;font-size:20pt"
                                (textChange)="onPasswordTextChange($event.value)"> </TextField>
                 </StackLayout>
 
                 <StackLayout orientation="horizontal">
                     <Label text="" style="width: 10%"> </Label>
                     <TextField #password2 hint="Confirm Password" autocorrect="false" returnKeyType="done"
-                               class="{{password2Valid ? 'input input-border' : 'validation'}}" secure="true" style="width: 70%"
+                               class="{{password2Valid ? 'input input-border myTextField' : 'validation'}}" secure="true"
+                               style="margin-top:2%;height: 100px;width:80%;border-style:dashed;font-weight: bold;font-size:20pt"
                                (textChange)="onPassword2TextChange($event.value)"> </TextField>
                 </StackLayout>
 
-            </android>
+                <android>
+                    <Button id="register" text="Register" (tap)="onRegister(name,email,password,$event)"
+                        style="margin-top:5%;width: 90%;"
+                        *ngIf="registerButtonActive"   class="buttonactive"></Button>
+
+                    <Button text="Register" style="margin-top:5%;width: 90%;"
+                        *ngIf="!registerButtonActive"   class="buttoninactive"></Button>
+                </android>
+
+                <ios>
+                    <Button id="register" text="Register" (tap)="onRegister(name,email,password,$event)"
+                            style="margin-top:5%;width: 90%;"
+                            *ngIf="registerButtonActive"   class="buttonactive buttons90P-W-ios"></Button>
+
+                    <Button text="Register" style="margin-top:5%;width: 90%;"
+                            *ngIf="!registerButtonActive"   class="buttoninactive buttons90P-W-ios"></Button>
+                </ios>
+
+            <!-- </android> -->
 
             <!--<Button text="Register" (tap)="onRegister(email,password)"-->
             <!--style="width: 90%;"-->
             <!--class="{{registerButtonActive?'buttonactive':'buttoninactive'}}"></Button>-->
 
-            <Button id="register" text="Register" (tap)="onRegister(name,email,password,$event)"
-                    style="width: 90%;"
-                    *ngIf="registerButtonActive"   class="buttonactive"></Button>
-
-            <Button text="Register" style="width: 90%;"
-                    *ngIf="!registerButtonActive"   class="buttoninactive"></Button>\
-
         </StackLayout>
-        <StackLayout orientation="horizontal" style="margin-top:2%">
+        <StackLayout orientation="horizontal" style="margin-top:5%">
 
             <StackLayout style="width: 10%"></StackLayout>
             <StackLayout>

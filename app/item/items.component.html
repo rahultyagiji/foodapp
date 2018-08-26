@@ -4,6 +4,7 @@
 
 
 <side-drawer-page>
+
 <TabView [(ngModel)]="tabSelectedIndex" borderBottomcolor="#B52E26"
 iosIconRenderingMode="alwaysOriginal" sdkExampleTitle sdkToggleNavButton style="height: 100%">
 
@@ -18,14 +19,15 @@ iosIconRenderingMode="alwaysOriginal" sdkExampleTitle sdkToggleNavButton style="
 <!--each list item-->
         <ng-template  let-item="item" class="textpadding">
 <!--first stack-->
-            <StackLayout id="cafename" orientation="horizontal" (tap)="jumptoMenu(item.cafeId,$event)" style="height: 15%">
+                <StackLayout id="cafename" orientation="horizontal" (tap)="jumptoMenu(item.cafeId,$event)" style="height: 20%">
 <!--cafe image-->
                <android>
                     <Image [src]="item.imgSrc"  style="width: 30%;border-image-width: 100%"></Image>
                 </android>
                 <ios>
-                    <Image [src]="item.imgSrc" stretch="fill" class="img-rounded p-l-15 p-r-15 p-t-15" style="width: 30%;border-image-width: 100%"></Image>                </ios>
-<!--name and description-->
+                    <Image [src]="item.imgSrc"  style="width: 30%;border-image-width: 100%"></Image>
+                    <!-- <Image [src]="item.imgSrc" stretch="fill" class="img-rounded p-l-15 p-r-15 p-t-15" style="width: 30%;border-image-width: 100%"></Image> -->
+                </ios>
                 <StackLayout orientation="vertical" style="width: 60%">
                     <Label [text]="item.name" textWrap="true" class="list-group-item" style="font-weight: bold"></Label>
                     <Label [text]="item.description" textWrap="true" class="list-group-item" style="font-size: 10pt"></Label>

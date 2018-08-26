@@ -25,11 +25,17 @@ export class AuthService {
             })
 
     }
+    
+    insertUserInfo(text, name){
+        console.log ("registered key in insertUserInfo is " + text);
+        const path='/userInfo/';
+        return firebase.update(path + text + '/', {"name":name});
+    }
 
     updateUserInfo(name,key){
 
         const path='/userInfo/';
-        return firebase.setValue(path,{"uid":key,"name":name});
+        return firebase.push(path,{"uid":key,"name":name});
     }
 
 

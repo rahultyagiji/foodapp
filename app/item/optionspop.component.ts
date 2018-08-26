@@ -4,10 +4,14 @@ import { Switch } from "ui/switch";
 import { ListPicker } from "ui/list-picker";
 import { Menu } from "../datatypes/menu";
 import {TextField} from "tns-core-modules/ui/text-field";
+import {TextView} from "tns-core-modules/ui/text-view";
 import { FlexboxLayout } from "tns-core-modules/ui/layouts/flexbox-layout";
 //import { CheckBox } from 'nativescript-checkbox';
 import { topmost } from 'ui/frame';
 import { RadioOption } from "./radio-option";
+import {firebase} from "nativescript-plugin-firebase/firebase-common";
+import {RouterExtensions} from "nativescript-angular";
+//import {RouterExtensions} from "../../platforms/android/app/src/main/assets/app/tns_modules/nativescript-angular/router/router-extensions";
 
 //let options = ["Small", "Medium", "Large"];
 @Component({
@@ -36,6 +40,8 @@ export class OptionspopComponent implements OnInit {
     optionPrice:number;
     inStock:boolean=false;
     hasImage:boolean=false;
+    customerID:string = "";
+    userLoggedIn:boolean=false;
 
     public options: Array<string>=[];
     public optionsPrice:Array<number>=[];
@@ -49,13 +55,26 @@ export class OptionspopComponent implements OnInit {
     public pickedPrice:number=0;
 
     constructor(
-        private params: ModalDialogParams
+        private params: ModalDialogParams,
+        private routerextensions:RouterExtensions
     ) {
 
     }
 
 
     ngOnInit(): void {
+
+        firebase.getCurrentUser()
+            .then((token)=> {
+                firebase.getValue("/userInfo/"+token.uid)
+                    .then((res)=>{
+                        if (!res.value.cID.isEmpty) {
+                            this.customerID = res.value.cID;
+                            this.userLoggedIn = true;
+                            console.log("customer id is " + res.value.cID);
+                        }
+                    });
+            });
 
         this.selectedMenu=[];
         this.selectedMenu.push(this.params.context);
@@ -64,11 +83,11 @@ export class OptionspopComponent implements OnInit {
 
         if(this.selectedMenuItem.imgSrc)this.hasImage=true;
 
-        if(this.selectedMenuItem.available){
-           this.inStock=true;
+        if(this.selectedMenuItem.available) {
+            this.inStock = true;
         }
-        else{
-            this.inStock=false;
+        else {
+            this.inStock = false;
         }
 
 
@@ -106,8 +125,21 @@ export class OptionspopComponent implements OnInit {
         this.pickedPrice=this.optionsPrice[picker.selectedIndex];
     }
 
+    onSpecialInstructionBlur(args) {
+        let textField = <TextView>args.object;
+        console.log("textView");
+
+        setTimeout(() => {
+            textField.dismissSoftInput();
+        }, 100);
+    }
 
     close(response:string){
+
+        if(response=="signIn") {
+            this.routerextensions.navigate(["/signin"], {clearHistory: true});
+        }
+
         var response1:{'response':string,'specialInstruction':string,'option':
         {'text':string,'price':number},
         'extras':{'text':string,'price':number}[]}={'response':"",'specialInstruction':'','option':

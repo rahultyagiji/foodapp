@@ -69,16 +69,16 @@ export class ItemsComponent implements OnInit{
     ngOnInit(): void {
 
         if(this.items!=[]){
-        this.itemService.load()
-            .subscribe((items: Array<Item>) => {
-                this._items = new ObservableArray(items);
-                this.items=[];
-                this._items.forEach((x)=>{
-                    this.items.push(x);
+            this.itemService.load()
+                .subscribe((items: Array<Item>) => {
+                    this._items = new ObservableArray(items);
+                    this.items=[];
+                    this._items.forEach((x)=>{
+                        this.items.push(x);
+                    });
+                    this.myItems.length=0;
+                    this.filterByLocation();
                 });
-                this.myItems.length=0;
-                this.filterByLocation();
-            });
         }
         else{
             console.log("not loading again")
@@ -100,7 +100,7 @@ export class ItemsComponent implements OnInit{
 
                         this.orderList.forEach((x)=>{
 //get Cafe details
-                                this.orderservice.getOrderDetails(x.cafe,x.orderNo)
+                            this.orderservice.getOrderDetails(x.cafe,x.orderNo)
                                 .then((result)=>{
                                     this.orderDisplay.cafeOwner=this.itemService.getCafeInfo(x.cafe).name;
                                     this.orderDisplay.imgSrc = this.itemService.getCafeInfo(x.cafe).imgSrc;
@@ -115,35 +115,35 @@ export class ItemsComponent implements OnInit{
                                     this.orderDisplay= {"key":"","uid":"","status":"","order": null,
                                         "cafeOwner":"","location":"","orderNo2":"","imgSrc":"","total":""};
                                 })
-                                    });
                         });
+                    });
                 this.ontapListofFrequent(token.uid);
             });
 
     }
 
 //Frequently visited - to be completed ....
-ontapListofFrequent(token){
-    var counts: {}[];
+    ontapListofFrequent(token){
+        var counts: {}[];
         this.orderservice.frequentCafe(token)
-        .then(
-            (res) => {
-                Object.keys(res.value).forEach((x) => {
-                    this.frequentCafes.push(res.value[x].cafe);
+            .then(
+                (res) => {
+                    Object.keys(res.value).forEach((x) => {
+                        this.frequentCafes.push(res.value[x].cafe);
+                    })
                 })
-            })
-        .catch();
-        }
+            .catch();
+    }
 
 //Navitage to next screen
-            jumptoMenu(cafeId,args) {
-                let page = <StackLayout>args.object;
-                let view = <StackLayout>page.getViewById("cafename");
-                view.backgroundColor = new Color("#f0f0f0");
-                view.animate({ backgroundColor: new Color("white"), duration: 200 });
+    jumptoMenu(cafeId,args) {
+        let page = <StackLayout>args.object;
+        let view = <StackLayout>page.getViewById("cafename");
+        view.backgroundColor = new Color("#f0f0f0");
+        view.animate({ backgroundColor: new Color("white"), duration: 200 });
 
-                   this.routerextensions.navigate(["/cafe", cafeId]);
-            }
+        this.routerextensions.navigate(["/cafe", cafeId]);
+    }
 //
 // //TabView controls
     changeTab() {
@@ -165,19 +165,19 @@ ontapListofFrequent(token){
 
         let searchBar = <SearchBar>args.object;
         if (searchBar.text!=""){
-        let searchValue = searchBar.text.toLowerCase();
-        if (searchBar.text != ""){
-            this.myItems = this.items.filter( item => {
-            return `${item.name} ${item.name}`.toLowerCase().indexOf(searchValue.toLowerCase()) > -1;
-        });
+            let searchValue = searchBar.text.toLowerCase();
+            if (searchBar.text != ""){
+                this.myItems = this.items.filter( item => {
+                    return `${item.name} ${item.name}`.toLowerCase().indexOf(searchValue.toLowerCase()) > -1;
+                });
+            }
+            else {
+                setTimeout(function() {
+                    searchBar.dismissSoftInput();
+                }, 300);
+            }
         }
-        else {
-            setTimeout(function() {
-                searchBar.dismissSoftInput();
-            }, 300);
-        }
-    }
-    else{
+        else{
             // this.myItems.length=0;
             // this.filterByLocation();
         }
@@ -203,7 +203,7 @@ ontapListofFrequent(token){
 
     onRegister(){
 
-    this.routerextensions.navigate(['register']);
+        this.routerextensions.navigate(['register']);
 
     }
 
@@ -220,11 +220,11 @@ ontapListofFrequent(token){
 
 
 //For your picks...
-        topThreeCafes(){
+    topThreeCafes(){
 
-            this.orderservice.frequentCafe("CBNUluA6FogVIkOSlD4WKOFvMjf1");
+        this.orderservice.frequentCafe("CBNUluA6FogVIkOSlD4WKOFvMjf1");
 
-        }
+    }
 
 
     onTapCurrentOrder(){
@@ -254,26 +254,26 @@ ontapListofFrequent(token){
         const date: Date = new Date();
         this.items.forEach((x)=>{
 
-        this.myItems.length=0;
-        let that = this;
+            this.myItems.length=0;
+            let that = this;
 
-        getCurrentLocation({desiredAccuracy: 1, updateDistance: 10, maximumAge: 20000, timeout: 5000}).
-        then(function(loc) {
-            if (loc) {
-                var a = distance(loc,{"latitude":x.lat,"longitude":x.lng, "direction":0, "horizontalAccuracy":14,
-                    "verticalAccuracy":14,"speed":0,"altitude":89,"timestamp":date});
-                if(a<25000){
-                    that.myItems.push(x);
+            getCurrentLocation({desiredAccuracy: 1, updateDistance: 10, maximumAge: 20000, timeout: 5000}).
+            then(function(loc) {
+                if (loc) {
+                    var a = distance(loc,{"latitude":x.lat,"longitude":x.lng, "direction":0, "horizontalAccuracy":14,
+                        "verticalAccuracy":14,"speed":0,"altitude":89,"timestamp":date});
+                    if(a<25000){
+                        that.myItems.push(x);
+                    }
+                    else{
+                        //remove this when we need filtering by location
+                        // that.myItems.push(x);
+                    }
                 }
-                else{
-                    //remove this when we need filtering by location
-                    // that.myItems.push(x);
-                }
-            }
-        }, function(e){
-            //push anyway
-            that.myItems.push(x);
-        });
+            }, function(e){
+                //push anyway
+                that.myItems.push(x);
+            });
 
         })
     }
