@@ -34,6 +34,9 @@
 
             <android>-->
 
+            <ActivityIndicator row="1" #activityIndicator busy="false" (busyChange)="onBusyChanged($event)"
+                               width="100" height="50" class="activity-indicator"></ActivityIndicator>
+
                 <StackLayout orientation="horizontal">
                     <Label text="" style="width: 10%"> </Label>
 
@@ -57,11 +60,11 @@
             <!--</android>-->
 
             <android>
-                <Button id="signin" text="Signin" (tap)="onSignin(email,password,$event)"
+                <Button id="signin" text="Signin" (tap)="onSigninAndroid(email,password,$event)"
                     style="background-color: #0A4C58; color: white;margin-top:5%;width: 90%"></Button>
             </android>
             <ios>
-                <Button id="signin" text="Signin" (tap)="onSignin(email,password,$event)"
+                <Button id="signin" text="Signin" (tap)="onSigninIos(email,password,$event)"
                         class="buttons90P-W-ios" style="margin-top: 5%"></Button>
             </ios>
         </StackLayout>

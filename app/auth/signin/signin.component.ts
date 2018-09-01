@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit, ViewChild, ElementRef} from "@angular/core";
 import {AuthService} from "../../services/auth.service";
 import * as Toast from "nativescript-toast";
 import * as EmailValidator from 'email-validator';
@@ -16,9 +16,11 @@ import {RouterExtensions} from "nativescript-angular";
 
 export class SigninComponent implements OnInit {
 
+    @ViewChild('activityIndicator') activityIndicator: ElementRef;
     userId:{"username","password"}={"username":"","password":""};
     emailText:string="";
     resetClicked:boolean=false;
+    public isBusy:boolean = false;
 
 
     constructor(private auth:AuthService,
@@ -32,7 +34,7 @@ export class SigninComponent implements OnInit {
 
     }
 
-    onSignin(email,password,args){
+    onSigninAndroid(email,password,args){
 
         let page = <StackLayout>args.object;
         let view = <StackLayout>page.getViewById("signin");
@@ -47,8 +49,31 @@ export class SigninComponent implements OnInit {
 
             })
             .catch((error)=>{
-                console.log(error);
-                Toast.makeText(error,'1500').show();
+                console.log("Login error " + error);
+                Toast.makeText(error,'10000').show();
+            });
+    }
+
+    onSigninIos(email,password,args){
+
+        /*let page = <Button>args.object;
+        let view = <Button>page.getViewById("signin");
+        view.backgroundColor = new Color("#1a626f");
+        view.animate({ backgroundColor: new Color("white"), duration: 600 });*/
+
+        let activityIndicator = this.activityIndicator.nativeElement;
+        activityIndicator.busy = true;
+
+        this.auth.signin(email.text,password.text)
+            .then((res)=>{
+                activityIndicator.busy = false;
+                this.routerextensions.navigate([""],{clearHistory: true});
+
+            })
+            .catch((error)=>{
+                activityIndicator.busy = false;
+                console.log("Login error " + error);
+                Toast.makeText(error,'10000').show();
             });
     }
 

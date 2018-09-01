@@ -13,8 +13,8 @@ import * as dialogs from "ui/dialogs";
 //import { Page } from 'ui/page';
 
 const application = require("tns-core-modules/application");
-//const stripe = new Stripe('pk_live_vQDnFzdF5EDZmRqSf7z5b0yG');
-const stripe = new Stripe('pk_test_l6tuKlddwfIkKUWlYj1HnxiB');
+const stripe = new Stripe('pk_live_vQDnFzdF5EDZmRqSf7z5b0yG');
+//const stripe = new Stripe('pk_test_l6tuKlddwfIkKUWlYj1HnxiB');
 //const FIREBASE_FUNCTION = 'https://[YOUR_FIREBASE_PROJECT].cloudfunctions.net/charge/'; // TODO: PUT YOUR FIREBASE FUNCTIONS URL HERE
 const FIREBASE_FUNCTION = 'https://us-central1-dekyou-cafe.cloudfunctions.net/customer/'; // TODO: PUT YOUR FIREBASE FUNCTIONS URL HERE
 const FIREBASE_FUNCTION_TEST = 'https://us-central1-dekyou-cafe.cloudfunctions.net/testfunction/'; // TODO: PUT YOUR FIREBASE FUNCTIONS URL HERE

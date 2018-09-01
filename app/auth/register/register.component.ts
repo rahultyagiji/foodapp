@@ -59,7 +59,7 @@ export class RegisterComponent implements OnInit {
 //
                     this.auth.register(email.text, password.text)
                         .then((res)=>{
-
+                            //console.log ("registered key is " + res);
                             this.auth.sendVerificationEmail()
                                 .then(()=>{
                                     console.log ("registered key is " + res.key);
