@@ -2,9 +2,14 @@
   <StackLayout tkDrawerContent class="sidedrawer-left">
     <StackLayout class="sidedrawer-header" style="background-color: #0A4C58" *ngIf="isVerified">
       <!-- Set src attribute to the logo of the app -->
-      <Image
-          class="sidedrawer-header-image">
-      </Image>
+      <android>
+        <Image src="res://icon" class="sidedrawer-header-image">
+        </Image>
+      </android>
+      <ios>
+        <Image src="res://AppIcon" class="sidedrawer-header-image">
+        </Image>
+      </ios>
       <Label
           class="sidedrawer-header-brand"
           [text]="'Hi, ' + name" *ngIf="name">

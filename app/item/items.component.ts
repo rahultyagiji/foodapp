@@ -262,7 +262,7 @@ export class ItemsComponent implements OnInit{
                 if (loc) {
                     var a = distance(loc,{"latitude":x.lat,"longitude":x.lng, "direction":0, "horizontalAccuracy":14,
                         "verticalAccuracy":14,"speed":0,"altitude":89,"timestamp":date});
-                    if(a<25000){
+                    if(a<35000){
                         that.myItems.push(x);
                     }
                     else{
