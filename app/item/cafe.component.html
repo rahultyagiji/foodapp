@@ -48,11 +48,11 @@
 
         <StackLayout id="viewcart" *ngIf="!cartEmpty && toggleMenuCart" style="{{scrollHeightBase}}" backgroundColor="#1a626f" (tap)="OnViewCart($event)" orientation="horizontal">
             <Label [text]="'$' + total$" verticalAlignment="middle" horizontalAlignment="left"
-                   style="color:white; font-size: 18px;text-align: center;padding-top: 15px"></Label>
+                   style="color:white; font-size: 18px;text-align: center;padding-top: 15px;margin-left: 2%"></Label>
             <Label text="View cart"  horizontalAlignment="center" verticalAlignment="middle"
                    style="color:white; font-size: 18px;text-align: center;padding-top: 15px;margin-left: 30%"></Label>
             <Label [text]="itemCount" verticalAlignment="middle" horizontalAlignment="right"
-                   style="color:white; font-size: 18px;text-align: center;padding-top: 15px;margin-left: 30%"></Label>
+                   style="color:white; font-size: 18px;text-align: center;padding-top: 15px;margin-left: 25%"></Label>
         </StackLayout>
 
         <StackLayout id="checkout" *ngIf="!cartEmpty && !toggleMenuCart" style="{{scrollHeightBase}}" (tap)="OnViewMenu($event)">
