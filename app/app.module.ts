@@ -3,7 +3,6 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
-
 import { ItemService } from "./services/item.service";
 import { ItemsComponent } from "./item/items.component";
 import {MenuService} from "./services/menu.service";

@@ -11,105 +11,119 @@
             text-align: center"></Label>
 
             <!--some image can go here...-->
-                <ios>
-                    <StackLayout style="height:5%"></StackLayout>
-                </ios>
+            <ios>
+                <StackLayout style="height:5%"></StackLayout>
+            </ios>
 
-                <!-- <StackLayout class="form">
-                    <StackLayout class="input-field"> -->
-                <!--<StackLayout orientation="horizontal">
-                        <TextField #name class="input input-border myTextField" hint="First Name"
-                                   autocorrect="false" returnKeyType="done"
-                                   style="margin-top:2%;height: 100px;width:90%;border-style:dashed;font-weight: bold;font-size:20pt">
-                        </TextField>
-                    </StackLayout>
+            <!-- <StackLayout class="form">
+                <StackLayout class="input-field"> -->
+            <!--<StackLayout orientation="horizontal">
+                    <TextField #name class="input input-border myTextField" hint="First Name"
+                               autocorrect="false" returnKeyType="done"
+                               style="margin-top:2%;height: 100px;width:90%;border-style:dashed;font-weight: bold;font-size:20pt">
+                    </TextField>
+                </StackLayout>
 
-                <StackLayout orientation="horizontal">
-                        <TextField #email class="{{emailValid ? 'input input-border' : 'validation'}}" hint="Enter a valid email"
-                                   autocorrect="false" returnKeyType="done" (textChange)="onEmailTextChange($event.value)"
-                                   style="margin-top:2%;height: 100px;width:90%;border-style:dashed;font-weight: bold;font-size:20pt">
-                        </TextField>
-                    </StackLayout>
+            <StackLayout orientation="horizontal">
+                    <TextField #email class="{{emailValid ? 'input input-border' : 'validation'}}" hint="Enter a valid email"
+                               autocorrect="false" returnKeyType="done" (textChange)="onEmailTextChange($event.value)"
+                               style="margin-top:2%;height: 100px;width:90%;border-style:dashed;font-weight: bold;font-size:20pt">
+                    </TextField>
+                </StackLayout>
 
-                <StackLayout orientation="horizontal">
-                        <TextField #password hint="Password" autocorrect="false" returnKeyType="done"
-                                   class="{{passwordValid ? 'input input-border' : 'validation'}}" secure="true"
-                                   style="margin-top:2%;height: 100px;width:90%;border-style:dashed;font-weight: bold;font-size:20pt"
-                                   (textChange)="onPasswordTextChange($event.value)"> </TextField>
+            <StackLayout orientation="horizontal">
+                    <TextField #password hint="Password" autocorrect="false" returnKeyType="done"
+                               class="{{passwordValid ? 'input input-border' : 'validation'}}" secure="true"
+                               style="margin-top:2%;height: 100px;width:90%;border-style:dashed;font-weight: bold;font-size:20pt"
+                               (textChange)="onPasswordTextChange($event.value)"> </TextField>
 </StackLayout>
-                <StackLayout orientation="horizontal">
-                    <TextField #password2 hint="Confirm Password" autocorrect="false" returnKeyType="done"
-                                   class="{{password2Valid ? 'input input-border' : 'validation'}}" secure="true"
-                                   style="margin-top:2%;height: 100px;width:90%;border-style:dashed;font-weight: bold;font-size:20pt"
-                                   (textChange)="onPassword2TextChange($event.value)"> </TextField>
+            <StackLayout orientation="horizontal">
+                <TextField #password2 hint="Confirm Password" autocorrect="false" returnKeyType="done"
+                               class="{{password2Valid ? 'input input-border' : 'validation'}}" secure="true"
+                               style="margin-top:2%;height: 100px;width:90%;border-style:dashed;font-weight: bold;font-size:20pt"
+                               (textChange)="onPassword2TextChange($event.value)"> </TextField>
 </StackLayout>
-                        <Button id="registerIos" text="Register" (tap)="onRegister(name,email,password,$event)"
-                                style="width: 90%;"
-                                *ngIf="registerButtonActive"   class="buttonactive"></Button>
+                    <Button id="registerIos" text="Register" (tap)="onRegister(name,email,password,$event)"
+                            style="width: 90%;"
+                            *ngIf="registerButtonActive"   class="buttonactive"></Button>
 
-                        <Button text="Register" style="width: 90%;"
-                                *ngIf="!registerButtonActive"   class="buttoninactive"></Button>
-
-                        </StackLayout>
+                    <Button text="Register" style="width: 90%;"
+                            *ngIf="!registerButtonActive"   class="buttoninactive"></Button>
 
                     </StackLayout>
 
-            </ios>-->
+                </StackLayout>
+
+        </ios>-->
 
             <android>
 
                 <StackLayout style="height: 20%"></StackLayout>
             </android>
 
-                <StackLayout orientation="horizontal">
-                    <Label text="" style="width: 10%"> </Label>
-                    <TextField hint="First name" autocorrect="false" returnKeyType="done" class="input input-border myTextField"
-                               style="margin-top:2%;height: 100px;width:80%;border-style:dashed;font-weight: bold;font-size:20pt"
-                               #name></TextField>
-                </StackLayout>
+            <StackLayout orientation="horizontal">
+                <Label text="" style="width: 10%"> </Label>
+                <TextField hint="First name" autocorrect="false" returnKeyType="done" class="input input-border myTextField"
+                           style="margin-top:2%;height: 100px;width:80%;border-style:dashed;font-weight: bold;font-size:20pt"
+                           #name></TextField>
+            </StackLayout>
 
-                <StackLayout orientation="horizontal">
-                    <Label text="" style="width: 10%"> </Label>
-                    <TextField hint="Enter a valid email" autocorrect="false" returnKeyType="done"
-                               class="{{emailValid ? 'input input-border myTextField' : 'validation'}}"
-                               style="margin-top:2%;height: 100px;width:80%;border-style:dashed;font-weight: bold;font-size:20pt"
-                               (textChange)="onEmailTextChange($event.value)"
-                               #email></TextField>
-                </StackLayout>
+            <StackLayout orientation="horizontal">
+                <Label text="" style="width: 10%"> </Label>
+                <TextField hint="Enter a valid email" autocorrect="false" returnKeyType="done"
+                           class="{{emailValid ? 'input input-border myTextField' : 'validation'}}"
+                           style="margin-top:2%;height: 100px;width:80%;border-style:dashed;font-weight: bold;font-size:20pt"
+                           (textChange)="onEmailTextChange($event.value)"
+                           #email></TextField>
+            </StackLayout>
 
-                <StackLayout orientation="horizontal">
-                    <Label text="" style="width: 10%"> </Label>
-                    <TextField #password hint="Password" autocorrect="false" returnKeyType="done"
-                               class="{{passwordValid ? 'input input-border myTextField' : 'validation'}}" secure="true"
-                               style="margin-top:2%;height: 100px;width:80%;border-style:dashed;font-weight: bold;font-size:20pt"
-                               (textChange)="onPasswordTextChange($event.value)"> </TextField>
-                </StackLayout>
+            <StackLayout orientation="horizontal">
+                <Label text="" style="width: 10%"> </Label>
+                <TextField #password hint="Password" autocorrect="false" returnKeyType="done"
+                           class="{{passwordValid ? 'input input-border myTextField' : 'validation'}}" secure="true"
+                           style="margin-top:2%;height: 100px;width:80%;border-style:dashed;font-weight: bold;font-size:20pt"
+                           (textChange)="onPasswordTextChange($event.value)"> </TextField>
+            </StackLayout>
 
-                <StackLayout orientation="horizontal">
-                    <Label text="" style="width: 10%"> </Label>
-                    <TextField #password2 hint="Confirm Password" autocorrect="false" returnKeyType="done"
-                               class="{{password2Valid ? 'input input-border myTextField' : 'validation'}}" secure="true"
-                               style="margin-top:2%;height: 100px;width:80%;border-style:dashed;font-weight: bold;font-size:20pt"
-                               (textChange)="onPassword2TextChange($event.value)"> </TextField>
-                </StackLayout>
+            <StackLayout orientation="horizontal" style="margin-top:5%">
 
-                <android>
-                    <Button id="register" text="Register" (tap)="onRegister(name,email,password,$event)"
+                <StackLayout style="width: 10%"></StackLayout>
+                <StackLayout>
+                    <Label text="Password rules" class="list-group-item"></Label>
+                    <Label text="- minimum 12 characters"> </Label>
+                    <Label text="- no spaces" > </Label>
+                    <Label text="- that's it!" > </Label>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout orientation="horizontal">
+                <Label text="" style="width: 10%"> </Label>
+                <TextField #password2 hint="Confirm Password" autocorrect="false" returnKeyType="done"
+                           class="{{password2Valid ? 'input input-border myTextField' : 'validation'}}" secure="true"
+                           style="margin-top:2%;height: 100px;width:80%;border-style:dashed;font-weight: bold;font-size:20pt"
+                           (textChange)="onPassword2TextChange($event.value)"> </TextField>
+            </StackLayout>
+
+            <ActivityIndicator row="1" #activityIndicator busy="false" (busyChange)="onBusyChanged($event)"
+                               width="100" height="50" class="activity-indicator"></ActivityIndicator>
+
+            <android>
+                <Button id="register" text="Register" (tap)="onRegister(name,email,password,$event)"
                         style="margin-top:5%;width: 90%;"
                         *ngIf="registerButtonActive"   class="buttonactive"></Button>
 
-                    <Button text="Register" style="margin-top:5%;width: 90%;"
+                <Button text="Register" style="margin-top:5%;width: 90%;"
                         *ngIf="!registerButtonActive"   class="buttoninactive"></Button>
-                </android>
+            </android>
 
-                <ios>
-                    <Button id="register" text="Register" (tap)="onRegister(name,email,password,$event)"
-                            style="margin-top:5%;width: 90%;"
-                            *ngIf="registerButtonActive"   class="buttonactive buttons90P-W-ios"></Button>
+            <ios>
+                <Button id="register" text="Register" (tap)="onRegister(name,email,password,$event)"
+                        style="margin-top:5%;width: 90%;"
+                        *ngIf="registerButtonActive"   class="buttonactive buttons90P-W-ios"></Button>
 
-                    <Button text="Register" style="margin-top:5%;width: 90%;"
-                            *ngIf="!registerButtonActive"   class="buttoninactive buttons90P-W-ios"></Button>
-                </ios>
+                <Button text="Register" style="margin-top:5%;width: 90%;"
+                        *ngIf="!registerButtonActive"   class="buttoninactive buttons90P-W-ios"></Button>
+            </ios>
 
             <!-- </android> -->
 
@@ -117,16 +131,6 @@
             <!--style="width: 90%;"-->
             <!--class="{{registerButtonActive?'buttonactive':'buttoninactive'}}"></Button>-->
 
-        </StackLayout>
-        <StackLayout orientation="horizontal" style="margin-top:5%">
-
-            <StackLayout style="width: 10%"></StackLayout>
-            <StackLayout>
-                <Label text="Password rules" class="list-group-item"></Label>
-                <Label text="- minimum 12 characters"> </Label>
-                <Label text="- no spaces" > </Label>
-                <Label text="- that's it!" > </Label>
-            </StackLayout>
         </StackLayout>
 
         <StackLayout *ngIf="processingRegistration">

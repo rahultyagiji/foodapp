@@ -26,6 +26,9 @@
                                style="margin-left:5%;height: 100px;width:40%;border-style:dashed;font-weight: bold;font-size:20pt"></TextField>
                 </StackLayout>
 
+                <ActivityIndicator row="1" #activityIndicator busy="false" (busyChange)="onBusyChanged($event)"
+                                   width="100" height="50" class="activity-indicator"></ActivityIndicator>
+
                 <android>
                     <Button text="Register Card" *ngIf="!cardExists" (tap)="onCardRegister($event)" class="buttons90P-W"></Button>
                     <Button text="Update Card" *ngIf="cardExists" (tap)="onCardRegister($event)" class="buttons90P-W"></Button>

@@ -323,4 +323,9 @@ export class CafeComponent implements OnInit, OnDestroy {
             this.toggleMenuCart=true;
         }
     }
+
+    onClickUnavailable(){
+        Toast.makeText("Item currently unavailable","2500").show();
+
+    }
 }

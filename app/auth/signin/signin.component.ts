@@ -36,19 +36,23 @@ export class SigninComponent implements OnInit {
 
     onSigninAndroid(email,password,args){
 
-        let page = <StackLayout>args.object;
+        /*let page = <StackLayout>args.object;
         let view = <StackLayout>page.getViewById("signin");
         view.backgroundColor = new Color("#f0f0f0");
         view.animate({ backgroundColor: new Color("white"), duration: 100 });
-        view.animate({ backgroundColor: new Color("#0A4C58"), duration: 100 });
+        view.animate({ backgroundColor: new Color("#0A4C58"), duration: 100 });*/
 
+        let activityIndicator = this.activityIndicator.nativeElement;
+        activityIndicator.busy = true;
 
         this.auth.signin(email.text,password.text)
             .then((res)=>{
+                activityIndicator.busy = false;
                 this.routerextensions.navigate([""],{clearHistory: true});
 
             })
             .catch((error)=>{
+                activityIndicator.busy = false;
                 console.log("Login error " + error);
                 Toast.makeText(error,'10000').show();
             });

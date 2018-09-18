@@ -16,7 +16,7 @@ app.on(app.launchEvent, (args) => {
     if (platform.isIOS) {
         //"pk_live_vQDnFzdF5EDZmRqSf7z5b0yG"
         //"pk_test_l6tuKlddwfIkKUWlYj1HnxiB"
-        STPPaymentConfiguration.sharedConfiguration().publishableKey = "pk_live_vQDnFzdF5EDZmRqSf7z5b0yG";
+        STPPaymentConfiguration.sharedConfiguration().publishableKey = "pk_test_l6tuKlddwfIkKUWlYj1HnxiB";
         console.log("stripe key is " + STPPaymentConfiguration.sharedConfiguration().publishableKey);
     }
 });

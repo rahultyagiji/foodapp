@@ -1,8 +1,10 @@
 import {Component, OnDestroy, OnInit, OnChanges, DoCheck, AfterContentChecked, AfterContentInit,
-    AfterViewChecked, AfterViewInit, Output, ViewContainerRef, EventEmitter, Input, ChangeDetectorRef} from "@angular/core";
+    AfterViewChecked, AfterViewInit, Output, ViewContainerRef, EventEmitter, Input, ChangeDetectorRef,
+    ViewChild, ElementRef, Injectable} from "@angular/core";
 import {OrderService} from "../services/order.service";
 import {ModalDialogService, RouterExtensions} from "nativescript-angular";
-import { HttpClient, HttpHeaders, HttpResponse } from "@angular/common/http";
+import { HttpClient, HTTP_INTERCEPTORS, HttpEventType, HttpErrorResponse,
+    HttpEvent, HttpInterceptor, HttpHandler, HttpRequest } from "@angular/common/http";
 import {Order} from "../datatypes/order";
 import {OrderpopComponent} from "../ordermodal/orderpop.component";
 import {firebase} from "nativescript-plugin-firebase/firebase-common";
@@ -11,10 +13,43 @@ import {topmost} from "ui/frame";
 import { ios, run as applicationRun } from "application";
 import {PanGestureEventData} from "tns-core-modules/ui/gestures";
 import * as dialogs from "ui/dialogs";
+import { Observable } from "rxjs";
+import { tap } from "rxjs/operators";
+//import {timeout} from "../../platforms/android/app/src/main/assets/app/tns_modules/rxjs/operator/timeout";
 //import {OnChanges} from "../../platforms/ios/DQCafev02/app/tns_modules/@angular/core/src/metadata/lifecycle_hooks";
 //import firebase = require("nativescript-plugin-firebase");
 const FIREBASE_FUNCTION_CHARGE = 'https://us-central1-dekyou-cafe.cloudfunctions.net/charge/';
 const application = require("tns-core-modules/application");
+
+
+@Injectable()
+export class CustomInterceptor implements HttpInterceptor {
+    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        console.log(`[CustomInterceptor] intercept url: ${req.url}`);
+
+        return next.handle(req).pipe(
+            tap(event => {
+                console.log(`[CustomInterceptor] handled type: ${HttpEventType[event.type]} url: ${req.url}`);
+            })
+        );
+    }
+}
+
+interface DataResults<T> {
+    results: Array<T>;
+}
+
+interface LocalData {
+    title: string;
+    description: string;
+}
+
+interface RemoteData {
+    name: { first: string };
+    email: string;
+}
+
+
 
 @Component({
     selector: "ns-confirm-order",
@@ -22,7 +57,17 @@ const application = require("tns-core-modules/application");
     templateUrl: "./order.component.html",
     styleUrls: ["./order.component.css"]
 })
-export class OrderConfirmComponent implements OnInit, OnChanges, OnDestroy, DoCheck, AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit {
+export class OrderConfirmComponent implements OnInit, OnChanges, OnDestroy, DoCheck,
+    AfterContentChecked, AfterContentInit, AfterViewChecked,
+    AfterViewInit {
+
+    static providers = [
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: CustomInterceptor,
+            multi: true,
+        }
+    ];
 
     order:Order[]=[];
     total$:number=0;
@@ -36,8 +81,12 @@ export class OrderConfirmComponent implements OnInit, OnChanges, OnDestroy, DoCh
     accountID:string = "";
     customerID:string = "";
     key:string;
+    paymentSuccess:boolean = false;
 
     @Input() cafeid: string;
+    @ViewChild('activityIndicator') activityIndicator: ElementRef;
+    @ViewChild('pb1') pb1: ElementRef;
+    @ViewChild('pb2') pb2: ElementRef;
     @Output() cartEmpty: EventEmitter<boolean> =   new EventEmitter();
 
 
@@ -48,6 +97,8 @@ export class OrderConfirmComponent implements OnInit, OnChanges, OnDestroy, DoCh
         private cdr: ChangeDetectorRef,
         private http: HttpClient,
         private vcRef: ViewContainerRef){
+
+        this.paymentSuccess = false;
 
         firebase.getCurrentUser()
             .then((token)=> {
@@ -229,61 +280,63 @@ export class OrderConfirmComponent implements OnInit, OnChanges, OnDestroy, DoCh
 
     onOrder(){
 
-            if (this.cardExists) {
+        if (this.cardExists) {
 
-                dialogs.prompt({
-                    title: "Table Number",
-                    message: "Please enter your table number",
-                    okButtonText: "OK",
-                    cancelButtonText: "Cancel text",
-                    neutralButtonText: "I'm getting takeaway!",
-                    defaultText: "",
-                    inputType: dialogs.inputType.text
-                }).then(r => {
-                    console.log("Dialog result: " + r.result + ", text: " + r.text);
+            dialogs.prompt({
+                title: "Table Number",
+                message: "Please enter your table number",
+                okButtonText: "OK",
+                cancelButtonText: "Cancel",
+                neutralButtonText: "I'm getting takeaway!",
+                defaultText: "",
+                inputType: dialogs.inputType.text
+            }).then(r => {
+                console.log("Dialog result: " + r.result + ", text: " + r.text);
 
-                    //modalcode
-                    /*let options = {
-                     fullscreen: false,
-                     viewContainerRef: this.vcRef,
+                //modalcode
+                /*let options = {
+                 fullscreen: false,
+                 viewContainerRef: this.vcRef,
 
-                     };*/
-                    if (r.result == false) {
+                 };*/
+                if (r.result == false) {
 
-                        console.log("do nothing");
+                    console.log("do nothing");
 
-                    } else {
+                } else {
 
-                        if (this.uid) {
-                            //this.popup.showModal(OrderpopComponent, options).then((response)=> {
-                            console.log("passing...", this.cafeid);
+                    if (this.uid) {
+                        //this.popup.showModal(OrderpopComponent, options).then((response)=> {
+                        console.log("passing...", this.cafeid);
 
-                            this.orderService.confirmOrder(this.order, this.cafeid, "card", this.uid, r.text);
-                            this.processPayment(this.total$);
-                            Toast.makeText("Your order has been placed").show();
-                            this.order.length = 0;
-                            this.total$ = 0;
-                            this.cartEmpty.emit(false);
-                            this.routerextensions.navigate(["/items", 1]);
-                            //}).catch(()=> {
-                            Toast.makeText("").show();
-                            //})
-                        }
-                        else {
-                            Toast.makeText("Please login to order").show();
-                        }
+                        this.processPayment(this.total$, r.text);
+                        
                     }
+                    else {
+                        Toast.makeText("Please login to order").show();
+                    }
+                }
 
-                });
-            }
-            else {
-                alert("Please add card details under Manage Cards option.");
-            }
+            });
+        }
+        else {
+            alert("Please add card details under Manage Cards option.");
+        }
     }
 
-    processPayment(total) {
+    processPayment(total, userText) {
 
-        console.log("in process payment for cafeid" + this.cafeid);
+        let activityIndicator = this.activityIndicator.nativeElement;
+        let pb1 = this.pb1.nativeElement;
+        let pb2 = this.pb2.nativeElement;
+        activityIndicator.busy = true;
+        pb1.isDisabled = true;
+        pb2.isDisabled = true;
+        pb1.color = "gray";
+        pb2.color = "gray";
+        //this.btnenabled = false;
+
+        console.log("in process payment for cafeid " + this.cafeid);
 
 
         /*firebase.getValue("/userInfo/" + token.uid)
@@ -321,65 +374,91 @@ export class OrderConfirmComponent implements OnInit, OnChanges, OnDestroy, DoCh
                         {
                             body: {"function":"charge", "aID": this.accountID, "cID":this.customerID,
                                 "amount":total, "chargeAmount":this.totalCharge$, "currency":"AUD"},
-                            headers: {"Content-Type": "application/json"}
-                        }).subscribe(res => {
-
+                            headers: {"Content-Type": "application/json"},
+                        }).toPromise().then( (res) => {
                         obj = res;
-                        console.log(obj.body.charge.id);
-                        console.log("the charge is " + obj.body.charge.id);
 
+                        if (obj.statusCode == 200) {
+                            console.log(obj.body.charge.id);
+                            console.log("the charge is " + obj.body.charge.id);
+                            this.paymentSuccess = true;
+                            this.orderService.confirmOrder(this.order, this.cafeid, "card", this.uid, userText);
+                            Toast.makeText("Your order has been placed").show();
+                            this.order.length = 0;
+                            this.total$ = 0;
+                            this.cartEmpty.emit(false);
+                            activityIndicator.busy = false;
+                            pb1.isDisabled = false;
+                            pb2.isDisabled = false;
+                            pb1.color = "white";
+                            pb2.color = "white";
+                            //this.btnenabled = true;
+                            this.routerextensions.navigate(["/items", 1]);
+                        }
+                        else {
+                            console.error("here " + obj.statusCode);
+                            activityIndicator.busy = false;
+                            pb1.isDisabled = false;
+                            pb2.isDisabled = false;
+                            pb1.color = "white";
+                            pb2.color = "white";
+                            //this.btnenabled = true;
+                            Toast.makeText("Your payment was unsuccessful").show();
+                        }
                     });
+
+                    /*subscribe(
+
+                     (res) => {
+                     obj = res;
+                     console.log(obj.body.charge.id);
+                     console.log("the charge is " + obj.body.charge.id);
+                     this.paymentSuccess = true;
+                     this.orderService.confirmOrder(this.order, this.cafeid, "card", this.uid, userText);
+                     Toast.makeText("Your order has been placed").show();
+                     this.order.length = 0;
+                     this.total$ = 0;
+                     this.cartEmpty.emit(false);
+                     activityIndicator.busy = false;
+                     this.routerextensions.navigate(["/items", 1]);
+                     },
+
+                     (error) => {
+
+                     this.onError(error);
+                     console.log("here the error happens");
+                     this.paymentSuccess = false;
+                     activityIndicator.busy = false;
+                     Toast.makeText("Your payment was unsuccessful").show();
+                     },
+
+                     () => {
+                     this.routerextensions.navigate(["/items", 1]);
+                     }
+
+                     );*/
 
                 }
             );
 
-        //console.log("the account id is " + this.accountID);
-
-        //var obj;
-
-        /*if (!this.accountID) {
-         var obj;
-
-         this.http.request("POST",
-         FIREBASE_FUNCTION_ACCOUNT,
-         {
-         body: {"id": this.cafeid},
-         headers: {"Content-Type": "application/json"}
-         }).subscribe(res => {
-
-         obj = res;
-         console.log(obj.body.account.id);
-         this.accountID = obj.body.account.id;
-         console.log("the customer token is " + this.accountID);
-
-         firebase.update("/businessName/-L6petTdgTRP_HfpTNYA", {"aID": this.accountID});*/
-
-        /*firebase.getCurrentUser()
-         .then(user => console.log("User uid: " + user.uid))
-         .catch(error => console.log("Trouble in paradise: " + error));*/
-
-        //textString = JSON.stringify(res);
-        //console.log("res is " + textString);
-        //textString = (<any>res).json;
-        //});
-
-        //firebase.update("/businessName/-L6petTdgTRP_HfpTNYA", {aID: this.accountID});
-        //}
-
 
     }
 
+    private onError(error: HttpErrorResponse) {
+        console.log("onError " + error);
+        console.dir(error);
+    }
 
 //    testing slide menu
 
     onPan(args: PanGestureEventData) {
-        console.log("Pan!",args);
-        console.log("Object that triggered the event: " + args.object);
-        console.log("View that triggered the event: " + args.view);
-        console.log("Event name: " + args.eventName);
-        console.log("Pan delta: [" + args.deltaX + ", " + args.deltaY + "] state: " + args.state);
+     console.log("Pan!",args);
+     console.log("Object that triggered the event: " + args.object);
+     console.log("View that triggered the event: " + args.view);
+     console.log("Event name: " + args.eventName);
+     console.log("Pan delta: [" + args.deltaX + ", " + args.deltaY + "] state: " + args.state);
 
-    }
+     }
 
     manageCards() {
         //this.cardExists = true;

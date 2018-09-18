@@ -245,7 +245,7 @@ export class ItemsComponent implements OnInit{
         var total="0";
         order.forEach((x)=>{
             //for total
-            total=(Math.round((parseFloat(total)+ parseFloat(x.price))*100)/100).toString();
+            total=(Math.round((parseFloat(total)+ parseFloat(x.priceQuantity))*100)/100).toString();
         });
         return total;
     }

@@ -13,8 +13,8 @@ import * as dialogs from "ui/dialogs";
 //import { Page } from 'ui/page';
 
 const application = require("tns-core-modules/application");
-const stripe = new Stripe('pk_live_vQDnFzdF5EDZmRqSf7z5b0yG');
-//const stripe = new Stripe('pk_test_l6tuKlddwfIkKUWlYj1HnxiB');
+//const stripe = new Stripe('pk_live_vQDnFzdF5EDZmRqSf7z5b0yG');
+const stripe = new Stripe('pk_test_l6tuKlddwfIkKUWlYj1HnxiB');
 //const FIREBASE_FUNCTION = 'https://[YOUR_FIREBASE_PROJECT].cloudfunctions.net/charge/'; // TODO: PUT YOUR FIREBASE FUNCTIONS URL HERE
 const FIREBASE_FUNCTION = 'https://us-central1-dekyou-cafe.cloudfunctions.net/customer/'; // TODO: PUT YOUR FIREBASE FUNCTIONS URL HERE
 const FIREBASE_FUNCTION_TEST = 'https://us-central1-dekyou-cafe.cloudfunctions.net/testfunction/'; // TODO: PUT YOUR FIREBASE FUNCTIONS URL HERE
@@ -31,6 +31,7 @@ const httpModule = require("http");
 @Injectable()
 export class ManageCardsComponent implements OnInit, OnChanges, DoCheck, AfterViewInit, AfterViewChecked {
 
+    @ViewChild('activityIndicator') activityIndicator: ElementRef;
     @ViewChild('cardView') cardRef: ElementRef;
     @Output() cardExist: EventEmitter<boolean> = new EventEmitter();
     //card: CardDetails;
@@ -181,6 +182,9 @@ export class ManageCardsComponent implements OnInit, OnChanges, DoCheck, AfterVi
 
     onCardRegister (args){
 
+        let activityIndicator = this.activityIndicator.nativeElement;
+        activityIndicator.busy = true;
+
         console.log("In Card Register with card number is" + this.cardNumber);
 
         const cc = new Card(this.cardNumber,Number(this.MM), Number(this.YY), this.CVC);
@@ -205,6 +209,7 @@ export class ManageCardsComponent implements OnInit, OnChanges, DoCheck, AfterVi
         var obj;
 
         stripe.createToken(cc.card, (error, token)=> {
+
             if (!error) {
                 //Do something with your token;
                 //this.cardToken = token.tokenId;
@@ -278,36 +283,59 @@ export class ManageCardsComponent implements OnInit, OnChanges, DoCheck, AfterVi
                             headers: {"Content-Type": "application/json"}
                         }).subscribe(res => {
 
-                        obj = res;
-                        console.log(obj.body.customer.id);
-                        this.customerToken = obj.body.customer.id;
-                        console.log("the customer token is " + this.customerToken);
+                            obj = res;
+                            console.log(obj.body.customer.id);
+                            this.customerToken = obj.body.customer.id;
+                            console.log("the customer token is " + this.customerToken);
 
 
-                        firebase.getCurrentUser()
-                            .then((token)=> {
-                                console.log(token);
-                                //this.uid = token.uid;
-                                //if(token.emailVerified){this.isVerified=true;}
+                            firebase.getCurrentUser()
+                                .then((token)=> {
+                                    console.log(token);
+                                    //this.uid = token.uid;
+                                    //if(token.emailVerified){this.isVerified=true;}
 
-                                firebase.update("/userInfo/" + token.uid, {cID: this.customerToken});
+                                    firebase.update("/userInfo/" + token.uid, {cID: this.customerToken});
 
-                                this.cardExists = true;
-                                this.cdr.detectChanges();
-                                this.cardExist.emit(true);
-                                alert("Details Updated");
+                                    this.cardExists = true;
+                                    this.cdr.detectChanges();
+                                    this.cardExist.emit(true);
+                                    //alert("Details Updated");
 
-                                //.then((res)=>{this.name=res.value.name})
-                            }).catch(error => console.log("Trouble in paradise: " + error));
+                                    //.then((res)=>{this.name=res.value.name})
+                                }).catch(error => console.log("Trouble in paradise: " + error));
 
-                        /*firebase.getCurrentUser()
-                         .then(user => console.log("User uid: " + user.uid))
-                         .catch(error => console.log("Trouble in paradise: " + error));*/
+                            /*firebase.getCurrentUser()
+                             .then(user => console.log("User uid: " + user.uid))
+                             .catch(error => console.log("Trouble in paradise: " + error));*/
 
-                        //textString = JSON.stringify(res);
-                        //console.log("res is " + textString);
-                        //textString = (<any>res).json;
-                    });
+                            //textString = JSON.stringify(res);
+                            //console.log("res is " + textString);
+                            //textString = (<any>res).json;
+                        },
+                        error => {
+                            activityIndicator.busy = false;
+
+                            dialogs.alert({
+                                title: "Error",
+                                message: "Please check the card details.",
+                                okButtonText: "Ok"
+                            })
+                        },
+
+                        () => {
+                            activityIndicator.busy = false;
+
+                            dialogs.alert({
+                                title: "Success",
+                                message: "Details successfully Updated. Press Ok to navigate to Home.",
+                                okButtonText: "Ok"
+                            }).then(r => {
+                                this.routerextensions.navigate([""], {clearHistory: true});
+                            });
+                        }
+
+                    );
                 } else if(application.android) {
 
                     console.log("the card token is " + token.getId());
@@ -338,11 +366,31 @@ export class ManageCardsComponent implements OnInit, OnChanges, DoCheck, AfterVi
                                 this.cardExists = true;
                                 this.cdr.detectChanges();
                                 this.cardExist.emit(true);
-                                alert("Details Updated");
+                                //alert("Details Updated");
 
                                 //.then((res)=>{this.name=res.value.name})
                             }).catch(error => console.log("Trouble in paradise: " + error));
-                    });
+                    },
+                        error => {
+                            activityIndicator.busy = false;
+                            dialogs.alert({
+                                title: "Error",
+                                message: "Please check the card details.",
+                                okButtonText: "Ok"
+                            })
+                        },
+
+                        () => {
+                            activityIndicator.busy = false;
+                            dialogs.alert({
+                                title: "Success",
+                                message: "Details successfully Updated. Press Ok to navigate to Home.",
+                                okButtonText: "Ok"
+                            }).then(r => {
+                                this.routerextensions.navigate([""], {clearHistory: true});
+                            });
+                        }
+                    );
                 }
 
                 //var response = JSON.parse(textString);
@@ -367,6 +415,15 @@ export class ManageCardsComponent implements OnInit, OnChanges, DoCheck, AfterVi
                  console.log ("error is " + e);
                  });*/
 
+                /*activityIndicator.busy = false;
+                dialogs.alert({
+                    title: "Success",
+                    message: "Details successfully Updated",
+                    okButtonText: "Ok"
+                }).then(r => {
+                    this.routerextensions.navigate([""], {clearHistory: true});
+                });*/
+
             } else {
                 //alert("Order Confirmed");
                 //Toast.makeText("Please login to confirm order").show();
@@ -374,6 +431,8 @@ export class ManageCardsComponent implements OnInit, OnChanges, DoCheck, AfterVi
                 alert(error.toString());
 
                 console.log("the token error is " + error);
+
+                activityIndicator.busy = false;
             }
         });
 

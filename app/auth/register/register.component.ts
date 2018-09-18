@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit, ViewChild, ElementRef} from "@angular/core";
 import {AuthService} from "../../services/auth.service";
 import * as Toast from "nativescript-toast";
 import * as EmailValidator from 'email-validator';
@@ -17,6 +17,7 @@ import {RouterExtensions} from "nativescript-angular";
 
 export class RegisterComponent implements OnInit {
 
+    @ViewChild('activityIndicator') activityIndicator: ElementRef;
     registrationAttempt:string="";
     userId:{"username","password"}={"username":"","password":""};
     emailField:string="";
@@ -43,13 +44,15 @@ export class RegisterComponent implements OnInit {
 
     onRegister(name,email,password,args){
 
-        console.log("values are: " + name.text + " " + email.text + " " + password.text);
+        /*console.log("values are: " + name.text + " " + email.text + " " + password.text);
 
         let page = <StackLayout>args.object;
         let view = <StackLayout>page.getViewById("register");
         view.backgroundColor = new Color("#f0f0f0");
         view.animate({ backgroundColor: new Color("white"), duration: 200 });
-        view.animate({ backgroundColor: new Color("#0A4C58"), duration: 200 });
+        view.animate({ backgroundColor: new Color("#0A4C58"), duration: 200 });*/
+        let activityIndicator = this.activityIndicator.nativeElement;
+        activityIndicator.busy = true;
 
         if(EmailValidator.validate(email.text)){
             this.emailValid=true;
@@ -66,13 +69,15 @@ export class RegisterComponent implements OnInit {
                                     this.auth.insertUserInfo(res.key, name.text);
                                     //this.auth.updateUserInfo(res.key, name.text);
                                     this.routerextensions.navigate(["signin"],{clearHistory: true});
-                                    Toast.makeText("An email has been sent for verification", '1500').show();
+                                    activityIndicator.busy = false;
+                                    Toast.makeText("An email has been sent for verification", '3500').show();
                                 });
 
                             this.processingRegistration=true;
                             this.passwordValid = true;
                         })
                         .catch((err)=>{
+                            activityIndicator.busy = false;
                             this.routerextensions.navigate(["register"],{clearHistory: true});
                             Toast.makeText("Oops there was some problem with registration", '1500').show();
                             this.processingRegistration=false;
@@ -82,12 +87,14 @@ export class RegisterComponent implements OnInit {
                 }
             }
             else{
+                activityIndicator.busy = false;
                 this.checkAllInput();
                 Toast.makeText("There are issues with the password", '1500').show()
             }
 
         }else{
             this.emailValid=false;
+            activityIndicator.busy = false;
             this.checkAllInput();
             Toast.makeText("Oops, something is wrong with the email",'1500').show()
         }
