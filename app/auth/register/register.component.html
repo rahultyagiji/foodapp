@@ -61,6 +61,16 @@
                 <StackLayout style="height: 20%"></StackLayout>
             </android>
 
+            <StackLayout orientation="horizontal" style="margin-top:2%">
+
+                <StackLayout style="width: 10%"></StackLayout>
+                <StackLayout>
+                    <Label text="Password rules" class="list-group-item"></Label>
+                    <Label text="- minimum 12 characters (no spaces)"> </Label>
+                    <Label text="- that's it!" > </Label>
+                </StackLayout>
+            </StackLayout>
+
             <StackLayout orientation="horizontal">
                 <Label text="" style="width: 10%"> </Label>
                 <TextField hint="First name" autocorrect="false" returnKeyType="done" class="input input-border myTextField"
@@ -83,17 +93,6 @@
                            class="{{passwordValid ? 'input input-border myTextField' : 'validation'}}" secure="true"
                            style="margin-top:2%;height: 100px;width:80%;border-style:dashed;font-weight: bold;font-size:20pt"
                            (textChange)="onPasswordTextChange($event.value)"> </TextField>
-            </StackLayout>
-
-            <StackLayout orientation="horizontal" style="margin-top:5%">
-
-                <StackLayout style="width: 10%"></StackLayout>
-                <StackLayout>
-                    <Label text="Password rules" class="list-group-item"></Label>
-                    <Label text="- minimum 12 characters"> </Label>
-                    <Label text="- no spaces" > </Label>
-                    <Label text="- that's it!" > </Label>
-                </StackLayout>
             </StackLayout>
 
             <StackLayout orientation="horizontal">
