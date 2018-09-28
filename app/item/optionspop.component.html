@@ -58,11 +58,11 @@
                 <Label class="p-10" text="Select Extras" textWrap="true" style="font-weight: bold"></Label>
                 <StackLayout class="p-10" *ngFor="let option of checkOptions">
                     <StackLayout orientation="horizontal" verticalAlignment="center">
-                        <CheckBox #elem [checked]="false" class="checkbox" (tap)="checkedExtra(option)"></CheckBox>
+                        <CheckBox #elem [checked]="false" class="checkbox" (checkedChange)="checkedExtra(option)"></CheckBox>
                         <StackLayout verticalAlignment="center" orientation="horizontal">
                             <Label text="+ $"></Label>
                             <Label [text]="option.price" style="width: 10%"></Label>
-                            <Label [text]="option.text" textWrap="true"></Label>
+                            <Label [text]="option.text" textWrap="true" (tap)="checkedExtra(option)"></Label>
                         </StackLayout>
                     </StackLayout>
                 </StackLayout>

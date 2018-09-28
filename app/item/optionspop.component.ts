@@ -143,7 +143,7 @@ export class OptionspopComponent implements OnInit {
         var response1:{'response':string,'specialInstruction':string,'option':
         {'text':string,'price':number},
         'extras':{'text':string,'price':number}[]}={'response':"",'specialInstruction':'','option':
-        {'text':"",'price':0},extras:null};
+        {'text':"",'price':0},extras:[]};
 
         response1.response=response;
         if(this.optionText){response1.option.text=this.optionText;}
@@ -172,6 +172,8 @@ export class OptionspopComponent implements OnInit {
 
     changeCheckedRadio(radioOption: RadioOption): void {
 
+        console.log("in radioOption");
+
         this.optionText=radioOption.text;
         this.optionPrice=radioOption.price;
 
@@ -191,6 +193,9 @@ export class OptionspopComponent implements OnInit {
     }
 
     checkedExtra(checkOption: RadioOption){
+
+        console.log("in checkOption");
+
         checkOption.selected = !checkOption.selected;
         if (checkOption.selected) {
             this.extrasAdded.push({"text": checkOption.text, "price": checkOption.price});
