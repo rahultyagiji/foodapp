@@ -1,16 +1,21 @@
-import {Component, ElementRef, OnInit, ViewChild, ViewContainerRef} from "@angular/core";
+import {Component, ElementRef, OnInit, ViewChild} from "@angular/core";
 import {ModalDialogParams} from "nativescript-angular/directives/dialogs";
-import { Switch } from "ui/switch";
-import { ListPicker } from "ui/list-picker";
-import { Menu } from "../datatypes/menu";
+import {Switch} from "ui/switch";
+import {ListPicker} from "ui/list-picker";
+import {Menu} from "../datatypes/menu";
 import {TextField} from "tns-core-modules/ui/text-field";
 import {TextView} from "tns-core-modules/ui/text-view";
-import { FlexboxLayout } from "tns-core-modules/ui/layouts/flexbox-layout";
-//import { CheckBox } from 'nativescript-checkbox';
-import { topmost } from 'ui/frame';
-import { RadioOption } from "./radio-option";
+import {FlexboxLayout} from "tns-core-modules/ui/layouts/flexbox-layout";
+import {topmost} from "ui/frame";
+import {RadioOption} from "./radio-option";
 import {firebase} from "nativescript-plugin-firebase/firebase-common";
 import {RouterExtensions} from "nativescript-angular";
+//import {EventData} from "data/observable";
+//import {Page} from "ui/page";
+//import {ScrollView} from "ui/scroll-view";
+//import {View} from "ui/core/view";
+//import { isAndroid, isIOS } from "tns-core-modules/platform";
+//import { CheckBox } from 'nativescript-checkbox';
 //import {RouterExtensions} from "../../platforms/android/app/src/main/assets/app/tns_modules/nativescript-angular/router/router-extensions";
 
 //let options = ["Small", "Medium", "Large"];
@@ -25,6 +30,7 @@ import {RouterExtensions} from "nativescript-angular";
 export class OptionspopComponent implements OnInit {
 
     @ViewChild("CB1") FirstCheckBox: ElementRef;
+    //@ViewChild("scrollView") scrollView: ElementRef;
 
 
     radioOptions?: Array<RadioOption>=[];
@@ -118,6 +124,19 @@ export class OptionspopComponent implements OnInit {
 
     }
 
+/*    ngAfterViewInit() {
+        let scrollvie = this.scrollView.nativeElement;
+        setTimeout(() => {
+            if(isAndroid){
+                scrollvie.android.setVerticalScrollBarEnabled(true);
+            }
+            else if (isIOS) {
+                scrollvie.ios.showsVerticalScrollIndicator = true;
+                scrollvie.ios.setScrollBarFadingEnabled = false;
+            }
+        },2);
+    }*/
+
 
     selectedIndexChanged(args) {
         let picker = <ListPicker>args.object;
@@ -141,8 +160,8 @@ export class OptionspopComponent implements OnInit {
         }
 
         var response1:{'response':string,'specialInstruction':string,'option':
-        {'text':string,'price':number},
-        'extras':{'text':string,'price':number}[]}={'response':"",'specialInstruction':'','option':
+            {'text':string,'price':number},
+            'extras':{'text':string,'price':number}[]}={'response':"",'specialInstruction':'','option':
         {'text':"",'price':0},extras:[]};
 
         response1.response=response;
@@ -184,7 +203,7 @@ export class OptionspopComponent implements OnInit {
             return;
         }
 
-        // uncheck all other options
+// uncheck all other options
         this.radioOptions.forEach(option => {
             if (option.text !== radioOption.text) {
                 option.selected = false;
@@ -202,7 +221,7 @@ export class OptionspopComponent implements OnInit {
             this.extrasAdded = this.extrasAdded.reduce(function(a,b){if(a.indexOf(b)<0)a.push(b);return a;},[]);
         }
         else{
-        //    remove from this.extrasAdded
+            //    remove from this.extrasAdded
 
             this.extrasAdded = this.extrasAdded.filter((e)=>{
                 return e.text !=checkOption.text;

@@ -8,7 +8,7 @@
         <StackLayout class="page page-content" height="85%" xmlns:stripe="nativescript-stripe">
 
             <StackLayout class="form">
-                <Label text="Enter card details" style="width:90%;margin-top:5%;margin-left:3%"></Label>
+                <Label text="Enter card details:" style="width:90%;margin-top:5%;margin-left:3%"></Label>
                 <StackLayout class="input-field">
                     <TextField class="input input-border myTextField" hint="credit card" maxLength="16" autocorrect="false"
                                (returnPress)="onCCReturnPress($event)" (blur)="onCCReturnBlur($event)" returnKeyType="done" keyboardType="number"
@@ -37,6 +37,19 @@
                     <Button text="Register Card" *ngIf="!cardExists" (tap)="onCardRegister($event)" class="buttons90P-W-ios"></Button>
                     <Button text="Update Card" *ngIf="cardExists" (tap)="onCardRegister($event)" class="buttons90P-W-ios"></Button>
                 </ios>
+            </StackLayout>
+
+            <StackLayout>
+                <Label *ngIf="cardExists" text="Your current registered cards details are:" style="width:90%;margin-top:5%;margin-left:1%"></Label>
+                <Label *ngIf="!cardExists" text="No card details registered" style="width:90%;margin-top:5%;margin-left:3%"></Label>
+                <StackLayout orientation="horizontal">
+                    <Label *ngIf="cardExists" text="Last 4 digits:" style="width:40%;margin-top:5%;margin-left:7%">></Label>
+                    <Label *ngIf="cardExists" text={{last4}} style="margin-left:3%">></Label>
+                </StackLayout>
+                <StackLayout orientation="horizontal">
+                    <Label *ngIf="cardExists" text="Card Brand:" style="width:40%;margin-top:5%;margin-left:7%">></Label>
+                    <Label *ngIf="cardExists" text={{brand}} style="margin-left:3%">></Label>
+                </StackLayout>
             </StackLayout>
 
             <!--<Label text="Enter email" style="width:90%;margin-top:5%"></Label>-->

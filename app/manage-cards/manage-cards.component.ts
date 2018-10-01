@@ -48,6 +48,8 @@ export class ManageCardsComponent implements OnInit, OnChanges, DoCheck, AfterVi
     public MM:string = "";
     public YY:string = "";
     public CVC:string = "";
+    private last4:string = "";
+    private brand:string = "";
 
     constructor(
         private route: ActivatedRoute,
@@ -57,6 +59,8 @@ export class ManageCardsComponent implements OnInit, OnChanges, DoCheck, AfterVi
         private cdr: ChangeDetectorRef,
         private http: HttpClient,
     ) {
+        this.last4 = "";
+        this.brand = "";
         this.checkCard();
     }
 
@@ -152,6 +156,8 @@ export class ManageCardsComponent implements OnInit, OnChanges, DoCheck, AfterVi
                         if (!res.value.cID.isEmpty) {
                             this.cardExists=true;
                             console.log("customer id is " + res.value.cID);
+                            this.last4 = res.value.last4;
+                            this.brand = res.value.brand;
                         }
                     });
 
@@ -296,6 +302,8 @@ export class ManageCardsComponent implements OnInit, OnChanges, DoCheck, AfterVi
                                     //if(token.emailVerified){this.isVerified=true;}
 
                                     firebase.update("/userInfo/" + token.uid, {cID: this.customerToken});
+                                    firebase.update("/userInfo/" + token.uid, {last4: cc.last4});
+                                    firebase.update("/userInfo/" + token.uid, {brand: cc.brand});
 
                                     this.cardExists = true;
                                     this.cdr.detectChanges();
@@ -362,6 +370,8 @@ export class ManageCardsComponent implements OnInit, OnChanges, DoCheck, AfterVi
                                 console.log(token);
 
                                 firebase.update("/userInfo/" + token.uid, {cID: this.customerToken});
+                                firebase.update("/userInfo/" + token.uid, {last4: cc.last4});
+                                firebase.update("/userInfo/" + token.uid, {brand: cc.brand});
 
                                 this.cardExists = true;
                                 this.cdr.detectChanges();
