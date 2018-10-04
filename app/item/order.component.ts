@@ -80,8 +80,10 @@ export class OrderConfirmComponent implements OnInit, OnChanges, OnDestroy, DoCh
     payOrCard:string = "Add Card";
     accountID:string = "";
     customerID:string = "";
+    customerName:string = "";
     key:string;
     paymentSuccess:boolean = false;
+    userVendor:boolean = false;
 
     @Input() cafeid: string;
     @ViewChild('activityIndicator') activityIndicator: ElementRef;
@@ -102,14 +104,25 @@ export class OrderConfirmComponent implements OnInit, OnChanges, OnDestroy, DoCh
 
         firebase.getCurrentUser()
             .then((token)=> {
-
                 firebase.getValue("/userInfo/"+token.uid)
                     .then((res)=>{
-                        if (!res.value.cID.isEmpty) {
-                            this.cardExists=true;
-                            this.payOrCard = "Click to Pay";
-                            this.customerID = res.value.cID;
-                            console.log("customer id is " + res.value.cID);
+
+                        if (res.value==null) {
+                            this.userVendor = true;
+                            this.cardExists = true;
+                            console.log("vendor user found");
+                        }
+                        try {
+                            this.customerName = res.value.name;
+                            if (!res.value.cID.isEmpty) {
+                                this.cardExists=true;
+                                this.payOrCard = "Click to Pay";
+                                this.customerID = res.value.cID;
+                                console.log("customer id is " + res.value.cID);
+                            }
+                        }
+                        catch(error) {
+                            console.log("error in order component");
                         }
                     });
 
@@ -268,7 +281,7 @@ export class OrderConfirmComponent implements OnInit, OnChanges, OnDestroy, DoCh
     deleteQuantityZero(){
         this.order = this.order.filter((x)=>{
             return x.quantity!=0;
-        })
+        });
 
         if(this.order.length===0){
             this.displayCart=false;
@@ -305,18 +318,26 @@ export class OrderConfirmComponent implements OnInit, OnChanges, OnDestroy, DoCh
 
                 } else {
 
-                    if (this.uid) {
+                    console.log("vendor user is " + this.userVendor);
+
+                    if (this.uid && !this.userVendor) {
                         //this.popup.showModal(OrderpopComponent, options).then((response)=> {
                         console.log("passing...", this.cafeid);
-
                         this.processPayment(this.total$, r.text);
-                        
+
+                    }
+                    else if (this.uid && this.userVendor) {
+                        this.orderService.confirmOrder(this.order, this.cafeid, "vendor", this.uid, r.text, this.total$);
+                        Toast.makeText("Vendor order has been placed").show();
+                        this.order.length = 0;
+                        this.total$ = 0;
+                        this.cartEmpty.emit(false);
+                        this.routerextensions.navigate(["/items", 1]);
                     }
                     else {
                         Toast.makeText("Please login to order").show();
                     }
                 }
-
             });
         }
         else {
@@ -382,7 +403,7 @@ export class OrderConfirmComponent implements OnInit, OnChanges, OnDestroy, DoCh
                             console.log(obj.body.charge.id);
                             console.log("the charge is " + obj.body.charge.id);
                             this.paymentSuccess = true;
-                            this.orderService.confirmOrder(this.order, this.cafeid, "card", this.uid, userText);
+                            this.orderService.confirmOrder(this.order, this.cafeid, "card", this.uid, userText, this.total$);
                             Toast.makeText("Your order has been placed").show();
                             this.order.length = 0;
                             this.total$ = 0;
@@ -452,13 +473,13 @@ export class OrderConfirmComponent implements OnInit, OnChanges, OnDestroy, DoCh
 //    testing slide menu
 
     onPan(args: PanGestureEventData) {
-     console.log("Pan!",args);
-     console.log("Object that triggered the event: " + args.object);
-     console.log("View that triggered the event: " + args.view);
-     console.log("Event name: " + args.eventName);
-     console.log("Pan delta: [" + args.deltaX + ", " + args.deltaY + "] state: " + args.state);
+        console.log("Pan!",args);
+        console.log("Object that triggered the event: " + args.object);
+        console.log("View that triggered the event: " + args.view);
+        console.log("Event name: " + args.eventName);
+        console.log("Pan delta: [" + args.deltaX + ", " + args.deltaY + "] state: " + args.state);
 
-     }
+    }
 
     manageCards() {
         //this.cardExists = true;

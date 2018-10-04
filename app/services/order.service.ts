@@ -61,18 +61,19 @@ export class OrderService {
         else {
             if(this.order[0].cafeId==cafeId){
 
-                if(this.order.some(e=>e.name===menu.name))
-                {   this.order.map((x)=>{
-                    if(x.name===menu.name){
-                        x.quantity=x.quantity+1;
-                        x.priceQuantity=(parseFloat(x.price)*x.quantity).toString();
-                    }})
-                }
-                else{
+                //if(this.order.some(e=>e.name===menu.name))
+                //{
+                    //this.order.map((x)=>{
+                    //if(x.name===menu.name){
+                      //  x.quantity=x.quantity+1;
+                        //x.priceQuantity=(parseFloat(x.price)*x.quantity).toString();
+                    //}
+                //}
+                //else{
                     this.order.push({'cafeId':cafeId,'name':menu.name,'price':this.price,'quantity':1,'specialInstruction':specialInstruction
                         ,'option':option,'extras':extras,
                         'priceQuantity':this.price});
-                }
+                //}})
             }
             else{
                 dialogs.alert("Can only order from one cafe at a time, please clear your cart first").then(()=> {
@@ -89,14 +90,14 @@ export class OrderService {
 
     }
 
-    confirmOrder(order:Order[],cafe,payway,uid,location){
+    confirmOrder(order:Order[],cafe,payway,uid,location, totalPrice){
 
         var time = Math.floor(Date.now() / 1000);
         var a = this.orderNo();
 
         if (payway == "Cash") {
             firebase.push('/order-cafe/' + cafe,
-                {order, "status": "ordered", "uid": uid,"location":location,"orderNo2":a,"timestamp":time} )
+                {order, "status": "ordered", "uid": uid,"location":location,"orderNo2":a,"timestamp":time, "totalPrice":totalPrice} )
                 .then((res) => {
                     firebase.push('/order-user/' + uid, {
                             "status": "ordered",
@@ -112,7 +113,7 @@ export class OrderService {
 
         }
         else {
-            firebase.push('/order-cafe/' + cafe, {order, "status": "ordered", "uid": uid,"location":location,"orderNo2":a,"timestamp":time})
+            firebase.push('/order-cafe/' + cafe, {order, "status": "ordered", "uid": uid,"location":location,"orderNo2":a,"timestamp":time, "totalPrice":totalPrice})
                 .then((res) => {
                     firebase.push('/order-user/' + uid, {
                             "status": "ordered",

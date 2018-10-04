@@ -74,7 +74,9 @@ export class OptionspopComponent implements OnInit {
             .then((token)=> {
                 firebase.getValue("/userInfo/"+token.uid)
                     .then((res)=>{
+
                         this.userLoggedIn = true;
+
                         if (!res.value.cID.isEmpty) {
                             this.customerID = res.value.cID;
                             console.log("customer id is " + res.value.cID);

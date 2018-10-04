@@ -4,22 +4,24 @@
         <ng-template  let-item="item" let-i="index">
             <StackLayout orientation="vertical">
                 <StackLayout orientation="horizontal">
-                        <Label text="+" style="width: 7%" class="list-group-item-copy2 numberCircle" (tap)="increaseQuantity(item,i)"></Label>
+                        <!-- <Label text="+" style="width: 7%" class="list-group-item-copy2 numberCircle" (tap)="increaseQuantity(item,i)"></Label>
                         <Label [text]="item.quantity" style="margin-left:2%;width: 10%" class="list-group-item-copy2"></Label>
-                        <Label text="-" style="width: 5%" class="list-group-item-copy2 numberCircle" (tap)="decreaseQuantity(item,i)"></Label>
+                        <Label text="X" style="width: 10%" class="list-group-item-copy2 numberCircle" (tap)="decreaseQuantity(item,i)"></Label>-->
 
                         <Label [text]="item.name" textWrap="true"
-                           class="list-group-item-copy" style="margin-left:2%; width: 60%"></Label>
-                        <Label [text]="'$' + item.priceQuantity" class="list-group-item-copy" style="width: 20%"></Label>
+                           class="list-group-item-copy" style="width: 55%;font-weight: bold"></Label>
+                        <Label [text]="'$' + item.priceQuantity" class="list-group-item-copy" style="margin-left:14%;width: 18%"></Label>
+                        <Label text="X" style="width:9%;font-weight: bold;color: red" class="list-group-item-copy2" (tap)="decreaseQuantity(item,i)"></Label>
+
 
                 </StackLayout>
 
                 <StackLayout orientation="vertical">
                     <!--Add display of options and extras here-->
-                    <Label [text]="'-' + item.option.text" *ngIf="item.option.text" class="list-group-item-copy"></Label>
+                    <Label [text]="item.option.text" *ngIf="item.option.text" class="list-group-item-copy" style="margin-left:2%;"></Label>
                     <StackLayout *ngIf="item.extras">
                         <StackLayout *ngFor="let extra of item.extras">
-                            <Label [text]="'-' + extra.text" class="list-group-item-copy"></Label>
+                            <Label [text]="extra.text" class="list-group-item-copy" style="margin-left:2%;"></Label>
                         </StackLayout>
                     </StackLayout>
                     <Label [text]="item.specialInstruction" class="list-group-item-copy"></Label>
@@ -35,9 +37,9 @@
     <StackLayout orientation="horizontal">
 
         <Label text="Total" textWrap="true"
-               class="list-group-item-copy" style="width: 80%"></Label>
+               class="list-group-item-copy" style="width: 80%;font-weight: bold"></Label>
         <Label [text]="'$' + total$" textWrap="true"
-               class="list-group-item-copy" style="width: 50%"></Label>
+               class="list-group-item-copy" style="width: 50%;font-weight: bold"></Label>
     </StackLayout>
 
     <StackLayout>
