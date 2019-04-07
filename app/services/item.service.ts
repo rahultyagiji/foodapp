@@ -38,6 +38,7 @@ export class ItemService {
 
             for (const cafeId in data) {
                 if (data.hasOwnProperty(cafeId)) {
+                    if(data[cafeId].available)
                     this.items.push(new Item(data[cafeId]));
                 }
             }

@@ -60,7 +60,7 @@ export class CafeComponent implements OnInit, OnDestroy {
     buttondisable:boolean=false;
     confirmbuttondisable:boolean=false;
     scrollHeight:string="height: 100%";
-    scrollHeightBase:string="height:20%;width: 100%;border-width: 1px";
+    scrollHeightBase:string="height:5%;width: 100%;border-width: 1px";
     imageVisible:boolean=true;
     touchDirection:number=0;
     opacity:string="1";

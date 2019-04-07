@@ -1,4 +1,4 @@
-<StackLayout *ngIf="displayCart" style="height: 70%">
+<StackLayout *ngIf="displayCart" style="height: 50%">
     <Label text="Your Order" class="h-block"></Label>
     <ListView [items]="order" class="list-group" style="height: 100%">
         <ng-template  let-item="item" let-i="index">
@@ -27,7 +27,7 @@
         </ng-template>
     </ListView>
 </StackLayout>
-<StackLayout orientation="horizontal">
+<StackLayout orientation="horizontal" style="height: 30%">
 <Label text="Total" textWrap="true"
        class="list-group-item-copy" style="width: 80%;font-weight: bold"></Label>
 <Label [text]="'$' + total$" textWrap="true"
@@ -35,14 +35,14 @@
 </StackLayout>
 <StackLayout>
 
-    <StackLayout>
+    <StackLayout >
 
         <ActivityIndicator row="1" #activityIndicator busy="false" (busyChange)="onBusyChanged($event)"
-                           width="100" height="20%" class="activity-indicator"></ActivityIndicator>
+                           width="100" class="activity-indicator"></ActivityIndicator>
 
         <android>
             <Button #pb1 text="Tap to Pay" (tap)="onOrder()" (cardExist)="updateButton($event)"
-                    style="width:90%;height: 80%;background-color: #E12842;color: white"></Button>
+                    style="width:90%;background-color: #E12842;color: white"></Button>
         </android>
         <ios>
             <Button #pb2 text="Tap to Pay" (tap)="onOrder()" (cardExist)="updateButton($event)"

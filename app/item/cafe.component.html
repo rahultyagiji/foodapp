@@ -57,7 +57,7 @@
             </StackLayout>
 
 
-            <StackLayout id="viewcart" *ngIf="!cartEmpty && toggleMenuCart" style="{{scrollHeightBase}}" backgroundColor="#E12842" (tap)="OnViewCart($event)" orientation="horizontal">
+            <StackLayout id="viewcart" *ngIf="!cartEmpty && toggleMenuCart" style="height:20%;width: 100%;border-width: 1px" backgroundColor="#E12842" (tap)="OnViewCart($event)" orientation="horizontal">
                 <StackLayout orientation="vertical">
                 <Label [text]="itemCount + ' item'" verticalAlignment="middle" horizontalAlignment="right"
                        style="color:white; font-size: 18px;text-align: center;padding-top: 15px;width: 20%" *ngIf="itemCount=='1'"></Label>

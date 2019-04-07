@@ -7,6 +7,7 @@ cafeId:string;
     description:string;
     lat:number;
     lng:number;
+    available:boolean;
 
 
     constructor(options){
@@ -18,6 +19,7 @@ cafeId:string;
         this.description=options.description;
         this.lat=options.lat;
         this.lng=options.lng;
+        this.available=options.available;
     }
 
 }
