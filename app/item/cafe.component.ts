@@ -59,8 +59,8 @@ export class CafeComponent implements OnInit, OnDestroy {
     cartEmpty:boolean=true;
     buttondisable:boolean=false;
     confirmbuttondisable:boolean=false;
-    scrollHeight:string="height: 90%";
-    scrollHeightBase:string="height:10%;width: 100%;border-width: 1px";
+    scrollHeight:string="height: 100%";
+    scrollHeightBase:string="height:20%;width: 100%;border-width: 1px";
     imageVisible:boolean=true;
     touchDirection:number=0;
     opacity:string="1";
@@ -155,7 +155,7 @@ export class CafeComponent implements OnInit, OnDestroy {
                 this.confirmbuttondisable = true;
             }
             this.cartEmpty=false;
-            this.scrollHeight="height: 90%"
+            this.scrollHeight="height: 85%"
         } else if (this.order.length == 0) {
             this.cartEmpty=true;
         }
@@ -181,7 +181,7 @@ export class CafeComponent implements OnInit, OnDestroy {
         //modalcode
         let options={
             context:data,
-            fullscreen:true,
+            fullscreen:false,
             viewContainerRef:this.vcRef,
 
         };
@@ -192,7 +192,7 @@ export class CafeComponent implements OnInit, OnDestroy {
                     this.order = this.orderService.getOrder();
                     if (this.order.length > 0) {
                         this.cartEmpty = false;
-                        this.scrollHeight = "height: 90%"
+                        this.scrollHeight = "height: 85%"
                     }
                     this.totalPrice(this.order);
                     let orderCount = 0;
@@ -210,7 +210,7 @@ export class CafeComponent implements OnInit, OnDestroy {
 
         ///
         if(this.order.length>0){
-            this.cartEmpty=false;this.scrollHeight="height: 90%";
+            this.cartEmpty=false;this.scrollHeight="height: 85%";
             this.totalPrice(this.order);
         }
     }
@@ -263,7 +263,7 @@ export class CafeComponent implements OnInit, OnDestroy {
         this.order.length=0;
         this.cartEmpty=true;
         this.total$=0;
-        this.scrollHeight="height: 90%"
+        this.scrollHeight="height: 100%"
     }
 
 
@@ -286,10 +286,10 @@ export class CafeComponent implements OnInit, OnDestroy {
                 this.confirmbuttondisable = true;
             }
             this.cartEmpty = false;
-            this.scrollHeight = "height: 90%"
+            this.scrollHeight = "height: 85%"
         }
         else if (this.order.length == 0) {
-            this.scrollHeight = "height:90%"
+            this.scrollHeight = "height:100%"
         }
     }
 

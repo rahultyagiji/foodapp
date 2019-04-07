@@ -65,8 +65,8 @@ export class RegisterComponent implements OnInit {
                             //console.log ("registered key is " + res);
                             this.auth.sendVerificationEmail()
                                 .then(()=>{
-                                    console.log ("registered key is " + res.key);
-                                    this.auth.insertUserInfo(res.key, name.text);
+                                    // console.log ("registered key is " + res.key);
+                                    // this.auth.insertUserInfo(res.key, name.text);
                                     //this.auth.updateUserInfo(res.key, name.text);
                                     this.routerextensions.navigate(["signin"],{clearHistory: true});
                                     activityIndicator.busy = false;

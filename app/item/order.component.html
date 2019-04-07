@@ -4,15 +4,11 @@
         <ng-template  let-item="item" let-i="index">
             <StackLayout orientation="vertical">
                 <StackLayout orientation="horizontal">
-                        <!-- <Label text="+" style="width: 7%" class="list-group-item-copy2 numberCircle" (tap)="increaseQuantity(item,i)"></Label>
-                        <Label [text]="item.quantity" style="margin-left:2%;width: 10%" class="list-group-item-copy2"></Label>
-                        <Label text="X" style="width: 10%" class="list-group-item-copy2 numberCircle" (tap)="decreaseQuantity(item,i)"></Label>-->
 
                         <Label [text]="item.name" textWrap="true"
                            class="list-group-item-copy" style="width: 55%;font-weight: bold"></Label>
                         <Label [text]="'$' + item.priceQuantity" class="list-group-item-copy" style="margin-left:14%;width: 18%"></Label>
                         <Label text="X" style="width:9%;font-weight: bold;color: red" class="list-group-item-copy2" (tap)="decreaseQuantity(item,i)"></Label>
-
 
                 </StackLayout>
 
@@ -31,34 +27,27 @@
         </ng-template>
     </ListView>
 </StackLayout>
-
+<StackLayout orientation="horizontal">
+<Label text="Total" textWrap="true"
+       class="list-group-item-copy" style="width: 80%;font-weight: bold"></Label>
+<Label [text]="'$' + total$" textWrap="true"
+       class="list-group-item-copy" style="width: 50%;font-weight: bold"></Label>
+</StackLayout>
 <StackLayout>
-
-    <StackLayout orientation="horizontal">
-
-        <Label text="Total" textWrap="true"
-               class="list-group-item-copy" style="width: 80%;font-weight: bold"></Label>
-        <Label [text]="'$' + total$" textWrap="true"
-               class="list-group-item-copy" style="width: 50%;font-weight: bold"></Label>
-    </StackLayout>
 
     <StackLayout>
 
         <ActivityIndicator row="1" #activityIndicator busy="false" (busyChange)="onBusyChanged($event)"
-                           width="100" height="30" class="activity-indicator"></ActivityIndicator>
+                           width="100" height="20%" class="activity-indicator"></ActivityIndicator>
 
         <android>
             <Button #pb1 text="Tap to Pay" (tap)="onOrder()" (cardExist)="updateButton($event)"
-                    style="width:90%;background-color: #B52D26;color: white"></Button>
+                    style="width:90%;height: 80%;background-color: #E12842;color: white"></Button>
         </android>
         <ios>
             <Button #pb2 text="Tap to Pay" (tap)="onOrder()" (cardExist)="updateButton($event)"
                     class="buttons90P-W-ios-red"></Button>
         </ios>
     </StackLayout>
-    <!--<StackLayout>
-        <Button text="Add Card" *ngIf="!cardExists" (tap)="manageCards()" (cardExist)="updateButton($event)"
-                style="width:80%;background-color: #B52D26;color: white"></Button>
-    </StackLayout>-->
 
 </StackLayout>

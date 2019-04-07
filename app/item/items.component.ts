@@ -18,6 +18,7 @@ import {Location, isEnabled, enableLocationRequest, getCurrentLocation, watchLoc
 import {Accuracy} from "tns-core-modules/ui/enums/enums";
 import {StackLayout} from "ui/layouts/stack-layout";
 import {Color} from "tns-core-modules/color";
+import {Page} from "tns-core-modules/ui/page";
 // import {and} from "../../platforms/ios/DQCafev02/app/tns_modules/@angular/router/src/utils/collection";
 // var Vibrate = require("nativescript-vibrate").Vibrate;
 // let vibrator = new Vibrate();
@@ -31,6 +32,7 @@ import {Color} from "tns-core-modules/color";
 })
 
 export class ItemsComponent implements OnInit{
+    tabSelected:Number=0;
     businessName: String[];
     items: Item[]=[];
     myItems:Item[]=[];
@@ -57,7 +59,8 @@ export class ItemsComponent implements OnInit{
                 private route:ActivatedRoute,
                 private routerextensions:RouterExtensions,
                 private auth:AuthService,
-                private orderservice:OrderService) {
+                private orderservice:OrderService,
+                private _page: Page) {
 
         if(this.route.snapshot.params["tabId"] != null && this.route.snapshot.params["tabId"] == 1) {
             this.tabSelectedIndex = 1;
@@ -67,6 +70,7 @@ export class ItemsComponent implements OnInit{
     }
 
     ngOnInit(): void {
+        this._page.actionBarHidden = true;
 
         if(this.items!=[]){
             this.itemService.load()
@@ -184,7 +188,6 @@ export class ItemsComponent implements OnInit{
     }
 
     searchLoaded(event) {
-        console.log("search loaded triggered");
         this.searchPhrase = "";
         event.object.android.setFocusable(false);
     }
@@ -267,7 +270,7 @@ export class ItemsComponent implements OnInit{
                     }
                     else{
                         //remove this when we need filtering by location
-                        // that.myItems.push(x);
+                        that.myItems.push(x);
                     }
                 }
             }, function(e){
@@ -276,6 +279,10 @@ export class ItemsComponent implements OnInit{
             });
 
         })
+    }
+
+    tabSelectedFunction(a:Number){
+        this.tabSelected=a;
     }
 
 }

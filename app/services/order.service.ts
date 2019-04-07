@@ -109,6 +109,9 @@ export class OrderService {
                         .then(()=>{
                             firebase.remove('/cart/'+uid+'/'+cafe)}
                         )
+                        .catch(()=>{
+                        //    fix this so that there is no inconsistency between user and cafe tables
+                        })
                 }).catch((err)=>{console.log(err)})
 
         }

@@ -6,19 +6,19 @@
 //    compile 'com.google.firebase:firebase-messaging:11.8.0'
 //}
 
-android {  
-  defaultConfig {  
+android {
+  defaultConfig {
     generatedDensities = []
-    applicationId = "org.nativescript.DQCafe"  
+    applicationId = "org.nativescript.DQCafe"
   }
 
-  aaptOptions {  
+  aaptOptions {
     additionalParameters "--no-version-vectors"
   }
 
-  project.ext {
-        googlePlayServicesVersion = "15.0.0"
-  }
+project.ext {
+      googlePlayServicesVersion = "15.0.1"
+}
 
 }
 

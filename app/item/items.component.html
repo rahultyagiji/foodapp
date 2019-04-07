@@ -1,103 +1,112 @@
-<ActionBar  class="action-bar" style="background-color: #0A4C58;color: white; vertical-align: center">
-<Label text="DQCafe" style="color: white; vertical-align: center;font-size: 22pt;font-weight: bold"></Label>
-</ActionBar>
 
+<StackLayout style="height:100%">
+    <StackLayout style="height:90%">
 
-<side-drawer-page>
+        <!--tab Around You selected-->
+        <StackLayout *ngIf='tabSelected==0'>
+        <SearchBar #sb id="searchbar" [text]="searchPhrase" hint="Type to search" (submit)="onSubmit($event)" (loaded)="searchLoaded()" (textChange)="onTextChanged($event)"
+        (clear)="onClear($event)" color="black"></SearchBar>
+        <!--<SearchBar id="searchbarid"  -->
+        <ListView [items]="myItems" class="list-group container" style="height: 90%">
 
-<TabView [(ngModel)]="tabSelectedIndex" borderBottomcolor="#B52E26"
-iosIconRenderingMode="alwaysOriginal" sdkExampleTitle sdkToggleNavButton style="height: 100%">
-
-<!--List View-->
-<StackLayout *tabItem="{title: 'Around You'}">
-<StackLayout>
-    <SearchBar #sb id="searchbar" [text]="searchPhrase" hint="Type to search" (submit)="onSubmit($event)" (loaded)="searchLoaded()" (textChange)="onTextChanged($event)"
-               (clear)="onClear($event)" color="black"></SearchBar>
-
-    <!--<SearchBar id="searchbarid"  -->
-    <ListView [items]="myItems" class="list-group container" style="height: 90%">
-<!--each list item-->
+        <!--each list item-->
         <ng-template  let-item="item" class="textpadding">
-<!--first stack-->
-                <StackLayout id="cafename" orientation="horizontal" (tap)="jumptoMenu(item.cafeId,$event)" style="height: 20%">
-<!--cafe image-->
-               <android>
-                    <Image [src]="item.imgSrc"  style="width: 30%;border-image-width: 100%"></Image>
-                </android>
-                <ios>
-                    <Image [src]="item.imgSrc"  style="width: 30%;border-image-width: 100%"></Image>
-                    <!-- <Image [src]="item.imgSrc" stretch="fill" class="img-rounded p-l-15 p-r-15 p-t-15" style="width: 30%;border-image-width: 100%"></Image> -->
-                </ios>
-                <StackLayout orientation="vertical" style="width: 60%">
-                    <Label [text]="item.name" textWrap="true" class="list-group-item" style="font-weight: bold"></Label>
-                    <Label [text]="item.description" textWrap="true" class="list-group-item" style="font-size: 10pt"></Label>
-                 </StackLayout>
-<!--rating and dollar      -->
-                <StackLayout style="width: 10%" orientation="vertical">
-                <Label text=""></Label>
-                <Label  text="$$" style="color:#FFA8A3"></Label>
-                <Label  text="*"></Label>
-                </StackLayout>
-                <Label text=" X " class="h-block" ></Label>
-            </StackLayout>
-
-        </ng-template>
-    </ListView>
-
-</StackLayout>
-
-    </StackLayout>
-
-
-<!--Your Orders view-->
-    <StackLayout *tabItem="{title: 'Your Orders'}" (tap)="changeTab()">
-            <ListView [items]="orderComplexLocalFilter" class="list-group" style="height: 90%">
-                <ng-template let-item="item" let-i="index">
-                    <StackLayout >
-                       <Label [text]="item.cafeOwner" class="list-group-item" style="font-weight: bold;font-size:16pt"> </Label>
-                        <Label [text]="'Order #:  ' + item.orderNo2"
-                               class="list-group-item" style="font-weight: bold;font-size:14pt"></Label>
-                        <StackLayout orientation="horizontal">
-                            <StackLayout orientation="vertical">
-                            <StackLayout *ngFor="let order of item.order" style="width: 80%">
-                                <StackLayout orientation="horizontal">
-                                    <Label [text]="order.quantity" style="margin-left: 5%"></Label>
-                                    <Label text="x"></Label>
-                                    <Label [text]="order.name" textWrap="true"></Label>
-                                </StackLayout>
-                                <Label [text]="order.specialInstruction"></Label>
-                            </StackLayout>
-                            </StackLayout>
-                            <StackLayout verticalAligment="middle">
-                            <Label text="Total" style=" font-size: 14pt" style.verticalAlignment="center" style.textAlignment="center"
-                                   ></Label>
-                            <Label [text]="'$' + item.total"  style=" font-size: 14pt" style.verticalAlignment="center" style.textAlignment="center"></Label>
-                            </StackLayout>
-                        </StackLayout>
-
-                            <StackLayout *ngIf="item.status=='completed'" style="height: 0.25%;width: 100%">
-                                <Label text="Order is ready!!!" class="list-group-item" style=" font-size: 14pt"></Label>
-                            </StackLayout>
-                                         <!--class="processed"-->
-
-                            <StackLayout *ngIf="item.status=='processing'" style="height: 0.25%;width: 100%"  >                              <Label text="Order is being prepared!!!" class="list-group-item" style=" font-size: 14pt"></Label> </StackLayout>
-                                         >
-                                <!--class="inProgress"-->
-
-                            <StackLayout *ngIf="item.status=='ordered'" style="height: 0.25%;width: 100%"><Label text="Order has been placed!!!" class="list-group-item" style="font-size: 14pt"></Label> </StackLayout>
-                    <!--class="ordered"-->
-                    </StackLayout>
-                </ng-template>
-            </ListView>
-
-        <StackLayout orientation="horizontal" style="height: 10%">
-            <Button text="Current Orders" (tap)="onTapCurrentOrder()" style="width: 50%"></Button>
-            <Button text="Past Orders" (tap)="onTapPastOrders()" style="width: 50%"></Button>
+        <!--first stack-->
+        <StackLayout id="cafename" orientation="horizontal" (tap)="jumptoMenu(item.cafeId,$event)" style="height: 20%">
+        <!--cafe image-->
+        <android>
+        <Image [src]="item.imgSrc"  style="width: 30%;border-image-width: 100%"></Image>
+        </android>
+        <ios>
+        <Image [src]="item.imgSrc"  style="width: 30%;border-image-width: 100%"></Image>
+        <!-- <Image [src]="item.imgSrc" stretch="fill" class="img-rounded p-l-15 p-r-15 p-t-15" style="width: 30%;border-image-width: 100%"></Image> -->
+        </ios>
+        <StackLayout orientation="vertical" style="width: 60%">
+        <Label [text]="item.name" textWrap="true" class="list-group-item"
+        style="font-size: 14pt;font-weight: bold;color: #422039"></Label>
+        <Label [text]="item.description" textWrap="true" class="list-group-item"
+        style="font-size: 10pt;color: #422039"></Label>
+        </StackLayout>
+        <!--rating and dollar      -->
+        <StackLayout style="width: 10%" orientation="vertical">
+        <Label text=""></Label>
+        <Label  text="$$" style="color:#FFA8A3"></Label>
+        <Label  text="*"></Label>
+        </StackLayout>
+        <Label text=" X " class="h-block" ></Label>
         </StackLayout>
 
+        </ng-template>
+        </ListView>
+
+        </StackLayout>
+        <!--end of tab Around You selected-->
+
+        <StackLayout *ngIf='tabSelected==1'>
+            <Label class="h-block" text="My Orders"></Label>>
+        <ListView [items]="orderComplexLocalFilter" class="list-group" style="height: 90%">
+        <ng-template let-item="item" let-i="index">
+        <StackLayout >
+        <Label [text]="item.cafeOwner" class="list-group-item" style="font-weight: bold;font-size:16pt"> </Label>
+        <Label [text]="'Order #:  ' + item.orderNo2"
+        class="list-group-item" style="font-weight: bold;font-size:14pt"></Label>
+        <StackLayout orientation="horizontal">
+        <StackLayout orientation="vertical">
+        <StackLayout *ngFor="let order of item.order" style="width: 80%">
+        <StackLayout orientation="horizontal">
+        <Label [text]="order.quantity" style="margin-left: 5%"></Label>
+        <Label text="x"></Label>
+        <Label [text]="order.name" textWrap="true"></Label>
+        </StackLayout>
+        <Label [text]="order.specialInstruction"></Label>
+        </StackLayout>
+        </StackLayout>
+        <StackLayout verticalAligment="middle">
+        <Label text="Total" style=" font-size: 14pt" style.verticalAlignment="center" style.textAlignment="center"
+        ></Label>
+        <Label [text]="'$' + item.total"  style=" font-size: 14pt" style.verticalAlignment="center" style.textAlignment="center"></Label>
+        </StackLayout>
+        </StackLayout>
+
+        <StackLayout *ngIf="item.status=='completed'" style="height: 0.25%;width: 100%">
+        <Label text="Order is ready!!!" class="list-group-item" style=" font-size: 14pt"></Label>
+        </StackLayout>
+        <!--class="processed"-->
+
+        <StackLayout *ngIf="item.status=='processing'" style="height: 0.25%;width: 100%"  >                              <Label text="Order is being prepared!!!" class="list-group-item" style=" font-size: 14pt"></Label> </StackLayout>
+        >
+        <!--class="inProgress"-->
+
+        <StackLayout *ngIf="item.status=='ordered'" style="height: 0.25%;width: 100%"><Label text="Order has been placed!!!" class="list-group-item" style="font-size: 14pt"></Label> </StackLayout>
+        <!--class="ordered"-->
+        </StackLayout>
+        </ng-template>
+        </ListView>
+
+        <!--<StackLayout orientation="horizontal" style="height: 10%">-->
+        <!--<Button text="Current Orders" (tap)="onTapCurrentOrder()" style="width: 50%"></Button>-->
+        <!--<Button text="Past Orders" (tap)="onTapPastOrders()" style="width: 50%"></Button>-->
+        <!--</StackLayout>-->
+
+        </StackLayout>
+        <!--tab end of Orders selected-->
+
+        <!--tab User Profile selected-->
+        <StackLayout *ngIf='tabSelected==2'>
+
+
+
+        </StackLayout>>
+
     </StackLayout>
+    <StackLayout style="height:10%;background-color: #422039" orientation="horizontal">
+        <Label text="AY" style="width: 33%;text-align: center;color: white"
+        (tap)="tabSelectedFunction('0')"></Label>
+        <Label text="YO" style="width: 33%;text-align: center;color: white"
+               (tap)="tabSelectedFunction('1')"></Label>
+        <Label text="UP" style="width: 33%;text-align: center;color: white"
+        (tap)="tabSelectedFunction('2')"></Label>
 
+    </StackLayout>
+</StackLayout>
 
-</TabView>
-
-</side-drawer-page>

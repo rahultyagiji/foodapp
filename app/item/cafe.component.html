@@ -1,28 +1,32 @@
-<ActionBar class="action-bar" style="background-color: #1a626f;color: white">
+<ActionBar class="action-bar" >
     <StackLayout orientation="horizontal">
-        <Label [text]="cafe.name" style="font-size:  18pt;vertical-align: center;font-weight: bold"></Label>
+        <Label text="<" style="width: 10%"></Label>>
+        <Label [text]="cafe.name" style="width:90%;font-size:  18pt;vertical-align: center;font-weight: bold"></Label>
     </StackLayout>
 </ActionBar>
 
-<StackLayout>
 
-    <TabView
-            [(ngModel)]="tabSelectedIndex" borderBottomcolor="#B52E26"
-            iosIconRenderingMode="alwaysOriginal" sdkExampleTitle sdkToggleNavButton style="height: 100%">
-
-
-        <StackLayout *tabItem="{title: 'Menu'}">
+        <StackLayout>
 
             <StackLayout>
+
+
                 <StackLayout *ngIf="toggleMenuCart">
-                    <ScrollView orientation="horizontal">
-                        <StackLayout orientation="horizontal">
-                            <Label text="All" #scrollbar id="all" (tap)="onclickAll($event)" class="category"></Label>
-                            <StackLayout #categoryScroll orientation="horizontal" *ngFor=" let categ of categories; let i = index">
-                                <Label [text]="categ" #category id="category" (tap)="onfiltercategory(categ,$event)" class="category"></Label>
-                            </StackLayout>
-                        </StackLayout>
-                    </ScrollView>
+                    <Image [src]="cafe.imgSrc" style="height: 30%;width:100%"></Image>>
+
+                    <StackLayout style="height:7%;background-color: #422039" orientation="horizontal">
+                        <Label text="Menu" style="width: 90%;color: white;"></Label>
+                        <Label text="F" style="width: 10%;color:white"></Label>
+                    </StackLayout>
+<!--This will be replaced with some new filtering mechanism-->
+                    <!--<ScrollView orientation="horizontal">-->
+                        <!--<StackLayout orientation="horizontal">-->
+                            <!--<Label text="All" #scrollbar id="all" (tap)="onclickAll($event)" class="category"></Label>-->
+                            <!--<StackLayout #categoryScroll orientation="horizontal" *ngFor=" let categ of categories; let i = index">-->
+                                <!--<Label [text]="categ" #category id="category" (tap)="onfiltercategory(categ,$event)" class="category"></Label>-->
+                            <!--</StackLayout>-->
+                        <!--</StackLayout>-->
+                    <!--</ScrollView>-->
 
                     <StackLayout class="page page-content" >
                         <ListView [items]="myMenu" class="list-group" style="{{scrollHeight}}">
@@ -52,17 +56,19 @@
 
             </StackLayout>
 
-            <!--<StackLayout *ngIf="cartEmpty" style="{{scrollHeightBase}}" backgroundColor="#1a626f">-->
-            <!--<Label text="Cart empty!"  horizontalAlignment="center" verticalAlignment="middle" style="color:white; font-size: 18px;text-align: center;padding-top: 15px"></Label>-->
-            <!--</StackLayout>-->
 
-            <StackLayout id="viewcart" *ngIf="!cartEmpty && toggleMenuCart" style="{{scrollHeightBase}}" backgroundColor="#1a626f" (tap)="OnViewCart($event)" orientation="horizontal">
+            <StackLayout id="viewcart" *ngIf="!cartEmpty && toggleMenuCart" style="{{scrollHeightBase}}" backgroundColor="#E12842" (tap)="OnViewCart($event)" orientation="horizontal">
+                <StackLayout orientation="vertical">
+                <Label [text]="itemCount + ' item'" verticalAlignment="middle" horizontalAlignment="right"
+                       style="color:white; font-size: 18px;text-align: center;padding-top: 15px;width: 20%" *ngIf="itemCount=='1'"></Label>
+                <Label [text]="itemCount + ' items'" verticalAlignment="middle" horizontalAlignment="right"
+                           style="color:white; font-size: 18px;text-align: center;padding-top: 15px;width: 20%" *ngIf="itemCount!='1'"></Label>
+
                 <Label [text]="'$' + total$" verticalAlignment="middle" horizontalAlignment="left"
-                       style="color:white; font-size: 18px;text-align: center;padding-top: 15px"></Label>
-                <Label text="View cart"  horizontalAlignment="center" verticalAlignment="middle"
-                       style="color:white; font-size: 18px;text-align: center;padding-top: 15px;margin-left: 30%"></Label>
-                <Label [text]="itemCount" verticalAlignment="middle" horizontalAlignment="right"
-                       style="color:white; font-size: 18px;text-align: center;padding-top: 15px;margin-left: 30%"></Label>
+                       style="color:white; font-size: 18px;text-align: center;padding-top: 15px;width: 30%"></Label>
+                </StackLayout>
+                <Label text="Continue ->"  horizontalAlignment="center" verticalAlignment="middle"
+                                                                                                                                           style="color:white; font-size: 18px;text-align: center;padding-top: 15px;width: 50%"></Label>
             </StackLayout>
 
             <StackLayout id="checkout" *ngIf="!cartEmpty && !toggleMenuCart" style="{{scrollHeightBase}}" (tap)="OnViewMenu($event)">
@@ -75,26 +81,6 @@
 
 
 
-
-        </StackLayout>
-        <StackLayout *tabItem="{title: 'Info'}">
-
-            <Image [src]="cafe.imgSrc" top="0"  right="0"></Image>
-
-            <Label style="font-size: 20pt" textWrap="true"
-                   [text]="'Your hot favourites at ' + cafe.name" class="list-group-item"></Label>
-
-            <StackLayout style="width: 85%;" *ngFor="let item of favList">
-                <Label [text]="item.name" textWrap="true" class="list-group-item-copy" style="font-size: 12pt"></Label>
             </StackLayout>
-
-        </StackLayout>
-
-    </TabView>
-
-
-
-</StackLayout>
-
 
 
