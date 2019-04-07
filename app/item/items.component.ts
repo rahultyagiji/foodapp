@@ -92,7 +92,6 @@ export class ItemsComponent implements OnInit{
 //order load for your picks
         firebase.getCurrentUser()
             .then((token)=> {
-                console.log(token);
                 this.orderservice.loadOrder(token.uid)
                     .subscribe((orderlist: Array<{"orderNo":string,"cafe":string,"status":string}>) => {
                         this.orderComplexLocal=[];
@@ -147,20 +146,6 @@ export class ItemsComponent implements OnInit{
         view.animate({ backgroundColor: new Color("white"), duration: 200 });
 
         this.routerextensions.navigate(["/cafe", cafeId]);
-    }
-//
-// //TabView controls
-    changeTab() {
-
-        if (this.tabSelectedIndex === 0) {
-            this.tabSelectedIndex = 1;
-        } else if (this.tabSelectedIndex === 1) {
-            this.tabSelectedIndex = 2;
-        } else if (this.tabSelectedIndex === 2) {
-            this.tabSelectedIndex = 0;
-        }
-
-
     }
 
 // search bar
@@ -225,7 +210,7 @@ export class ItemsComponent implements OnInit{
 //For your picks...
     topThreeCafes(){
 
-        this.orderservice.frequentCafe("CBNUluA6FogVIkOSlD4WKOFvMjf1");
+        this.orderservice.frequentCafe(this.auth.authUid());
 
     }
 
@@ -283,6 +268,11 @@ export class ItemsComponent implements OnInit{
 
     tabSelectedFunction(a:Number){
         this.tabSelected=a;
+    }
+
+    onClickmanagecard(){
+        this.routerextensions.navigate(['cards']);
+
     }
 
 }

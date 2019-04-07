@@ -93,10 +93,12 @@
 
         <!--tab User Profile selected-->
         <StackLayout *ngIf='tabSelected==2'>
+            <Label text="Profile" class="h-block"> </Label>
+            <Label text="Manage Card" (tap)="onClickmanagecard()" class="h-block"></Label>
+            <Label text="Sigin" (tap)="onSignin()" class="h-block" ></Label>
+            <Label text="Sigout" (tap)="onSignout()" class="h-block"></Label>
 
-
-
-        </StackLayout>>
+        </StackLayout>
 
     </StackLayout>
     <StackLayout style="height:10%;background-color: #422039" orientation="horizontal">
